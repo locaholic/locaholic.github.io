@@ -1,0 +1,12 @@
+{
+  "name": "2.0.3",
+  "_cacheHeaders": {
+    "ETag": "\"1ec6f1ee3e0ed0474187f932afa5c9b26174ff8b\"",
+    "Content-Type": "application/zip",
+    "Content-Disposition": "attachment; filename=jparallax-2.0.3.zip"
+  },
+  "_release": "e-tag:1ec6f1ee3",
+  "_source": "https://github.com/stephband/jparallax/archive/2.0.3.zip",
+  "_target": "*",
+  "_originalSource": "https://github.com/stephband/jparallax/archive/2.0.3.zip"
+}

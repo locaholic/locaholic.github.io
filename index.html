@@ -1,10 +1,149 @@
 <!DOCTYPE html>
-<html>
-	<head>
-        <meta charset="utf-8" />
-		<title>index</title>
-	</head>
-	<body>
-	    TESTING
-	</body>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AppKit – Landing page</title>
+        <meta name="description" content="AppKit – Landing page">
+        <meta name="author" content="ArtRow Team">
+        <link rel="shortcut icon" href="static/images/fav.png" type="image/png">
+        <link href="static/vendor/bootstrap/dist/css/bootstrap.css" rel="stylesheet" media="screen">
+        <link href="static/vendor/font-awesome/css/font-awesome.css" rel="stylesheet">
+        <link href="static/vendor/fancybox/source/jquery.fancybox.css" rel="stylesheet">
+        <link href="static/vendor/owl-carousel/owl-carousel/owl.carousel.css" rel="stylesheet">
+        <link href="static/vendor/owl-carousel/owl-carousel/owl.theme.css" rel="stylesheet">
+        <link href="static/vendor/animate.css/animate.min.css" rel="stylesheet">
+        <link href="static/styles/themes/main-theme-dark.css" rel="stylesheet" media="screen">
+        <link href="static/styles/devices.css" rel="stylesheet" media="screen">
+        <link href="static/styles/responsive.css" rel="stylesheet" media="screen">
+        <link href="static/styles/preloader.css" rel="stylesheet" media="screen">
+        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic'
+        rel='stylesheet' type='text/css'><!--Font Lato -->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700'
+        rel='stylesheet' type='text/css'><!--Font OpenSans -->
+        <style type="text/css" media="all">
+            .text-black-border{
+                text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+            }
+        </style>
+    </head>
+    <body data-spy="scroll" data-target="#main-navbar" data-offset="50"><!-- Data-target for navigation -->
+        <!-- Preloader -->
+        <div class="preloader js-feature-preloader">
+            <table>
+                <tr>
+                    <td>
+                        <div class="preloader-icon-gif"></div>
+                        <div class="preloader-text">Loading...</div>
+                        <div class="preloader-close js-preloader-warning">Loading takes a very long time.<br>You can close the preloader<br>
+                            <a href="javascript:void(0);" class="js-preloader-close"><div class="btn btn-sm btn-theme">CLOSE</div></a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div><!-- /Preloader -->
+        <!-- Navigation -->
+        <!--  <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+            <div class="container">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div id="main-navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#landing-main" class="js-feature-scroll">Locaholic</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav> -->
+        <!-- /Navigation -->
+        <!-- Landing section -->
+        <section id="landing-main" class="landing-fullscreen bg-landing-photo" data-stellar-background-ratio="0.5">
+            <div class="landing">
+                <div class="container">
+                    <div class="row">
+                        <!-- Device -->
+                        <div class="col-md-5 col-xs-12">
+                            <div id="carousel-device" class="device-mobile windowsphone-lumia-blue slide carousel" data-ride="carousel">
+                                <div class="carousel-inner carousel-inner-device img-screen-wrapper">
+                                    <div class="item active">
+                                        <img src="static/images/screenshots/wp-01.png" alt="...">
+                                    </div>
+                                    <div class="item">
+                                        <img src="static/images/screenshots/wp-02.png" alt="...">
+                                    </div>
+                                    <div class="item">
+                                        <img src="static/images/screenshots/wp-03.png" alt="...">
+                                    </div>
+                                </div>
+                                <a class="left carousel-control carousel-control-device" href="#carousel-device" data-slide="prev"></a>
+                                <a class="right carousel-control carousel-control-device" href="#carousel-device" data-slide="next"></a>
+                                <!-- Badges -->
+                                <ul class="badge-wrapper left-bot-side">
+                                    <li class="wow swing"><img src="static/images/badges/58.png" alt="..."></li>
+                                </ul>
+                            </div>
+                        </div><!-- /Device -->
+                        <div class="col-md-7 col-xs-12 main-app-description right-side margin-vertical">
+                            <h1 class="main-title text-white text-black-border">Locaholic</h1>
+                            <h3 class="text-white text-black-border">Your private personalized recommendations from people you trust.</h3>
+                            <div class="clearfix"></div>
+                            <p class="main-description with-bg text-white">Effortlessly Share, Ask and Remember your private personalized recommendations from your network of family, friends, colleagues and their extended network.</p>
+                            <p class="available-device text-white">Coming soon to <i class="fa fa-tablet"></i> <i class="fa fa-mobile"></i></p>
+                            <div class="group-inline">
+                                <a href="#"><div class="btn-store btn-store-ios-white"></div></a>
+                                <a href="#"><div class="btn-store btn-store-android-white"></div></a>
+                                <a href="#"><div class="btn-store btn-store-wp-white"></div></a>
+                            </div>
+                            <p class="copyrights-landing text-white">© Locaholic 2015. All rights reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- /Landing section -->
+        <section class="footer">
+            <h6 class="sr-only">Footer</h6>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="group-inline">
+                            <div class="footer-copyrights">© <a href="#">Locaholic</a>, 2015</div>
+                            <ul class="footer-menu">
+                                <li>Contact Us at <a href="mailto:prashantkankaria@gmail.com">prashantkankaria@gmail.com</a></li>
+                            </ul>
+                            <div class="footer-last">
+                                <ul class="footer-menu">
+                                    <li><a href="#landing-main" class="js-feature-scroll">Go to top</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- /Footer -->
+        <script src="static/vendor/requirejs/require.js"></script>
+        <script src="static/scripts/config.js"></script>
+        <script>
+            require([
+                'feature/scroll',
+                'feature/wow',
+                'feature/preloader',
+                'feature/fancybox',
+                'feature/fullscreen',
+                'feature/menu',
+                'feature/navigation',
+                'feature/parallax',
+                'feature/jparallax',
+                'feature/subscribe',
+                'feature/tooltip',
+                'feature/video',
+                'feature/i-specs',
+                'feature/i-screen',
+                'feature/carousel',
+                'feature/accordion'
+            ]);
+        </script>
+    </body>
 </html>

@@ -1,0 +1,307 @@
+/* Main styles for template "Mobile App Kit" */
+@import "variables-cover";
+
+body {
+    font-family: "Open Sans";
+    color: @color-default;
+    margin: 0;
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    background: @bg-cover-gradient-top; /* Old browsers */
+    background: -moz-linear-gradient(top,  @bg-cover-gradient-top 0%, @bg-cover-gradient-bot 100%)fixed; /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@bg-cover-gradient-top), color-stop(100%,@bg-cover-gradient-bot))fixed; /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  @bg-cover-gradient-top 0%,@bg-cover-gradient-bot 100%)fixed; /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  @bg-cover-gradient-top 0%,@bg-cover-gradient-bot 100%)fixed; /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  @bg-cover-gradient-top 0%,@bg-cover-gradient-bot 100%)fixed; /* IE10+ */
+    background: linear-gradient(to bottom,  @bg-cover-gradient-top 0%,@bg-cover-gradient-bot 100%)fixed; /* W3C */
+}
+p {
+    color: @color-default-p;    
+}
+
+/* Cover backgrounds */
+.text-primary {
+    color: @color-main;
+}
+.cover {
+    overflow: hidden;
+    
+    .container {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+}
+.bg-cover {
+    width: 100%;
+    height: 850px;
+    position: absolute;
+    background: transparent url(@bg-cover-element) no-repeat top center;
+    opacity: @bg-cover-opacity;
+}
+.bg-cover-pattern {
+    background: url(@bg-cover-pattern);
+}
+.bg-cover-photo {
+    background: url(@bg-cover-photo) center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.bg-flare-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 850px;
+    overflow: hidden;
+
+    .bg-flare-left,
+    .bg-flare-right {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-left: -570px;
+        width: 1140px;
+        height: 850px;
+    }
+
+    .bg-flare-left {
+        background: url("@{path-images}/backgrounds/cover/flare_left.png") no-repeat top center;
+    }
+    .bg-flare-right {
+        background: url("@{path-images}/backgrounds/cover/flare_right.png") no-repeat top center;
+    }
+}
+
+#big-video-wrap {
+    overflow: hidden;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+/* Button */
+.btn-enter {
+    margin-top: 10px;
+    margin-bottom: 40px;
+    background-color: @btn-enter;
+}
+.btn-enter:hover,
+.btn-enter:focus,
+.btn-enter:active,
+.btn-enter.active,
+.open .dropdown-toggle.btn-theme {
+  color: #fff;
+  background-color: darken(@color-main, 10%);
+  border-color: darken(@color-main, 10%);
+}
+.btn-enter:active,
+.btn-enter.active,
+.open .dropdown-toggle.btn-theme {
+  background-image: none;
+}
+.btn-theme .badge {
+  color: @color-main;
+  background-color: #fff;
+}
+
+.btn-link:hover,
+.btn-link:focus {
+  color: @color-main;
+
+  &.btn-enter {
+    background: none;
+  }
+}
+
+/* Cover-interactive */
+.cover-interactive-wrapper {
+    position: relative;
+    margin: auto auto;
+    margin-bottom: 100px;
+    width: 700px;
+    height: 650px;
+
+    .cover-ia-center {
+        position: absolute;
+        width: 350px;
+        height: 650px;
+        top: 0;
+        left: 50%;
+        margin-left: -175px;
+        pointer-events: none;
+
+        .move-item {
+            position: absolute;
+            width: 350px;
+            left: 0;
+            top: 0;
+        }
+    }
+
+    .cover-ia-left,
+    .cover-ia-left-static {
+        position: absolute;
+        width: 350px;
+        height: 650px;
+        top: 0;
+        left: 0;
+
+        .move-item {            
+            opacity: 0;
+            position: absolute;
+            display: table;
+            display: none;
+            width: 300px;
+            height: 650px;
+            top: 0;
+            left: 50%;
+
+            .v-center {
+                display: table-cell;
+                vertical-align: middle;
+            }
+        }
+
+        .static-item {
+            position: absolute;
+            display: table;
+            width: 300px;
+            height: 650px;
+            top: 0;
+            left: 0;
+            text-align: left;
+
+            .v-center {
+                display: table-cell;
+                vertical-align: middle;
+            }
+
+            .cover-slogan,
+            .cover-rating {
+                text-align: right;
+            }
+        }
+    }
+
+    .cover-ia-right,
+    .cover-ia-right-static {
+        position: absolute;
+        width: 350px;
+        height: 650px;
+        top: 0;
+        right: 0;
+
+        .move-item {
+            opacity: 0;
+            position: absolute;
+            display: table;
+            display: none;
+            width: 300px;
+            height: 650px;
+            top: 0;
+            right: 50%;
+
+            .v-center {
+                display: table-cell;
+                vertical-align: middle;
+            }
+        }
+
+        .static-item {
+            position: absolute;
+            display: table;
+            width: 300px;
+            height: 650px;
+            top: 0;
+            right: 0;
+            text-align: right;
+
+            .v-center {
+                display: table-cell;
+                vertical-align: middle;
+            }
+
+            .cover-slogan,
+            .cover-rating {
+                text-align: left;
+            }
+        }
+    }
+}
+
+/* Cover-interactive elements */
+.reviewer-cover {
+    padding: 10px;
+    border-bottom: 1px solid fade(@color-default-p, 50%);
+
+    img {
+        margin: 0 auto;
+
+        &.img-circle {
+            margin-bottom: 20px;
+            border: 5px solid rgba(255, 255, 255, 0.8)
+        }
+    }
+}
+.cover-slogan {
+    display: inline-block;
+    width: 150px;
+    font-family: 'Oswald';
+
+    .str-01 {
+        font-size: 53px;
+        line-height: 53px;
+    }
+    .str-02 {
+        font-size: 20px;
+        font-weight: 400;
+        opacity: 0.5;
+    }
+    .str-03 {
+        /* any styles */
+    }
+}
+.cover-rating {
+    display: inline-block;
+    width: 150px;
+    line-height: 200px;
+
+    .review-rating {
+        font-size: 24px;
+        color: @star-color-bg;
+
+        i > .half-star,
+        .full-star {
+            color: @star-color;
+        }
+    }
+}
+.main-description {
+    &.with-bg {
+        background-color: @with-bg;
+    }
+}
+
+/* High Resolution support
+-------------------------------------------------------------------*/
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+/* BG */
+    .bg-cover {
+        background: url(@bg-cover-element2x) no-repeat top center;
+        background-size: 1140px 850px;
+    }
+    .bg-flare-left {
+        background: url("@{path-images}/backgrounds/cover/flare_left@2x.png") no-repeat top center;
+        background-size: 1140px 850px;
+    }
+    .bg-flare-right {
+        background: url("@{path-images}/backgrounds/cover/flare_right@2x.png") no-repeat top center;
+        background-size: 1140px 850px;
+    }
+}

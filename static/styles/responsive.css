@@ -1,0 +1,519 @@
+/* Responsive styles for template "Mobile App Kit" */
+/* 1080PX < 1199PX Medium devices
+---------------------------------------------------*/
+@media (max-width: 1199px) {
+  /* landing */
+  .landing-fixed {
+    height: auto;
+  }
+  /* footer */
+  .footer-menu li {
+    display: block;
+  }
+  .footer .group-inline > * {
+    vertical-align: top;
+  }
+  /* Start button */
+  .decorate-element-top {
+    width: 180px;
+    margin: 0 auto;
+    top: 0;
+  }
+  .decorate-element-bot {
+    width: 180px;
+    margin: 0 auto;
+    bottom: 0;
+  }
+  /* Fix */
+  .fix-center {
+    margin-left: -25px;
+  }
+}
+/* 992PX < 1079PX
+---------------------------------------------------*/
+@media (max-width: 1079px) {
+  .landing .carousel {
+    margin-top: 50px;
+    margin-bottom: 0;
+  }
+}
+/* 768PX < 991PX Small devices
+---------------------------------------------------*/
+@media (max-width: 991px) {
+  /* navigation */
+  .navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+  }
+  .navbar .navbar-collapse {
+    text-align: center;
+  }
+  .navbar.left-side .navbar-collapse,
+  .navbar.right-side .navbar-collapse {
+    text-align: center;
+  }
+  /* landing */
+  .landing {
+    padding-bottom: 40px;
+  }
+  .main-app-description {
+    padding-top: 0;
+  }
+  .main-app-description.right-side,
+  .main-app-description.left-side {
+    text-align: center;
+  }
+  .main-app-description.right-side .app-icon,
+  .main-app-description.left-side .app-icon {
+    float: none;
+    margin: 40px 0;
+  }
+  .main-app-description.right-side .app-icon img,
+  .main-app-description.left-side .app-icon img {
+    max-width: 256px;
+    max-height: 256px;
+  }
+  /* Features */
+  .features-specification.left-side,
+  .features-specification-fixed.left-side,
+  .features-specification.right-side,
+  .features-specification-fixed.right-side {
+    text-align: center;
+  }
+  .features-specification.left-side .spec-icon,
+  .features-specification-fixed.left-side .spec-icon,
+  .features-specification.right-side .spec-icon,
+  .features-specification-fixed.right-side .spec-icon {
+    display: inline-block;
+    margin: 0;
+    float: none !important;
+  }
+  .features-specification.left-side .check-list,
+  .features-specification-fixed.left-side .check-list,
+  .features-specification.right-side .check-list,
+  .features-specification-fixed.right-side .check-list {
+    padding-left: 20px;
+  }
+  .features-specification.left-side .check-list li,
+  .features-specification-fixed.left-side .check-list li,
+  .features-specification.right-side .check-list li,
+  .features-specification-fixed.right-side .check-list li {
+    padding: 5px 0;
+    text-align: left;
+  }
+  .features-specification.left-side .check-list li:before,
+  .features-specification-fixed.left-side .check-list li:before,
+  .features-specification.right-side .check-list li:before,
+  .features-specification-fixed.right-side .check-list li:before {
+    display: inline-block;
+  }
+  .features-specification.left-side .check-list li:after,
+  .features-specification-fixed.left-side .check-list li:after,
+  .features-specification.right-side .check-list li:after,
+  .features-specification-fixed.right-side .check-list li:after {
+    display: none;
+  }
+  .features-specification.left-side.text-to-left,
+  .features-specification-fixed.left-side.text-to-left,
+  .features-specification.right-side.text-to-left,
+  .features-specification-fixed.right-side.text-to-left {
+    text-align: left;
+  }
+  .features-specification.left-side.text-to-left .check-list,
+  .features-specification-fixed.left-side.text-to-left .check-list,
+  .features-specification.right-side.text-to-left .check-list,
+  .features-specification-fixed.right-side.text-to-left .check-list {
+    padding-left: 20px;
+  }
+  .features-specification.left-side.text-to-left .check-list li,
+  .features-specification-fixed.left-side.text-to-left .check-list li,
+  .features-specification.right-side.text-to-left .check-list li,
+  .features-specification-fixed.right-side.text-to-left .check-list li {
+    padding: 5px 0;
+    text-align: left;
+  }
+  .features-specification.left-side.text-to-left .check-list li:before,
+  .features-specification-fixed.left-side.text-to-left .check-list li:before,
+  .features-specification.right-side.text-to-left .check-list li:before,
+  .features-specification-fixed.right-side.text-to-left .check-list li:before {
+    display: inline-block;
+  }
+  .features-specification.left-side.text-to-left .check-list li:after,
+  .features-specification-fixed.left-side.text-to-left .check-list li:after,
+  .features-specification.right-side.text-to-left .check-list li:after,
+  .features-specification-fixed.right-side.text-to-left .check-list li:after {
+    display: none;
+  }
+  /* Parallax (line of screenshots) */
+  .screens-wrapper {
+    width: 700px;
+  }
+  .screens-wrapper .line-03 {
+    display: none;
+  }
+  .screens-wrapper .line-02 {
+    margin-left: 0;
+  }
+  .screens-wrapper .line-01 {
+    margin-left: 25px;
+  }
+  /* Fix */
+  .fix-center {
+    margin-left: auto;
+  }
+}
+/* 720PX < 767PX Extra small devices
+---------------------------------------------------*/
+@media (max-width: 767px) {
+  /* navigation */
+  .navbar .navbar-nav {
+    width: 50%;
+    display: block;
+    float: right;
+  }
+  .navbar .navbar-toggle {
+    float: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .navbar .navbar-collapse {
+    position: relative;
+    text-align: left;
+  }
+  .navbar .navbar-collapse .app-icon {
+    display: block;
+    position: absolute;
+    top: 50%;
+    margin-top: -64px;
+    left: 25%;
+    margin-left: -64px;
+  }
+  .navbar.left-side .navbar-collapse,
+  .navbar.right-side .navbar-collapse {
+    text-align: left;
+  }
+  .navbar-transparent,
+  .navbar-transparent-additional {
+    background-color: #fff;
+  }
+  .navbar-transparent ul li,
+  .navbar-transparent-additional ul li {
+    color: #333;
+    border-top: none;
+  }
+  .navbar-transparent ul li:hover,
+  .navbar-transparent-additional ul li:hover,
+  .navbar-transparent ul li:focus,
+  .navbar-transparent-additional ul li:focus {
+    border-top: none;
+  }
+  .navbar-transparent ul li.active,
+  .navbar-transparent-additional ul li.active {
+    color: #fff;
+    border-top: none;
+  }
+  .navbar-default ul li,
+  .navbar-inverse ul li {
+    color: inherit;
+    border-top: none;
+  }
+  .navbar-default ul li:hover,
+  .navbar-inverse ul li:hover,
+  .navbar-default ul li:focus,
+  .navbar-inverse ul li:focus,
+  .navbar-default ul li.active,
+  .navbar-inverse ul li.active {
+    color: #fff;
+    border-top: none;
+  }
+  .navbar-default .navbar-nav > .active > a,
+  .navbar-default .navbar-nav > .active > a:hover,
+  .navbar-default .navbar-nav > .active > a:focus {
+    color: #fff;
+  }
+  .navbar-default .navbar-nav > li > a:hover {
+    color: #fff;
+  }
+  .navbar-inverse .navbar-nav > .active > a,
+  .navbar-inverse .navbar-nav > .active > a:hover,
+  .navbar-inverse .navbar-nav > .active > a:focus {
+    color: #fff;
+  }
+  /* Parallax (line of screenshots) */
+  .screens-wrapper {
+    width: 350px;
+  }
+  .screens-wrapper .line-02 {
+    display: none;
+  }
+  .screens-wrapper .line-01 {
+    width: 350px;
+    margin-left: 0;
+    padding: 0;
+  }
+  /* slogan */
+  .section-slogan {
+    height: 680px;
+  }
+  .section-slogan .slogan-bg {
+    height: 680px;
+  }
+  .section-slogan .text-slogan {
+    text-align: center !important;
+  }
+  .section-slogan .device-slogan {
+    position: relative;
+  }
+  .section-slogan .device-slogan:hover {
+    top: -250px;
+  }
+  /* main content */
+  .main-content {
+    padding-bottom: 300px;
+  }
+  /* footer */
+  .footer-copyrights {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  /* cover */
+  .cover-interactive-wrapper {
+    width: 100%;
+  }
+  .cover-interactive-wrapper .cover-ia-left,
+  .cover-interactive-wrapper .cover-ia-right {
+    display: none;
+  }
+  .cover-interactive-wrapper .cover-ia-left-static,
+  .cover-interactive-wrapper .cover-ia-right-static {
+    display: none;
+  }
+}
+/* 640PX < 719PX
+---------------------------------------------------*/
+@media (max-width: 719px) {
+  /* Devices */
+  .device-tablet-landscape {
+    width: 315px;
+    height: 225px;
+    background-size: 315px 225px;
+  }
+  .device-tablet-landscape .highlight,
+  .device-tablet-landscape.shadow:before {
+    width: 315px;
+    height: 225px;
+    background-size: 315px 225px;
+  }
+  .ios-tablet-air-black-landscape .img-screen-wrapper,
+  .ios-tablet-air-white-landscape .img-screen-wrapper {
+    top: 16px;
+    left: 29px;
+    width: 256px;
+    height: 192px;
+  }
+  .android-tablet-nexus10-landscape .img-screen-wrapper {
+    top: 32px;
+    left: 30px;
+    width: 254px;
+    height: 159px;
+  }
+  .windowsphone-tablet-lumia-landscape .img-screen-wrapper {
+    top: 40px;
+    left: 28px;
+    width: 259px;
+    height: 146px;
+  }
+}
+/* 480PX < 639PX
+---------------------------------------------------*/
+@media (max-width: 639px) {
+  /* navigation */
+  .navbar ul {
+    float: none;
+  }
+  .navbar .navbar-nav {
+    float: none;
+    width: auto;
+  }
+  .navbar .navbar-collapse {
+    text-align: center;
+  }
+  .navbar .navbar-collapse .app-icon {
+    display: none;
+  }
+  .navbar.left-side .navbar-collapse,
+  .navbar.right-side .navbar-collapse {
+    text-align: center;
+  }
+  /* footer */
+  .footer-menu li {
+    display: inline-block;
+  }
+  .footer-fixed {
+    padding: 20px 0 !important;
+  }
+  .footer .group-inline > * {
+    display: block;
+    clear: both;
+  }
+  .footer .footer-last {
+    float: none;
+  }
+}
+/* ... < 320PX < 479PX
+---------------------------------------------------*/
+@media (max-width: 479px) {
+  /* Devices */
+  .device-mobile {
+    width: 175px;
+    height: 325px;
+    background-size: 175px 325px;
+  }
+  .device-mobile .highlight,
+  .device-mobile.shadow:before {
+    width: 175px;
+    height: 325px;
+    background-size: 175px 325px;
+  }
+  .device-tablet {
+    width: 225px;
+    height: 315px;
+    background-size: 225px 315px;
+  }
+  .device-tablet .highlight,
+  .device-tablet.shadow:before {
+    width: 225px;
+    height: 315px;
+    background-size: 225px 315px;
+  }
+  /* iOS */
+  .ios-iphone5c-blue .img-screen-wrapper,
+  .ios-iphone5c-green .img-screen-wrapper,
+  .ios-iphone5c-red .img-screen-wrapper,
+  .ios-iphone5c-white .img-screen-wrapper,
+  .ios-iphone5c-yellow .img-screen-wrapper,
+  .ios-iphone5s-black .img-screen-wrapper,
+  .ios-iphone5s-white .img-screen-wrapper {
+    top: 54px;
+    left: 26px;
+    width: 123px;
+    height: 219px;
+  }
+  .ios-iphone6-black .img-screen-wrapper,
+  .ios-iphone6-silver .img-screen-wrapper,
+  .ios-iphone6-gold .img-screen-wrapper {
+    top: 47px;
+    left: 22px;
+    width: 130px;
+    height: 231px;
+  }
+  .ios-iphone6plus-black .img-screen-wrapper,
+  .ios-iphone6plus-silver .img-screen-wrapper,
+  .ios-iphone6plus-gold .img-screen-wrapper {
+    top: 40px;
+    left: 20px;
+    width: 135px;
+    height: 240px;
+  }
+  .ios-tablet-air-black .img-screen-wrapper,
+  .ios-tablet-air-white .img-screen-wrapper {
+    top: 29px;
+    left: 16px;
+    width: 192px;
+    height: 256px;
+  }
+  /* Android */
+  .android-nexus5-black .img-screen-wrapper,
+  .android-nexus5-white .img-screen-wrapper {
+    top: 39px;
+    left: 20px;
+    width: 135px;
+    height: 240px;
+  }
+  .android-tablet-nexus10 .img-screen-wrapper {
+    top: 30px;
+    left: 33px;
+    width: 159px;
+    height: 254px;
+  }
+  /* Windows Phone */
+  .windowsphone-lumia-black .img-screen-wrapper,
+  .windowsphone-lumia-white .img-screen-wrapper,
+  .windowsphone-lumia-blue .img-screen-wrapper,
+  .windowsphone-lumia-grey .img-screen-wrapper,
+  .windowsphone-lumia-red .img-screen-wrapper,
+  .windowsphone-lumia-yellow .img-screen-wrapper {
+    top: 39px;
+    left: 20px;
+    width: 134px;
+    height: 223px;
+  }
+  .windowsphone-tablet-lumia .img-screen-wrapper {
+    top: 27px;
+    left: 40px;
+    width: 146px;
+    height: 259px;
+  }
+  /* app icon */
+  .main-app-description.right-side .app-icon img,
+  .main-app-description.left-side .app-icon img {
+    max-width: 128px;
+    max-height: 128px;
+  }
+  /* Parallax (line of screenshots) */
+  .screens-wrapper {
+    width: 175px;
+    height: 325px;
+    margin-bottom: 0;
+  }
+  .screens-wrapper .line-01 {
+    width: 175px;
+    height: 325px;
+  }
+  /* slogan */
+  .section-slogan .device-slogan:hover {
+    top: 0;
+  }
+  /* cover */
+  .bg-cover {
+    background-position: center -300px;
+  }
+  .cover-interactive-wrapper {
+    height: 325px;
+  }
+  .cover-interactive-wrapper .cover-ia-center {
+    width: 320px;
+  }
+  .cover-interactive-wrapper .cover-ia-center .move-item {
+    width: 280px;
+    left: 50% !important;
+    margin-left: -125px;
+  }
+  /* Badges & QR-code */
+  .badge-wrapper img {
+    width: 50%;
+    height: 50%;
+  }
+  .badge-wrapper.left-side {
+    top: 35px;
+  }
+  .badge-wrapper.right-side {
+    top: 35px;
+  }
+  .badge-wrapper.left-bot-side {
+    bottom: 15px;
+  }
+  .badge-wrapper.right-bot-side {
+    bottom: 15px;
+  }
+  .qr-code-wrapper {
+    width: 54px;
+    height: 54px;
+    border: 2px solid white;
+  }
+  .qr-code-wrapper img {
+    width: 50px;
+    height: 50px;
+  }
+}

@@ -19,46 +19,21 @@
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-        <link rel="manifest" href="/manifest.json">
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
         <link href="static/vendor/bootstrap/dist/css/bootstrap.css" rel="stylesheet" media="screen">
-        <link href="static/vendor/font-awesome/css/font-awesome.css" rel="stylesheet">
-        <link href="static/vendor/fancybox/source/jquery.fancybox.css" rel="stylesheet">
-        <link href="static/vendor/owl-carousel/owl-carousel/owl.carousel.css" rel="stylesheet">
-        <link href="static/vendor/owl-carousel/owl-carousel/owl.theme.css" rel="stylesheet">
-        <link href="static/vendor/animate.css/animate.min.css" rel="stylesheet">
         <link href="static/styles/themes/main-theme-dark.css" rel="stylesheet" media="screen">
         <link href="static/styles/devices.css" rel="stylesheet" media="screen">
-        <link href="static/styles/responsive.css" rel="stylesheet" media="screen">
-        <link href="static/styles/preloader.css" rel="stylesheet" media="screen">
-        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic'
-        rel='stylesheet' type='text/css'><!--Font Lato -->
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700'
-        rel='stylesheet' type='text/css'><!--Font OpenSans -->
+        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700' rel='stylesheet' type='text/css'>
         <style type="text/css" media="all">
             .text-black-border{
                 text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
             }
         </style>
     </head>
-    <body data-spy="scroll" data-target="#main-navbar" data-offset="50"><!-- Data-target for navigation -->
-        <!-- Preloader -->
-        <div class="preloader js-feature-preloader">
-            <table>
-                <tr>
-                    <td>
-                        <div class="preloader-icon-gif"></div>
-                        <div class="preloader-text">Loading...</div>
-                        <div class="preloader-close js-preloader-warning">Loading takes a very long time.<br>You can close the preloader<br>
-                            <a href="javascript:void(0);" class="js-preloader-close"><div class="btn btn-sm btn-theme">CLOSE</div></a>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-        </div><!-- /Preloader -->
-        <!-- Navigation -->
+    <body data-target="#main-navbar" data-offset="50"><!-- Data-target for navigation -->
         <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
             <div class="container">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
@@ -69,7 +44,7 @@
                 </button>
                 <div id="main-navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="#landing-main" class="js-feature-scroll">Locaholic</a></li>
+                        <li class="active"><a href="#landing-main">Locaholic</a></li>
                         <li><a href="https://goo.gl/oOZVOE" target="_blank">Contact Us</a></li>
                     </ul>
                 </div>
@@ -107,8 +82,9 @@
                             <h1 class="main-title text-white text-black-border"><i><b>Locaholic</b></i></h1>
                             <h3 class="text-white text-black-border">Your private personalized recommendations from the people you trust.</h3>
                             <div class="clearfix"></div>
-                            <p class="main-description with-bg text-white text-black-border">Effortlessly Share, Ask and Remember your private personalized recommendations from your network of family, friends, colleagues and their extended network.</p>
-                           <!-- <p class="main-description with-bg text-white"><b>Effortlessly Share, Ask and Remember your private personalized recommendations from your network of family, friends, colleagues and their extended network.</b></p>-->
+                            <p class="main-description with-bg text-white text-black-border">
+                                Effortlessly Share, Ask and Remember your private personalized recommendations from your network of family, friends, colleagues and their extended network.
+                            </p>
                             <p class="available-device text-white">Coming soon to <i class="fa fa-tablet"></i> <i class="fa fa-mobile"></i></p>
                             <div class="group-inline">
                                 <a href="http://goo.gl/forms/2Y78rgc2fA"><div class="btn-store btn-store-ios-white"></div></a>
@@ -128,11 +104,11 @@
                         <div class="group-inline">
                             <div class="footer-copyrights">© <a href="#">Locaholic</a>, 2015</div>
                             <ul class="footer-menu">
-                                <li><a href="http://goo.gl/forms/w9XRhK1NyN"><u>Contact Us</u></a> at <a href="mailto:pk@locaholic.co"><u>pk@locaholic.co</u></a></li>
+                                <li><a href="http://goo.gl/forms/w9XRhK1NyN" target="_blank"><u>Contact Us</u></a> at <a href="mailto:pk@locaholic.co"><u>pk@locaholic.co</u></a></li>
                             </ul>
                             <div class="footer-last">
                                 <ul class="footer-menu">
-                                    <li><a href="#landing-main" class="js-feature-scroll">Go to top</a></li>
+                                    <li><a href="#landing-main">Go to top</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -140,27 +116,5 @@
                 </div>
             </div>
         </section><!-- /Footer -->
-        <script src="static/vendor/requirejs/require.js"></script>
-        <script src="static/scripts/config.js"></script>
-        <script>
-            require([
-                'feature/scroll',
-                'feature/wow',
-                'feature/preloader',
-                'feature/fancybox',
-                'feature/fullscreen',
-                'feature/menu',
-                'feature/navigation',
-                'feature/parallax',
-                'feature/jparallax',
-                'feature/subscribe',
-                'feature/tooltip',
-                'feature/video',
-                'feature/i-specs',
-                'feature/i-screen',
-                'feature/carousel',
-                'feature/accordion'
-            ]);
-        </script>
     </body>
 </html>

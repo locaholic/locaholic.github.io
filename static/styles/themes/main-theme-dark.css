@@ -33,7 +33,7 @@ body {
   color: #cccccc;
 }
 h1 {
-  font-size: 60px;
+  font-size: 90px;
   font-weight: 300;
 }
 h2 {
@@ -407,7 +407,7 @@ section.landing-auto {
 .main-description.with-bg {
   padding: 20px;
   border-radius: 10px;
-  background-color: rgba(0, 66, 93, 0.2);
+  background-color: rgba(0, 66, 93, 0.4);
   margin-bottom: 20px;
 }
 .available-device {

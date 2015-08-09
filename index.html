@@ -23,6 +23,7 @@
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
         <link href="static/vendor/bootstrap/dist/css/bootstrap.css" rel="stylesheet" media="screen">
+        <link href="static/vendor/font-awesome/css/font-awesome.css" rel="stylesheet">
         <link href="static/styles/themes/main-theme-dark.css" rel="stylesheet" media="screen">
         <link href="static/styles/devices.css" rel="stylesheet" media="screen">
         <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
@@ -61,21 +62,17 @@
                             <div id="carousel-device" class="device-mobile ios-iphone6-gold  slide carousel" data-ride="carousel">
                                 <div class="carousel-inner carousel-inner-device img-screen-wrapper">
                                     <div class="item active">
-                                        <img src="static/images/screenshots/wp-01.png" alt="...">
+                                        <img src="static/images/screenshots/wp-01.png">
                                     </div>
                                     <div class="item">
-                                        <img src="static/images/screenshots/wp-02.png" alt="...">
+                                        <img src="static/images/screenshots/wp-02.png">
                                     </div>
                                     <div class="item">
-                                        <img src="static/images/screenshots/wp-03.png" alt="...">
+                                        <img src="static/images/screenshots/wp-03.png">
                                     </div>
                                 </div>
                                 <a class="left carousel-control carousel-control-device" href="#carousel-device" data-slide="prev"></a>
                                 <a class="right carousel-control carousel-control-device" href="#carousel-device" data-slide="next"></a>
-                                <!-- Badges -->
-                                <ul class="badge-wrapper left-bot-side">
-                                    <li class="wow swing"><img src="static/images/badges/58.png" alt="..."></li>
-                                </ul>
                             </div>
                         </div><!-- /Device -->
                         <div class="col-md-7 col-xs-12 main-app-description right-side margin-vertical">
@@ -116,5 +113,12 @@
                 </div>
             </div>
         </section><!-- /Footer -->
+        <script src="static/vendor/requirejs/require.js"></script>
+        <script src="static/scripts/config.js"></script>
+        <script>
+            require([
+                'feature/carousel'
+            ]);
+        </script>
     </body>
 </html>

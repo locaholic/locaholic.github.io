@@ -31,71 +31,82 @@
 
         <!-- Add your site or application content here -->
     <!-- Header -->
-    <div  class="container">
-        <header id="top">
-            <div class="col-md-10 row col-md-offset-1">
-                <div class="col-xs-8">
-                    <div class="header wow zoomIn" data-wow-duration="0.5s">locaholic</div>
+    <div  class="container-fluid top">
+        <div class="container">
+            <div class="page-header row">
+                <section id="top">
+                        <div class="col-xs-8">
+                    <div class="wow zoomIn" data-wow-duration="0.5s">
+                        <h2 class="header">locaholic</h2>
+                    </div>
                     <div class="intro-notify">
-                    <div class="header wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">Get recommendations from people you trust.</div><br/>
-                    <div class="col-xs-10 col-xs-offset-1">
-                    <form role="form" class="form-inline wow tada" data-wow-delay="1.50s">
-                        <div id="notify">
-                        <input id="notify-input" class="form-control input-xl" placeholder="Your email" type="text" />
-                        <button id="notify-btn" class="btn btn-xl">Notify Me</button>
+                            <div class="header wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+                                <p class="h2 text-center">Get recommendations from people you trust.</p>
+                            </div>
+                            <div class="col-xs-10 col-xs-offset-1">
+                                <div role="form" class="form-inline wow tada" data-wow-delay="1.50s">
+                                    <div id="notify">
+                                    <input id="notify-input" class="form-control input-xl" placeholder="Your email" type="text" />
+                                    <button id="notify-btn" class="btn btn-xl" onclick="subscribe()">Notify Me</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </form>
                     </div>
-                </div>
-                </div>
-                <div class="col-xs-4 wow fadeInRight" data-wow-duration="01.5s" data-wow-delay="0s">
-                    <img class="img-responsive phone" src="img/iphone.png"/>
-                </div>
-            </div>
-        </header>
-        <section id="mid">
-            <div class="col-md-10 row col-md-offset-1">
-                <div class="col-xs-4">
-                    <img class="img-responsive phone wow fadeInLeft" src="img/nexus.png" alt="nexus-graphic">
-                </div>
-                <div class="col-xs-8">
-                    <div class="mid-text wow slideInRight">
-                        Effortlessly Share. Ask and 
-                        Remember your private
-                        personalized recommendations
-                        from your network of family, friends, 
-                        colleagues and their extended 
-                        network.
+                    <div class="col-xs-4 wow fadeInRight" data-wow-duration="01.5s" data-wow-delay="0s">
+                        <img class="img-responsive phone" src="img/iphone.png"/>
                     </div>
-                </div>
+                </section>
             </div>
-            <div>
-                  
-        </section>
-        <section id="contact">
-            <div class="col-md-10 col-md-offset-1">
-              <p class="h2 text-center wow fadeInDown">Do you have any inquiry or suggestion?</br>
-                            <span class="small">Please use the form below to contact us.</span>
-                </p>
-                <br/>
-               <form class="form" role="form">
-                  <div class="form-group">
-                        <input id="lolo-name" class="form-control input-lg wow fadeInLeft" placeholder="Your Name" type="text" />
-                    <input id="lolo-email" class="form-control input-lg wow fadeInRight" placeholder="Your email" type="text" />
-                  </div>
-                  <br/><br/>
-               <div class="form-group">
-                   <textarea class="form-control input-lg wow fadeInDown" id="lolo-msg" placeholder="Your Message" rows="4" cols="100"> </textarea>
-                    <br/>
-                  <button type="submit" id="lolo-btn" class="form-control btn btn-lg wow pulse">Submit</button>
-                </div>
-                </form>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <section id="mid">
+                    <div class="col-md-10 row col-md-offset-1">
+                        <div class="col-xs-4">
+                            <img class="img-responsive phone wow fadeInLeft" src="img/nexus.png" alt="nexus-graphic">
+                        </div>
+                        <div class="col-xs-8">
+                            <div class="mid-text wow slideInRight">
+                                Effortlessly Share. Ask and 
+                                Remember your private
+                                personalized recommendations
+                                from your network of family, friends, 
+                                colleagues and their extended 
+                                network.
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
-            <div>
-                  
-        </section>
-        
+        </div>
     </div>
+    <div class="container-fluid bottom">
+        <div class="container">
+            <div class="page-header row">
+                <section id="contact">
+                    <div class="col-md-10 col-md-offset-1">
+                      <p class="h2 text-center wow fadeInDown">Do you have any query or suggestion?</br>
+                                    <span class="small">Please use the form below to contact us.</span>
+                        </p>
+                        <br/>
+                       <form class="form" role="form">
+                          <div class="form-group">
+                                <input id="lolo-name" class="form-control input-lg wow fadeInLeft" placeholder="Your Name" type="text" />
+                            <input id="lolo-email" class="form-control input-lg wow fadeInRight" placeholder="Your email" type="text" />
+                          </div>
+                          <br/><br/>
+                       <div class="form-group">
+                           <textarea class="form-control input-lg wow fadeInDown" id="lolo-msg" placeholder="Your Message" rows="4" cols="100"> </textarea>
+                            <br/>
+                          <button type="submit" id="lolo-btn" class="form-control btn btn-lg wow pulse">Submit</button>
+                        </div>
+                        </form>
+                    </div>                  
+                </section>
+            </div>
+        </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
@@ -115,5 +126,6 @@
             <p class="text-info text-center"> &#169; Locaholic, 2015</p>
         </div>
     </footer>
+    </div>
     </body>
 </html>

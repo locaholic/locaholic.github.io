@@ -94,34 +94,26 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color: white;
-}
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-   color: white;
-   opacity:  1;
-}
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-   color: white;
-   opacity:  1;
-}
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-   color: white;
-}
+.form-control::-webkit-input-placeholder { color: white; }
+.form-control:-moz-placeholder { color: white; }
+.form-control::-moz-placeholder { color: white; }
+.form-control:-ms-input-placeholder { color: white; }
 
 body{
-    background-image: url("../img/background.png");
-    background-repeat: no-repeat;
-    padding-top:50px;
     margin:0px;
     font-family: 'Montserrat', sans-serif;
 
 }
-.header{
-    color: white;
-    font-size: 3.0vw;
-    font-weight: bold;
-    padding: 15px 0 1px 9%;
+.top{
+    background-image: url("../img/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bottom{
+    background-image: url("../img/footer.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 .phone{
@@ -130,15 +122,23 @@ body{
 }
 .intro-notify{
     position: relative;
-    margin-top:50%;
+    margin-top:30%;
 }
 #notify{
     position: relative;
     width: 100%;
 }
 
+.header{
+    color: white;
+    font-size: 3.0em;
+    font-weight: bold;
+    padding: 15px 0 1px 9%;
+}
+
+
 #notify-input{
-    font-size: 1.5vw;
+    font-size: 1.5em;
     width: 100%;
     height: auto;
     padding: 10px;
@@ -150,7 +150,7 @@ border-radius: 10px;
 }
 
 #notify-btn{
-    font-size: 1.5vw;
+    font-size: 1.5em;
     background-color:rgba(48,48,48,0.4);
     color: white;
     height: auto;
@@ -171,12 +171,8 @@ border-radius: 10px;
     height: inherit;
     margin-top: 50%;
     text-align: left;
-    font-size: 2.5vmin;
+    font-size: 1.5em;
     font-family: sans-serif;
-}
-
-#contact{
-    background-image: url("../img/footer.png");
 }
 
 #lolo-name{
@@ -216,7 +212,7 @@ width:100%;
 }
 #lolo-btn{
     float: right;
-font-size: 1.5vw;
+font-size: 1.5em;
     width: auto;
     background-color:rgba(48,48,48,0.4);
     color: white;

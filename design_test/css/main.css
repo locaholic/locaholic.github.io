@@ -1,0 +1,9 @@
+.header-image {
+position:relative;
+}
+
+.screen {
+position:absolute;
+z-index:99;
+left:10px;
+}

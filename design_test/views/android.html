@@ -1,0 +1,39 @@
+<div class="row well">
+<div class="container col-md-5">
+	<div class="panel panel-info">
+	<ul class="list-unstyled">
+		<li ng-repeat="task in tasks"><p class="container"><i ng-if="!task.status" class="fa fa-exclamation text-mute"></i>
+			<i ng-if="task.status" class="fa fa-check text-success"></i>{{task.text}}</p></li>
+	</ul>
+	</div>
+	<div class="panel panel-primary">
+	<ul class="list-unstyled">
+		<li ng-repeat="task in donetasks"><p class="container text-success">
+			<i ng-if="task.status" class="fa fa-check "></i>{{task.text}}</p></li>
+	</ul>
+	</div>
+	<button ng-if="alldone" class="btn btn-lg btn-success">Next-></button>
+</div>
+<div class="container col-md-6">
+<div id="1">
+	<img id="Image-Maps-Com-image-maps-2015-12-31-095549" src="images/Andriod_app/Screens/welcome.jpg" class="img-responsive" usemap="#image-maps-2015-12-31-095549"/>
+	<map name="image-maps-2015-12-31-095549" id="ImageMapsCom-image-maps-2015-12-31-095549">
+	<area  alt="" title="0" ng-click="done($event)" shape="rect" coords="405,286,622,382" style="outline:none;" target="_self"/>
+	<area  alt="" title="0" ng-click="done($event)" shape="rect" coords="90,285,371,387" style="outline:none;" target="_self"     />
+	<area  alt="" title="0" ng-click="done($event)" shape="rect" coords="127,431,346,530" style="outline:none;" target="_self"     />
+	<area  alt="" title="0" ng-click="done($event)" shape="rect" coords="90,577,373,678" style="outline:none;" target="_self"     />
+	<area  alt="" title="0" ng-click="done($event)" shape="rect" coords="409,578,623,674" style="outline:none;" target="_self"     />
+	<area  alt="" title="0" ng-click="done($event)" shape="rect" coords="383,431,606,532" style="outline:none;" target="_self"     />
+	<area  alt="" title="0" ng-click="done($event)" shape="rect" coords="510,1177,675,1230" style="outline:none;" target="_self"     />
+	<area  alt="" title="0" ng-click="done($event)" shape="rect" coords="58,1174,265,1229" style="outline:none;" target="_self"     />
+	<area shape="rect" coords="718,1278,720,1280" alt="Image Map" style="outline:none;" title="0" href="#" />
+	</map>
+</div>
+
+</div>
+</div>
+        <script>
+    $(document).ready(function(e) {
+    $('img[usemap]').rwdImageMaps();
+});
+</script>

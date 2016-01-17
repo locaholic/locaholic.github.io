@@ -1,15 +1,43 @@
-<div class="jumbotron vcenter">
-<div class="container">
-<p class="info">
-Hi Visitor,
-Upcoming screens will have a Task and a mobile view of Locaholic app.
-After you complete the task you'll be taken to the next screen, your session will be recorded and analaysed to evalute the usability of our designs.
+<div class="row well">
+<div class="container col-md-5">
+	<div class="panel panel-info">
+	<ul class="list-unstyled">
+		<li ng-repeat="task in tasks"><p class="container"><i ng-if="!task.status" class="fa fa-exclamation text-mute"></i>
+			<i ng-if="task.status" class="fa fa-check text-success"></i>{{task.text}}</p></li>
+	</ul>
+	</div>
+	<div class="panel panel-primary">
+	<ul class="list-unstyled">
+		<li ng-repeat="task in donetasks"><p class="container text-success">
+			<i ng-if="task.status" class="fa fa-check "></i>{{task.text}}</p></li>
+	</ul>
+	</div>
+	<button ng-if="alldone" class="btn btn-lg btn-success">Next-></button>
+</div>
+<div class="container col-md-6">
 
-Chose your Platform to proceed. 
-</p>
-<div class="container center-block">
-<a href="#android"><button class="btn btn-lg btn-default"><img src="images/android.png" class="img-responsive"/>Android</button></a>
-<a href="#ios"><button class="btn btn-lg btn-default"><img src="images/ios.png" class="img-responsive"/>iOS</button></a>
+<div id="welcome">
+	<img id="Image-Maps-Com-image-maps-2015-12-31-095549" src="images/Andriod_app/Screens/welcome.png" class="img-responsive" usemap="#1"/>
+	<map name="1" id="ImageMapsCom-image-maps-2016-01-17-013656">
+		<area id="0" alt="" title="" ng-click="done($event)" shape="rect" coords="87,281,374,387" style="outline:none;" target="_self"     />
+		<area id="0" alt="" title="" ng-click="done($event)" shape="rect" coords="405,285,624,383" style="outline:none;" target="_self"     />
+		<area id="0" alt="" title="" ng-click="done($event)" shape="rect" coords="127,433,346,531" style="outline:none;" target="_self"     />
+		<area id="0" alt="" title="" ng-click="done($event)" shape="rect" coords="383,431,602,529" style="outline:none;" target="_self"     />
+		<area id="0" alt="" title="" ng-click="done($event)" shape="rect" coords="91,574,371,672" style="outline:none;" target="_self"     />
+		<area id="0" alt="" title="" ng-click="done($event)" shape="rect" coords="407,577,622,675" style="outline:none;" target="_self"     />
+		<area id="0" alt="" title="" ng-click="done($event)" shape="rect" coords="131,724,346,822" style="outline:none;" target="_self"     />
+		<area  alt="" title=""  ng-click="done($event)" shape="rect" coords="390,721,605,819" style="outline:none;" target="_self"     />
+		<area id="0" alt="" title="" ng-click="done($event)" shape="rect" coords="405,869,620,967" style="outline:none;" target="_self"     />
+		<area id="0" alt="" title="" ng-click="done($event)" shape="rect" coords="93,869,372,968" style="outline:none;" target="_self"     />
+		<area id="1" alt="" title="" ng-click="done($event)" shape="rect" coords="507,1167,693,1240" style="outline:none;" target="_self"     />
+		<area  alt="" title="" shape="rect" coords="49,1166,271,1238" style="outline:none;" target="_self"     />
+		</map>
+
 </div>
 </div>
 </div>
+        <script>
+    $(document).ready(function(e) {
+    $('img[usemap]').rwdImageMaps();
+});
+</script>

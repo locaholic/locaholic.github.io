@@ -1,6 +1,6 @@
 'use strict';
 angular.module('designTest')
-  .controller('AndroidCtrl', function ($scope) {
+  .controller('platformCtrl', function ($scope) {
     $scope.random = Math.floor(Math.random() *4 +1);
     $scope.tasks=[{text:"taks 0",status:false}]
    	$scope.donetasks=[];

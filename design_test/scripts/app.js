@@ -15,15 +15,27 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/welcome.html'
+        templateUrl: 'views/platform.html'
       })
-      .when('/android', {
-        templateUrl: 'views/android.html',
-        controller: 'AndroidCtrl'
+      .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'loginCtrl'
       })
-      .when('/ios', {
-        templateUrl: 'views/ios.html',
-        controller: 'IosCtrl'
+      .when('/welcome', {
+        templateUrl: 'views/welcome.html',
+        controller: 'welcomeCtrl'
+      })
+      .when('/placesmap', {
+        templateUrl: 'views/placesmap.html',
+        controller: 'placesmapCtrl'
+      })
+      .when('/placeslist', {
+        templateUrl: 'views/placeslist.html',
+        controller: 'placeslistCtrl'
+      })
+      .when('/placesdetail', {
+        templateUrl: 'views/placedetail.html',
+        controller: 'placedetailCtrl'
       })
       .otherwise({
         redirectTo: '/'

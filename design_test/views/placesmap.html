@@ -1,0 +1,30 @@
+<div class="row well">
+<div class="container col-md-5">
+	<div class="panel panel-info">
+	<ul class="list-unstyled">
+		<li ng-repeat="task in tasks"><p class="container"><i ng-if="!task.status" class="fa fa-exclamation text-mute"></i>
+			<i ng-if="task.status" class="fa fa-check text-success"></i>{{task.text}}</p></li>
+	</ul>
+	</div>
+	<div class="panel panel-primary">
+	<ul class="list-unstyled">
+		<li ng-repeat="task in donetasks"><p class="container text-success">
+			<i ng-if="task.status" class="fa fa-check "></i>{{task.text}}</p></li>
+	</ul>
+	</div>
+</div>
+<div class="container col-md-6">
+<div id="login">
+	<img id="Image-Maps-Com-image-maps-2016-01-16-232944" src="images/Andriod_app/Screens/placesmap.jpg" class="img-responsive" usemap="#login" alt="" />
+<map name="login" id="ImageMapsCom-image-maps-2016-01-16-232944">
+<area  alt="Login with Facebook" title="Login with facebook" id="0" ng-click="done($event)" shape="rect" coords="0,1115,720,1280" style="outline:none;" target="_self"     />
+<area shape="rect" coords="718,1278,720,1280" alt="Image Map" style="outline:none;" title="Image Map" href="#" />
+</map>
+</div>
+</div>
+</div>
+        <script>
+    $(document).ready(function(e) {
+    $('img[usemap]').rwdImageMaps();
+});
+</script>

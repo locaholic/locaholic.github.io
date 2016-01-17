@@ -2,7 +2,10 @@
 <html class="no-js" lang="">
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<script src="scripts/parse-1.6.14.min.js"></script>
+
       <script type="text/javascript">
+
 (function() {
 var hm = document.createElement('script'); hm.type ='text/javascript'; hm.async = true;
 hm.src = ('++u-heatmap-it+log-js').replace(/[+]/g,'/').replace(/-/g,'.');
@@ -17,6 +20,9 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm
     mf.src = "//cdn.mouseflow.com/projects/43558e67-da68-4e1f-81f0-23ecdaf10173.js";
     document.getElementsByTagName("head")[0].appendChild(mf);
   })();
+</script>
+<script>
+Parse.initialize("JoHZTkFmn4TVRHUyLVDtZjcne68gigskIq2fleha", "vBBSKsenJcItAZWfPv6Cy1SATleQ0CMpf1mfOoE1");
 </script>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -56,7 +62,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm
         <script src="scripts/jquery.rwdImageMaps.min.js"></script>
         <script src="../js/main.js"></script>
         <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/android.js"></script>
 <!-- Hotjar Tracking Code for http://locaholic.co -->
 <script>
     (function(h,o,t,j,a,r){
@@ -68,6 +73,34 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm
         a.appendChild(r);
     })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
+        <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/controllers/welcome.js"></script>
+        <script src="scripts/controllers/platform.js"></script>
+        <script src="scripts/controllers/placesmap.js"></script>
+        <script src="scripts/controllers/placeslist.js"></script>
+                
+<!-- Start Open Web Analytics Tracker -->
+<script type="text/javascript">
+//<![CDATA[
+var owa_baseUrl = 'http://localhost/owa/';
+var owa_cmds = owa_cmds || [];
+owa_cmds.push(['setSiteId', '0252e9b1859c2699de269f4bb99f7c83']);
+owa_cmds.push(['trackPageView']);
+owa_cmds.push(['trackClicks']);
+owa_cmds.push(['trackDomStream']);
+
+(function() {
+    var _owa = document.createElement('script'); _owa.type = 'text/javascript'; _owa.async = true;
+    owa_baseUrl = ('https:' == document.location.protocol ? window.owa_baseSecUrl || owa_baseUrl.replace(/http:/, 'https:') : owa_baseUrl );
+    _owa.src = owa_baseUrl + 'modules/base/js/owa.tracker-combined-min.js';
+    var _owa_s = document.getElementsByTagName('script')[0]; _owa_s.parentNode.insertBefore(_owa, _owa_s);
+}());
+//]]>
+</script>
+<!-- End Open Web Analytics Code -->
+                
+        
+>>>>>>> Stashed changes
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

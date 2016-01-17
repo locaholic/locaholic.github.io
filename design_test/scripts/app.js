@@ -12,7 +12,8 @@ angular
   .module('designTest', [
     'ngRoute'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider,$sceProvider) {
+    $sceProvider.enabled(false);
     $routeProvider
       .when('/', {
         templateUrl: 'views/platform.html'

@@ -15,42 +15,42 @@ angular
   .config(function ($routeProvider,$sceProvider) {
     $sceProvider.enabled(false);
     $routeProvider
-      .when('/', {
+      .when('/?screen="platform"', {
         templateUrl: 'views/platform.html'
       })
-      .when('/login', {
+      .when('/login?screen="login"', {
         templateUrl: 'views/login.html',
         controller: 'loginCtrl'
       })
-      .when('/welcome', {
+      .when('/welcome?screen="welcome"', {
         templateUrl: 'views/welcome.html',
         controller: 'welcomeCtrl'
       })
-      .when('/placesmap', {
+      .when('/placesmap?screen="placesmap"', {
         templateUrl: 'views/placesmap.html',
         controller: 'placesmapCtrl'
       })
-      .when('/placeslist', {
+      .when('/placeslist?screen="placeslist"', {
         templateUrl: 'views/placeslist.html',
         controller: 'placeslistCtrl'
       })
-      .when('/placesdetail', {
+      .when('/placesdetail?screen="placesdetail"', {
         templateUrl: 'views/placesdetail.html',
         controller: 'placedetailCtrl'
       })
-      .when('/recommend', {
+      .when('/recommend?screen="recommend"', {
         templateUrl: 'views/recommend.html',
         controller: 'recommendCtrl'
       })
-      .when('/ask', {
+      .when('/ask?screen="ask"', {
         templateUrl: 'views/ask.html',
         controller: 'askCtrl'
       })
-      .when('/tip', {
+      .when('/tip?screen="tip"', {
         templateUrl: 'views/tip.html',
         controller: 'tipCtrl'
       })
-      .when('/thanks', {
+      .when('/thanks?screen=thanks', {
         templateUrl: 'views/thanks.html',
         controller: 'thanksCtrl'
       })

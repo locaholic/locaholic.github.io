@@ -45,6 +45,14 @@ angular
         templateUrl: 'views/ask.html',
         controller: 'askCtrl'
       })
+      .when('/tip', {
+        templateUrl: 'views/tip.html',
+        controller: 'tipCtrl'
+      })
+      .when('/thanks', {
+        templateUrl: 'views/thanks.html',
+        controller: 'thanksCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

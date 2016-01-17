@@ -34,8 +34,16 @@ angular
         controller: 'placeslistCtrl'
       })
       .when('/placesdetail', {
-        templateUrl: 'views/placedetail.html',
+        templateUrl: 'views/placesdetail.html',
         controller: 'placedetailCtrl'
+      })
+      .when('/recommend', {
+        templateUrl: 'views/recommend.html',
+        controller: 'recommendCtrl'
+      })
+      .when('/ask', {
+        templateUrl: 'views/ask.html',
+        controller: 'askCtrl'
       })
       .otherwise({
         redirectTo: '/'

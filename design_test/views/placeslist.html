@@ -1,0 +1,41 @@
+<div class="row well">
+<div class="container col-md-5">
+	<div class="panel panel-info">
+	<ul class="list-unstyled">
+		<li ng-repeat="task in tasks"><p class="container"><i ng-if="!task.status" class="fa fa-exclamation text-mute"></i>
+			<i ng-if="task.status" class="fa fa-check text-success"></i>{{task.text}}</p></li>
+	</ul>
+	</div>
+	<!-- <div class="panel panel-primary">
+	<ul class="list-unstyled">
+		<li ng-repeat="task in donetasks"><p class="container text-success">
+			<i ng-if="task.status" class="fa fa-check "></i>{{task.text}}</p></li>
+	</ul>
+	</div> -->
+</div>
+<div class="container col-md-6">
+<div id="login">
+	<img id="Image-Maps-Com-image-maps-2016-01-17-042927" src="images/Andriod_app/Screens/placeslist.jpg" border="0" width="720" height="1280" orgWidth="720" orgHeight="1280" usemap="#image-maps-2016-01-17-042927" alt="" />
+<map name="image-maps-2016-01-17-042927" id="ImageMapsCom-image-maps-2016-01-17-042927">
+<area  alt="" title="Sidebar" shape="rect" coords="36,35,101,85" style="outline:none;" target="_self"     />
+<area  alt="" title="Search" shape="rect" coords="111,37,596,87" style="outline:none;" target="_self"     />
+<area  alt="" title="Map View" shape="rect" coords="616,30,676,92" style="outline:none;" target="_self"     />
+<area  alt="" title="Wishlist" shape="rect" coords="40,119,212,181" style="outline:none;" target="_self"     />
+<area  alt="" title="Visited" shape="rect" coords="547,114,719,176" style="outline:none;" target="_self"     />
+<area  alt="" title="Recommended To you" shape="rect" coords="218,117,534,179" style="outline:none;" target="_self"     />
+<area  alt="" title="Place Detail" shape="rect" coords="12,200,712,501" style="outline:none;" target="_self"     />
+<area  alt="" title="Faces" shape="rect" ng-click="done($event)" id="1"coords="35,512,282,580" style="outline:none;" target="_self"     />
+<area  alt="" title="Plus" href="" shape="rect" coords="617,510,692,580" style="outline:none;" target="_self"     />
+<area  alt="" title="Plus" href="" shape="rect" coords="617,913,692,983" style="outline:none;" target="_self"     />
+<area  alt="" title="Place Details" shape="rect" coords="12,602,713,904" style="outline:none;" target="_self"     />
+<area  alt="" title="Place Detail" shape="rect" coords="14,1011,707,1278" style="outline:none;" target="_self"     />
+</map>
+
+</div>
+</div>
+</div>
+        <script>
+    $(document).ready(function(e) {
+    $('img[usemap]').rwdImageMaps();
+});
+</script>

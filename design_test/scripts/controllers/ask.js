@@ -1,8 +1,8 @@
 'use strict';
 angular.module('designTest')
-  .controller('placesmapCtrl', function ($scope,$location) {
-    $scope.tasks=[{text:"Click to see more information about Nando's",status:false},
-                  {text:"Click to see a list view of places.",status:false}]
+  .controller('askCtrl', function ($scope,$location) {
+    $scope.tasks=[{text:"Click to request a recomendation from friends.",status:false},
+                  {text:"Click to view questions yet to be answered by friends.",status:false}]
     $scope.donetasks=[];
     $scope.done=function(event){
       if(!$scope.tasks[event.target.id].status){
@@ -10,7 +10,7 @@ angular.module('designTest')
       $scope.donetasks.push($scope.tasks[event.target.id]);
     }
       if($scope.tasks.length==$scope.donetasks.length){
-        $location.path("/placeslist");
+        $location.path("/recommend");
       }
     }
 

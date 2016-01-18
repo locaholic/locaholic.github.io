@@ -1,7 +1,13 @@
+.task-text{
+	font-family: sans-serif;
+	font-size: 1.2em;
+}
 .header-image {
 position:relative;
 }
-
+.img-screen{
+	max-height: 100vh;
+}
 .screen {
 position:absolute;
 z-index:99;

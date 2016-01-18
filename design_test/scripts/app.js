@@ -10,7 +10,8 @@
  */
 angular
   .module('designTest', [
-    'ngRoute'
+    'ngRoute',
+    'ngFitText'
   ])
   .config(function ($routeProvider,$sceProvider) {
     $sceProvider.enabled(false);

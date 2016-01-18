@@ -1,8 +1,8 @@
 <div class="row well">
-<div class="container col-md-5">
+<div class="container col-md-6">
 	<div class="panel panel-info">
 	<ul class="list-unstyled">
-		<li ng-repeat="task in tasks"><p class="container"><i ng-if="!task.status" class="fa fa-exclamation text-mute"></i>
+		<li ng-repeat="task in tasks"><p class="container task-text"><i ng-if="!task.status" class="fa fa-exclamation text-mute"></i>
 			<i ng-if="task.status" class="fa fa-check text-success"></i>{{task.text}}</p></li>
 	</ul>
 	</div>
@@ -13,9 +13,9 @@
 	</ul>
 	</div> -->
 </div>
-<div class="container col-md-6">
+<div class="container col-md-5">
 <div id="login">
-	<img id="Image-Maps-Com-image-maps-2016-01-16-232944" src="images/Andriod_app/Screens/recommend.jpg" class="img-responsive" usemap="#recommend" alt="" />
+	<img id="Image-Maps-Com-image-maps-2016-01-16-232944" src="images/Andriod_app/Screens/recommend.jpg" class="img-responsive img-screen" usemap="#recommend" alt="" />
 <map name="recommend" id="ImageMapsCom-image-maps-2016-01-17-051745">
 <area  alt="" title="Sidebar" href="" shape="rect" coords="46,37,96,87" style="outline:none;" target="_self"     />
 <area  alt="" title="Recommend to a friend" ng-click="done($event)" id="0" shape="rect" coords="56,131,675,255" style="outline:none;" target="_self"     />

@@ -1,8 +1,8 @@
-<div class="row well">
-<div class="container col-md-5">
+<div class="row well" ng-init="randomize()">
+<div class="container col-md-6">
 	<div class="panel panel-info">
 	<ul class="list-unstyled">
-		<li ng-repeat="task in tasks"><p class="container"><i ng-if="!task.status" class="fa fa-exclamation text-mute"></i>
+		<li ng-repeat="task in tasks"><p class="container task-text"><i ng-if="!task.status" class="fa fa-exclamation text-mute"></i>
 			<i ng-if="task.status" class="fa fa-check text-success"></i>{{task.text}}</p></li>
 	</ul>
 	</div>
@@ -14,10 +14,11 @@
 	</div>
 	<button ng-if="alldone" class="btn btn-lg btn-success">Next-></button> -->
 </div>
-<div class="container col-md-6">
+<div class="container col-md-5">
 
-<div id="welcome">
-	<img id="Image-Maps-Com-image-maps-2015-12-31-095549" src="images/Andriod_app/Screens/welcome.png" class="img-responsive" usemap="#1"/>
+<div id="welcome" style="position:relative;">
+		<p  class="header text-center" id="welcometext" style="position:absolute;max-width:700px;font-size:3.5vh;font-weight:normal;">{{tasks[0].welcometext}}</p>
+	<img id="welcomescreen" src="images/Andriod_app/Screens/welcome.png" class="img-responsive img-screen" usemap="#{{map}}"/>
 	<map name="1" id="ImageMapsCom-image-maps-2016-01-17-013656">
 		<area id="0" alt="" title="" ng-click="done($event)" shape="rect" coords="87,281,374,387" style="outline:none;" target="_self"     />
 		<area id="0" alt="" title="" ng-click="done($event)" shape="rect" coords="405,285,624,383" style="outline:none;" target="_self"     />
@@ -29,10 +30,24 @@
 		<area  alt="" title=""  ng-click="done($event)" shape="rect" coords="390,721,605,819" style="outline:none;" target="_self"     />
 		<area id="0" alt="" title="" ng-click="done($event)" shape="rect" coords="405,869,620,967" style="outline:none;" target="_self"     />
 		<area id="0" alt="" title="" ng-click="done($event)" shape="rect" coords="93,869,372,968" style="outline:none;" target="_self"     />
-		<area id="1" alt="" title="" ng-click="done($event)" shape="rect" coords="507,1167,693,1240" style="outline:none;" target="_self"     />
-		<area  alt="" title="" shape="rect" coords="49,1166,271,1238" style="outline:none;" target="_self"     />
+		<area  alt="" title="next" ng-click="redirect('/placesmap')" shape="rect" coords="513,1173,678,1236" style="outline:none;" target="_self"     />
+			<area  alt="" title="check" href="" shape="rect" coords="99,1171,264,1234" style="outline:none;" target="_self"	/ >
 		</map>
-
+	<map name="2" id="ImageMapsCom-image-maps-2016-01-18-122321">
+	<area  alt="" title="heart" ng-click="done($event)" id="0" shape="rect" coords="319,332,369,382" style="outline:none;" target="_self"     />
+	<area  alt="" title="heart" ng-click="done($event)" id="0" shape="rect" coords="570,330,620,380" style="outline:none;" target="_self"     />
+	<area  alt="" title="heart" ng-click="done($event)" id="0" shape="rect" coords="551,475,601,525" style="outline:none;" target="_self"     />
+	<area  alt="" title="heart" ng-click="done($event)" id="0" shape="rect" coords="570,620,620,670" style="outline:none;" target="_self"     />
+	<area  alt="" title="heart" ng-click="done($event)" id="0" shape="rect" coords="293,477,343,527" style="outline:none;" target="_self"     />
+	<area  alt="" title="heart" ng-click="done($event)" id="0" shape="rect" coords="318,622,368,672" style="outline:none;" target="_self"     />
+	<area  alt="" title="heart" ng-click="done($event)" id="0" shape="rect" coords="292,768,342,818" style="outline:none;" target="_self"     />
+	<area  alt="" title="heart" ng-click="done($event)" id="0" shape="rect" coords="551,768,601,818" style="outline:none;" target="_self"     />
+	<area  alt="" title="heart" ng-click="done($event)" id="0" shape="rect" coords="317,914,367,964" style="outline:none;" target="_self"     />
+	<area  alt="" title="heart" ng-click="done($event)" id="0" shape="rect" coords="570,914,620,964" style="outline:none;" target="_self"     />
+	<area  alt="" title="next" ng-click="redirect('/placesmap')" shape="rect" coords="513,1173,678,1236" style="outline:none;" target="_self"     />
+	<area  alt="" title="check" href="" shape="rect" coords="99,1171,264,1234" style="outline:none;" target="_self"     />
+	</map>
+{{map}}
 </div>
 </div>
 </div>

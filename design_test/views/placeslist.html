@@ -1,8 +1,8 @@
 <div class="row well">
-<div class="container col-md-5">
+<div class="container col-md-6">
 	<div class="panel panel-info">
 	<ul class="list-unstyled">
-		<li ng-repeat="task in tasks"><p class="container"><i ng-if="!task.status" class="fa fa-exclamation text-mute"></i>
+		<li ng-repeat="task in tasks"><p class="container task-text"><i ng-if="!task.status" class="fa fa-exclamation text-mute"></i>
 			<i ng-if="task.status" class="fa fa-check text-success"></i>{{task.text}}</p></li>
 	</ul>
 	</div>
@@ -13,27 +13,42 @@
 	</ul>
 	</div> -->
 </div>
-<div class="container col-md-6">
+<div class="container col-md-5">
 <div id="login">
-	<img id="Image-Maps-Com-image-maps-2016-01-17-042927" src="images/Andriod_app/Screens/placeslist.jpg"class="img-responsive" usemap="#image-maps-2016-01-17-042927" alt="" />
+	<img id="Image-Maps-Com-image-maps-2016-01-17-042927" src="images/Andriod_app/Screens/placeslist.jpg"class="img-responsive img-screen" usemap="#image-maps-2016-01-17-042927" alt="" />
 <map name="image-maps-2016-01-17-042927" id="ImageMapsCom-image-maps-2016-01-17-042927">
 <area  alt="" title="Sidebar" shape="rect" coords="36,35,101,85" style="outline:none;" target="_self"     />
-<area  alt="" title="Search" shape="rect" coords="111,37,596,87" style="outline:none;" target="_self"     />
+<area  alt="" title="Search" shape="rect" ng-click="done($event)" id="2" coords="111,37,596,87" style="outline:none;" target="_self"     />
 <area  alt="" title="Map View" shape="rect" coords="616,30,676,92" style="outline:none;" target="_self"     />
 <area  alt="" title="Wishlist" shape="rect" coords="40,119,212,181" style="outline:none;" target="_self"     />
 <area  alt="" title="Visited" shape="rect" coords="547,114,719,176" style="outline:none;" target="_self"     />
 <area  alt="" title="Recommended To you" shape="rect" coords="218,117,534,179" style="outline:none;" target="_self"     />
 <area  alt="" title="Place Detail" shape="rect" coords="12,200,712,501" style="outline:none;" target="_self"     />
 <area  alt="" title="Faces" shape="rect" ng-click="done($event)" id="1"coords="35,512,282,580" style="outline:none;" target="_self"     />
-<area  alt="" title="Plus" href="" shape="rect" coords="617,510,692,580" style="outline:none;" target="_self"     />
-<area  alt="" title="Plus" href="" shape="rect" coords="617,913,692,983" style="outline:none;" target="_self"     />
+<area  alt="" title="Plus" ng-click="plus($event)" shape="rect" coords="617,510,692,580" style="outline:none;" target="_self"     />
+<area  alt="" title="Plus" ng-click="plus($event)" shape="rect" coords="617,913,692,983" style="outline:none;" target="_self"     />
 <area  alt="" title="Place Details" shape="rect" coords="12,602,713,904" style="outline:none;" target="_self"     />
 <area  alt="" title="Place Detail" shape="rect" coords="14,1011,707,1278" style="outline:none;" target="_self"     />
 </map>
+<!-- Context menu for plus -->
+<div ng-show="show" style="" ng-style="{'left':x,'top':y,'position':'absolute','max-width':'150px'}" class="container panel">
+  <table class="table table-hover">
+    <tbody>
+      <tr>
+        <td ng-click="done($event)" id="0">Recommend</td>
+      </tr>
+      <tr>
+        <td ng-click="done($event)" id="3">Add to wish list</td>
+      </tr>
+      </tbody>
+  </table>
+</div>
 
 </div>
 </div>
 </div>
+
+
         <script>
     $(document).ready(function(e) {
     $('img[usemap]').rwdImageMaps();

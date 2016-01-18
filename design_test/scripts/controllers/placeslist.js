@@ -5,6 +5,15 @@ angular.module('designTest')
                   {text:"Click to see all the friends who have recommended Nando's to you.",status:false},
                   {text:"Click to add more places to the list.",status:false},
                   {text:"Click to add II Padrino to the wishlist.",status:false}]
+    $scope.plus= function(event){
+      $scope.show=true;
+     // $timeout(function(){if($scope.show = false){}}, 3000); 
+      var coords=event.target.coords.split(',')
+      $scope.x=(coords[0])+'px';
+      $scope.y=coords[3]+'px';
+      console.log($scope.x);
+      console.log($scope.y); 
+    }
     $scope.donetasks=[];
     $scope.done=function(event){
       if(!$scope.tasks[event.target.id].status){

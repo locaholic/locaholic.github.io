@@ -6,6 +6,11 @@ angular.module('designTest')
     $scope.done=function(event){
       console.log(event.target.id);
       if(!$scope.tasks[event.target.id].status){
+        var TestObject = Parse.Object.extend("TestObject");
+var testObject = new TestObject();
+testObject.save({foo: "bar"}).then(function(object) {
+  alert("yay! it worked");
+});
         $scope.tasks[event.target.id].status=true;
       $scope.donetasks.push($scope.tasks[event.target.id]);
     }

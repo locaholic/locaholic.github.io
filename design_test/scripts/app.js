@@ -8,12 +8,13 @@
  *
  * Main module of the application.
  */
-angular
+var app=angular
   .module('designTest', [
     'ngRoute',
     'ngFitText'
   ])
   .config(function ($routeProvider,$sceProvider) {
+   
     $sceProvider.enabled(false);
     $routeProvider
       .when('/', {
@@ -57,5 +58,22 @@ angular
       })
       .otherwise({
         redirectTo: '/'
-      });
+      })
   });
+app.run(function($rootScope) {
+ 
+     Parse.initialize("7YyZO6oZNVongKR6pluyULEkMEmvLVRtVZvd6OXn", "JTOrsTnWqTBhxqxFMEvPdOUzDd9Ro01JqpiAF003");
+ 
+    $rootScope.sessionUser = Parse.User.current();
+    Parse.FacebookUtils.init({
+      appId: '971388552927772',
+      channelUrl : 'views/channel.html',
+      cookie: true,
+      version: 'v2.5',
+      xfbml: true
+    });
+  });
+
+
+
+

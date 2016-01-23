@@ -1,3 +1,4 @@
+
 <div class="jumbotron vcenter">
 <div class="container">
 <p class="h1 text-center">
@@ -6,58 +7,12 @@ Thanks for your time!
 <p class="info">
 Your feedback has been recorded and will be analysed to improve our services.
 Visit again.
+Please login with facebook to end your session. 
 </p>
-<div class="container center-block">
-<form class="form-horizontal">
-<fieldset>
-
-<!-- Form Name -->
-<legend>Login Form</legend>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="email">Email Id</label>  
-  <div class="col-md-4">
-  <input id="email" name="email" type="text" placeholder="Please enter your email Id" class="form-control input-md" required="">
-    
+<div class="container">
+  <div class="jumbotron text-center">
+<button ng-click="login()" class="btn btn-lg btn-primary">Login with Facebook</button>
   </div>
-</div>
-
-<!-- Multiple Radios (inline) -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="radios">Do you have a password ?</label>
-  <div class="col-md-4"> 
-    <label class="radio-inline" for="radios-0">
-      <input type="radio" name="radios" id="radios-0" ng-model='pass' ng-value=true checked="checked">
-      Yes
-    </label> 
-    <label class="radio-inline" for="radios-1">
-      <input type="radio" name="radios" id="radios-1" ng-model="pass" ng-value=false>
-      No
-    </label>
-  </div>
-</div>
-
-<!-- Password input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="password">Password</label>
-  <div class="col-md-4">
-    <input id="password" ng-show="pass" name="password" type="password" placeholder="Pasword" class="form-control input-md">
-    <span class="help-block">It must be in your email if you were invited.</span>
-  </div>
-</div>
-
-<!-- Button -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="singlebutton">Single Button</label>
-  <div class="col-md-4">
-    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Button</button>
-  </div>
-</div>
-
-</fieldset>
-</form>
-
 </div>
 </div>
 </div>

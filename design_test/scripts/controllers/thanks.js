@@ -5,14 +5,6 @@ angular.module('designTest')
 
 
   $scope.login=function() {
-    var user=Parse.User.current();
-  user.fetch().then(function(fetchedUser){
-    var name = fetchedUser.getEmail();
-    console.log(name);
-}, function(error){
-    //Handle the error
-}); 
-    console.log();
     // console.log(Parse.FacebookUtils.getLoginStatus());
     Parse.FacebookUtils.logIn('email', {
   success: function(user) {

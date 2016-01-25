@@ -13,13 +13,48 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/animatecss/3.4.0/animate.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
         <script>
     new WOW().init();
+    $(document).ready( function () {
+    // I only have one form on the page but you can be more specific if need be.
+    var $form = $('#notify-form');
+    $('#response').hide();
+    if ( $form.length > 0 ) {
+        $('form input[type="submit"]').bind('click', function ( event ) {
+            if ( event ) event.preventDefault();
+            // validate_input() is a validation function I wrote, you'll have to substitute this with your own.
+            register($form);
+        });
+    }
+});
+
+function register($form) {
+    $.ajax({
+        type: $form.attr('method'),
+        url: $form.attr('action'),
+        data: $form.serialize(),
+        cache       : false,
+        dataType    : 'json',
+        contentType: "application/json; charset=utf-8",
+        error       : function(err) { alert("Could not connect to the registration server. Please try again later."); },
+        success     : function(data) {
+            if (data.result != "success") {
+                // Something went wrong, do something to notify the user. maybe alert(data.msg);
+                $('#response span').text(data.msg);
+                $('#response').show();
+            } else {
+                $('#response').show();
+                $('#response span').text(data.msg);
+                // It worked, carry on...
+            }
+        }
+    });
+}
 </script>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     </head>
     <body>
@@ -45,10 +80,22 @@
                             </div>
                             <div class="col-xs-10 col-xs-offset-1">
                                 <div role="form" class="form-inline wow tada" data-wow-delay="1.50s">
-                                    <div id="notify">
-                                    <input id="notify-input" class="form-control input-xl" placeholder="Your email" type="text" />
-                                    <button id="notify-btn" class="btn btn-xl" onclick="subscribe()">Notify Me</button>
+                                    <form action="//Locaholic.us1.list-manage.com/subscribe/post-json?u=ce3acb399e33ebb64b0f3b5fb&amp;id=eec40ee34a&c=?" method="post" id="notify-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                                    <div>
+                                        <div id="notify">
+                                        <input type="email" value="" name="EMAIL" id="notify-input" class="form-control input-xl" placeholder="Your email" type="text" />
+                                        <input id="notify-btn" class="btn btn-xl" type="submit" value="Notify Me" name="subscribe" class="button">
+                                        </div>
+                                        <div class="">
+                                        <div id="response" class="well text-center text-info">
+                                            <span></span>
+                                        </div>
                                     </div>
+                                    </div>
+                                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_ce3acb399e33ebb64b0f3b5fb_eec40ee34a" tabindex="-1" value="">
+                                    </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>

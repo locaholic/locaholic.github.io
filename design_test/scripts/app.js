@@ -72,6 +72,7 @@ app.run(function($rootScope) {
       version: 'v2.5',
       xfbml: true
     });
+   
   });
 
 

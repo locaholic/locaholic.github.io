@@ -72,7 +72,13 @@ app.run(function($rootScope) {
       version: 'v2.5',
       xfbml: true
     });
-   
+     window.onhashchange=function(){ mouseflow.newPageView(document.location.pathname + document.location.hash); };  var _mfq = _mfq || [];
+  (function() {
+    var mf = document.createElement("script");
+    mf.type = "text/javascript"; mf.async = true;
+    mf.src = "//cdn.mouseflow.com/projects/43558e67-da68-4e1f-81f0-23ecdaf10173.js";
+    document.getElementsByTagName("head")[0].appendChild(mf);
+  })();  
   });
 
 

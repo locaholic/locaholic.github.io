@@ -16,8 +16,8 @@ angular.module('designTest')
       FB.api("/me?fields=name,email", function(response) {
         console.log(response);
       user.setEmail(response.email);
-      $rootScope.name=response.name;
        user.save();
+     mouseflow.tag(response.email);
      });
     }
   },

@@ -1,2 +1,10 @@
 <div ui-view>
 </div>
+<div id="map_canvas" ng-controller="mapCtrl">
+    <script type="text/ng-template" id="searchbox.tpl.html">
+        <input type="text" placeholder="Search Box">
+    </script>
+    <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options">
+        <ui-gmap-search-box parentdiv="'sidebar'" template="searchbox.template" events="searchbox.events"></ui-gmap-search-box>
+    </ui-gmap-google-map>
+</div>

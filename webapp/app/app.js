@@ -9,7 +9,7 @@ config(['$urlRouterProvider','$stateProvider','uiGmapGoogleMapApiProvider' ,func
 	uiGmapGoogleMapApiProvider.configure({
          key: 'AIzaSyA83dOY_bZ5DmaWcfX1PDFnYaAWFrO0t3s',
         v: '3.20', //defaults to latest 3.X anyhow
-        libraries: 'weather,geometry,visualization'
+        libraries: 'places'
         });
   $urlRouterProvider.otherwise('/');
 
@@ -36,5 +36,11 @@ config(['$urlRouterProvider','$stateProvider','uiGmapGoogleMapApiProvider' ,func
   				'list':{templateUrl: 'list/list.html'},
   			}
   		})
+      .state('home.login',{
+        url: 'login',
+        views:{
+          '':{templateUrl: 'login/login.html'}
+        }
+      })
 }
 ]);

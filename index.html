@@ -1,209 +1,132 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>locaholic</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
-
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/animatecss/3.4.0/animate.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-        <script>
-    new WOW().init();
-    $(document).ready( function () {
-    // I only have one form on the page but you can be more specific if need be.
-    var $form = $('#notify-form');
-    $('#response').hide();
-    if ( $form.length > 0 ) {
-        $('form input[type="submit"]').bind('click', function ( event ) {
-            if ( event ) event.preventDefault();
-            // validate_input() is a validation function I wrote, you'll have to substitute this with your own.
-            register($form);
-        });
-    }
-});
-
-function register($form) {
-    $.ajax({
-        type: $form.attr('method'),
-        url: $form.attr('action'),
-        data: $form.serialize(),
-        cache       : false,
-        dataType    : 'json',
-        contentType: "application/json; charset=utf-8",
-        error       : function(err) { alert("Could not connect to the registration server. Please try again later."); },
-        success     : function(data) {
-            if (data.result != "success") {
-                // Something went wrong, do something to notify the user. maybe alert(data.msg);
-                $('#response span').text(data.msg);
-                $('#response').show();
-            } else {
-                $('#response').show();
-                $('#response span').text(data.msg);
-                // It worked, carry on...
-            }
-        }
-    });
-}
-</script>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    </head>
-    <body>
-        
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        <!-- Navigation -->
-
-        <!-- Add your site or application content here -->
-    <!-- Header -->
-    <div  class="container-fluid top">
-        <div class="container">
-            <div class="page-header row">
-                <section id="top">
-                        <div class="col-xs-8">
-                    <div class="wow zoomIn" data-wow-duration="0.5s">
-                        <h2 class="header">locaholic</h2>
-                    </div>
-                    <div class="intro-notify" id="notify-panel">
-                            <div class="header wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
-                                <p class="h2 text-center">Get recommendations from people you trust.</p>
-                            </div>
-                            <div class="col-xs-10 col-xs-offset-1">
-                                <div role="form" class="form-inline wow tada" data-wow-delay="1.50s">
-                                    <form action="//Locaholic.us1.list-manage.com/subscribe/post-json?u=ce3acb399e33ebb64b0f3b5fb&amp;id=eec40ee34a&c=?" method="post" id="notify-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                                    <div>
-                                        <div id="notify">
-                                        <input type="email" value="" name="EMAIL" id="notify-input" class="form-control input-xl" placeholder="Your email" type="text" />
-                                        <input id="notify-btn" class="btn btn-xl" type="submit" value="Notify Me" name="subscribe" class="button">
-                                        </div>
-                                        <div class="">
-                                        <div id="response" class="well text-center text-info">
-                                            <span></span>
-                                        </div>
-                                    </div>
-                                    </div>
-                                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_ce3acb399e33ebb64b0f3b5fb_eec40ee34a" tabindex="-1" value="">
-                                    </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-4 wow fadeInRight" data-wow-duration="01.5s" data-wow-delay="0s">
-                        <img class="img-responsive phone" src="img/iphone.png"/>
-                    </div>
-                </section>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                <section id="mid">
-                    <div class="col-md-10 row col-md-offset-1">
-                        <div class="col-xs-4">
-                            <img class="img-responsive phone wow fadeInLeft" src="img/nexus.png" alt="nexus-graphic">
-                        </div>
-                        <div class="col-xs-8">
-                            <div class="mid-text wow slideInRight">
-                                Effortlessly Share. Ask and 
-                                Remember your private
-                                personalized recommendations
-                                from your network of family, friends, 
-                                colleagues and their extended 
-                                network.
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid bottom">
-        <div class="container">
-            <div class="page-header row">
-                <section id="contact">
-                    <div class="col-md-10 col-md-offset-1">
-                      <p class="h2 text-center wow fadeInDown">Do you have any query or suggestion?</br>
-                                    <span class="small">Please use the form below to contact us.</span>
-                        </p>
-                        <br/>
-                       <form class="form" role="form">
-                          <div class="form-group">
-                                <input id="lolo-name" class="form-control input-lg wow fadeInLeft" placeholder="Your Name" type="text" />
-                            <input id="lolo-email" class="form-control input-lg wow fadeInRight" placeholder="Your email" type="text" />
-                          </div>
-                          <br/><br/>
-                       <div class="form-group">
-                           <textarea class="form-control input-lg wow fadeInDown" id="lolo-msg" placeholder="Your Message" rows="4" cols="100"> </textarea>
-                            <br/>
-                          <button type="submit" id="lolo-btn" class="form-control btn btn-lg wow pulse">Submit</button>
-                        </div>
-                        </form>
-                    </div>                  
-                </section>
-            </div>
-        </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-        <!-- Start Open Web Analytics Tracker -->
-<script type="text/javascript">
-//<![CDATA[
-var owa_baseUrl = 'http://gauravshukla.xyz/owa/';
-var owa_cmds = owa_cmds || [];
-owa_cmds.push(['setSiteId', '0252e9b1859c2699de269f4bb99f7c83']);
-owa_cmds.push(['trackPageView']);
-owa_cmds.push(['trackClicks']);
-owa_cmds.push(['trackDomStream']);
-
-(function() {
-    var _owa = document.createElement('script'); _owa.type = 'text/javascript'; _owa.async = true;
-    owa_baseUrl = ('https:' == document.location.protocol ? window.owa_baseSecUrl || owa_baseUrl.replace(/http:/, 'https:') : owa_baseUrl );
-    _owa.src = owa_baseUrl + 'modules/base/js/owa.tracker-combined-min.js';
-    var _owa_s = document.getElementsByTagName('script')[0]; _owa_s.parentNode.insertBefore(_owa, _owa_s);
-}());
-//]]>
-</script>
-<!-- End Open Web Analytics Code -->
-
-        <!-- Hotjar Tracking Code for http://locaholic.co -->
-<script>
-    (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:132796,hjsv:5};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-        a.appendChild(r);
-    })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
-</script>
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='https://www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
-        </script>
-    <footer>
-        <div>
-            <p class="text-info text-center"> &#169; Locaholic, 2015</p>
-        </div>
-    </footer>
-    </div>
-    </body>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" href="favicon.jpg" type="image/jpg" sizes="16x16">
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/media.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="js/main.js"></script>
+		<script>
+			function openNav() {
+				document.getElementById("myNav").style.width = "100%";
+			}
+			function closeNav() {
+				document.getElementById("myNav").style.width = "0%";
+			}
+		</script>
+	</head>
+	<body>
+		<!--[if IE]>
+			<p class="browserupgrade">This webiste is not compatible with IE. Please use Chrome, Safari or Mozilla Firefox.</p>
+		<![endif]-->
+		
+		
+		<div id="myNav" class="overlay">
+			<img src="imgs/close.png" href="javascript:void(0)" class="closebtn" onclick="closeNav()"></button>
+			<div class="overlay-content">
+				<div>
+					DISPLAY LOGIN FORM HERE!!!!!!!!!
+				</div>
+			</div>
+		</div>
+		
+		
+		<header>
+			<div class="auth">
+				<input type="button" id="lgn-btn" onclick="openNav()" value="LOGIN"/>
+				<input type="button" id="sign-btn" onclick="openNav()" value="SIGN UP" />
+			</div>
+			<hr></hr>
+		</header>
+		<section class="sec1">
+			<article class="art-quote">
+				<div>
+					<p class="title">locaholic</p>
+					<span class="quote">Discover new places recommended by people you trust</span><br>
+					<input type="button" id="" value="BE THE FIRST TO FIND OUT">
+				</div>
+			</article>
+			<article class="art-img">
+				<img src="imgs/devices.jpg" alt="devices">
+			</article>
+		</section>
+		<section class="sec2">
+			<article class="art-quote">
+				<div>
+					<p class="sub-title">Interact with the people you want, no matter what</p>
+					<span class="sub-quote">We want you to be able to give or ask for a recommendation to anyone you want, even if they are not is the app and you will be able to do that via WhatsApp or any messaging, social network or communication app you use.</span>
+				</div>
+			</article>
+			<article class="art-img">
+				<img src="imgs/circles.jpg" alt="network">
+			</article>
+		</section>
+		<section class="sec3">
+			<article class="art-quote">
+				<div>
+					<p class="sub-title">Discover, collect and recommend places</p>
+					<span class="sub-quote">
+						<p>
+							Ask a friend for a place recommendation, or post it on Facebook so anyone can help you. You can use integrates Google Places Search
+						</p>
+						<p>
+							Create new list of place and ass your ratings and tips to let your friends they must try the pasta
+						</p>
+						<p>
+							Recommend a place or an entire list of friend in need or to everyone.
+						</p>
+					</span>
+				</div>
+			</article>
+			<article class="art-img">
+				<img src="imgs/places-map.jpg" alt="places-map">
+			</article>
+		</section>
+		<section class="sec4">
+			<article class="art-quote">
+				<div>
+					<p class="sub-title">The team behind Locaholic</p>
+					<span class="sub-quote">If you wish to find out more about the team and behind the scenes of Locaholic.</span><br>
+					<input type="button" id="" value="About Us">
+				</div>
+			</article>
+			<article class="art-img">
+				<img src="imgs/signs.jpg" alt="intro">
+			</article>
+		</section>
+		<footer class="footer">
+			<article class="foot-quote">
+				<div>
+					<p class="sub-title">
+						Get in touch with us:<br>
+						hello@locaholic.com
+					</p>
+					<span class="sub-quote">For any kind of communication, feedback, information request, internship or just for saying hi, send us and email or use the contact form:.</span><br>
+				</div>
+			</article>
+			<article class="contact-form">
+				<div>
+					<form>
+						<input type="text" placeholder="Name"></input><br>
+						<input type="text" placeholder="Subject"></input><br>
+						<textarea placeholder="Message"></textarea><br>
+						<input type="submit" value="SEND"></input>
+					</form>
+				</div>
+			</article>
+			<article class="privacy-pol">
+				<span>locaholic</span>
+				<ul>
+					<li>Terms of Use</li>
+					<li>Privacy Policy</li>
+					<li>Copyright 2016</li>
+				</ul>
+			</article>
+		</section>
+	</body>
 </html>

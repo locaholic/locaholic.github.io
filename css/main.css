@@ -1,414 +1,290 @@
-/*! HTML5 Boilerplate v5.2.0 | MIT License | https://html5boilerplate.com/ */
-
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
-
-/* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300);
+@font-face {
+font-family: Steady;
+src: url("../fonts/Steady.otf") format("opentype");
+}
 html {
-    color: #222;
-    font-size: 1em;
-    line-height: 1.4;
+    color: #777;
+	font-family: "Montserrat";
+    font-size: 16px;
+    line-height: 1.5;
 }
-
-/*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * These selection rule sets have to be separate.
- * Customize the background color to match your design.
- */
-
-::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
+header,
+section,
+footer,
+aside, 
+nav,
+main,
+article,
+figure {
+    display: block;
 }
-
-::selection {
-    background: #b3d4fc;
-    text-shadow: none;
+body,
+hr{
+	margin:0;
+	padding:0;
+	margin: auto;
 }
-
-/*
- * A better looking default horizontal rule
- */
-
+section article, 
+footer article{
+	margin-bottom:12px;
+}
+input[type=button],
+input[type=submit]{
+	color: #14396A !important;
+	font-family: "Montserrat";
+	font-size:16px;
+	text-shadow: 1px 1px 0px #7CACDE;
+	margin-right:2px;
+	padding: 4px 9px;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+	border: 2px solid #3866A3;
+	background: #13EDED;
+	background: linear-gradient(top,  #13EDED,  #4082BF);
+	background: -ms-linear-gradient(top,  #13EDED,  #4082BF);
+	background: -webkit-gradient(linear, left top, left bottom, from(#13EDED), to(#4082BF));
+	background: -moz-linear-gradient(top,  #13EDED,  #4082BF);
+	cursor:pointer;
+}
+input[type=button]:hover,
+input[type=submit]:hover{
+	color: #14396A !important;
+	background: #4082BF;
+	background: linear-gradient(top,  #4082BF,  #13EDED);
+	background: -ms-linear-gradient(top,  #4082BF,  #13EDED);
+	background: -webkit-gradient(linear, left top, left bottom, from(#4082BF), to(#13EDED));
+	background: -moz-linear-gradient(top,  #4082BF,  #13EDED);
+	cursor:pointer;
+}
 hr {
     display: block;
-    height: 1px;
     border: 0;
     border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
+	clear: right;
 }
-
-/*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
-
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-    vertical-align: middle;
-}
-
-/*
- * Remove default fieldset styles.
- */
-
-fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
-}
-
-/*
- * Allow only vertical resizing of textareas.
- */
-
-textarea {
-    resize: vertical;
-}
-
-/* ==========================================================================
-   Browser Upgrade Prompt
-   ========================================================================== */
-
 .browserupgrade {
-    margin: 0.2em 0;
+    margin: 3px 0;
     background: #ccc;
     color: #000;
-    padding: 0.2em 0;
+    padding: 3px 0;
+	font-size:32px;
+}
+.auth{
+	float:right;
+	width:200px;
+	padding:8px;
+}
+section, 
+footer{
+	clear:both;
+	display:table;
+	--height:600px;
+	width:100%;
+}
+.sec1 article,
+.sec3 article, 
+footer article{
+	float: left !important;
+}
+.sec2 article,
+.sec4 article{
+	float: right !important;
+}
+.sec2,
+.sec3,
+.sec4{
+	margin-top:20px;
+}
+.art-img{
+	width:60%;
+	max-height:inherit;
+}
+.art-img img{
+	max-height:inherit;
+	width:100%;
 }
 
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-.form-control::-webkit-input-placeholder { color: white; }
-.form-control:-moz-placeholder { color: white; }
-.form-control::-moz-placeholder { color: white; }
-.form-control:-ms-input-placeholder { color: white; }
-
-body{
-    margin:0px;
-    font-family: 'Montserrat', sans-serif;
-
+.art-quote{
+	width:40%;
 }
-.top{
-    background-image: url("../img/background.png");
-    background-repeat: no-repeat;
-    background-size: cover;
+.foot-quote{
+	width:50%;
 }
-
-.bottom{
-    background-image: url("../img/footer.png");
-    background-repeat: no-repeat;
-    background-size: 100%;
+.art-quote div, .foot-quote div, .contact-form div{
+	--align-self: center;
+	margin:15% 8%;
 }
-
-.phone{
-    position: relative;
-    margin-top: 10px;
+.art-quote div,
+.contact-form div{
+	width:84%;
 }
-.intro-notify{
-    position: relative;
-    margin-top:30%;
+.foot-quote div{
+	width:60%;
 }
-#notify{
-    position: relative;
-    width: 100%;
+.title{
+	font-size: 80px;
+	font-family: "Steady";
+	margin:0 0 10px 0;
 }
-
-.header{
-    color: white;
-    font-size: 3.0em;
-    font-weight: bold;
-    padding: 15px 0 1px 9%;
+.title, .sub-title{
+	color: #0E6CC4;
+	line-height: 1.2;
+	word-wrap: break-word;
 }
-area[ng-click]{
-    cursor: pointer;
+.sub-title{
+	font-size: 38px;
+	font-weight:300;
+	font-family: "Source Sans Pro";
 }
-
-#notify-input{
-    font-size: 1.5em;
-    width: 100%;
-    height: auto;
-    padding: 10px;
-    background-color:rgba(48,48,48,0.4);
-    color: white;
--webkit-border-radius: 10px;
--moz-border-radius: 10px;
-border-radius: 10px;
+.quote,.sub-quote{
+	color: #888;
+	line-height: 1.2;
+	word-wrap: break-word;
 }
-
-#notify-btn{
-    font-size: 1.5em;
-    background-color:rgba(48,48,48,0.4);
-    color: white;
-    height: auto;
-    padding: 10px;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-   -webkit-border-radius: 10px;
--moz-border-radius: 10px;
-border-radius: 10px;
+.quote{
+	font-size: 38px;
+	font-family: "Source Sans Pro";
 }
-
-.mid-text{
-    padding-left: 20%;
-    color: black;
-    width:80%;
-    position: relative;
-    height: inherit;
-    margin-top: 50%;
-    text-align: left;
-    font-size: 1.5em;
-    font-family: sans-serif;
+.sub-quote{
+	font-size: 20px;
+	font-family: "Montserrat";
 }
-
-#lolo-name{
-    padding: 15px;
-    background-color:rgba(48,48,48,0.4);
-    color: white;
--webkit-border-radius: 10px;
--moz-border-radius: 10px;
-border-radius: 10px;
-width:34%;
-margin-bottom: 1%;
-float: left;
+.art-quote div input{
+	margin-top:30px;
 }
-#lolo-email{
-    margin-left: 1%;
-    margin-bottom: 1%;
-    float: right;
-    width: 65%;
-    padding: 15px;
-    background-color:rgba(48,48,48,0.4);
-    color: white;
--webkit-border-radius: 10px;
--moz-border-radius: 10px;
-border-radius: 10px;
+footer{
+	background-image: url("../imgs/bg-contact.jpg");
+	background-repeat: no-repeat;
 }
-
-#lolo-msg{
-
-    display: block;
-    padding: 10px;
-    background-color:rgba(48,48,48,0.4);
-    color: white;
--webkit-border-radius: 5px;
--moz-border-radius: 5px;
-border-radius: 5px;
-width:100%;
+.contact-form{
+	float: left;
+	width:50%;
+	height:inherit;
 }
-#lolo-btn{
-    float: right;
-font-size: 1.5em;
-    width: auto;
-    background-color:rgba(48,48,48,0.4);
-    color: white;
-    height: auto;
-    padding: 10px;
-    position: relative;
-    -webkit-border-radius: 10px;
--moz-border-radius: 10px;
-border-radius: 10px;
+.contact-form input[type="text"]{
+	width:100%;
+	height:50px;
+}
+.contact-form textarea{
+     width:99%;
+	 resize:none;
+}
+input[type="text"], textarea{
+	margin:0;
+	padding:0;
+	line-height:1.5;
+	font-size:16px;
+	background:transparent;
+	border-bottom: 1px solid;
+	border-left-style:none;
+	border-right-style:none;
+	border-top:none;
+}
+textarea{
+	height: 12em;
+}
+/* input[type="submit"]{
+	background:transparent;
+	border:none;
+	color: #0E6CC4;
+	font-size:20px;
+	float:right;
+} */
+input[type="submit"]{
+	float:right;
+}
+input::-webkit-input-placeholder {
+   font-size:20px;
+   font-family: "Montserrat";
+}
+input:-moz-placeholder { /* Firefox 18- */
+   font-size:20px;
+   font-family: "Montserrat";
+}
+input::-moz-placeholder {  /* Firefox 19+ */
+	font-size:20px;
+	font-family: "Montserrat";
+}
+input:-ms-input-placeholder {  
+   font-size:20px;
+   font-family: "Montserrat";
+}
+textarea::-webkit-input-placeholder {
+   padding-top:150px;
+   font-size:20px;
+   font-family: "Montserrat";
+}
+textarea:-moz-placeholder { /* Firefox 18- */
+   padding-top:150px;
+   font-size:20px;
+   font-family: "Montserrat";
+}
+textarea::-moz-placeholder {  /* Firefox 19+ */
+	padding-top:150px;
+   font-size:20px;
+   font-family: "Montserrat";
+}
+textarea:-ms-input-placeholder {  
+   padding-top:150px;
+   font-size:20px;
+   font-family: "Montserrat";
 }
 
-.shade{
-    opacity:    0.5; 
-  background: #000; 
-  width:      100%;
-  height:     100%; 
-  top:        0; 
-  left:       0;
-  z-index: -1; 
-  position:   fixed; 
+.privacy-pol{
+	clear:both;
+	width:100%;
 }
-
-.aboveshade{
-  z-index:    11; 
+.privacy-pol span{
+	float:left;
+	padding-left:30px;
+	font-size: 40px;
+	font-weight:bold;
+	font-style: italic;
+	font-family: "Source Sans Pro lighter";
+	color:#000;
 }
-
-
-
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-/*
- * Hide visually and from screen readers
- */
-
-.hidden {
-    display: none !important;
-}
-
-/*
- * Hide only visually, but have it available for screen readers:
- * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
- */
-
-.visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
+.privacy-pol ul{
+	float:right;
+	list-style-type: none;
     padding: 0;
-    position: absolute;
-    width: 1px;
+}
+.privacy-pol ul li{
+	height:inhert;
+	padding:20px;
+	display:inline;
 }
 
-/*
- * Extends the .visuallyhidden class to allow the element
- * to be focusable when navigated to via the keyboard:
- * https://www.drupal.org/node/897638
- */
 
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
+/* OVERLAY OPEN*/
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(235,235,235, 0.8);
+    overflow-x: hidden;
+    transition: 0.5s;
+	-webkit-transition: 0.5s;
 }
-
-/*
- * Hide visually and from screen readers, but maintain layout
- */
-
-.invisible {
-    visibility: hidden;
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+	color:blue;
+	font-size:40px;
 }
-
-/*
- * Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
-
-.clearfix:before,
-.clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
+.closebtn {
+	position: absolute;
+	top: 50px;
+    right: 20px;
+	height:22px;
+	width:40px;
 }
-
-.clearfix:after {
-    clear: both;
-}
-
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
-}
-
-@media print,
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 1.25dppx),
-       (min-resolution: 120dpi) {
-    /* Style adjustments for high resolution devices */
-}
-
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   http://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
-
-@media print {
-    *,
-    *:before,
-    *:after,
-    *:first-letter,
-    *:first-line {
-        background: transparent !important;
-        color: #000 !important; /* Black prints faster:
-                                   http://www.sanbeiji.com/archives/953 */
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
-
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
-
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
-
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
-
-    /*
-     * Don't show links that are fragment identifiers,
-     * or use the `javascript:` pseudo protocol
-     */
-
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
-        content: "";
-    }
-
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
-
-    /*
-     * Printing Tables:
-     * http://css-discuss.incutio.com/wiki/Printing_Tables
-     */
-
-    thead {
-        display: table-header-group;
-    }
-
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
-
-    img {
-        max-width: 100% !important;
-    }
-
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
-
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
-}
+/* OVERLAY CLOSE*/

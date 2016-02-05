@@ -1,3 +1,8 @@
-<button class="btn btn-xl btn-primary">
-Login with Facebook
-</button>
+<ul>
+	<li ng-repeat="place in places">
+		<a ui-sref="home.detail({ id: place.place_id })">{{place.name}}
+		<img ng-src={{place.icon}}>
+		</a>
+		{{place}}
+	</li>
+</ul>

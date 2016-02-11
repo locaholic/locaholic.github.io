@@ -20,9 +20,6 @@ article,
 figure {
     display: block;
 }
-body{
-display:none;
-}
 body,
 hr{
 	margin:0;

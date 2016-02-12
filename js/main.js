@@ -43,7 +43,6 @@ function getUserName() {
   }
 function lgOut(){
       Parse.User.logOut();
-      window.location.href = "";
 }
 
 (function(d, s, id){

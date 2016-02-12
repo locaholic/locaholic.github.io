@@ -22,11 +22,9 @@
 
   function checkIfLoaded() {
     alert("click");
-    if(isLoaded) 
-      console.log("LOADED!");
-    else 
-      console.log("NOT YET!");
-    return false;
+   if (typeof FB !== 'undefined') {
+       alert("FB JS API is available now");
+   } else {alert("do something...")}
   }
 
   // Load the SDK Asynchronously

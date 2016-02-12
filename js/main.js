@@ -1,7 +1,7 @@
 Parse.initialize("7YyZO6oZNVongKR6pluyULEkMEmvLVRtVZvd6OXn", "JTOrsTnWqTBhxqxFMEvPdOUzDd9Ro01JqpiAF003");
       window.fbAsyncInit = function() {
     Parse.FacebookUtils.init({ // this line replaces FB.init({
-      appId      : '{facebook-app-id}', // Facebook App ID
+      appId      : '971388552927772', // Facebook App ID
       status     : true,  // check Facebook Login status
       cookie     : true,  // enable cookies to allow Parse to access the session
       xfbml      : true,  // initialize Facebook social plugins on the page

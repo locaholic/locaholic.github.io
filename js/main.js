@@ -16,11 +16,12 @@ function checkLoginState() {
             Parse.FacebookUtils.logIn(null, {
                   success: function(user) {
                         if (!user.existed()) {
-                              alert("User signed up and logged in through Facebook!");
+                              //alert("User signed up and logged in through Facebook!");
+                              getUserName();
                               document.getElementById("lgn-btn").style.display="none";
                               document.getElementById("lgot-btn").style.display="block";
                         } else {
-                              alert("User logged in through Facebook!");
+                              //alert("User logged in through Facebook!");
                               document.getElementById("lgn-btn").style.display="none";
                               document.getElementById("lgot-btn").style.display="block";
                         }
@@ -34,10 +35,14 @@ function checkLoginState() {
             alert("Your network does not support FaceBook Login!!")
       }
 }
-
+function getUserName() {
+    FB.api('/me', function(response) {
+      document.getElementById('usrname').innerHTML = response.name;
+    });
+  }
 function lgOut(){
       Parse.User.logOut();
-      window.location.href = "locaholi.co";
+      window.location.href = "";
 }
 
 (function(d, s, id){

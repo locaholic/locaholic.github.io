@@ -7,7 +7,7 @@ window.fbAsyncInit = function() {
             xfbml      : true,  // initialize Facebook social plugins on the page
             version    : 'v2.3' // point to the latest Facebook Graph API version
       });
-
+      
   // Run code after the Facebook SDK is loaded
 };
 
@@ -42,8 +42,8 @@ function getUserName() {
     });
   }
 function lgOut(){
-      alert("sss");
       Parse.User.logOut();
+      location.reload();
 }
 
 (function(d, s, id){

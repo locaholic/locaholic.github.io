@@ -77,8 +77,8 @@ overlay-login{
 }
 .auth{
 	float:right;
-	width:200px;
-	padding:8px;
+	--width:200px;
+	padding:8px 45px 8px 8px;
 }
 section, 
 footer{

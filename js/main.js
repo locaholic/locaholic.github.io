@@ -9,7 +9,7 @@ Parse.initialize("7YyZO6oZNVongKR6pluyULEkMEmvLVRtVZvd6OXn", "JTOrsTnWqTBhxqxFME
     });
 
         // Run code after the Facebook SDK is loaded.
-        Parse.FacebookUtils.logIn(email, {
+        Parse.FacebookUtils.logIn(null, {
           success: function(user) {
             if (!user.existed()) {
               alert("User signed up and logged in through Facebook!");

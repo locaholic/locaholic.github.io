@@ -12,18 +12,23 @@ Parse.initialize("7YyZO6oZNVongKR6pluyULEkMEmvLVRtVZvd6OXn", "JTOrsTnWqTBhxqxFME
   };
 
 function checkLoginState() {
-      Parse.FacebookUtils.logIn(null, {
-            success: function(user) {
-                  if (!user.existed()) {
-                        alert("User signed up and logged in through Facebook!");
-                  } else {
-                        alert("User logged in through Facebook!");
+      if (typeof FB !== 'undefined') {
+            Parse.FacebookUtils.logIn(null, {
+                  success: function(user) {
+                        if (!user.existed()) {
+                              alert("User signed up and logged in through Facebook!");
+                        } else {
+                              alert("User logged in through Facebook!");
+                        }
+                  },
+                  error: function(user, error) {
+                        alert("Please login to access the Locaholic services!!");
                   }
-            },
-            error: function(user, error) {
-                  alert("User cancelled the Facebook login or did not fully authorize.");
-            }
-      });
+            });
+      }
+      else{
+            alert("Your network does not support FaceBook Login!!")
+      }
 }
 
 

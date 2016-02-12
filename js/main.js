@@ -35,7 +35,7 @@ function checkLoginState() {
       }
 }
 
-function logOut(){
+function lgOut(){
       Parse.User.logOut();
       window.location.href = "locaholi.co";
 }

@@ -41,10 +41,7 @@ function getUserName() {
       document.getElementById('usrname').innerHTML = response.name;
     });
   }
-function lgOut(){
-      alert("sss");
-    
-}
+
 
 (function(d, s, id){
       var js, fjs = d.getElementsByTagName(s)[0];

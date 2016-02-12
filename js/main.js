@@ -2,8 +2,7 @@ function statusChangeCallback(response) {
     console.log('statusChangeCallback');
     console.log(response);
     if (response.status === 'connected') {
-      var uid = response.authResponse.userID;
-      accessToken = response.authResponse.accessToken;
+      document.getElementById('status').innerHTML = 'you are logged into this app.';
     } else if (response.status === 'not_authorized') {
       document.getElementById('status').innerHTML = 'Please log into this app.';
     } else {

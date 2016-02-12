@@ -17,6 +17,7 @@ function checkLoginState() {
                   success: function(user) {
                         if (!user.existed()) {
                               //alert("User signed up and logged in through Facebook!");
+                              alert("1");
                               getUserName();
                               document.getElementById("lgn-btn").style.display="none";
                               document.getElementById("lgot-btn").style.display="block";
@@ -36,6 +37,7 @@ function checkLoginState() {
       }
 }
 function getUserName() {
+      alert(response.name);
     FB.api('/me', function(response) {
       document.getElementById('usrname').innerHTML = response.name;
     });

@@ -1,8 +1,24 @@
+function statusChangeCallback(response) {
+    console.log('statusChangeCallback');
+    console.log(response);
+    if (response.status === 'connected') {
+      var uid = response.authResponse.userID;
+      accessToken = response.authResponse.accessToken;
+    } else if (response.status === 'not_authorized') {
+      document.getElementById('status').innerHTML = 'Please log into this app.';
+    } else {
+      document.getElementById('status').innerHTML = 'Please log into Facebook.';
+    }
+  }
+  
 window.fbAsyncInit = function() {
   FB.init({
     appId      : '971388552927772',
     xfbml      : true,
     version    : 'v2.5'
+  });
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
   });
 };
 

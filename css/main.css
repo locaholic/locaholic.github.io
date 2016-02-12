@@ -80,6 +80,9 @@ overlay-login{
 	--width:200px;
 	padding:8px 45px 8px 8px;
 }
+#lgot-btn{
+	display:none;
+}
 section, 
 footer{
 	clear:both;

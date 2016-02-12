@@ -9,6 +9,7 @@ function statusChangeCallback(response) {
   }
   // This function is called when someone finishes with the Login button.  
   function checkLoginState() {
+      alert("click");
     FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
     });

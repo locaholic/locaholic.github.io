@@ -43,16 +43,7 @@ function getUserName() {
   }
 function lgOut(){
       alert("sss");
-      Parse.Promise logOut();
-      location.reload();
-//      Parse.User.logOut().then(
-//            function() {
-//                alert('success');
-//            }, 
-//            function(error) {
-//                alert('error : ' + error);
-//            }
-//      );
+    
 }
 
 (function(d, s, id){

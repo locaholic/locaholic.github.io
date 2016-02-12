@@ -43,6 +43,7 @@ function getUserName() {
   }
 function lgOut(){
       Parse.User._currentUser._logOutWithAll();
+      location.reload();
 //      Parse.User.logOut().then(
 //            function() {
 //                alert('success');

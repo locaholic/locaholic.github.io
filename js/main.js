@@ -43,7 +43,7 @@ function getUserName() {
   }
 function lgOut(){
       alert("sss");
-      Parse.User._logOutWith('facebook');
+      Parse.User _logOutWith('facebook');
       location.reload();
 //      Parse.User.logOut().then(
 //            function() {

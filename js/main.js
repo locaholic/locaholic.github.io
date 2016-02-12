@@ -42,6 +42,7 @@ function getUserName() {
     });
   }
 function lgOut(){
+      alert("sss");
       Parse.User.logOut();
 }
 

@@ -42,14 +42,15 @@ function getUserName() {
     });
   }
 function lgOut(){
-      Parse.User.logOut().then(
-            function() {
-                alert('success');
-            }, 
-            function(error) {
-                alert('error : ' + error);
-            }
-      );
+      Parse.User._currentUser._logOutWithAll();
+//      Parse.User.logOut().then(
+//            function() {
+//                alert('success');
+//            }, 
+//            function(error) {
+//                alert('error : ' + error);
+//            }
+//      );
 }
 
 (function(d, s, id){

@@ -8,6 +8,8 @@
 <body>
 <script>
 function statusChangeCallback(response) {
+    console.log('statusChangeCallback');
+    console.log(response);
     if (response.status === 'connected') {
       testAPI();
     } else if (response.status === 'not_authorized') {
@@ -56,7 +58,7 @@ function statusChangeCallback(response) {
   }
   </script>
 
-<button onclick='checkLoginState();'>click </button>
+<button onclick='checkLoginState();'>click1</button>
 <div id="status">
 </div>
 

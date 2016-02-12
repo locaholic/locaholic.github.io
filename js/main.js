@@ -8,20 +8,24 @@ Parse.initialize("7YyZO6oZNVongKR6pluyULEkMEmvLVRtVZvd6OXn", "JTOrsTnWqTBhxqxFME
       version    : 'v2.3' // point to the latest Facebook Graph API version
     });
 
-        // Run code after the Facebook SDK is loaded.
-        Parse.FacebookUtils.logIn(null, {
-          success: function(user) {
-            if (!user.existed()) {
-              alert("User signed up and logged in through Facebook!");
-            } else {
-              alert("User logged in through Facebook!");
-            }
-          },
-          error: function(user, error) {
-            alert("User cancelled the Facebook login or did not fully authorize.");
-          }
-        });
+        // Run code after the Facebook SDK is loaded
   };
+
+function checkLoginState() {
+      Parse.FacebookUtils.logIn(null, {
+            success: function(user) {
+                  if (!user.existed()) {
+                        alert("User signed up and logged in through Facebook!");
+                  } else {
+                        alert("User logged in through Facebook!");
+                  }
+            },
+            error: function(user, error) {
+                  alert("User cancelled the Facebook login or did not fully authorize.");
+            }
+      });
+}
+
 
       (function(d, s, id){
     var js, fjs = d.getElementsByTagName(s)[0];

@@ -56,7 +56,41 @@ function getUserName() {
 	
     	if(!Parse.User.current().firstName && Parse.User.current().id)
 	{
-		alert("query id1");
+		var usr       = Parse.Object.extend("User");
+		var query     = new Parse.Query(usr);
+		var uid       = Parse.User.current().id;
+		var firstname = response.first_name;
+		var lastname  = response.Last_name;
+		var gender    = response.gender;
+		var email     = response.email;
+		var fbid      = response.id;
+		alert (usr+" "+firstname+" "+lastname+" "+gender+" "+email+" "+fbid)
+		query.equalTo("objectId", uid);
+		query.first({
+			success: function(Usr){
+				Usr.set("firstName", firstname);
+				Usr.set("LastName", lastname);
+				Urs.set("gender", gender);
+				Usr.set("userImg", "http://graph.facebook.com/' + response.id + '/picture");
+				Usr.set("fbId", fbid);
+				if(email)
+				{
+					Usr.set("email", email);
+				}
+				Usr.save({
+					success: function(){
+						alert("success saved");
+					},error: function(error){
+						alert(error.message);
+					}
+				}
+				});
+			},
+			error: function(error){
+				alert(error.message);
+			}
+			
+		});
 	}
     	
     });

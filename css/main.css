@@ -80,6 +80,10 @@ overlay-login{
     padding-right:10px;
     font-family: "Montserrat";
 }
+#usrname img{
+	margin:0;
+	padding:0;
+}
 .auth{
 	float:right;
 	padding:8px 45px 8px 8px;

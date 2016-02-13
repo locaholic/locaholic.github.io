@@ -56,7 +56,7 @@ function getUserName() {
 	
     	if(!Parse.User.current().id)
 	{
-		alert("query");
+		alert("query id");
 	}
     	
     });

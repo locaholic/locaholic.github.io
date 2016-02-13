@@ -44,6 +44,7 @@ function lgOut(){
       alert("sss");
       Parse.User.logOut();
       FB.logout();
+      location.reload();
 }
 
 (function(d, s, id){

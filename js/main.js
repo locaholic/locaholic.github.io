@@ -3,6 +3,7 @@ window.fbAsyncInit = function() {
       Parse.FacebookUtils.init({ // this line replaces FB.init({
             appId      : '971388552927772', // Facebook App ID
             status     : true,  // check Facebook Login status
+            cookie     : true,  // enable cookies to allow Parse to access the session
             xfbml      : true,  // initialize Facebook social plugins on the page
             version    : 'v2.5' // point to the latest Facebook Graph API version
       });

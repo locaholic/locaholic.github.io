@@ -53,51 +53,9 @@ function getUserName() {
     FB.api('/me?fields=id,first_name,last_name,email,gender,picture', function(response) {
 		document.getElementById('usrname').innerHTML = '<img src="http://graph.facebook.com/' + response.id + '/picture" />';
 		//document.getElementById('usrname').innerHTML = Parse.User.current().id + response.id + "A";
-	
-    	if(!Parse.User.current().firstName && Parse.User.current().id)
-	{
+	if( typeof Parse.User.current().firstName === 'undefined' || Parse.User.current().firstName === null )
+    	{
 		alert("update called");
-		var usr       = Parse.Object.extend("User");
-		var query     = new Parse.Query(usr);
-		var uid       = Parse.User.current().id;
-		var firstname = response.first_name;
-		var lastname  = response.last_name;
-		var gender    = response.gender;
-		var email     = response.email;
-		var fbid      = response.id;
-		var pic       = "http://graph.facebook.com/" + response.id + "/picture";
-		query.equalTo("objectId", uid);
-		query.first({
-			success: function(Usrobj){
-			//	alert (uid+" "+firstname+" "+lastname+" "+gender+" "+email+" "+fbid+" "+pic);
-				Usrobj.set("fbId", fbid);
-				Usrobj.set("firstName", firstname);
-				Usrobj.set("LastName", lastname);
-				if(gender)
-				{
-					Usrobj.set("gender", gender);
-				}
-				if(pic)
-				{
-					Usrobj.set("userImg", pic);
-				}
-				if(email)
-				{
-					Usrobj.set("email", email);
-				}
-				Usrobj.save({
-					success: function(){
-						alert("success saved");
-					},error: function(error){
-						alert("saving failed error " + error.message);
-					}
-				});
-			},
-			error: function(error){
-				alert("query first error " +error.message);
-			}
-			
-		});
 	}
     	
     });

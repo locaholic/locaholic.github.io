@@ -58,7 +58,7 @@ function getUserName() {
 		var lastName = user.get('lastName');
 		alert(firstName);
 		alert(lastName);
-	if(firstName === 'undefined' || firstName === null)
+	if(emailVerified === 'undefined' || emailVerified === null)
     	{
 		console.log("undefined "+response.last_name);
 	}

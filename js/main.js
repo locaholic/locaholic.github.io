@@ -41,7 +41,7 @@ function getUserName() {
     });
   }
 function lgOut(){
-      alert("sss");
+      alert("sss1");
       Parse.User.logOut();
       FB.logout();
       location.reload();

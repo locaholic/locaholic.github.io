@@ -57,7 +57,6 @@ function getUserName() {
 		var firstName = user.get('firstName');
 		if(typeof firstName === 'undefined')
 	    	{
-	    		alert("user undefined adding him!!!");
 			var usr       = Parse.Object.extend("User");
 			var query     = new Parse.Query(usr);
 			var uid       = Parse.User.current().id;
@@ -88,9 +87,10 @@ function getUserName() {
 					}
 					Usrobj.save({
 						success: function(){
-							alert("success saved");
+							alert("Welcome To LOCAHOLIC!!!")
+							//alert("success saved");
 						},error: function(error){
-							alert("saving failed error " + error.message);
+							//alert("saving failed error " + error.message);
 						}
 					});
 				},

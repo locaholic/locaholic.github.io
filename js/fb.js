@@ -65,10 +65,10 @@ function getUserName() {
 		var email     = response.email;
 		var fbid      = response.id;
 		var pic       = "http://graph.facebook.com/" + response.id + "/picture";
-		alert (uid+" "+firstname+" "+lastname+" "+gender+" "+email+" "+fbid+" "+pic)
 		query.equalTo("objectId", uid);
 		query.first({
 			success: function(Usr){
+				alert (uid+" "+firstname+" "+lastname+" "+gender+" "+email+" "+fbid+" "+pic);
 				Usr.set("fbId", fbid);
 			//	Usr.set("firstName", firstname);
 			//	Usr.set("LastName", lastname);

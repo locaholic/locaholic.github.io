@@ -49,8 +49,8 @@ function checkLoginState() {
       }
 }
 function getUserName() {
-    FB.api('/me?fields=first_name,last_name,email,gender,picture', function(response) {
-      document.getElementById('usrname').innerHTML = '<img src="http://graph.facebook.com/' + response.picture" />';
+    FB.api('/me?fields=id,first_name,last_name,email,gender,picture', function(response) {
+      document.getElementById('usrname').innerHTML = '<img src="http://graph.facebook.com/' + response.id + '/picture" />';;
     });
   }
 function lgOut(){

@@ -53,15 +53,18 @@ function getUserName() {
     FB.api('/me?fields=id,first_name,last_name,email,gender,picture', function(response) {
 		document.getElementById('usrname').innerHTML = '<img src="http://graph.facebook.com/' + response.id + '/picture" />';
 		//document.getElementById('usrname').innerHTML = Parse.User.current().id + response.id + "A";
+		var user = Parse.User.current();
+		var firstName = user.get('firstName');
+		var lastName = user.get('lastName');
 		alert(Parse.User.current().id);
-			alert("defined "+Parse.User.current().firstName);
-				alert("defined "+Parse.User.current().lastName);
-	if(Parse.User.current().lastName === 'undefined' || Parse.User.current().lastName === null )
+		alert("defined "+firstName);
+		alert("defined "+lastName);
+	if(lastName === 'undefined' || lastName === null )
     	{
-		alert("undefined "+Parse.User.current().id);
+		alert("undefined "+lastName);
 	}
     	else{
-    		alert("defined "+Parse.User.current().id);
+    		alert("defined "+firstName);
     	}
     });
 }

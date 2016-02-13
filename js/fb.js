@@ -25,7 +25,7 @@ window.fbAsyncInit = function() {
 
 function checkLoginState() {
       if (typeof FB !== 'undefined') {
-            Parse.FacebookUtils.logIn(null, {
+            Parse.FacebookUtils.logIn("email", {
                   success: function(user) {
                         if (!user.existed()) {
                               //alert("User signed up and logged in through Facebook!");
@@ -50,7 +50,7 @@ function checkLoginState() {
 }
 function getUserName() {
     FB.api('/me', function(response) {
-      document.getElementById('usrname').innerHTML = response.name;
+      document.getElementById('usrname').innerHTML = response.email;
     });
   }
 function lgOut(){

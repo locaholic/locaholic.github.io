@@ -56,7 +56,7 @@ function getUserName() {
 	
     	if(!Parse.User.current().firstName && Parse.User.current().id)
 	{
-		alert("query id");
+		alert("query id1");
 	}
     	
     });

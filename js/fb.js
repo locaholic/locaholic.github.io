@@ -48,39 +48,41 @@ function checkLoginState() {
             alert("Your network does not support FaceBook Login!!")
       }
 }
+
 function getUserName() {
     FB.api('/me?fields=id,first_name,last_name,email,gender,picture', function(response) {
-      document.getElementById('usrname').innerHTML = '<img src="http://graph.facebook.com/' + response.id + '/picture" />';;
-      //document.getElementById('usrname').innerHTML = Parse.User.current().id + response.id + "A";
-      if(!Parse.User.current().firstName && !Parse.User.current().lastName)
-      {
-            alert("query");
-            var usr = Parse.Object.extend("User");
-            var query = new Parse.Query(usr);
-            query.equalTo("objectId", Parse.User.current().id);
-            query.first({
-            success: function (usr) {
-                  usr.save(null, {
-                        success: function (usr) {
-                              usr.set("firstName", response.first_name);
-                              usr.set("LastName", response.Last_name);
-                              usr.set("gender", response.gender);
-                              usr.set("userImg", "http://graph.facebook.com/' + response.id + '/picture");
-                              usr.set("fbId", response.id);
-                              if(response.email)
-                              {
-                              usr.set("email", response.email);
-                              }
-                              usr.save();
-                              location.reload();
-                        }
-                  });
-            },
-            error: function(error) {
-                  alert("Error: " + error.code + " " + error.message);
-            }
-      });
-    });
+		document.getElementById('usrname').innerHTML = '<img src="http://graph.facebook.com/' + response.id + '/picture" />';
+		//document.getElementById('usrname').innerHTML = Parse.User.current().id + response.id + "A";
+		if(!Parse.User.current().firstName && !Parse.User.current().lastName)
+		{
+			alert("query");
+			var usr = Parse.Object.extend("User");
+			var query = new Parse.Query(usr);
+			query.equalTo("objectId", Parse.User.current().id);
+			query.first({
+				success: function (usr) {
+					usr.save(null, {
+						success: function (usr) {
+							usr.set("firstName", response.first_name);
+							usr.set("LastName", response.Last_name);
+							usr.set("gender", response.gender);
+							usr.set("userImg", "http://graph.facebook.com/' + response.id + '/picture");
+							usr.set("fbId", response.id);
+							if(response.email)
+							{
+								usr.set("email", response.email);
+							}
+							usr.save();
+							location.reload();
+						}
+					});
+				},
+				error: function(error) {
+					alert("Error: " + error.code + " " + error.message);
+				}
+			});
+		}
+	}
 }
 function lgOut(){
       //alert(Parse.User.current().id);

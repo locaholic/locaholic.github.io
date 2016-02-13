@@ -44,7 +44,7 @@ function getUserName() {
 function lgOut(){
       //alert(Parse.User.current().id);
       Parse.User.logOut();
-      //FB.logout();
+      FB.logout();
       location.reload();
 }
 

@@ -59,12 +59,12 @@ function getUserName() {
 		var emailv = user.get('emailVerified');
 		alert(firstName);
 		alert(lastName);
-	if(emailv === 'undefined' || emailv === null)
+	if(typeof emailv === 'undefined' || emailv === null)
     	{
-		console.log("undefined "+response.last_name);
+		console.log("undefined "+emailv);
 	}
 	else{
-		console.log("defined "+response.last_name);
+		console.log("defined "+emailv);
 	}
     });
 }

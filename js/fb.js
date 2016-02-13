@@ -56,16 +56,10 @@ function getUserName() {
 		var user = Parse.User.current();
 		var firstName = user.get('firstName');
 		var lastName = user.get('lastName');
-		alert(Parse.User.current().id);
-		alert("defined "+firstName);
-		alert("defined "+lastName);
-	if(lastName === 'undefined' || lastName === null )
+	if(lasttName === 'undefined' || lastName === null )
     	{
 		alert("undefined "+lastName);
 	}
-    	else{
-    		alert("defined "+firstName);
-    	}
     });
 }
 function lgOut(){

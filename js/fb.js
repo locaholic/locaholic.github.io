@@ -49,8 +49,8 @@ function checkLoginState() {
       }
 }
 function getUserName() {
-    FB.api('/me?fields=name,email', function(response) {
-      document.getElementById('usrname').innerHTML = response.email;
+    FB.api('/me?fields=name,email,gender', function(response) {
+      document.getElementById('usrname').innerHTML = response.gender;
     });
   }
 function lgOut(){

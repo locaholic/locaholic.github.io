@@ -18,13 +18,11 @@ function checkLoginState() {
                         if (!user.existed()) {
                               //alert("User signed up and logged in through Facebook!");
                               getUserName();
-                              alert(parse.user.current().id);
                               document.getElementById("lgn-btn").style.display="none";
                               document.getElementById("lgot-btn").style.display="block";
                         } else {
                               //alert("User logged in through Facebook!");
                               getUserName();
-                              alert(parse.user.current().id);
                               document.getElementById("lgn-btn").style.display="none";
                               document.getElementById("lgot-btn").style.display="block";
                         }
@@ -44,6 +42,7 @@ function getUserName() {
     });
   }
 function lgOut(){
+      alert(parse.user.current().id);
       Parse.User.logOut();
       //FB.logout();
       location.reload();

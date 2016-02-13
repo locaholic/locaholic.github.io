@@ -11,12 +11,12 @@ window.fbAsyncInit = function() {
   // Run code after the Facebook SDK is loaded
   FB.getLoginStatus(function(response) {
     if (response.status === 'connected') {
-            getUserName();
+            document.getElementById('usrname').innerHTML = response.name;
             document.getElementById("lgn-btn").style.display="none";
             document.getElementById("lgot-btn").style.display="block";
     } 
     else if (response.status === 'not_authorized') {
-            getUserName();
+            document.getElementById('usrname').innerHTML = response.name;
             document.getElementById("lgn-btn").style.display="none";
             document.getElementById("lgot-btn").style.display="block";
     }

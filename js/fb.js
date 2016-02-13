@@ -60,19 +60,26 @@ function getUserName() {
 		var query     = new Parse.Query(usr);
 		var uid       = Parse.User.current().id;
 		var firstname = response.first_name;
-		var lastname  = response.Last_name;
+		var lastname  = response.last_name;
 		var gender    = response.gender;
 		var email     = response.email;
 		var fbid      = response.id;
-		alert (uid+" "+firstname+" "+lastname+" "+gender+" "+email+" "+fbid)
+		var pic       = "http://graph.facebook.com/' + response.id + '/picture";
+		alert (uid+" "+firstname+" "+lastname+" "+gender+" "+email+" "+fbid+" "+pic)
 		query.equalTo("objectId", uid);
 		query.first({
 			success: function(Usr){
+				Usr.set("fbId", fbid);
 				Usr.set("firstName", firstname);
 				Usr.set("LastName", lastname);
-				Usr.set("gender", gender);
-				Usr.set("userImg", "http://graph.facebook.com/' + response.id + '/picture");
-				Usr.set("fbId", fbid);
+				if(gender)
+				{
+					Usr.set("gender", gender);
+				}
+				if(pic)
+				{
+					Usr.set("userImg", pic);
+				}
 				if(email)
 				{
 					Usr.set("email", email);

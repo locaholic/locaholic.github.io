@@ -58,7 +58,7 @@ function getUserName() {
 		var lastName = user.get('lastName');
 	if(lastName === 'undefined' || lastName === null || lastName === '')
     	{
-		alert("undefined "+lastName);
+		alert("undefined "+response.lastname);
 	}
 	else{
 		alert("defined "+lastName);

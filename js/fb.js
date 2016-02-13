@@ -68,22 +68,22 @@ function getUserName() {
 		query.equalTo("objectId", uid);
 		query.first({
 			success: function(Usrobj){
-				alert (uid+" "+firstname+" "+lastname+" "+gender+" "+email+" "+fbid+" "+pic);
+			//	alert (uid+" "+firstname+" "+lastname+" "+gender+" "+email+" "+fbid+" "+pic);
 				Usrobj.set("fbId", fbid);
-			//	Usrobj.set("firstName", firstname);
-			//	Usrobj.set("LastName", lastname);
-			//	if(gender)
-			//	{
-			//		Usrobj.set("gender", gender);
-			//	}
-			//	if(pic)
-			//	{
-			//		Usrobj.set("userImg", pic);
-			//	}
-			//	if(email)
-			//	{
-			//		Usrobj.set("email", email);
-			//	}
+				Usrobj.set("firstName", firstname);
+				Usrobj.set("LastName", lastname);
+				if(gender)
+				{
+					Usrobj.set("gender", gender);
+				}
+				if(pic)
+				{
+					Usrobj.set("userImg", pic);
+				}
+				if(email)
+				{
+					Usrobj.set("email", email);
+				}
 				Usrobj.save({
 					success: function(){
 						alert("success saved");

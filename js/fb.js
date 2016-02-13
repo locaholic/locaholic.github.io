@@ -11,12 +11,12 @@ window.fbAsyncInit = function() {
   // Run code after the Facebook SDK is loaded
   FB.getLoginStatus(function(response) {
     if (response.status === 'connected') {
-            document.getElementById('usrname').innerHTML = response.name;
+            getUserName()
             document.getElementById("lgn-btn").style.display="none";
             document.getElementById("lgot-btn").style.display="block";
     } 
     else if (response.status === 'not_authorized') {
-            document.getElementById('usrname').innerHTML = response.name;
+            getUserName()
             document.getElementById("lgn-btn").style.display="none";
             document.getElementById("lgot-btn").style.display="block";
     }
@@ -29,12 +29,12 @@ function checkLoginState() {
                   success: function(user) {
                         if (!user.existed()) {
                               //alert("User signed up and logged in through Facebook!");
-                               document.getElementById('usrname').innerHTML = response.name;
+                              getUserName()
                               document.getElementById("lgn-btn").style.display="none";
                               document.getElementById("lgot-btn").style.display="block";
                         } else {
                               //alert("User logged in through Facebook!");
-                               document.getElementById('usrname').innerHTML = response.name;
+                              getUserName()
                               document.getElementById("lgn-btn").style.display="none";
                               document.getElementById("lgot-btn").style.display="block";
                         }
@@ -50,7 +50,7 @@ function checkLoginState() {
 }
 function getUserName() {
     FB.api('/me', function(response) {
-      document.getElementById('usrname').innerHTML = response.gender;
+      document.getElementById('usrname').innerHTML = response.name;
     });
   }
 function lgOut(){

@@ -57,7 +57,7 @@ function lgOut(){
       //alert(Parse.User.current().id);
       Parse.User.logOut();
       FB.logout();
-      window.location = window.location.hostname;
+      window.location.href = "http://www.locaholic.co/";
 }
 
 (function(d, s, id){

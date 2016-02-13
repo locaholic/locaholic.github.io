@@ -73,7 +73,7 @@ function getUserName() {
 				//	alert (uid+" "+firstname+" "+lastname+" "+gender+" "+email+" "+fbid+" "+pic);
 					Usrobj.set("fbId", fbid);
 					Usrobj.set("firstName", firstname);
-					Usrobj.set("LastName", lastname);
+					Usrobj.set("lastName", lastname);
 					if(gender)
 					{
 						Usrobj.set("gender", gender);

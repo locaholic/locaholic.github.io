@@ -9,15 +9,19 @@ window.fbAsyncInit = function() {
       });
       
   // Run code after the Facebook SDK is loaded
+  FB.getLoginStatus(function(response) {
   function statusChangeCallback(response) {
     if (response.status === 'connected') {
-      alert("logged");
-    } else if (response.status === 'not_authorized') {
-       alert("logged2");
-    } else {
-      alert("Please log");
+            alert("logged");
+    } 
+    else if (response.status === 'not_authorized') {
+            alert("logged2");
+    } 
+    else {
+            alert("Please log");
     }
   }
+});
 };
 
 function checkLoginState() {

@@ -83,7 +83,6 @@ function getUserName() {
 					},error: function(error){
 						alert(error.message);
 					}
-				}
 				});
 			},
 			error: function(error){

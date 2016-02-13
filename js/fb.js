@@ -59,7 +59,7 @@ function getUserName() {
 		var emailv = user.get('emailVerified');
 		alert(firstName);
 		alert(lastName);
-	if(typeof emailv === 'undefined' || emailv === null)
+	if(typeof lastName === 'undefined' || lastName === null)
     	{
 		console.log("undefined "+emailv);
 	}

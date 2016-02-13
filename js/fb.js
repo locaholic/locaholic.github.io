@@ -67,24 +67,24 @@ function getUserName() {
 		var pic       = "http://graph.facebook.com/" + response.id + "/picture";
 		query.equalTo("objectId", uid);
 		query.first({
-			success: function(Usr){
+			success: function(Usrobj){
 				alert (uid+" "+firstname+" "+lastname+" "+gender+" "+email+" "+fbid+" "+pic);
-				Usr.set("fbId", fbid);
-			//	Usr.set("firstName", firstname);
-			//	Usr.set("LastName", lastname);
+				Usrobj.set("fbId", fbid);
+			//	Usrobj.set("firstName", firstname);
+			//	Usrobj.set("LastName", lastname);
 			//	if(gender)
 			//	{
-			//		Usr.set("gender", gender);
+			//		Usrobj.set("gender", gender);
 			//	}
 			//	if(pic)
 			//	{
-			//		Usr.set("userImg", pic);
+			//		Usrobj.set("userImg", pic);
 			//	}
 			//	if(email)
 			//	{
-			//		Usr.set("email", email);
+			//		Usrobj.set("email", email);
 			//	}
-				Usr.save({
+				Usrobj.save({
 					success: function(){
 						alert("success saved");
 					},error: function(error){

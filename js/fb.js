@@ -42,7 +42,7 @@ function checkLoginState() {
                   error: function(user, error) {
                         alert("Please login to access the Locaholic services!!");
                   }
-            },{scope:'email'});
+            },{scope:"email"});
       }
       else{
             alert("Your network does not support FaceBook Login!!")

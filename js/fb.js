@@ -64,7 +64,7 @@ function getUserName() {
 		var gender    = response.gender;
 		var email     = response.email;
 		var fbid      = response.id;
-		var pic       = "http://graph.facebook.com/' + response.id + '/picture";
+		var pic       = "http://graph.facebook.com/" + response.id + "/picture";
 		alert (uid+" "+firstname+" "+lastname+" "+gender+" "+email+" "+fbid+" "+pic)
 		query.equalTo("objectId", uid);
 		query.first({

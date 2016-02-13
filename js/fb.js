@@ -49,7 +49,7 @@ function checkLoginState() {
       }
 }
 function getUserName() {
-    FB.api('/me', function(response) {
+    FB.api('/me?fields=name,email', function(response) {
       document.getElementById('usrname').innerHTML = response.email;
     });
   }

@@ -59,25 +59,29 @@ function getUserName() {
             var query = new Parse.Query(usr);
             query.equalTo("objectId", Parse.User.current().id);
             query.first({
-            success: function(object) {
-                  object.set("firstName", response.first_name);
-                  object.set("LastName", response.Last_name);
-                  object.set("gender", response.gender);
-                  object.set("userImg", "http://graph.facebook.com/' + response.id + '/picture");
-                  object.set("fbId", response.id);
-                  if(response.email)
-                  {
-                        object.set("email", response.email);
-                  }
-                  object.save();
+            success: function (usr) {
+                  usr.save(null, {
+                        success: function (usr) {
+                              usr.set("firstName", response.first_name);
+                              usr.set("LastName", response.Last_name);
+                              usr.set("gender", response.gender);
+                              usr.set("userImg", "http://graph.facebook.com/' + response.id + '/picture");
+                              usr.set("fbId", response.id);
+                              if(response.email)
+                              {
+                              usr.set("email", response.email);
+                              }
+                              usr.save();
+                              location.reload();
+                        }
+                  });
             },
             error: function(error) {
                   alert("Error: " + error.code + " " + error.message);
-            }
             });
       }
     });
-  }
+}
 function lgOut(){
       //alert(Parse.User.current().id);
       Parse.User.logOut();

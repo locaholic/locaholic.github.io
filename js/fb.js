@@ -60,6 +60,9 @@ function getUserName() {
     	{
 		alert("undefined "+lastName);
 	}
+	else{
+		alert("defined "+lastName);
+	}
     });
 }
 function lgOut(){

@@ -3,7 +3,6 @@ window.fbAsyncInit = function() {
       Parse.FacebookUtils.init({ // this line replaces FB.init({
             appId      : '971388552927772', // Facebook App ID
             status     : true,  // check Facebook Login status
-            cookie     : true,  // enable cookies to allow Parse to access the session
             xfbml      : true,  // initialize Facebook social plugins on the page
             version    : 'v2.5' // point to the latest Facebook Graph API version
       });
@@ -43,14 +42,8 @@ function getUserName() {
   }
 function lgOut(){
       alert("sss");
-      Parse.User.logOut().then(
-            function() {
-                alert('success');
-            }, 
-            function(error) {
-                alert('error : ' + error);
-            }
-      );
+      Parse.User.logOut();
+      FB.logout();
 }
 
 (function(d, s, id){

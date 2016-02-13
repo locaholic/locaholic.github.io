@@ -64,7 +64,7 @@ function getUserName() {
 		var gender    = response.gender;
 		var email     = response.email;
 		var fbid      = response.id;
-		alert (usr+" "+firstname+" "+lastname+" "+gender+" "+email+" "+fbid)
+		alert (uid+" "+firstname+" "+lastname+" "+gender+" "+email+" "+fbid)
 		query.equalTo("objectId", uid);
 		query.first({
 			success: function(Usr){
@@ -81,12 +81,12 @@ function getUserName() {
 					success: function(){
 						alert("success saved");
 					},error: function(error){
-						alert(error.message);
+						alert("saving failed error " + error.message);
 					}
 				});
 			},
 			error: function(error){
-				alert(error.message);
+				alert("query first error " +error.message);
 			}
 			
 		});

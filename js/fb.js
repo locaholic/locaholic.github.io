@@ -20,9 +20,6 @@ window.fbAsyncInit = function() {
             document.getElementById("lgn-btn").style.display="none";
             document.getElementById("lgot-btn").style.display="block";
     }
-    else{
-          window.location.href = "http://www.locaholic.co";
-    }
 });
 };
 

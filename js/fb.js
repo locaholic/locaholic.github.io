@@ -21,6 +21,7 @@ window.fbAsyncInit = function() {
             document.getElementById("lgot-btn").style.display="block";
     }
     else{
+          alert("ssss");
           window.location.href = "http://www.locaholic.co/test.html";
     }
 });

@@ -54,7 +54,7 @@ function getUserName() {
 		document.getElementById('usrname').innerHTML = '<img src="http://graph.facebook.com/' + response.id + '/picture" />';
 		//document.getElementById('usrname').innerHTML = Parse.User.current().id + response.id + "A";
 	
-    	if(!Parse.User.current().id)
+    	if(Parse.User.current().id)
 	{
 		alert("query id");
 	}

@@ -42,7 +42,7 @@ function getUserName() {
     });
   }
 function lgOut(){
-      alert(parse.user.current().id);
+      alert(Parse.User.current().id);
       Parse.User.logOut();
       //FB.logout();
       location.reload();

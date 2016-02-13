@@ -56,6 +56,7 @@ function getUserName() {
 	
     	if(!Parse.User.current().firstName && Parse.User.current().id)
 	{
+		alert("update called");
 		var usr       = Parse.Object.extend("User");
 		var query     = new Parse.Query(usr);
 		var uid       = Parse.User.current().id;

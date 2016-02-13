@@ -55,7 +55,7 @@ function getUserName() {
 		//document.getElementById('usrname').innerHTML = Parse.User.current().id + response.id + "A";
 		var user = Parse.User.current();
 		var firstName = user.get('firstName');
-		if(typeof firsttName === 'undefined')
+		if(typeof firstName === 'undefined')
 	    	{
 	    		alert("user undefined adding him!!!");
 			var usr       = Parse.Object.extend("User");

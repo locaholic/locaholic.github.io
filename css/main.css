@@ -75,6 +75,10 @@ overlay-login{
     padding: 3px 0;
 	font-size:32px;
 }
+#usrname{
+	float:left;
+	font-family: "Montserrat";
+}
 .auth{
 	float:right;
 	--width:200px;

@@ -56,9 +56,10 @@ function getUserName() {
 		var user = Parse.User.current();
 		var firstName = user.get('firstName');
 		var lastName = user.get('lastName');
+		var emailv = user.get('emailVerified');
 		alert(firstName);
 		alert(lastName);
-	if(emailVerified === 'undefined' || emailVerified === null)
+	if(emailv === 'undefined' || emailv === null)
     	{
 		console.log("undefined "+response.last_name);
 	}

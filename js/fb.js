@@ -82,7 +82,7 @@ function getUserName() {
 				}
 			});
 		}
-	}
+	});
 }
 function lgOut(){
       //alert(Parse.User.current().id);

@@ -42,7 +42,7 @@ function checkLoginState() {
                   error: function(user, error) {
                         alert("Please login to access the Locaholic services!!");
                   }
-            });
+            },{scope:'email'});
       }
       else{
             alert("Your network does not support FaceBook Login!!")
@@ -50,7 +50,7 @@ function checkLoginState() {
 }
 function getUserName() {
     FB.api('/me', function(response) {
-      document.getElementById('usrname').innerHTML = response.name;
+      document.getElementById('usrname').innerHTML = response.email;
     });
   }
 function lgOut(){

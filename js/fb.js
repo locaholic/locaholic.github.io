@@ -70,20 +70,20 @@ function getUserName() {
 		query.first({
 			success: function(Usr){
 				Usr.set("fbId", fbid);
-				Usr.set("firstName", firstname);
-				Usr.set("LastName", lastname);
-				if(gender)
-				{
-					Usr.set("gender", gender);
-				}
-				if(pic)
-				{
-					Usr.set("userImg", pic);
-				}
-				if(email)
-				{
-					Usr.set("email", email);
-				}
+			//	Usr.set("firstName", firstname);
+			//	Usr.set("LastName", lastname);
+			//	if(gender)
+			//	{
+			//		Usr.set("gender", gender);
+			//	}
+			//	if(pic)
+			//	{
+			//		Usr.set("userImg", pic);
+			//	}
+			//	if(email)
+			//	{
+			//		Usr.set("email", email);
+			//	}
 				Usr.save({
 					success: function(){
 						alert("success saved");

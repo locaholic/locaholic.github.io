@@ -78,8 +78,8 @@ function getUserName() {
             },
             error: function(error) {
                   alert("Error: " + error.code + " " + error.message);
-            });
-      }
+            }
+      });
     });
 }
 function lgOut(){

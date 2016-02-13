@@ -50,6 +50,8 @@ function checkLoginState() {
 }
 
 function getUserName() {
+	if(Parse.User.current())
+	{
 	FB.api('/me?fields=id,first_name,last_name,email,gender,picture', function(response) {
 		document.getElementById('usrname').innerHTML = '<img src="http://graph.facebook.com/' + response.id + '/picture" />';
 		//document.getElementById('usrname').innerHTML = Parse.User.current().id + response.id + "A";
@@ -101,6 +103,7 @@ function getUserName() {
 			});
 		}
 	});
+	}
 }
 function lgOut(){
       //alert(Parse.User.current().id);

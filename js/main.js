@@ -10,7 +10,6 @@ window.fbAsyncInit = function() {
       
   // Run code after the Facebook SDK is loaded
   FB.getLoginStatus(function(response) {
-  function statusChangeCallback(response) {
     if (response.status === 'connected') {
             alert("logged");
     } 
@@ -20,7 +19,6 @@ window.fbAsyncInit = function() {
     else {
             alert("Please log");
     }
-  }
 });
 };
 

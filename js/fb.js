@@ -60,10 +60,10 @@ function getUserName() {
 		alert(lastName);
 	if(firstName === 'undefined' || firstName === null)
     	{
-		alert("undefined "+response.last_name);
+		console.log("undefined "+response.last_name);
 	}
 	else{
-		alert("defined "+response.last_name);
+		console.log("defined "+response.last_name);
 	}
     });
 }

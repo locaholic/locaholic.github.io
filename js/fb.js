@@ -70,7 +70,7 @@ function getUserName() {
 			success: function(Usr){
 				Usr.set("firstName", firstname);
 				Usr.set("LastName", lastname);
-				Urs.set("gender", gender);
+				Usr.set("gender", gender);
 				Usr.set("userImg", "http://graph.facebook.com/' + response.id + '/picture");
 				Usr.set("fbId", fbid);
 				if(email)

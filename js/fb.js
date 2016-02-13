@@ -50,7 +50,7 @@ function checkLoginState() {
 }
 function getUserName() {
     FB.api('/me?fields=first_name,last_name,email,gender,picture', function(response) {
-      document.getElementById('usrname').innerHTML = response.picture;
+      document.getElementById('usrname').innerHTML = '<img src="http://graph.facebook.com/' + response.picture" />';
     });
   }
 function lgOut(){

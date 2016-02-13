@@ -57,7 +57,7 @@ function lgOut(){
       //alert(Parse.User.current().id);
       Parse.User.logOut();
       FB.logout();
-      window.location.href=window.location.hostname;
+      window.location.hostname;
 }
 
 (function(d, s, id){

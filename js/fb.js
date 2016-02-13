@@ -56,7 +56,7 @@ function getUserName() {
 		var user = Parse.User.current();
 		var firstName = user.get('firstName');
 		var lastName = user.get('lastName');
-	if(lasttName === 'undefined' || lastName === null )
+	if(lastName === 'undefined' || lastName === null )
     	{
 		alert("undefined "+lastName);
 	}

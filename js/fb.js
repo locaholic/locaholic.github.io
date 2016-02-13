@@ -55,9 +55,11 @@ function getUserName() {
 		//document.getElementById('usrname').innerHTML = Parse.User.current().id + response.id + "A";
 	if( typeof Parse.User.current().firstName === 'undefined' || Parse.User.current().firstName === null )
     	{
-		alert("update called");
+		alert("undefined");
 	}
-    	
+    	else{
+    		alert("defined");
+    	}
     });
 }
 function lgOut(){

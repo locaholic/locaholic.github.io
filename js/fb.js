@@ -53,12 +53,12 @@ function getUserName() {
     FB.api('/me?fields=id,first_name,last_name,email,gender,picture', function(response) {
 		document.getElementById('usrname').innerHTML = '<img src="http://graph.facebook.com/' + response.id + '/picture" />';
 		//document.getElementById('usrname').innerHTML = Parse.User.current().id + response.id + "A";
-	if( typeof Parse.User.current().firstName === 'undefined' || Parse.User.current().firstName === null )
+	if(Parse.User.current().firstName === 'undefined' || Parse.User.current().firstName === null )
     	{
-		alert("undefined");
+		alert("undefined "+Parse.User.current().firstName);
 	}
     	else{
-    		alert("defined");
+    		alert("defined "+Parse.User.current().firstName);
     	}
     });
 }

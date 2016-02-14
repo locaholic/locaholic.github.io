@@ -1,12 +1,3 @@
 <button style="z-index:30;position: fixed;" ng-click="logout()">logout</button>
 <div ui-view>
 </div>
-<div id="map_canvas">
-    <script type="text/ng-template" id="searchbox.tpl.html">
-        <input type="text" placeholder="Search Box">
-    </script>
-    <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options">
-        <ui-gmap-search-box parentdiv="'sidebar'" template="searchbox.template" events="searchbox.events"></ui-gmap-search-box>
-        <ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">
-    </ui-gmap-google-map>
-</div>

@@ -1,4 +1,7 @@
-<div class="row">
+<div class="row" ng-init="load()">
+	<img ng-src="{{currentUser.userImg}}" />
+	<button ng-click="logout()">logout</button>
+	<div ui-view="login"></div>
 	<div class="col-xs-3">
 		<div id="sidebar">
 		</div>

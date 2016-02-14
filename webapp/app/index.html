@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
   <link rel="stylesheet" href="app.css">
-
 <script src="http://connect.facebook.net/en_US/all.js"></script>
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
   <!-- Latest compiled and minified CSS -->
@@ -28,7 +27,8 @@ src="parse-1.6.14.min.js"></script>
 
 </head>
 <body>
-  <div class="container-fluid">
+
+  <div class="container" ng-controller="mapCtrl">
       <div ui-view></div>
   </div>
   <!--[if lt IE 7]>
@@ -41,11 +41,12 @@ src="parse-1.6.14.min.js"></script>
   <script src='bower_components/lodash/dist/lodash.min.js'></script>
   <script src="bower_components/angular/angular.js"></script>
   <script src='bower_components/angular-simple-logger/dist/angular-simple-logger.min.js'></script>
-<script src='bower_components/angular-google-maps/dist/angular-google-maps.min.js'></script>
+  <script src='bower_components/angular-google-maps/dist/angular-google-maps.min.js'></script>
   <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
   <script src="app.js"></script>
   <script src="body/body.js"></script>
   <script src="login/login.js"></script>
+  <script src="detail/detail.js"></script>
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>

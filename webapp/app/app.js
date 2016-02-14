@@ -1,4 +1,4 @@
-'use strict';
+
 
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
@@ -8,6 +8,7 @@ angular.module('myApp', [
 .run(['$rootScope','$state',function($rootScope,$state) {
  
      Parse.initialize("7YyZO6oZNVongKR6pluyULEkMEmvLVRtVZvd6OXn", "JTOrsTnWqTBhxqxFMEvPdOUzDd9Ro01JqpiAF003");
+   $rootScope.sessionUser = Parse.User.current();
 
      window.onhashchange=function(){ mouseflow.newPageView(document.location.pathname + document.location.hash); };  var _mfq = _mfq || [];
   (function() {
@@ -23,19 +24,11 @@ angular.module('myApp', [
       version: 'v2.5',
       xfbml: true
     });
-  
   $rootScope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams){
     if (toState.authenticate){
-      console.log("check sessionuser");
       console.log($rootScope.sessionUser);
-      if(!$rootScope.sessionUser)
-      {
-        $rootScope.sessionUser = Parse.User.current();
-        console.log("current user fetched");
-        console.log($rootScope.sessionUser);
-      }
-      if($rootScope.sessionUser== null || !$rootScope.sessionUser.authenticated())
-      {
+      if(typeof $rootScope.sessionUser=== 'undefined' || !$rootScope.sessionUser)
+      {console.log($rootScope.sessionUser);
       $rootScope.previous=fromState;
       $rootScope.previousParams=fromParams;
       console.log("previous state",$rootScope.previous);
@@ -43,28 +36,30 @@ angular.module('myApp', [
       event.preventDefault(); 
       }
     }
-  });
+  }
+  );
+  
 
-  }])
+}])
 .config(['$urlRouterProvider','$stateProvider','uiGmapGoogleMapApiProvider' ,function($urlRouterProvider,$stateProvider,uiGmapGoogleMapApiProvider) {
-	uiGmapGoogleMapApiProvider.configure({
+  uiGmapGoogleMapApiProvider.configure({
          key: 'AIzaSyA83dOY_bZ5DmaWcfX1PDFnYaAWFrO0t3s',
         v: '3.20', //defaults to latest 3.X anyhow
         libraries: 'places',
         sensor:true
         });
   $urlRouterProvider.otherwise('/');
-
   $stateProvider
   		.state('home',{
   			url: '/',
   			views:{
   				'': {templateUrl: 'main/main.html',
-               controller: 'mapCtrl'
-  					},
-  				'sidebar@home':{templateUrl: 'sidebar/sidebar.html'},
-  				'body@home':{templateUrl: 'body/body.html'},
-          'list@home':{templateUrl: 'list/list.html'}
+               },
+  				'sidebar@home':{templateUrl: 'sidebar/sidebar.html',
+                          controller: 'loginCtrl'
+                        },
+          'list@home':{templateUrl: 'list/list.html',
+                      }
   
   			},
         authenticate:true		
@@ -72,16 +67,15 @@ angular.module('myApp', [
       .state('home.login',{
         url: 'login',
         views:{
-          '':{templateUrl: 'login/login.html',
-              controller: 'loginCtrl'
+          'login':{templateUrl: 'login/login.html',
               }
         },
       })
       .state('home.detail',{
-        url: 'places/:id',
+        url: 'places/:placeId',
         views:{
           'detail':{templateUrl: 'detail/detail.html',
-                    // controller: 'placeDetailCtrl'
+                    controller: 'placeDetailCtrl'
                   }
         }
       })

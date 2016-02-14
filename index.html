@@ -10,36 +10,21 @@
 		<link rel="stylesheet" href="css/main.css">
 		<link rel="stylesheet" href="css/media.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<script src="js/main.js"></script>
-		<script>
-			function openNav() {
-				document.getElementById("myNav").style.width = "100%";
-			}
-			function closeNav() {
-				document.getElementById("myNav").style.width = "0%";
-			}
-		</script>
+		<script src="http://www.parsecdn.com/js/parse-1.6.14.min.js"></script>
+		<script src="js/fb.js"></script>
 	</head>
 	<body>
 		<!--[if IE]>
 			<p class="browserupgrade">This webiste is not compatible with IE. Please use Chrome, Safari or Mozilla Firefox.</p>
 		<![endif]-->
-		
-		
-		<div id="myNav" class="overlay">
-			<img src="imgs/close.png" href="javascript:void(0)" class="closebtn" onclick="closeNav()"></button>
-			<div class="overlay-content">
-				<div>
-					DISPLAY LOGIN FORM HERE!!!!!!!!!
-				</div>
-			</div>
-		</div>
-		
-		
+		<div id="fb-root"></div>
 		<header>
 			<div class="auth">
-				<input type="button" id="lgn-btn" onclick="openNav()" value="LOGIN"/>
-				<input type="button" id="sign-btn" onclick="openNav()" value="SIGN UP" />
+				<div id="usrname"></div>
+				<input type="button" id="lgn-btn" onclick="checkLoginState()" value="LOGIN"/>
+				<input type="button" id="lgot-btn" onclick="lgOut()" value="LOGOUT"/>
+				<!--<input type="button" id="lgn-btn" onclick="openNav()" value="LOGIN"/>
+				<input type="button" id="sign-btn" onclick="openNav()" value="SIGN UP" /> -->
 			</div>
 			<hr></hr>
 		</header>

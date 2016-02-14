@@ -6,7 +6,7 @@ src: url("../fonts/Steady.otf") format("opentype");
 }
 html {
     color: #777;
-	font-family: "Montserrat";
+    font-family: "Montserrat";
     font-size: 16px;
     line-height: 1.5;
 }
@@ -63,19 +63,30 @@ hr {
     display: block;
     border: 0;
     border-top: 1px solid #ccc;
-	clear: right;
+    clear: right;
+}
+overlay-login{
+	display:none;
 }
 .browserupgrade {
     margin: 3px 0;
     background: #ccc;
     color: #000;
     padding: 3px 0;
-	font-size:32px;
+    font-size:32px;
+}
+#usrname{
+    float:left;
+    padding-right:10px;
+    font-family: "Montserrat";
 }
 .auth{
 	float:right;
-	width:200px;
-	padding:8px;
+	padding:8px 45px 8px 8px;
+}
+#lgot-btn{
+	float:left;
+	display:none;
 }
 section, 
 footer{
@@ -256,35 +267,3 @@ textarea:-ms-input-placeholder {
 	padding:20px;
 	display:inline;
 }
-
-
-/* OVERLAY OPEN*/
-.overlay {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: rgba(235,235,235, 0.8);
-    overflow-x: hidden;
-    transition: 0.5s;
-	-webkit-transition: 0.5s;
-}
-.overlay-content {
-    position: relative;
-    top: 25%;
-    width: 100%;
-    text-align: center;
-    margin-top: 30px;
-	color:blue;
-	font-size:40px;
-}
-.closebtn {
-	position: absolute;
-	top: 50px;
-    right: 20px;
-	height:22px;
-	width:40px;
-}
-/* OVERLAY CLOSE*/

@@ -20,7 +20,7 @@
 		--height:460px;
 	}
 	.auth{
-		width:150px;
+		--width:150px;
 	}
 	.title{
 		font-size:65px;
@@ -103,7 +103,7 @@
 		--height:400px;
 	}
 	.auth{
-		width:150px;
+		--width:150px;
 	}
 	.title{
 		font-size:50px;
@@ -195,7 +195,7 @@
 		margin:8px 0;
 	}
 	.auth{
-		width:125px;
+		--width:125px;
 	}
 	.title{
 		font-size:60px;

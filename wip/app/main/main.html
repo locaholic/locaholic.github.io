@@ -1,0 +1,21 @@
+<script type="text/ng-template" id="searchbox.tpl.html">
+    <input type="text" class="form-control c-theme" placeholder="Search places" style="border: none; border-radius: 4px !important;background-color: #f3f3f3;" />
+    <a href="javascript:void(0);" class="loca-search c-font-grey-3 l-search-position form-control-feedback"></a>
+</script>
+
+
+<div class="container-fluid" style="padding:0px 15px;">
+    <div class="row">
+        <div class="col-md-3 c-reset" ui-view="sidebar" style="padding-top: 15px; border-right: #E6E6E6 solid 1px;position:fixed;z-index:10;">
+        </div>
+        <div class="col-md-9" >
+            <div id="map_canvas">
+                <ui-gmap-google-map center="map.center" zoom="map.zoom" control="map.control" draggable="true" options="options">
+                    <ui-gmap-search-box parentdiv="'searchbox'" template="searchbox.template" events="searchbox.events"></ui-gmap-search-box>
+                    <ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">
+                </ui-gmap-google-map>
+            </div>  
+        </div>
+    </div>
+</div>
+                

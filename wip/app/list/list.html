@@ -1,0 +1,33 @@
+<div class="sidebar-tabs" style="padding-top:5px;">
+    <div class="l-sidebar-gradient">
+		<div class="c-body">
+		    <div class="c-content-tab-1 c-theme">
+		        <div class="clearfix">
+		            <div class="c-center">
+		                <a ui-sref="home.places" ui-sref-active="l-active-tab" class="l-active-tab c-font-uppercase c-font-11" style="padding: 10px 15px;padding-bottom: 5px;">
+		                    Recommendation
+		                </a>
+		                <a ui-sref="home.recommendation" ui-sref-active="l-active-tab" class="l-nonactive-tab c-font-uppercase c-font-11" style="padding: 10px 15px; padding-bottom: 5px; padding-bottom: 5px;">
+		                    Places
+		                </a>
+		            </div>
+		        </div>
+		        <div class="sidebar-tabs" style="padding-top:5px;">
+		            <div class="l-sidebar-gradient">
+		                <div ui-view="tabcontent">
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>              
+<ul>
+	<li ng-repeat="place in places">
+		<a ui-sref="home.detail({ placeId: place.place_id })">{{place.name}}
+		<img ng-src={{place.icon}}>
+		<img ng-src="{{getUrl(place.photos[0])}}"/>
+		</a>
+		<button ng-click="share(place.place_id)">share</button>
+	</li>
+</ul>
+	</div>
+</div>

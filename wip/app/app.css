@@ -1,0 +1,33 @@
+a {
+  text-decoration: none;
+}
+.overlay{
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  z-index: 10;
+  top:0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+#map_canvas{
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position: fixed;
+}
+.angular-google-map-container {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+}
+.uiview{
+padding: 0;
+margin: 0;
+float:left;
+}

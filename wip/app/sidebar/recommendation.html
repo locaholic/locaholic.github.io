@@ -1,0 +1,204 @@
+<div class="tab-content c-bordered l-bg c-padding-lg" style="padding-top: 10px;padding-bottom:100%; padding-right: 15px; padding-left: 15px; ">
+                                        <div class="content" id="recommendcontent">
+                                            <div class="c-center">
+                                                <a href="javascript:void(0);" id="sub-requestTab" class="c-font-white l-bg-blue c-font-uppercase c-font-11" style="padding: 3px 8px; margin-right: 10px; border-radius: 10px;">
+                                                    Request
+                                                </a>
+                                                <a href="javascript:void(0);" id="sub-recommendTab" class="c-font-white l-bg-grey c-font-uppercase c-font-11" style="padding: 3px 8px;border-radius: 10px;">Recommend</a>
+                                            </div>
+                                            <div id="sub-recommendTab-content" style="display:none;">
+                                                <div class="c-bg-white l-recommend-div c-margin-t-20">
+                                                    <div class="row c-reset">
+                                                        <div class="c-reset col-lg-2 col-md-2 col-xs-2 col-sm-2" style="padding-bottom: 10px; padding-top: 10px;">
+                                                            <a href="#">
+                                                                <i class="loca-thumbsup c-bg-grey" style="padding: 15px;border-radius: 100%;margin-left: initial; font-size: 18px; color: #868686; font-weight: 600;"></i>
+
+                                                            </a>
+                                                        </div>
+                                                        <div style="padding-top: 7px;" class="c-reset col-lg-10 col-md-10 col-sm-10 col-xs-10  l-comp-right">
+                                                            <div class="l-flex">
+                                                                <span class="c-font-15 c-font-slim">Give a recommendation</span>
+                                                            </div>
+
+
+                                                            <div class="l-flex">
+                                                                <span class="c-font-13" style="color: #b2b2b2;margin-top: 5px;">Here is a gift from me for your trip to New York City, avoid touristy places, go here!</span>
+                                                            </div>
+
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="c-center c-margin-t-15">
+                                                    <button style="background-image: url(images/sharebg.png);width:85%;" onclick="openshareModal();" class="c-font-13 c-bg-white l-btn-share c-font-slim">
+                                                        Share recommendation using
+                                                        <i class="fa fa-arrow-right" style="padding-left: 10px;"></i>
+                                                    </button>
+                                                </div>
+
+                                                <div class="c-center c-margin-t-10" style="padding: 0px 20px;">
+                                                    <span class="c-font-15">Start searching for places to get started</span>
+                                                </div>
+                                            </div>
+                                            <!--  Starting request sub tab  -->
+                                            <div id="sub-requestTab-content">
+                                                <div class="c-bg-white l-recommend-div c-margin-t-20" style="display: block;">
+                                                    <div class="row c-reset" style="padding-bottom: 10px;border-bottom: #e2e2e2 solid 1px;">
+                                                        <div class="c-reset col-lg-2 col-md-2 col-xs-2 col-sm-2" style="padding-bottom: 10px; padding-top: 10px;">
+                                                            <a href="#">
+                                                                <i class="loca-pen c-font-15" style="padding: 10px;border-radius: 100%;margin-left: initial;font-size: 25px;color: #CCC;/* font-weight: 600; */"></i>
+
+                                                            </a>
+                                                        </div>
+                                                        <div style="padding-top: 7px;" class="c-reset col-lg-10 col-md-10 col-sm-10 col-xs-10  l-comp-right">
+                                                            <div class="l-flex">
+                                                                <span class="c-font-15 c-font-slim">Write here your request</span>
+                                                            </div>
+
+
+                                                            <div class="l-flex">
+                                                                <span class="c-font-13" style="color: #b2b2b2;margin-top: 5px;">Any good Thai restaurants in LA? I don't want it to be expensive</span>
+                                                            </div>
+
+
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="row c-reset" style="padding-top: 10px;">
+                                                        <div class="c-reset col-lg-2 col-md-2 col-xs-2 col-sm-2" style="padding-bottom: 10px; padding-top: 10px;">
+                                                            <a href="#">
+                                                                <i class="loca-gps-location c-font-15" style="padding: 10px;border-radius: 100%;margin-left: initial;font-size: 25px;color: #CCC;/* font-weight: 600; */"></i>
+
+                                                            </a>
+                                                        </div>
+
+                                                        <div style="padding-top: 7px;" class="c-reset col-lg-10 col-md-10 col-sm-10 col-xs-10  l-comp-right">
+                                                            <div class="l-flex">
+                                                                <span class="c-font-15 c-font-slim">Where</span>
+                                                            </div>
+
+
+                                                            <div class="l-flex">
+                                                                <span class="c-font-13" style="color: #b2b2b2;margin-top: 5px;">Write the location here</span>
+                                                            </div>
+
+
+                                                        </div>
+                                                        <div style="padding-top: 7px;">
+
+
+
+                                                            <div class="c-center">
+                                                                <span class="c-font-13" style="color: #b2b2b2;margin-top: 5px;">or</span>
+                                                            </div>
+                                                            <div class="c-center">
+                                                                <div class="l-checkbox-inline" style="margin:0px;">
+                                                                    <div class="l-checkbox">
+                                                                        <input type="checkbox" id="checkbox6-444" class="l-check">
+                                                                        <label for="checkbox6-444" class="l-grey" style="font-size: 13px; color: #b2b2b2;">
+                                                                            <span class="inc"></span>
+                                                                            <span class="check"></span>
+                                                                            <span class="box"></span>
+                                                                            Use current location
+                                                                        </label>
+                                                                    </div>
+
+
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="c-center c-margin-t-15">
+                                                    <button style="background-image: url(images/sharebg.png);padding: 11px;" onclick="openshareModal();" class="c-font-13 c-bg-white l-btn-share c-font-slim">
+                                                        Share reqest using
+                                                        <i class="fa fa-arrow-right" style="padding-left: 10px;"></i>
+                                                    </button>
+                                                </div>
+
+                                                <div class="c-center c-margin-t-15">
+                                                    <a href="javascript:void(0);" id="recommend-ansTab" class="l-subactive-tab c-font-15" style="padding: 10px 15px;padding-bottom: 5px;">
+                                                        Answered
+                                                    </a>
+                                                    <a href="javascript:void(0);" id="recommend-penTab" class="c-font-15" style="padding: 10px 15px; padding-bottom: 5px;">
+                                                        Pending
+                                                    </a>
+                                                </div>
+
+                                                <div id="recommend-ansTab-content">
+                                                    <div class="c-bg-white c-margin-t-15 l-subrequest-div">
+                                                        <div class="content-1">
+                                                             <div class="l-flex" style="padding: 5px;">
+                                                                <span class="c-font-13 c-center">
+                                                                    Please tell me a good place to party with friends with nice music!
+                                                                </span>
+                                                            </div>
+
+                                                            <div class="c-center">
+                                                                <span class="c-font-10 l-grey-3">in downtown Boston</span>
+                                                            </div>
+                                                            <div class="c-center" style="margin-top: 5px;">
+                                                                <a href="#">
+                                                                    <img src="images/avatars/team3.jpg" width="48px" height="48px" style="border-radius: 100%;">
+
+                                                                </a>
+                                                                <a href="#">
+                                                                    <img src="images/avatars/team1.jpg" width="48px" height="48px" style="border-radius: 100%;">
+
+                                                                </a><a href="#">
+                                                                    <img src="images/avatars/team11.jpg" width="48px" height="48px" style="border-radius: 100%;">
+
+                                                                </a>
+                                                            </div>
+                                                        </div>
+
+
+
+                                                    </div>
+                                                </div>
+
+                                                <div id="recommend-penTab-content" style="display:none;">
+                                                    <div class="c-bg-white c-margin-t-15 l-subrequest-div">
+                                                        <div class="content-1">
+                                                            <div class="l-flex" style="padding: 5px;">
+                                                                <span class="c-font-13 c-center">
+                                                                   Where should I go for a romantic candle light dinner?
+                                                                </span>
+                                                            </div>
+
+                                                            <div class="c-center">
+                                                                <span class="c-font-10 l-grey-3">in Manhattan</span>
+                                                            </div>
+                                                            <div class="c-center" style="margin-top: 5px;">
+                                                                <a href="#">
+                                                                    <img src="images/avatars/team9.jpg" width="48px" height="48px" style="border-radius: 100%;">
+
+                                                                </a>
+                                                                <a href="#">
+                                                                    <img src="images/avatars/team1.jpg" width="48px" height="48px" style="border-radius: 100%;">
+
+                                                                </a>
+                                                                <a href="#">
+                                                                    <img src="images/avatars/team3.jpg" width="48px" height="48px" style="border-radius: 100%;">
+
+                                                                </a>
+                                                                
+                                                            </div>
+                                                        </div>
+
+
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <!-- Ending request subtab-->
+
+                                        </div>

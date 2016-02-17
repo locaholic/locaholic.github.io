@@ -10,10 +10,10 @@ Parse.initialize("7YyZO6oZNVongKR6pluyULEkMEmvLVRtVZvd6OXn", "JTOrsTnWqTBhxqxFME
     userID = "4eR0kPmptl";
     Parse.Cloud.run('userDetails', { userid: userID }, {
           success: function (result) {
-            alert(result);
+            console.log(result);
           },
           error: function (error) {
-            alert(error);
+            console.log(error);
           }
         });   
 </script>

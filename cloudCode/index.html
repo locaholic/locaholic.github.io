@@ -2,12 +2,20 @@
 <html>
 <body>
 
-<p id="demo" onclick="myFunction()"></p>
-Click me to change my HTML content (innerHTML).
+<H1>USER DETAILS</h1>
 
 
 <script>
-        document.getElementById("demo").innerHTML = "Paragraph changed!";
+Parse.initialize("7YyZO6oZNVongKR6pluyULEkMEmvLVRtVZvd6OXn", "JTOrsTnWqTBhxqxFMEvPdOUzDd9Ro01JqpiAF003");
+    userID = "4eR0kPmptl";
+    Parse.Cloud.run('userDetails', { userid: userID }, {
+          success: function (result) {
+            alert(result);
+          },
+          error: function (error) {
+            alert(error);
+          }
+        });   
 </script>
 </body>
 </html> 

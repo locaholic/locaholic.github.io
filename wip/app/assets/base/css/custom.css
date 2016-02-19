@@ -1,5 +1,6 @@
 .search-row{max-width:93%;margin-left:auto;}.search-row .search-col{padding:0;position:relative;}.search-row .search-col .form-control,.search-row button.btn-search{border-radius:0;border:0;height:48px;margin-bottom:0;}.search-row .search-col .form-control{box-shadow:none!important;}.locinput{border-right:solid 1px #ddd!important; border-radius:5px 0px 0px 5px}button.btn-search{border-radius:0!important;font-size:18px;height:48px;letter-spacing:-0.5px;text-shadow:0 2px 2px #20a759;-webkit-text-shadow:0 2px 2px #20a759;text-transform:uppercase;}.has-icon{padding-left:40px;}.icon-append{color:#949494;font-size:18px;left:8px;position:absolute;top:16px;}.search-row .search-col:first-child .form-control{border-radius:3px 0 0 3px;}.search-row .btn-search{border-radius:0 3px 3px 0!important;}@media (max-width:767px) {#hrftalktocounsellor {margin-top:10px !important; font-size:12px; }.locinput{border-right:none!important;border-bottom:solid 1px #ddd!important;}.intro h1{font-size:30px;margin-bottom:10px;padding-bottom:0;line-height:34px;}.intro p{color:#e8eced;font-size:16px;line-height:normal;}}
 
+
 .pos-initial
 {
 position:initial;
@@ -19,6 +20,11 @@ height:100px !important;
 .afoot :hover
 {
 	color:#32c5d2 ;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url(../../../fonts/Montserrat-Light.otf);
 }
 
 .c-content-product-1 .row .expert-phone > img {
@@ -321,4 +327,39 @@ height:100px !important;
     -webkit-transform: scale(1) rotate(45deg);
     -moz-transform: scale(1) rotate(45deg);
     transform: scale(1) rotate(45deg);
+}
+
+.l-tile-shadow
+{
+        webkit-box-shadow: inset -6px -22px 65px 39px rgba(0, 0, 0, 0.49);
+    -moz-box-shadow: inset -6px -22px 65px 39px rgba(0, 0, 0, 0.49);
+    box-shadow: inset -6px -22px 65px 39px rgba(0, 0, 0, 0.49);
+}
+
+.l-circle-shadow
+{
+        -moz-box-shadow: 0px 10px 20px 0px rgba(2, 1, 2, 0.1);
+    webkit-box­-shadow: 0px 10px 20px 0px rgba(2, 1, 2, 0.1);
+    box-shadow: 0px 10px 20px 0px rgba(2, 1, 2, 0.1);
+}
+
+.l-r-100
+{
+    border-radius:100%;
+}
+
+.l-midbar-gradient
+{
+        background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 2%,rgba(255,255,255,0.1) 71%,rgba(255, 255, 255, 0) 100%);
+        background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 2%,rgba(255,255,255,0.1) 71%,rgba(255, 255, 255, 0) 100%);
+     background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 2%,rgba(255,255,255,0.1) 71%,rgba(255, 255, 255, 0) 100%);
+     background: linear-gradient(top, rgba(255, 255, 255, 1) 2%,rgba(255,255,255,0.1) 71%,rgba(255, 255, 255, 0) 100%);
+     background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 2%,rgba(255,255,255,0.1) 71%,rgba(255, 255, 255, 0) 100%);
+}
+
+.l-map-shadow
+{
+        box-shadow: inset 0px -13px 45px 30px rgba(255, 255, 255, 0.79);
+        -moz-box-shadow: inset 0px -13px 45px 30px rgba(255, 255, 255, 0.79);
+        webkit-box­-shadow: inset 0px -13px 45px 30px rgba(255, 255, 255, 0.79);
 }

@@ -64,6 +64,7 @@ angular.module('myApp')
         var events = {
           places_changed: function (searchBox) {
             var place = searchBox.getPlaces();
+            $state.go("home.places");
         if (!place || place == 'undefined' || place.length == 0) {
             console.log('no place data :(');
             return;

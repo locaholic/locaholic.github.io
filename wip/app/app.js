@@ -85,7 +85,8 @@ angular.module('myApp', [
         views:{
           'tabcontent':{templateUrl: 'sidebar/recommendation.html',
                     // controller: 'placeDetailCtrl'
-                  }
+                  },
+          'secondary-tabs@home.recommendation':{templateUrl: 'nav/round-tab.html'}
         }
       })
       .state('home.detail',{

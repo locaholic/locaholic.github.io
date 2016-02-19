@@ -5,6 +5,19 @@ COMPONENTS
 General reset
 ***/
 /* Set default body */
+
+@font-face {
+    font-family: Montserrat;
+    src: url(../../../fonts/Montserrat-Light.otf);
+	font-weight: 300;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url(../../../fonts/Montserrat-Regular.otf);
+	font-weight: 500;
+}
+
 body {
   color: #5c6873;
   font-family: "Montserrat", sans-serif;

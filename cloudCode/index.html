@@ -13,7 +13,7 @@
     
     
     requestid = "5t7LtEksHQ";
-    Parse.Cloud.run('userRequests', { requestid: requestid }, {
+    Parse.Cloud.run('RequestResponses', { requestid: requestid }, {
         success: function (result) {
                 console.log(result);
         },
@@ -22,7 +22,15 @@
         }
     });   
         
-    
+    requestid = "5t7LtEksHQ";
+    Parse.Cloud.run('RequestDetails', { requestid: requestid }, {
+        success: function (result) {
+                console.log(result);
+        },
+        error: function (error) {
+        	console.log(error);
+        }
+    }); 
     
     
     placeid = "vEJywNHxjZ";

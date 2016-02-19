@@ -10,6 +10,21 @@
 
 <script>
     Parse.initialize("7YyZO6oZNVongKR6pluyULEkMEmvLVRtVZvd6OXn", "JTOrsTnWqTBhxqxFMEvPdOUzDd9Ro01JqpiAF003");
+    
+    
+    requestid = "5t7LtEksHQ";
+    Parse.Cloud.run('userReqs', { requestid: requestid }, {
+        success: function (result) {
+                console.log(result[0]);
+        },
+        error: function (error) {
+        	console.log(error);
+        }
+    });   
+        
+    
+    
+    
     placeid = "vEJywNHxjZ";
     Parse.Cloud.run('placeDetails', { placeid: placeid }, {
         success: function (result) {
@@ -19,19 +34,7 @@
             console.log(error);
         }
     });
-        
-    requestid = "5t7LtEksHQ";
-    Parse.Cloud.run('userReqs', { requestid: requestid }, {
-        success: function (result) {
-                console.log(result);
-        },
-        error: function (error) {
-        	console.log(error);
-        }
-    });   
-        
-        
-        
+    
 </script>
 </body>
 </html> 

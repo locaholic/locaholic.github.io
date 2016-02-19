@@ -23,13 +23,9 @@
     requestId = "5t7LtEksHQ";
     Parse.Cloud.run('userRequests', { requestid: requestId }, {
         success: function (result) {
-        	alert("success");
-        	//for (var i = 0; i < result.length; i++){
-                	console.log(result);
-		//}
+                console.log(result);
         },
         error: function (error) {
-        	alert("error");
         	console.log(error.message);
         }
     });   

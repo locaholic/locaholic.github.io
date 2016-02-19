@@ -3,7 +3,7 @@
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
   'ui.router',
-  'uiGmapgoogle-maps'
+  'uiGmapgoogle-maps',
 ])
 .run(['$rootScope','$state',function($rootScope,$state) {
  

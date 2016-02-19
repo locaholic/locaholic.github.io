@@ -1,9 +1,6 @@
-<ul>
+<ul style="list-style-type:none;">
 	<li ng-repeat="place in places">
-		<a ui-sref="home.detail({ placeId: place.place_id })">{{place.name}}
-		<img ng-src={{place.icon}}>
-		<img ng-src="{{getUrl(place.photos[0])}}"/>
-		</a>
-		<button ng-click="share(place.place_id)">share</button>
+		<div place-tile place="place"></div>
+		<!-- <button ng-click="share(place.place_id)">share</button> --> -->
 	</li>
 </ul>

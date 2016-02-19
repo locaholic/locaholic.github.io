@@ -1,0 +1,46 @@
+<div class="l-tile-shadow" ng-style="{'background-image': 'url('+getUrl(place.photos[0])+')'}" style="border-radius: 5px;margin-bottom:5px; background-position: center; background-size: cover;">
+    <div style="padding-bottom: 10px;padding-left: 10px;padding-top: 95px;padding-right: 10px;" class="c-font-white">
+        <a ui-sref="home.detail({ placeId: ctrl.place.place_id })">
+            <div>
+                <div style="text-align: right;float: left;">
+                    <span class="c-font-13">4.2</span>
+                    <span class="fa fa-star-o c-font-13"> </span>
+                </div>
+                <div>
+                    <p style="margin: 0px;text-align: left;display: inline-table;">
+                        <span style="display: table;padding-left: 10px;" class="c-font-15" ng-bind="ctrl.place.name"></span>
+                        <span style="padding-left: 10px;display: table;" class="c-font-11"></span>
+                    </p>
+                </div>
+            </div>
+        </a>
+        <div style="padding-top: 5px;padding-bottom: 5px;">
+            <div style="display: list-item;">
+                <div style="float: left;">
+                    <a href="#" class="l-circle-shadow" style="float: left;margin-right: -10px;">
+                        <img src="images/avatars/team3.jpg" width="30px" height="30px" style="border-radius: 100%;">
+                    </a>
+
+
+                    <a href="#" class="l-circle-shadow" style="float: left;margin-right: -10px;">
+                        <img src="images/avatars/team6.jpg" width="30px" height="30px" style="border-radius: 100%;">
+                    </a>
+                    <a href="#" style="float: left;margin-right: -10px;">
+                        <img src="images/avatars/team12.jpg" width="30px" height="30px" style="border-radius: 100%;">
+                    </a><a href="#" style="padding: 5px;height: 30px;width: 30px;float: left;margin-right: -10px;border-radius: 100%;" class="c-bg-white c-font-13 c-font-slim c-center">+1</a>
+                </div><div style="float:right;">
+                    <a href="#">
+                        <span class="c-font-15 l-circle-shadow l-r-100 c-font-bold c-bg-white loca-comment" style="padding: 7px;"></span>
+                    </a><a href="#">
+                        <span class="c-font-15 l-circle-shadow l-r-100 c-font-bold c-bg-white loca-check-circle" style="padding: 7px;"></span>
+                    </a><a href="#">
+                        <span class="c-font-15 c-font-bold l-circle-shadow l-r-100 c-bg-white loca-thumbsup" style="padding: 7px;"></span>
+                    </a>
+                    <a href="#">
+                        <span class="c-font-15 l-circle-shadow l-r-100 c-font-bold c-bg-white loca-like" style="padding: 7px;"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

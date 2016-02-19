@@ -71,7 +71,7 @@ angular.module('myApp')
         }
           $scope.places=place;
           $scope.getUrl=function(photo){
-            return photo.getUrl({'maxWidth': 100, 'maxHeight': 100});
+            return photo.getUrl({'maxWidth': 600, 'maxHeight': 300});
           };
         $scope.map = {
             "center": {

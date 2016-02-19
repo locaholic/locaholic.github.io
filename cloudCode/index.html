@@ -34,7 +34,7 @@
     
     
     placeid = "vEJywNHxjZ";
-    Parse.Cloud.run('placeDetails', { placeid: placeid }, {
+    Parse.Cloud.run('PlaceDetails', { placeid: placeid }, {
         success: function (result) {
             console.log(result);
         },
@@ -44,7 +44,7 @@
     });
     
     recommendId = "6Ab6gVboQK";
-    Parse.Cloud.run('recommendation', { recommendis: recommendId }, {
+    Parse.Cloud.run('PlaceRecommendation', { recommendis: recommendId }, {
         success: function (result) {
             console.log(result);
         },

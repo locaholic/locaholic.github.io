@@ -44,7 +44,7 @@
     });
     
     recommendId = "6Ab6gVboQK";
-    Parse.Cloud.run('PlaceRecommendation', { recommendid: recommendId }, {
+    Parse.Cloud.run('RecommendationDetails', { recommendid: recommendId }, {
         success: function (result) {
             console.log(result);
         },

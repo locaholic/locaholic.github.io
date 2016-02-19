@@ -21,12 +21,12 @@
     });
         
     requestid = "5t7LtEksHQ";
-    Parse.Cloud.run('userRequests', { requestid: requestid }, {
+    Parse.Cloud.run('userReqs', { requestid: requestid }, {
         success: function (result) {
                 console.log(result);
         },
         error: function (error) {
-        	console.log(error.message);
+        	console.log(error);
         }
     });   
         

@@ -32,6 +32,16 @@
         }
     }); 
    
+   userid = "KjLqWNhDXD";
+    Parse.Cloud.run('UserRequests', { userid: userid }, {
+        success: function (result) {
+            console.log(result);
+        },
+        error: function (error) {
+        	console.log(error);
+        }
+    });
+   
    
     requestid = "5t7LtEksHQ";
     Parse.Cloud.run('RequestResponseDetails', { requestid: requestid }, {

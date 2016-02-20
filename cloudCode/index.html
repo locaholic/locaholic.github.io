@@ -12,7 +12,7 @@
     Parse.initialize("7YyZO6oZNVongKR6pluyULEkMEmvLVRtVZvd6OXn", "JTOrsTnWqTBhxqxFMEvPdOUzDd9Ro01JqpiAF003");
     
     userid = "KjLqWNhDXD";
-    Parse.Cloud.run('UserDetails', { requestid: userid }, {
+    Parse.Cloud.run('UserDetails', { userid: userid }, {
         success: function (result) {
             console.log(result);
         },

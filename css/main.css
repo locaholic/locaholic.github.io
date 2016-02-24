@@ -145,7 +145,7 @@ footer article{
 	line-height: 1.2;
 	word-wrap: break-word;
 }
-.title-quote{
+p .title-quote{
 	text-align: right;
 }
 .sub-title{

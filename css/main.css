@@ -167,8 +167,8 @@ footer article{
 	font-size: 20px;
 	font-family: "Montserrat";
 }
-.art-quote div input[type=button]{
-	margin-top:30px;
+.art-quote div input{
+	margin-top:25px;
 }
 .art-quote input[type=text]{
 	width:inherit;

@@ -121,6 +121,10 @@ footer article{
 .art-quote{
 	width:40%;
 }
+.art-quote input[type=textbox]{
+	width:inherit;
+	height:100px;
+}
 .foot-quote{
 	width:50%;
 }

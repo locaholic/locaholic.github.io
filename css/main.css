@@ -121,10 +121,7 @@ footer article{
 .art-quote{
 	width:40%;
 }
-.art-quote input[type=textbox]{
-	width:inherit;
-	height:100px;
-}
+
 .foot-quote{
 	width:50%;
 }
@@ -170,8 +167,12 @@ footer article{
 	font-size: 20px;
 	font-family: "Montserrat";
 }
-.art-quote div input{
+.art-quote div input[type=button]{
 	margin-top:30px;
+}
+.art-quote input[type=text]{
+	width:inherit;
+	height:100px;
 }
 footer{
 	background-image: url("../imgs/bg-contact.jpg");

@@ -191,7 +191,7 @@ footer{
      width:99%;
 	 resize:none;
 }
-input[type="text"], textarea{
+.contact-form input[type="text"], textarea{
 	margin:0;
 	padding:0;
 	line-height:1.5;

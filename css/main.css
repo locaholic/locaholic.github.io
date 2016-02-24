@@ -142,11 +142,11 @@ footer article{
 }
 .title, .sub-title{
 	color: #0E6CC4;
-	line-height: 1.2;
+	line-height: 1;
 	word-wrap: break-word;
 }
-p .title-quote{
-	text-align: right;
+.title-quote{
+	float: right;
 }
 .sub-title{
 	font-size: 38px;

@@ -257,19 +257,19 @@ input:-ms-input-placeholder {
 textarea::-webkit-input-placeholder {
    font-size:16px;
    --font-family: "Montserrat";
-   font-family: "Source Sans Pro"
+   font-family: "Source Sans Pro";
 }
 textarea:-moz-placeholder { /* Firefox 18- */
    font-size:16px;
-   font-family: "Source Sans Pro"
+   font-family: "Source Sans Pro";
 }
 textarea::-moz-placeholder {  /* Firefox 19+ */
 	font-size:16px;
-	font-family: "Source Sans Pro"
+	font-family: "Source Sans Pro";
 }
 textarea:-ms-input-placeholder {  
    font-size:16px;
-  font-family: "Source Sans Pro"
+  font-family: "Source Sans Pro";
 }
 
 

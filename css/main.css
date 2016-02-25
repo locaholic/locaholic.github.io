@@ -125,28 +125,36 @@ footer article{
 .foot-quote{
 	width:50%;
 }
-.art-quote div, .foot-quote div, .contact-form div{
-	--align-self: center;
-	margin:15% 8%;
+.sec1 .art-quote div{
+	margin: 10% 8%;
 }
-.art-quote div,
+.sec2 .art-quote div, 
+.sec3 .art-quote div,
+.sec4 .art-quote div, 
+.foot-quote div, 
 .contact-form div{
-	width:84%;
+	--align-self: center;
+	margin:0% 8%;
 }
 .foot-quote div{
 	width:60%;
 }
-.title{
-	font-size: 80px;
+.main-title{
+	font-size: 90px;
 	font-family: "Steady";
-	margin:0 0 10px 0;
 }
-.title, .sub-title{
+.title{
+	font-size: 50px;
+	font-family: "Steady";
+	margin:3px 0 0 0;
+}
+.main-title, .title, .sub-title{
 	color: #0E6CC4;
 	line-height: 1;
 	word-wrap: break-word;
 }
 .title-quote{
+	font-size: 20px;
 	float: right;
 }
 .sub-title{
@@ -160,19 +168,33 @@ footer article{
 	word-wrap: break-word;
 }
 .quote{
-	font-size: 38px;
+	font-size: 30px;
+	--font-weight:bold;
 	font-family: "Source Sans Pro";
+}
+#btn-txt{
+	font-size: 20px;
+	--font-family: "Source Sans Pro";
+}
+.quote p{
+	margin: 0;
+	padding:0;
+	width: 100%;
+	text-align:center;
 }
 .sub-quote{
 	font-size: 20px;
 	font-family: "Montserrat";
 }
-.art-quote div input{
+.art-quote div input, .art-quote div  textarea{
 	margin-top:25px;
 }
-.art-quote input[type=text]{
-	width:inherit;
+.art-quote  textarea{
+	width:100%;
 	height:100px;
+	resize:none;
+	font-size: 20px;
+	font-family: "Montserrat";
 }
 footer{
 	background-image: url("../imgs/bg-contact.jpg");
@@ -191,7 +213,7 @@ footer{
      width:99%;
 	 resize:none;
 }
-.contact-form input[type="text"], textarea{
+.contact-form input[type="text"], .contact-form textarea{
 	margin:0;
 	padding:0;
 	line-height:1.5;
@@ -202,7 +224,7 @@ footer{
 	border-right-style:none;
 	border-top:none;
 }
-textarea{
+.contact-form textarea{
 	height: 12em;
 }
 /* input[type="submit"]{
@@ -228,25 +250,44 @@ input::-moz-placeholder {  /* Firefox 19+ */
 	font-family: "Montserrat";
 }
 input:-ms-input-placeholder {  
-   font-size:20px;
+   font-size:16px;
    font-family: "Montserrat";
 }
 textarea::-webkit-input-placeholder {
-   padding-top:150px;
-   font-size:20px;
-   font-family: "Montserrat";
+   font-size:16px;
+   --font-family: "Montserrat";
+   font-family: "Source Sans Pro"
 }
 textarea:-moz-placeholder { /* Firefox 18- */
+   font-size:16px;
+   font-family: "Source Sans Pro"
+}
+textarea::-moz-placeholder {  /* Firefox 19+ */
+	font-size:16px;
+	font-family: "Source Sans Pro"
+}
+textarea:-ms-input-placeholder {  
+   font-size:16px;
+  font-family: "Source Sans Pro"
+}
+
+
+.contact-form textarea::-webkit-input-placeholder {
    padding-top:150px;
    font-size:20px;
    font-family: "Montserrat";
 }
-textarea::-moz-placeholder {  /* Firefox 19+ */
+.contact-form textarea:-moz-placeholder { /* Firefox 18- */
+   padding-top:150px;
+   font-size:20px;
+   font-family: "Montserrat";
+}
+.contact-form textarea::-moz-placeholder {  /* Firefox 19+ */
 	padding-top:150px;
    font-size:20px;
    font-family: "Montserrat";
 }
-textarea:-ms-input-placeholder {  
+.contact-form textarea:-ms-input-placeholder {  
    padding-top:150px;
    font-size:20px;
    font-family: "Montserrat";
@@ -274,4 +315,4 @@ textarea:-ms-input-placeholder {
 	height:inhert;
 	padding:20px;
 	display:inline;
-}
+} 

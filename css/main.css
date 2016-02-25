@@ -199,6 +199,7 @@ footer article{
 footer{
 	background-image: url("../imgs/bg-contact.jpg");
 	background-repeat: no-repeat;
+	background-size:cover;
 }
 .contact-form{
 	float: left;

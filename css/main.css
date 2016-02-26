@@ -129,16 +129,8 @@ footer article{
 .foot-quote{
 	width:50%;
 }
-.sec1 .art-quote div{
-	margin: 5% 1% 1% 8%;
-}
-.sec2 .art-quote div, 
-.sec3 .art-quote div,
-.sec4 .art-quote div, 
-.foot-quote div, 
-.contact-form div{
-	-margin:0% 8%;
-	margin:0;
+#center-div{
+	margin: -15% 1% 1% 5%;
 }
 .foot-quote div{
 	width:60%;

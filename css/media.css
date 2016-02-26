@@ -175,44 +175,32 @@
 	}	
 }
 @media screen and (max-width: 630px){
-	 body {
-        width: 100%;
-    }
+	body {
+        	width: 100%;
+    	}
 	input[type=button],
 	input[type=submit]{
 		font-size:8px;
 	}
 	section, footer{
-		--height:225px;
 		margin:0 !important;
 	}
 	section article, 
 	footer article{
-		margin-top:15px;
 		clear:both;
 	}
 	p{
 		margin:8px 0;
 	}
-	.auth{
-		--width:125px;
-	}
 	.title{
 		font-size:60px;
-		text-align:center;
+		--text-align:center;
 	}
 	.art-img{
 		width:100%;
 	}
 	.art-quote, .foot-quote, .contact-form{
 		width:inherit;
-	}
-	.art-quote div, .foot-quote div, .contact-form div{
-		margin:0 10%;
-		width:85%;
-	}
-	.art-quote div input{
-		margin-top:8px;
 	}
 	.quote, .sub-title{
 		font-size:20px;

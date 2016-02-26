@@ -65,9 +65,6 @@ hr {
     border-top: 1px solid #ccc;
     clear: right;
 }
-overlay-login{
-	display:none;
-}
 .browserupgrade {
     margin: 3px 0;
     background: #ccc;
@@ -76,9 +73,9 @@ overlay-login{
     font-size:32px;
 }
 #usrname{
-    float:left;
-    padding-right:10px;
-    font-family: "Montserrat";
+	float:left;
+	padding-right:10px;
+	font-family: "Montserrat";
 }
 .auth{
 	float:right;
@@ -93,6 +90,7 @@ footer{
 	clear:both;
 	display:table;
 	width:100%;
+	height:100VH;
 }
 .sec1 article,
 .sec3 article, 
@@ -106,34 +104,42 @@ footer article{
 .sec2,
 .sec3,
 .sec4{
-	margin-top:20px;
+	--margin-top:20px;
 }
 .art-img{
 	width:60%;
 	--max-height:inherit;
+	height: 95VH;
+	display:flex;
+	align-items:center;
 }
 .art-img img{
 	--max-height:inherit;
 	width:100%;
+	height: inherit;
 }
 
 .art-quote{
 	width:40%;
+	height: 95VH;
+	display:flex;
+	align-items:center;
 }
 
 .foot-quote{
 	width:50%;
 }
 .sec1 .art-quote div{
-	margin: 5% 1% 1% 8%;
+	--margin: 5% 1% 1% 8%;
+	margin: 0;
 }
 .sec2 .art-quote div, 
 .sec3 .art-quote div,
 .sec4 .art-quote div, 
 .foot-quote div, 
 .contact-form div{
-	--align-self: center;
-	margin:0% 8%;
+	-margin:0% 8%;
+	margin:0;
 }
 .foot-quote div{
 	width:60%;
@@ -145,7 +151,7 @@ footer article{
 .title{
 	font-size: 50px;
 	font-family: "Steady";
-	margin:3px 0 0 0;
+	--margin:3px 0 0 0;
 }
 .main-title, .title, .sub-title{
 	color: #0E6CC4;
@@ -168,7 +174,6 @@ footer article{
 }
 .quote{
 	font-size: 30px;
-	--font-weight:bold;
 	font-family: "Source Sans Pro";
 }
 #btn-txt{
@@ -255,7 +260,6 @@ input:-ms-input-placeholder {
 }
 textarea::-webkit-input-placeholder {
    font-size:16px;
-   --font-family: "Montserrat";
    font-family: "Source Sans Pro";
 }
 textarea:-moz-placeholder { /* Firefox 18- */

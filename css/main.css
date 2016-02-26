@@ -146,7 +146,7 @@ footer article{
 .title{
 	font-size: 50px;
 	font-family: "Steady";
-	--margin:3px 0 0 0;
+	margin:3px 0 3px 0;
 }
 .main-title, .title, .sub-title{
 	color: #0E6CC4;

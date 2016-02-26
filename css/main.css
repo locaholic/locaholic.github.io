@@ -110,10 +110,10 @@ footer article{
 }
 .art-img{
 	width:60%;
-	max-height:inherit;
+	--max-height:inherit;
 }
 .art-img img{
-	max-height:inherit;
+	--max-height:inherit;
 	width:100%;
 }
 

@@ -114,9 +114,9 @@ footer article{
 	align-items:center;
 }
 .art-img img{
-	--max-height:inherit;
+	max-height:inherit;
 	width:100%;
-	height: inherit;
+	--height: inherit;
 }
 
 .art-quote{

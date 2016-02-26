@@ -145,12 +145,14 @@ footer article{
 }
 .title{
 	font-size: 50px;
+	line-height: 1.5;
 	font-family: "Steady";
-	margin:3px 0 3px 0;
+}
+.main-title, .sub-title{
+	line-height: 1;
 }
 .main-title, .title, .sub-title{
 	color: #0E6CC4;
-	line-height: 1;
 	word-wrap: break-word;
 }
 .title-quote{
@@ -164,7 +166,7 @@ footer article{
 }
 .quote,.sub-quote{
 	color: #888;
-	line-height: 1.2;
+	line-height: 1;
 	word-wrap: break-word;
 }
 .quote{

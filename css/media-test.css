@@ -1,4 +1,13 @@
+@media screen and (min-height: 900px) {
+	.sub-quote{
+		line-height:1.5;
+	}
+}
 @media screen and (min-width: 650px) {
+	input[type=button],
+	input[type=submit]{
+		font-size:calc(0.5vw + 1.5vh);
+	}
 	.desc-article{
 		width: 40%;
 	}
@@ -40,6 +49,7 @@
 	.contact-form input[type="text"], .contact-form textarea{
 		font-size: calc(0.5vw + 1vh);
 	}
+	
 	input::-webkit-input-placeholder {
 		font-size: calc(0.5vw + 1.5vh);
 	}
@@ -70,5 +80,4 @@
 	.foot-menu li{
 		font-size: calc(0.5vw + 1.5vh);
 	}
-	
 }

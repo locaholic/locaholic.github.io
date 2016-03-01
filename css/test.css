@@ -214,15 +214,12 @@ footer{
 	max-height:100%;
 	font-size: calc(2vw + 3.5vh);
 	line-height: 1;
-	float:left;
-	padding-left:1%;
 	font-weight:bold;
 	font-style: italic;
 	font-family: "Source Sans Pro lighter";
 	color:#000;
 }
 .foot-menu{
-	float:right;
 	padding-right: 1%;
 	list-style-type: none;
     margin: 0;

@@ -8,7 +8,6 @@ html {
     color: #777;
     font-family: "Montserrat";
     font-size: 16px;
-    line-height: 1.5;
 }
 body,
 hr{
@@ -20,7 +19,6 @@ input[type=button],
 input[type=submit]{
 	color: #14396A !important;
 	font-family: "Montserrat";
-	font-size:16px;
 	text-shadow: 1px 1px 0px #7CACDE;
 	margin-right:2px;
 	padding: 4px 9px;
@@ -137,6 +135,9 @@ footer .contact-form{
 .quote span{
 	text-align:center;
 }
+.sub-quote{
+	 line-height: 1;
+}
 .desc-article div textarea{
 	width:99%;
 	resize:none;
@@ -246,10 +247,3 @@ textarea:-ms-input-placeholder {
 	font-family: "Source Sans Pro";
 }
 /* place holders in textboxes END -----------*/
-
-
-
-
-
-
-

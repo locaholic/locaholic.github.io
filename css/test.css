@@ -123,9 +123,20 @@ footer .contact-form{
 	color: #0E6CC4;
 	line-height: 1;
 	word-wrap: break-word;
+	font-size: calc(4vw + 6vh);
 }
 .title-quote{
 	float: right;
+	font-size: calc(1vw + 1.5vh);
+}
+.quote{
+	font-size: calc(1vw + 1.5vh);
+}
+.sub-title{
+	font-size: calc(1.5vw + 2.5vh);
+}
+.sub-title-quote{
+	font-size: calc(2.5vw + 3vh);
 }
 .quote,
 .sub-title,
@@ -136,13 +147,17 @@ footer .contact-form{
 .quote span{
 	text-align:center;
 }
-.sub-quote{
-	 line-height: 1;
-}
 .desc-article div textarea{
 	width:99%;
 	resize:none;
 	font-family: "Source Sans Pro";
+	height:15vh;
+	font-size: calc(0.5vw + 1.5vh);
+}
+#btn-txt,
+.sub-quote{
+	font-size: calc(0.5vw + 1.5vh);
+	 line-height: 1;
 }
 .sub-title{
 	color: #0E6CC4;
@@ -158,15 +173,6 @@ footer{
 	background-repeat: no-repeat;
 	background-size:cover;
 }
-footer .foot-desc{
-	width: 49% !important;
-	height: 92%;
-}
-footer .contact-form{
-	width: 49% !important;
-	height: 92%;
-}
-
 .contact-form input[type="text"]{
 	width:100%;
 }
@@ -177,6 +183,7 @@ footer .contact-form{
 .contact-form input[type="text"], .contact-form textarea{
 	margin:0;
 	padding:0;
+	font-size: calc(0.5vw + 1vh);
 	line-height:1.5;
 	background:transparent;
 	border-bottom: 1px solid;
@@ -184,6 +191,13 @@ footer .contact-form{
 	border-right-style:none;
 	border-top:none;
 }
+.contact-form input[type="text"]{
+	height:10vh;
+}
+.contact-form textarea{
+	height: 20vh;
+}
+
 /* footer CSS */
 
 /* Privacy policy menu------------------*/
@@ -198,6 +212,7 @@ footer .contact-form{
 }
 .foot-title{
 	max-height:100%;
+	font-size: calc(2vw + 3.5vh);
 	line-height: 1;
 	float:left;
 	padding-left:1%;
@@ -214,6 +229,7 @@ footer .contact-form{
 }
 .foot-menu li{
 	height:inhert;
+	font-size: calc(0.5vw + 1.5vh);
 	padding:20px 20px 0 0;
 	display:inline;
 } 
@@ -225,26 +241,34 @@ input[type="submit"]{
 }
 input::-webkit-input-placeholder {
 	font-family: "Source Sans Pro";
+	font-size: calc(0.5vw + 1.5vh);
 }
 input:-moz-placeholder { /* Firefox 18- */
 	font-family: "Source Sans Pro";
+	font-size: calc(0.5vw + 1.5vh);
 }
 input::-moz-placeholder {  /* Firefox 19+ */
 	font-family: "Source Sans Pro";
+	font-size: calc(0.5vw + 1.5vh);
 }
 input:-ms-input-placeholder {  
 	font-family: "Source Sans Pro";
+	font-size: calc(0.5vw + 1.5vh);
 }
 textarea::-webkit-input-placeholder {
 	font-family: "Source Sans Pro";
+	font-size: calc(0.5vw + 1.5vh);
 }
 textarea:-moz-placeholder { /* Firefox 18- */
 	font-family: "Source Sans Pro";
+	font-size: calc(0.5vw + 1.5vh);
 }
 textarea::-moz-placeholder {  /* Firefox 19+ */
 	font-family: "Source Sans Pro";
+	font-size: calc(0.5vw + 1.5vh);
 }
 textarea:-ms-input-placeholder {  
 	font-family: "Source Sans Pro";
+	font-size: calc(0.5vw + 1.5vh);
 }
 /* place holders in textboxes END -----------*/

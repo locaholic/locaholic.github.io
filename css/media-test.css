@@ -1,0 +1,74 @@
+@media screen and (min-width: 650px) {
+	.desc-article{
+		width: 40%;
+	}
+	.img-article {
+		width: 59%;
+	}
+	#section2 .img-article img{
+		width:95%;
+	}
+	.title{
+		font-size: calc(4vw + 6vh);
+	}
+	.title-quote{
+		font-size: calc(1vw + 1.5vh);
+	}
+	.quote{
+		font-size: calc(1vw + 1.5vh);
+	}
+	.sub-title{
+		font-size: calc(1.5vw + 2.5vh);
+	}
+	.sub-title-quote{
+		font-size: calc(2.5vw + 3vh);
+	}
+	.desc-article div textarea{
+		height:15vh;
+		font-size: calc(0.5vw + 1.5vh);
+	}
+	#btn-txt,
+	.sub-quote{
+		font-size: calc(0.5vw + 1.5vh);
+	}
+	.contact-form input[type="text"]{
+		height:50px;
+	}
+	.contact-form textarea{
+		height: 20vh;
+	}
+	.contact-form input[type="text"], .contact-form textarea{
+		font-size: calc(0.5vw + 1vh);
+	}
+	input::-webkit-input-placeholder {
+		font-size: calc(0.5vw + 1.5vh);
+	}
+	input:-moz-placeholder { /* Firefox 18- */
+		font-size: calc(0.5vw + 1.5vh);
+	}
+	input::-moz-placeholder {  /* Firefox 19+ */
+		font-size: calc(0.5vw + 1.5vh);
+	}
+	input:-ms-input-placeholder {  
+		font-size: calc(0.5vw + 1.5vh);
+	}
+	textarea::-webkit-input-placeholder {
+		font-size: calc(0.5vw + 1.5vh);
+	}
+	textarea:-moz-placeholder { /* Firefox 18- */
+		font-size: calc(0.5vw + 1.5vh);
+	}
+	textarea::-moz-placeholder {  /* Firefox 19+ */
+		font-size: calc(0.5vw + 1.5vh);
+	}
+	textarea:-ms-input-placeholder {  
+		font-size: calc(0.5vw + 1.5vh);
+	}
+	.foot-title{
+		font-size: calc(2vw + 3.5vh);
+	}
+	.foot-menu li{
+		font-size: calc(0.5vw + 1.5vh);
+	}
+	
+}

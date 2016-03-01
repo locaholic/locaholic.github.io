@@ -73,11 +73,12 @@ section article div,
 	width:100%;
 }
 /*article:not(#sec1-img) */
-article{
+article:not(#sec1){
 	display: -webkit-flex;
 	display:flex;
 	align-items:center;
 }
+
 #section1 .desc-article,
 #section3 .desc-article,
 footer .foot-desc{
@@ -89,10 +90,10 @@ footer .contact-form{
 	float:right;
 }
 #section1 .desc-article div{
-	margin: -13% 0 0 15% !important;
+	margin: 0 0 0 15%;
 }
 #section3 .desc-article div{
-	margin: 0 0 0 15% !important;
+	margin: 0 0 0 15%;
 }
 #section2 .desc-article,
 #section4 .desc-article{
@@ -104,13 +105,13 @@ footer .contact-form{
 }
 #section2 .desc-article div,
 #section4 .desc-article div{
-	margin: -10% 0 0 7.5% !important;
+	margin: -10% 0 0 7.5%;
 }
 .foot-desc div{
-	margin: 0% 5% 0 10% !important;
+	margin: 0% 5% 0 10%;
 }
 .contact-form div{
-	margin: 0% 10% 0 5% !important;
+	margin: 0% 10% 0 5%;
 }
 .desc-article div,
 .foot-desc div,

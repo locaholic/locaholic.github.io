@@ -76,6 +76,10 @@
 		max-height:48vh;
 		width:100%;
 	}
+	#section2 .img-article img{
+		width:86%;
+		padding:0 7% 0 7%;
+	}
 	.desc-article div textarea{
 		height:8vh;
 	}

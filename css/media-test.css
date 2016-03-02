@@ -15,7 +15,7 @@
 	section,
 	section article,
 	footer{
-		height:679px;
+		height:100vh;
 	}
 	input[type=button],
 	input[type=submit]{
@@ -52,7 +52,11 @@
 	p{
 		margin:5px 0 5px 0;
 	}
-
+	section,
+	section article,
+	footer{
+		height:679px;
+	}
 	section article{
 		height:50%;
 	}

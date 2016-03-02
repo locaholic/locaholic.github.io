@@ -169,7 +169,7 @@ footer .contact-form{
 
 /* footer CSS */
 footer{
-	background-image: url("../imgs/bg-contact.jpg");
+	--background-image: url("../imgs/bg-contact.jpg");
 	background-repeat: no-repeat;
 	background-size:cover;
 }

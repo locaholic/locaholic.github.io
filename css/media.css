@@ -80,7 +80,7 @@
 	}
 	section article div,
 	.img-article img{
-		max-height:100%;
+		height:99%;
 		width:100%;
 	}
 	#section2 .img-article img{

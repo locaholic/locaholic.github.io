@@ -1,6 +1,6 @@
 @media screen and (min-height: 900px) {
 	.sub-quote{
-		line-height:1.5;
+		line-height:1;
 	}
 	article{
 		display: -webkit-flex;

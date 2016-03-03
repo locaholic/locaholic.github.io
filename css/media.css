@@ -59,7 +59,8 @@
 	#section1 .desc-article div{
 		margin: -4% 0 0 5%;
 	}
-	#section3 .desc-article div{
+	#section3 .desc-article div,
+	.contact-form div{
 		margin: 0 0 0 5%;
 	}
 	#section2 .desc-article div,

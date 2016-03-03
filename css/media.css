@@ -80,6 +80,9 @@
 	.img-article img{
 		width:100%;
 	}
+	.img-article div{
+		height:100%;
+	}
 	.img-article img{
 		height:99%;
 	}

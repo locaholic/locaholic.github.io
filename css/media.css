@@ -52,10 +52,10 @@
 		height:50%;
 	}
 	#section3 .desc-article{
-		height:52%;
+		height:52% !important;
 	}
 	#section3 .img-article{
-		height:48%;
+		height:48% !important;
 	}
 	article{
 		display: -webkit-flex;
@@ -80,7 +80,7 @@
 	}
 	section article div,
 	.img-article img{
-		max-height:48vh;
+		max-height:100%;
 		width:100%;
 	}
 	#section2 .img-article img{

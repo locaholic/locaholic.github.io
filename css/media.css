@@ -44,7 +44,7 @@
 }
 
 
-@media screen and (max-width: 649px) {
+@media screen and (max-width: 560px) {
 	p{
 		margin:5px 0 5px 0;
 	}

@@ -86,6 +86,12 @@
 	.contact-form input[type="text"], .contact-form textarea{
 		line-height:1;
 	}
+	.contact-form input[type="text"]{
+		height:6vh;
+	}
+	.contact-form textarea{
+		height: 15vh;
+	}
 	input[type=button],
 	input[type=submit]{
 		font-size:calc(0.5vw + 1.5vh);

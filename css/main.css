@@ -63,17 +63,27 @@ hr {
     clear: right;
 }
 section,
-section article,
 footer{
 	height:100vh;
 }
+section article{
+	height:100%;
+}
 section article div,
 .img-article img{
-	max-height:96vh;
 	width:100%;
 }
+.img-article div{
+	height:100%;
+}
+.img-article img{
+	max-height:98%;
+}
 /*article:not(#sec1-img) */
-article:not(#sec1){
+.desc-article,
+.img-article div,
+.contact-form,
+.foot-desc{
 	display: -webkit-flex;
 	display:flex;
 	align-items:center;

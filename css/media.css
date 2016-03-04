@@ -1,4 +1,4 @@
-@media screen and (min-height: 900px) {
+@media screen and (min-width: 801px) and (min-height: 900px) {
 	.sub-quote{
 		line-height:1.5;
 	}
@@ -8,23 +8,36 @@
 		align-items:center;
 	}
 	#section1 .desc-article div{
-		margin: -13% 0 0 15%;
+		margin: -13% 0 0 15% !important;
 	}
 }
-@media screen and (min-width: 561px) {
+@media screen and (min-width: 479px) and (min-height: 319px) and (orientation: landscape) {
 	input[type=button],
 	input[type=submit]{
 		font-size:calc(0.5vw + 1.5vh);
 	}
+	#section1 .desc-article div{
+		margin: -20% 0 0 5% !important;
+	}
+	section .desc-article div,
+	.contact-form div,
+	.foot-desc div {
+		margin: 0 0 0 5% !important;
+	}
+	.desc-article div,
+	.foot-desc div,
+	.contact-form div{
+		width: 90%;
+	}
 	.desc-article{
-		width: 40%;
+		width: 46%;
 	}
 	.img-article {
-		width: 59%;
+		width: 54%;
 	}
 	#section2 .img-article img{
 		width:86%;
-		padding:0 7% 0 7%;
+		padding:0 7% 0 7% !important;
 	}
 	footer .foot-desc{
 		width: 49%;
@@ -36,17 +49,16 @@
 	}
 	.foot-title{
 		float:left;
-		padding-left:1%;
+		padding-left:1% !important;
 	}
 	.foot-menu{
 		float:right;
 	}
 }
 
-
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 801px) and (max-height: 1281px) and (orientation: portrait){
 	p{
-		margin:5px 0 5px 0;
+		margin:5px 0 5px 0 !important;
 	}
 	section article{
 		height:50%;
@@ -57,19 +69,18 @@
 	#section3 .img-article{
 		height:48% !important;
 	}
-	article{
+	.desc-article,
+	.img-article div,
+	.contact-form,
+	.foot-desc{
 		display: -webkit-flex;
 		display:flex;
 		align-items:center;
 	}
-	#section1 .desc-article div,
-	#section3 .desc-article div,
-	.contact-form div{
-		margin: 0 0 0 5%;
-	}
-	#section2 .desc-article div,
-	#section4 .desc-article div{
-		margin: 0 0 0 5%;
+	section .desc-article div,
+	.contact-form div,
+	.foot-desc div{
+		margin: 0 0 0 5% !important;
 	}
 	.desc-article div,
 	.foot-desc div,
@@ -88,7 +99,7 @@
 	}
 	#section2 .img-article img{
 		width:86%;
-		padding:0 7% 0 7%;
+		padding:0 7% 0 7% !important;
 	}
 	.desc-article div textarea{
 		height:8vh;
@@ -125,7 +136,7 @@
 	    text-align:center;
 	}
 	.foot-menu li{
-		padding:0 10px 0 10px;
+		padding:0 10px 0 10px !important;
 	}
 	.foot-title{
 		float:none;
@@ -136,3 +147,4 @@
 		float:none;
 	}
 }
+ 

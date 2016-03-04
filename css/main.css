@@ -139,6 +139,9 @@ footer .contact-form{
 .quote{
 	font-size: calc(1vw + 1.5vh);
 }
+.title-quote{
+	float:right;
+}
 .sub-title{
 	font-size: calc(1.5vw + 2.5vh);
 }

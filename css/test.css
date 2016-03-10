@@ -135,12 +135,12 @@ footer .contact-form{
 	word-wrap: break-word;
 	font-size: calc(4vw + 6vh);
 }
-.title-quote,
-.quote{
+.title-quote{
+	float: right;
 	font-size: calc(1vw + 1.5vh);
 }
-.title-quote{
-	float:right;
+.quote{
+	font-size: calc(1vw + 1.5vh);
 }
 .sub-title{
 	font-size: calc(1.5vw + 2.5vh);

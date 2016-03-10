@@ -11,21 +11,42 @@
 <script>
     Parse.initialize("7YyZO6oZNVongKR6pluyULEkMEmvLVRtVZvd6OXn", "JTOrsTnWqTBhxqxFMEvPdOUzDd9Ro01JqpiAF003");
     
-    
-    requestid = "5t7LtEksHQ";
-    Parse.Cloud.run('RequestResponses', { requestid: requestid }, {
+    userid = "KjLqWNhDXD";
+    Parse.Cloud.run('UserDetails', { userid: userid }, {
         success: function (result) {
-                console.log(result);
+            console.log(result);
         },
         error: function (error) {
         	console.log(error);
         }
-    });   
-        
-    requestid = "5t7LtEksHQ";
-    Parse.Cloud.run('RequestDetails', { requestid: requestid }, {
+    }); 
+   
+   
+   userid = "KjLqWNhDXD";
+    Parse.Cloud.run('UserRecommendations', { userid: userid }, {
         success: function (result) {
-                console.log(result);
+            console.log(result);
+        },
+        error: function (error) {
+        	console.log(error);
+        }
+    }); 
+   
+   userid = "KjLqWNhDXD";
+    Parse.Cloud.run('UserRequests', { userid: userid }, {
+        success: function (result) {
+            console.log(result);
+        },
+        error: function (error) {
+        	console.log(error);
+        }
+    });
+   
+   
+    requestid = "5t7LtEksHQ";
+    Parse.Cloud.run('RequestResponseDetails', { requestid: requestid }, {
+        success: function (result) {
+            console.log(result);
         },
         error: function (error) {
         	console.log(error);
@@ -33,7 +54,7 @@
     }); 
     
     
-    placeid = "vEJywNHxjZ";
+    placeid = "uUVAqUAgv0";
     Parse.Cloud.run('PlaceDetails', { placeid: placeid }, {
         success: function (result) {
             console.log(result);
@@ -44,7 +65,7 @@
     });
     
     recommendId = "6Ab6gVboQK";
-    Parse.Cloud.run('PlaceRecommendation', { recommendid: recommendId }, {
+    Parse.Cloud.run('RecommendationDetails', { recommendid: recommendId }, {
         success: function (result) {
             console.log(result);
         },

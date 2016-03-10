@@ -1,0 +1,297 @@
+@media screen and (min-width: 1200px) {
+    body {
+        --width: 1200px;
+    }
+}
+@media screen (min-width: 980px) and (max-width: 1200px) {
+    body {
+        width: 100%;
+    }
+}
+@media screen and (min-width: 740px) and (max-width: 980px) {
+    body {
+        width: 100%;
+    }
+	input[type=button],
+	input[type=submit]{
+		font-size:10px;
+	}
+	section, footer{
+		--height:460px;
+	}
+	.auth{
+		--width:150px;
+	}
+	.title{
+		font-size:65px;
+	}
+	.sub-title{
+		font-size:25px;
+	}
+	.quote{
+		font-size:30px;
+	}
+	.sub-quote{
+		font-size:16px;
+	}
+	.contact-form div{
+		width:85%;
+	}
+	.contact-form input[type="text"] {
+		width: 100%;
+		height:20px;
+	}	
+	input[type="text"], textarea{
+	font-size:12px;
+	}
+	textarea{
+	height: 15em;
+	}
+	input::-webkit-input-placeholder {
+	   font-size:14px;
+	   font-family: "Montserrat";
+	}
+	input:-moz-placeholder { /* Firefox 18- */
+	   font-size:14px;
+	   font-family: "Montserrat";
+	}
+	input::-moz-placeholder {  /* Firefox 19+ */
+		font-size:14px;
+		font-family: "Montserrat";
+	}
+	input:-ms-input-placeholder {  
+	   font-size:14px;
+	   font-family: "Montserrat";
+	}
+	textarea::-webkit-input-placeholder {
+	   padding-top:150px;
+	   font-size:14px;
+	   font-family: "Montserrat";
+	}
+	textarea:-moz-placeholder { /* Firefox 18- */
+	   padding-top:150px;
+	   font-size:14px;
+	   font-family: "Montserrat";
+	}
+	textarea::-moz-placeholder {  /* Firefox 19+ */
+		padding-top:150px;
+	   font-size:14px;
+	   font-family: "Montserrat";
+	}
+	textarea:-ms-input-placeholder {  
+	   padding-top:150px;
+	   font-size:14px;
+	   font-family: "Montserrat";
+	}
+	.privacy-pol span{
+		font-size: 30px;
+	}
+	.privacy-pol ul li{
+		padding:5px;
+		font-size:13px;
+	}	
+}
+@media screen and (min-width: 630px) and (max-width: 740px) {
+    body {
+        width: 100%;
+    }
+	input[type=button],
+	input[type=submit]{
+		font-size:10px;
+	}
+	section, footer{
+		--height:400px;
+	}
+	.auth{
+		--width:150px;
+	}
+	.title{
+		font-size:50px;
+	}
+	.sub-title{
+		font-size:25px;
+	}
+	.quote{
+		font-size:22px;
+	}
+	.sub-quote{
+		font-size:14px;
+	}
+	.contact-form div{
+		width:85%;
+	}
+	.contact-form input[type="text"] {
+		width: 100%;
+		height:20px;
+	}
+	input[type="text"], textarea{
+	font-size:12px;
+	}
+	textarea{
+		height: 12em;
+	}
+	input::-webkit-input-placeholder {
+	   font-size:14px;
+	   font-family: "Montserrat";
+	}
+	input:-moz-placeholder { /* Firefox 18- */
+	   font-size:14px;
+	   font-family: "Montserrat";
+	}
+	input::-moz-placeholder {  /* Firefox 19+ */
+		font-size:14px;
+		font-family: "Montserrat";
+	}
+	input:-ms-input-placeholder {  
+	   font-size:14px;
+	   font-family: "Montserrat";
+	}
+	textarea::-webkit-input-placeholder {
+	   padding-top:110px;
+	   font-size:14px;
+	   font-family: "Montserrat";
+	}
+	textarea:-moz-placeholder { /* Firefox 18- */
+	   padding-top:110px;
+	   font-size:14px;
+	   font-family: "Montserrat";
+	}
+	textarea::-moz-placeholder {  /* Firefox 19+ */
+		padding-top:110px;
+	   font-size:14px;
+	   font-family: "Montserrat";
+	}
+	textarea:-ms-input-placeholder {  
+	   padding-top:110px;
+	   font-size:14px;
+	   font-family: "Montserrat";
+	}
+	.privacy-pol span{
+		font-size: 30px;
+	}
+	.privacy-pol ul li{
+		padding:5px;
+		font-size:13px;
+	}	
+}
+@media screen and (max-width: 630px){
+	body {
+        	width: 100%;
+    	}
+	input[type=button],
+	input[type=submit]{
+		font-size:8px;
+	}
+	section, footer{
+		margin:0 !important;
+	}
+	section article, 
+	footer article{
+		clear:both;
+	}
+	p{
+		margin:8px 0;
+	}
+	.title{
+		font-size:60px;
+		--text-align:center;
+	}
+	.art-img{
+		width:100%;
+	}
+	.art-quote, .foot-quote, .contact-form{
+		width:inherit;
+	}
+	.quote, .sub-title{
+		font-size:20px;
+	}
+	.sub-quote{
+		font-size:12px;
+	}
+	.quote,.sub-quote{
+		text-align:left;
+	}
+	.contact-form div{
+		width:85%;
+	}
+	.contact-form input[type="text"] {
+		width: 100%;
+		height:20px;
+	}
+	input[type="text"], textarea{
+		font-size:12px;
+	}
+	.contact-form textarea{
+		width:99%;
+		resize:none;
+		height: 12em;
+	}
+	input::-webkit-input-placeholder {
+	   font-size:12px;
+	   font-family: "Montserrat";
+	}
+	input:-moz-placeholder { /* Firefox 18- */
+	   font-size:12px;
+	   font-family: "Montserrat";
+	}
+	input::-moz-placeholder {  /* Firefox 19+ */
+		font-size:12px;
+		font-family: "Montserrat";
+	}
+	input:-ms-input-placeholder {  
+		font-size:12px;
+		font-family: "Montserrat";
+	}
+	textarea::-webkit-input-placeholder {
+		font-size:12px;
+		font-family: "Source Sans Pro";
+	}
+	textarea:-moz-placeholder { /* Firefox 18- */
+		font-size:12px;
+		font-family: "Source Sans Pro";
+	}
+	textarea::-moz-placeholder {  /* Firefox 19+ */
+	   	font-size:12px;
+	   	font-family: "Source Sans Pro";
+	}
+	textarea:-ms-input-placeholder {  
+		font-size:12px;
+		font-family: "Source Sans Pro";
+	}
+	.contact-form textarea::-webkit-input-placeholder {
+		padding-top:110px;
+		font-size:12px;
+		font-family: "Montserrat";
+	}
+	.contact-form textarea:-moz-placeholder { /* Firefox 18- */
+		padding-top:110px;
+		font-size:12px;
+		font-family: "Montserrat";
+	}
+	.contact-form textarea::-moz-placeholder {  /* Firefox 19+ */
+		padding-top:110px;
+		font-size:12px;
+		font-family: "Montserrat";
+	}
+	.contact-form textarea:-ms-input-placeholder {  
+		padding-top:110px;
+		font-size:12px;
+		font-family: "Montserrat";
+	}
+	.privacy-pol span,
+	.privacy-pol ul
+	{
+		clear:both;
+		padding:0;
+		margin:0;
+		width:100%;
+		text-align:center;
+	}
+	.privacy-pol span{
+		font-size: 25px;
+	}
+	.privacy-pol ul li{
+		padding:5px;
+		font-size:12px;
+	}
+}

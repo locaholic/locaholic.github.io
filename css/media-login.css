@@ -4,6 +4,9 @@
 	}
 }
 @media screen and (max-width: 768px) and (orientation: portrait) {
+	#login-cont{
+		height:95vh;
+	}
 	#login-plist img {
 		width: 22.7vw;
 		height: 11vh;
@@ -23,6 +26,9 @@
 	}
 }
 @media screen and (max-width: 1024px) and (max-height: 769px) and (orientation: landscape) {
+	#login-cont{
+		height:95vh;
+	}
 	#login-plist img {
 		width: 14.8vw;
 		height: 17vh;

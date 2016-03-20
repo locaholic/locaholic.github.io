@@ -4,6 +4,9 @@
 	}
 }
 @media screen and (max-width: 768px) {
+	section{
+		height: 95vh;
+	}
 	#login-plist img {
 		width: 22.8vw;
 		height: 12vh;

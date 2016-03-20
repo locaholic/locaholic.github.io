@@ -29,6 +29,10 @@
 	#req-details div {
     		margin: 1% auto;
 	}
+	#requester img{
+		width:17vh;
+		height:17vh;
+	}
 	#login-plist img {
 		width: 14.8vw;
 		height: 17vh;

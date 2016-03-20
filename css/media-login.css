@@ -26,6 +26,9 @@
 	}
 }
 @media screen and (max-width: 1024px) and (max-height: 769px) and (orientation: landscape) {
+	#req-details div {
+    		margin: 1% auto;
+	}
 	#login-plist img {
 		width: 14.8vw;
 		height: 17vh;

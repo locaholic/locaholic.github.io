@@ -1,0 +1,19 @@
+@media screen and (max-height: 790px) {
+	#req-details{
+		--padding:0 !important;
+	}
+}
+@media screen and (max-width: 768px) {
+	#login-plist img {
+		width: 22.8vw;
+		height: 12vh;
+		margin:1vh 0.5vw 1vh 0.5vw;
+	}
+	#login-plist{
+		width: 95vw;
+		height: 15.2vh;
+	}
+	#pimg-select{
+		top: calc(4.5vw + 6vh);
+	}
+}

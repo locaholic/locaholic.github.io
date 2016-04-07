@@ -1,0 +1,53 @@
+@media screen and (max-height: 790px) {
+	#req-details{
+		--padding:0 !important;
+	}
+}
+@media screen and (max-width: 768px) and (orientation: portrait) {
+	#login-cont{
+		height:90vh;
+	}
+	#login-plist img {
+		width: 22.7vw;
+		height: 11vh;
+		margin:1vh 0.5vw 1vh 0.5vw;
+	}
+	#login-plist{
+		width: 95vw;
+		height: 13vh;
+	}
+	#pimg-select{
+		left: 1vw;
+		top: 8vh;
+	}
+	#requester input{
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+	}
+}
+@media screen and (max-width: 1024px) and (max-height: 769px) and (orientation: landscape) {
+	#req-details div {
+    		margin: 1% auto;
+	}
+	#requester img{
+		width:18vh;
+		height:18vh;
+	}
+	#login-plist img {
+		width: 14.8vw;
+		height: 17vh;
+		margin:1vh 0.5vw 1vh 0.5vw;
+	}
+	#login-plist{
+		width: 95vw;
+		height: 19.5vh;
+	}
+	#pimg-select{
+		left: 1vw;
+		top: 11.6vh;
+	}
+	#requester input{
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+	}
+}

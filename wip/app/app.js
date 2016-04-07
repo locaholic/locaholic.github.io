@@ -24,6 +24,7 @@ angular.module('myApp', [
       version: 'v2.5',
       xfbml: true
     });
+
   $rootScope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams){
     if (toState.authenticate){
       console.log($rootScope.sessionUser);
@@ -34,6 +35,11 @@ angular.module('myApp', [
       console.log("previous state",$rootScope.previous);
       $state.transitionTo("home.login");
       event.preventDefault(); 
+      }
+      else{
+        Parse.Cloud.run('UserDetails', { userid: $rootScope.sessionUser.id }).then(function(response) {
+            $rootScope.sessionUser.detail=response;
+          });
       }
     }
   }

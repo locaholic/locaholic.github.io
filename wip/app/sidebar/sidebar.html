@@ -1,14 +1,18 @@
-<!-- <div class="row" ng-init="load()">
-	<img ng-src="{{currentUser.userImg}}" />
-	<button ng-click="logout()">logout</button>
+	<!-- <button ng-click="logout()">logout</button> -->
 	<div ui-view="login"></div>
-		<div id="sidebar">
-		</div> -->
-<div class="search-bar" style="padding:0px 15px;">
+	
+<div class="search-bar" style="padding:0px 15px;" ng-init="load()">
     <div class="c-reset col-sm-1 col-xs-1 col-md-1">
-        <a href="javascipt:void(0);">
-            <img src="images/avatars/team8.jpg" width="35px" height="35px" style="border-radius:5px;">
+  <div class="dropdown">
+    <a class="dropdown-toggle" type="button" data-toggle="dropdown">
+            <img ng-src="{{currentUser.userImg}}" width="35px" height="35px" style="border-radius:5px;">
         </a>
+    <ul class="dropdown-menu">
+      <li><a href="#" ng-click="logout()"><i class="fa fa-sign-out"> </i> Logout</a></li>
+      <li><a href="#"><i class="fa fa-user"> </i> Profile</a></li>
+      <li><a href="#"><i class="fa fa-cogs"> </i> Settings</a></li>
+    </ul>
+  </div>
     </div>
     <div class="has-search col-sm-10 col-xs-10 col-md-10" style="position: relative;">
     	<div id='searchbox'></div>

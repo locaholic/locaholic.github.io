@@ -4,9 +4,15 @@ angular.module('myApp')
   
   $scope.load=function(){
         if($rootScope.sessionUser){
+
         $scope.currentUser= $rootScope.sessionUser;
+        
         $scope.currentUser.userImg=$rootScope.sessionUser.get('userImg');
-        console.log($scope.currentUser.userImg);
+        console.log($rootScope.sessionUser.id);
+        Parse.Cloud.run('UserDetails', { userid: $rootScope.sessionUser.id }).then(function(response) {
+            $scope.currentUser.detail=response;
+        console.log($scope.currentUser.detail);
+          });
       }
     }
   $scope.login=function() {
@@ -46,7 +52,7 @@ angular.module('myApp')
               }
             }
           );
-            mouseflow.tag(response.email);
+                    mouseflow.tag(response.email);
            }); 
     }
   $state.go('home');

@@ -6,9 +6,9 @@
 
 <div class="container-fluid" style="padding:0px 15px;">
     <div class="row">
-        <div class="col-md-3 c-reset" ui-view="sidebar" style="padding-top: 15px; border-right: #E6E6E6 solid 1px;position:absolute;z-index:10;">
+        <div class="col-md-3 col-sm-12 c-reset" ui-view="sidebar" style="padding-top: 15px; border-right: #E6E6E6 solid 1px;position:absolute;z-index:10;">
         </div>
-        <div class="col-md-9" >
+        <div class="hidden-sm hidden-xs col-md-9">
             <div id="map_canvas">
                 <ui-gmap-google-map center="map.center" zoom="map.zoom" control="map.control" draggable="true" options="options">
                     <ui-gmap-search-box parentdiv="'searchbox'" template="searchbox.template" events="searchbox.events"></ui-gmap-search-box>

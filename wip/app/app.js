@@ -24,7 +24,9 @@ angular.module('myApp', [
       version: 'v2.5',
       xfbml: true
     });
-
+    FB.Event.subscribe('auth.login', function(){
+    window.location.href = '';
+  });
   $rootScope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams){
     if (toState.authenticate){
       console.log($rootScope.sessionUser);
@@ -37,9 +39,9 @@ angular.module('myApp', [
       event.preventDefault(); 
       }
       else{
-        Parse.Cloud.run('UserDetails', { userid: $rootScope.sessionUser.id }).then(function(response) {
-            $rootScope.sessionUser.detail=response;
-          });
+        // Parse.Cloud.run('UserDetails', { userid: $rootScope.sessionUser.id }).then(function(response) {
+        //     $rootScope.sessionUser.detail=response;
+        //   });
       }
     }
   }
@@ -84,7 +86,8 @@ angular.module('myApp', [
           'tabcontent':{templateUrl: 'sidebar/places.html',
                     // controller: 'placeDetailCtrl'
                   }
-        }
+        },
+        authenticate:true
       })
       .state('home.recommendation',{
         url: 'recommendation/',
@@ -93,7 +96,8 @@ angular.module('myApp', [
                     // controller: 'placeDetailCtrl'
                   },
           'secondary-tabs@home.recommendation':{templateUrl: 'nav/round-tab.html'}
-        }
+        },
+        authenticate:true
       })
       .state('home.detail',{
         url: 'places/:placeId',
@@ -101,7 +105,8 @@ angular.module('myApp', [
           'detail':{templateUrl: 'detail/detail.html',
                     controller: 'placeDetailCtrl'
                   }
-        }
+        },
+        authenticate:true
       })
 }
 ]);

@@ -1,0 +1,63 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300);
+@font-face {
+font-family: Steady;
+src: url("../fonts/Steady.otf") format("opentype");
+}
+html {
+    color: #776;
+    font-family: "Montserrat";
+    font-size: 16px;
+}
+body,
+hr{
+	margin-top: auto;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: auto;
+	padding: 0 !important;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+}
+hr {
+    display: block;
+    border: 0;
+    border-top: 1px solid #ccc;
+    clear: right;
+}
+/* Login Page --------------------------*/
+#login-cont{
+	margin:0 auto;
+	padding:0;
+	display:flex;
+	align-items: center;
+}
+
+#requester{
+	margin:auto;
+	text-align: center;
+}
+#requester p{
+	font-size: calc(1vw + 1vh);
+	line-height: 1.5;
+	color: #FFFFFF;
+	position: relative;
+	top: -115px;
+}
+#requester p span{
+	font-family: "Source Sans Pro";
+}
+#login-foot-title{
+	font-size: 300%;
+	font-family: "Steady";
+	color: #FFFFFF;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 150px;
+	margin-top:225px;
+}
+html,body{
+    overflow:hidden
+    }
+/* Login Page-End --------------------------*/

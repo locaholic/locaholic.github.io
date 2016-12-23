@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en" >
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $('input[type="radio"]').click(function(){
+      $('.hide').hide().removeClass('hide');
+      $('.hidden').hide().removeClass('hidden');
+      if($(this).attr("value")=="a1_one"){
+        $(".box").not(".a1_one").hide();
+        $(".a1_one").show();
+        $(".hideMe").show();
+      }
+      if($(this).attr("value")=="a1_two"){
+        $(".box").not(".a1_two").hide();
+        $(".a1_two").show();
+        $(".hideMe").show();
+      }
+      if($(this).attr("value")=="a1_three"){
+        $(".box").not(".a1_three").hide();
+        $(".a1_three").show();
+        $(".hideMe").show();
+      }
+      if($(this).attr("value")=="a2_one"){
+        $(".box").not(".a2_one").hide();
+        $(".a2_one").show();
+        $(".a1_one").show();
+      }
+      if($(this).attr("value")=="a2_two"){
+        $(".box").not(".a2_two").hide();
+        $(".a2_two").show();
+        $(".a1_one").show();
+      }
+      if($(this).attr("value")=="a3_one"){
+        $(".box").not(".a3_one").hide();
+        $(".a1_one").show();
+        $(".a2_one").show();
+        $(".a3_one").show();
+      }
+      if($(this).attr("value")=="a4_one"){
+        $(".box").not(".a4_one").hide();
+        $(".a1_one").show();
+        $(".a2_one").show();
+        $(".a3_one").show();
+        $(".a4_one").show();
+      }
+      if($(this).attr("value")=="a4_two"){
+        $(".box").not(".a4_two").hide();
+        $(".a1_one").show();
+        $(".a2_one").show();
+        $(".a3_one").show();
+        $(".a4_two").show();
+      }
+      if($(this).attr("value")=="a5_one"){
+        $(".box").not(".a5_one").hide();
+        $(".a1_one").show();
+        $(".a2_two").show();
+        $(".a1_two").show();
+        $(".a5_one").show();
+      }
+      if($(this).attr("value")=="a5_two"){
+        $(".box").not(".a5_two").hide();
+        $(".a1_one").show();
+        $(".a2_one").show();
+        $(".a3_two").show();
+        $(".a1_three").show();
+        $(".a5_two").show();
+      }
+      if($(this).attr("value")=="a6"){
+        $(".box").not(".a6").hide();
+        $(".a1_two").show();
+        $(".a6").show();
+      }
+      if($(this).attr("value")=="a7"){
+        $(".box").not(".a7").hide();
+        $(".a1_two").show();
+        $(".a6").show();
+        $(".a7").show();
+      }
+      if($(this).attr("value")=="a8"){
+        $(".box").not(".a8").hide();
+        $(".a1_three").show();
+        $(".a8").show();
+      }
+    });
+  });
+  </script>
+</head>
+
+<body>
+  <div class="container col-md-6 col-md-offset-3">
+    <link href="widget.css" rel="stylesheet">
+    <div class="menu">
+      <div class="back"><i class="fa fa-chevron-left"></i> <img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
+      <div class="name">Mark | powered by Locaholic</div>
+      <div class="last">18:09</div>
+    </div>
+    <ol class="chat">
+      <li class="other">
+        <div class="avatar"><img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
+        <div class="msg">
+          <p>Hi there!</p>
+          <p>My name is Mark, how can I help you ?</p>
+          <time>20:17</time>
+        </div>
+      </li>
+      <li class="self">
+        <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
+        <div class="msg">
+          <label><input type=radio name=radio1 value="a1_one">Just exploring</label><br><br>
+          <label><input type=radio name=radio1 value="a1_two">I need a restaurant recommendation.</label><br><br>
+          <label><input type=radio name=radio1 value="a1_three">Just wanted to say hi.</label><br><br>
+        </div>
+      </li>
+      <div class="hideMe">
+        <div class="a1_one box">
+          <li class="other">
+            <div class="avatar"><img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
+            <div class="msg">
+              <p>Would you like to learn more about Locaholic? </p>
+            </div>
+          </li>
+        </div>
+        <div class="a1_one box">
+          <li class="self">
+            <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
+            <div class="msg">
+              <label><input type=radio name=radio2 value="a2_one">Yes</label><br><br>
+              <label><input type=radio name=radio2 value="a2_two">No</label><br><br>
+            </div>
+          </li>
+        </div>
+        <div class="a2_one box">
+          <li class="other">
+            <div class="avatar"><img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
+            <div class="msg">
+              <p>Pick a new restaurant in 5 mins!</p>
+              <p>Locaholic helps you get personalized recommendations from people you trust in minutes!</p>
+              <br><br><br><br><br><br><br><br>
+              <p>Would you like to join our waiting list?</p>
+            </div>
+          </li>
+        </div>
+        <div class="a2_one box">
+          <li class="self">
+            <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
+            <div class="msg">
+              <label><input type=radio name=radio3 value="a3_one">Yes</label><br><br>
+              <label><input type=radio name=radio3 value="a2_two">No</label><br><br>
+            </div>
+          </li>
+        </div>
+        <div class="a3_one box">
+          <li class="other">
+            <div class="avatar"><img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
+            <div class="msg">
+              <p>Are you a restaurant/travel blogger?</p>
+            </div>
+          </li>
+        </div>
+        <div class="a3_one box">
+          <li class="self">
+            <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
+            <div class="msg">
+              <label><input type=radio name=radio4 value="a4_one">Yes</label><br><br>
+              <label><input type=radio name=radio4 value="a4_two">No</label><br><br>
+            </div>
+          </li>
+        </div>
+        <div class="a4_one box">
+          <li class="self">
+            <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
+            <div class="msg">
+              <form action="a4_one_a.asp">
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" placeholder="John Smith" class="form-control" id="name">
+                  <label for="cellNumber">Phone</label>
+                  <input type="phone" placeholder="9955887700" class="form-control" id="cellNumber">
+                  <label for="email">Email</label>
+                  <input type="email" placeholder="John@smith.com" class="form-control" id="email">
+                  <label for="url">Blog</label>
+                  <input type="url" placeholder="Johns-travel.com" class="form-control" id="blog">
+                  <input type="submit" value="Submit">
+                </div>
+              </form>
+            </div>
+          </li>
+        </div>
+        <div class="a4_two box">
+          <li class="self">
+            <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
+            <div class="msg">
+              <form action="a4_two_a.asp">
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" placeholder="John Smith" class="form-control" id="name">
+                  <label for="cellNumber">Phone</label>
+                  <input type="phone" placeholder="9955887700" class="form-control" id="cellNumber">
+                  <label for="email">Email</label>
+                  <input type="email" placeholder="John@smith.com" class="form-control" id="email">
+                  <input type="submit" value="Submit">
+                </div>
+              </form>
+            </div>
+          </li>
+        </div>
+        <div class="a2_two box">
+          <li class="other">
+            <div class="avatar"><img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
+            <div class="msg">
+              <p>I am always excited to meet people. The team is working hard to help you find a new restaurant in less than 5 mins.</p>
+            </div>
+          </li>
+        </div>
+        <div class="a2_two box">
+          <li class="self">
+            <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
+            <div class="msg">
+              <label><input type=radio name=radio5 value="a5_one">I need a restaurant recommendation.</label><br><br>
+              <label><input type=radio name=radio5 value="a5_two">Leave a comment</label><br><br>
+            </div>
+          </li>
+        </div>
+        <div class="a1_two box">
+          <li class="other">
+            <div class="avatar"><img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
+            <div class="msg">
+              <p>That's awesome, I am glad I can be of help  </p>
+            </div>
+          </li>
+        </div>
+        <div class="a1_two box">
+          <li class="self">
+            <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
+            <div class="msg">
+              <form action="a1_two_a.asp">
+                <div class="form-group">
+                  <label for="location">Location</label>
+                  <input type="text" placeholder="New York" class="form-control" id="location">
+                  <input type="submit" value="Submit">
+                </div>
+              </form>
+            </div>
+          </li>
+        </div>
+        <div class="a6 box">
+          <li class="other">
+            <div class="avatar"><img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
+            <div class="msg">
+              <p>Tell me a little more about your requirements. What are you in the mood for? </p>
+            </div>
+          </li>
+        </div>
+        <div class="a6 box">
+          <li class="self">
+            <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
+            <div class="msg">
+              <form action="a6_a.asp">
+                <div class="form-group">
+                  <label for="preferences">Preferences</label>
+                  <input type="text" placeholder="Sample of what are users have asked: I am a vegetarian, I feel like some thai place with byob..." class="form-control" id="preferences">
+                  <input type="submit" value="Submit">
+                </div>
+              </form>
+            </div>
+          </li>
+        </div>
+        <div class="a7 box">
+          <li class="other">
+            <div class="avatar"><img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
+            <div class="msg">
+              <p>Cool I will put together some awesome restaurants for you.</p>
+              <p>Where do you want me to sent this to?</p>
+            </div>
+          </li>
+        </div>
+        <div class="a7 box">
+          <li class="self">
+            <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
+            <div class="msg">
+              <form action="a7_a.asp">
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" placeholder="John Smith" class="form-control" id="name">
+                  <label for="cellNumber">Phone</label>
+                  <input type="phone" placeholder="9955887700" class="form-control" id="cellNumber">
+                  <label for="email">Email</label>
+                  <input type="email" placeholder="John@smith.com" class="form-control" id="email">
+                  <input type="submit" value="Submit">
+                </div>
+              </form>
+            </div>
+          </li>
+        </div>
+        <div class="a1_three box">
+          <li class="other">
+            <div class="avatar"><img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
+            <div class="msg">
+              <p>Hi! I am always excited to meet new people. Please type in your comments and I or someone from my team will get back to you within 24 hours.</p>
+            </div>
+          </li>
+        </div>
+        <div class="a1_three box">
+          <li class="self">
+            <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
+            <div class="msg">
+              <form action="a1_three_a.asp">
+                <div class="form-group">
+                  <label for="comment">Comment</label>
+                  <input type="text" placeholder="I would like to invest..." class="form-control" id="comment">
+                  <input type="submit" value="Submit">
+                </div>
+              </form>
+            </div>
+          </li>
+        </div>
+        <div class="a8 box">
+          <li class="other">
+            <div class="avatar"><img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
+            <div class="msg">
+              <p>Thanks for writing to us. There are a few bloggers ahead of you on our waitlist. </p>
+              <p>Signup to join our waitlist:</p>
+            </div>
+          </li>
+        </div>
+        <div class="a8 box">
+          <li class="self">
+            <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
+            <div class="msg">
+              <form action="a8_a.asp">
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" placeholder="John@smith.com" class="form-control" id="email">
+                  <input type="submit" value="Submit">
+                </div>
+              </form>
+            </div>
+          </li>
+        </div>
+      </div>
+    </ol>
+  </div>
+</body>

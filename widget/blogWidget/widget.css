@@ -1,14 +1,19 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700);
 @import url(http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
 
-/*html, body {
-    background: #e5e5e5;
+html, body {
+  /*  background: #e5e5e5;
     font-family: 'Lato', sans-serif;
     margin: 0px auto;
-}*/
+    */
+    font-size: 16px;
+}
 ::selection{
   background: rgba(82,179,217,0.3);
   color: inherit;
+}
+label{
+  font-weight: normal;
 }
 a{
   color: rgba(82,179,217,0.9);
@@ -81,7 +86,9 @@ a{
 }
 
 /* M E S S A G E S */
-
+.hideMe {
+    display: none;
+}
 .chat {
     list-style: none;
     background: none;
@@ -190,7 +197,7 @@ a{
     box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.07);
 }
 .msg p {
-    font-size: 0.8rem;
+    /*font-size: 0.8rem;*/
     margin: 0 0 0.2rem 0;
     color: #777;
 }

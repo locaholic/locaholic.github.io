@@ -31,65 +31,6 @@
 </head>
 
 <body>
-<!-- Modal -->
-<div id="getButtonModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Customize your button</h4>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-            <div class="col-md-6">
-            <form>
-              <div class="form-group">
-                <label for="url">Blog URL</label>
-                <input type="url" placeholder="http://myblog.com" class="form-control" id="url">
-              </div>
-              <div class="form-group">
-                <label for="email">Where to send the incoming Requests ?</label>
-                <input type="email" placeholder="awesomeblogger@gmail.com" class="form-control" id="email">
-              </div>
-              <div class="form-group">
-                <label for="name">Your Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Mark">
-              </div>
-              
-              <div class="checkbox">
-                <label><input name="emailChoice" type="checkbox"> Do you want us to contact you by email ?</label>
-              </div>
-              <p class="text-muted">
-                <a href="#" class="link" data-toggle="collapse" data-target="#advOpt"> Advanced Options</a>
-              </p>
-              <div id="advOpt" class="collapse">
-                  <div class="form-group">
-                <label for="color">Color Theme</label>
-                <input type="color" class="form-control" id="color">
-              </div>
-              <div class="form-group">
-                <label for="btnText">Button Text</label>
-                <input type="text" class="form-control" id="buttonText">
-              </div>
-              </div>
-              <button class="btn btn-success">Preview and Generate Code</button>
-            </form>       
-            </div>
-            <div class="col-md-6">
-            <p class="text-muted h3"> Button Preview</p>
-            <button id='preview_button' style="color: #FDFDFD;background-color: #426bf4">Ask Mark Recommendations</button></div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-
-  </div>
-</div>
-
 
     <!-- Navigation -->
     <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
@@ -120,7 +61,11 @@
             <h1>Locaholic</h1>
             <h3 class="type-it"></h3>
             <br>
-            <a href="#how" id = "btn-how" class="btn btn-dark btn-lg">Find out how !</a>
+            <a href="#signup" id = "btn-signup" class="btn btn-dark btn-lg">Sign up Now !</a>
+                <div class="col-lg-11 col-lg-offset-1 text-right">
+                    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+                    <a href="#how" id = "btn-how" class="btn btn-dark btn-lg">Find out how !</a>
+                </div>
         </div>
     </header>
 
@@ -129,8 +74,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Suggest Some text for this area</h2>
-                    <p class="lead">this also, Mission statement would be nice here <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a>.</p>
+                    <h2>An interactive blog experience</h2>
+                    <p class="lead">Connect with the readers via your blog to personalize their experiences.</p>
                 </div>
             </div>
             <!-- /.row -->
@@ -156,7 +101,7 @@
                                     <strong>Add our button to your blog</strong>
                                 </h4>
                                 <p>Add our little code snippet to your blog and you are ready to take requests.</p>
-                                <a href="#" class="btn btn-light" data-toggle="modal" data-target="#getButtonModal">Get your Button</a>
+
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -168,34 +113,34 @@
                                 <h4>
                                     <strong>User Clicks on it</strong>
                                 </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                <a href="#" class="btn btn-light">Learn More</a>
+                                <p>Visitor clicks to ask for a recommendation.</p>
+
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
                             <div class="service-item">
                                 <span class="fa-stack fa-4x">
                                 <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-flask fa-stack-1x text-primary"></i>
+                                <i class="fa fa-question-circle-o fa-stack-1x text-primary"></i>
                             </span>
                                 <h4>
-                                    <strong>Service Name</strong>
+                                    <strong>Request Notification</strong>
                                 </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                <a href="#" class="btn btn-light">Learn More</a>
+                                <p>You will get notified of the request.</p>
+
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
                             <div class="service-item">
                                 <span class="fa-stack fa-4x">
                                 <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-shield fa-stack-1x text-primary"></i>
+                                <i class="fa fa-mail-reply-all fa-stack-1x text-primary"></i>
                             </span>
                                 <h4>
-                                    <strong>Service Name</strong>
+                                    <strong>Respond Back with Recommendations </strong>
                                 </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                <a href="#" class="btn btn-light">Learn More</a>
+                                <p>Respond within minutes to help your reader find their next awesome experience</p>
+
                             </div>
                         </div>
                     </div>
@@ -205,13 +150,15 @@
             </div>
             <!-- /.row -->
         </div>
+        <div class="col-md-20 text-center">
+        <a href="#" class="btn btn-light"><strong>Get your Button</strong></a></div>
         <!-- /.container -->
     </section>
 
     <!-- Callout -->
     <aside class="callout">
         <div class="text-vertical-center">
-            <h1>Vertically Centered Text</h1>
+            <h1>"Alone we can do so little, together we can do so much."</h1>
         </div>
     </aside>
 
@@ -220,7 +167,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h2>Our Work</h2>
+                    <h2>Meet our Team</h2>
                     <hr class="small">
                     <div class="row">
                         <div class="col-md-6">
@@ -253,7 +200,7 @@
                         </div>
                     </div>
                     <!-- /.row (nested) -->
-                    <a href="#" class="btn btn-dark">View More Items</a>
+
                 </div>
                 <!-- /.col-lg-10 -->
             </div>
@@ -267,9 +214,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h3>The buttons below are impossible to resist.</h3>
-                    <a href="#" class="btn btn-lg btn-light">Click Me!</a>
-                    <a href="#" class="btn btn-lg btn-dark">Look at Me!</a>
+                    <h3>Ready to Commit ?</h3>
+                    <a href="#" class="btn btn-lg btn-light">Sign Up No</a>
+
                 </div>
             </div>
         </div>
@@ -344,9 +291,9 @@
     // loopDelay: 100000,
     strings: [
     'Do you want your <strong>readers </strong> to ask you for <strong>Recommendations</strong> ?',
-    'Do you want to respond to your readers requests within minutes ?',
+    'Do you want to respond to your readers requests <strong>within minutes </strong>?',
     'Do you want to make your blog more <strong> interactive and personal</strong> ?',
-    'Now you can !!',
+    'Now you can!!!',
     "Let's make your blog more <strong> interactive and personal</strong> ..."]
     });
 

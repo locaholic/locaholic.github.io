@@ -79,7 +79,31 @@
             </div>
             <div class="col-md-6">
             <p class="text-muted h3"> Button Preview</p>
-            <button id='preview_button' style="color: #FDFDFD;background-color: #426bf4">Ask Mark Recommendations</button></div>
+            <div id="askButtonBody" class="collapse">
+                <div class="panel panel-primary">
+                      <div class="panel-heading">Hello there, what are you looking for ?</div>
+                      <div class="panel-body">
+                          
+                          <form>
+                              <div class="form-group">
+                                <textarea class="form-control" rows="5" id="question" placeholder="Looking for places that serve good italian? Someplace not very pricey, plz"></textarea>
+                                <label for="location">Where?</label>
+                                <input type="email" placeholder="New York" class="form-control" id="email"><span><a href="#" class="link">My Current Location</a></span>
+                              </div>
+                              <div class="form-group">
+                                <label for="email">Where do we send the Recommendations to?</label>
+                                <input type="email" placeholder="nikhil@gmail.com" class="form-control" id="email">
+                              </div>
+                              <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Nikhil">
+                              </div>
+                            </form>
+                      </div>
+                    </div>
+                </div>
+            <button data-toggle="collapse" data-target="#askButtonBody" style="color: #FDFDFD;background-color: #426bf4;float: right;">Ask Mark For Recommendations</button>
+            </div>
         </div>
       </div>
       <div class="modal-footer">

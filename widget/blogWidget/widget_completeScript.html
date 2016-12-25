@@ -26,19 +26,26 @@
       }
       if($(this).attr("value")=="a2_one"){
         $(".box").not(".a2_one").hide();
-        $(".a2_one").show();
         $(".a1_one").show();
+        $(".a2_one").show();
       }
       if($(this).attr("value")=="a2_two"){
         $(".box").not(".a2_two").hide();
-        $(".a2_two").show();
         $(".a1_one").show();
+        $(".a2_two").show();
       }
       if($(this).attr("value")=="a3_one"){
         $(".box").not(".a3_one").hide();
         $(".a1_one").show();
         $(".a2_one").show();
         $(".a3_one").show();
+      }
+      if($(this).attr("value")=="a3_two"){
+        $(".box").not(".a3_two").hide();
+        $(".a1_one").show();
+        $(".a2_one").show();
+        $(".a3_two").show();
+
       }
       if($(this).attr("value")=="a4_one"){
         $(".box").not(".a4_one").hide();
@@ -55,19 +62,12 @@
         $(".a4_two").show();
       }
       if($(this).attr("value")=="a5_one"){
-        $(".box").not(".a5_one").hide();
-        $(".a1_one").show();
-        $(".a2_two").show();
         $(".a1_two").show();
-        $(".a5_one").show();
+        $(".a1_three").hide();
       }
       if($(this).attr("value")=="a5_two"){
-        $(".box").not(".a5_two").hide();
-        $(".a1_one").show();
-        $(".a2_one").show();
-        $(".a3_two").show();
         $(".a1_three").show();
-        $(".a5_two").show();
+        $(".a1_two").hide();
       }
       if($(this).attr("value")=="a6"){
         $(".box").not(".a6").hide();
@@ -139,7 +139,7 @@
             <div class="msg">
               <p>Pick a new restaurant in 5 mins!</p>
               <p>Locaholic helps you get personalized recommendations from people you trust in minutes!</p>
-              <br><br><br><br><br><br><br><br>
+              <br><br>
               <p>Would you like to join our waiting list?</p>
             </div>
           </li>
@@ -149,7 +149,7 @@
             <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
             <div class="msg">
               <label><input type=radio name=radio3 value="a3_one">Yes</label><br><br>
-              <label><input type=radio name=radio3 value="a2_two">No</label><br><br>
+              <label><input type=radio name=radio3 value="a3_two">No</label><br><br>
             </div>
           </li>
         </div>
@@ -208,6 +208,23 @@
             </div>
           </li>
         </div>
+        <div class="a3_two box">
+          <li class="other">
+            <div class="avatar"><img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
+            <div class="msg">
+              <p>I am always excited to meet people. The team is working hard to help you find a new restaurant in less than 5 mins.</p>
+            </div>
+          </li>
+        </div>
+        <div class="a3_two box">
+          <li class="self">
+            <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
+            <div class="msg">
+              <label><input type=radio name=radio5 value="a5_one">I need a restaurant recommendation.</label><br><br>
+              <label><input type=radio name=radio5 value="a5_two">Leave a comment</label><br><br>
+            </div>
+          </li>
+        </div>
         <div class="a2_two box">
           <li class="other">
             <div class="avatar"><img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
@@ -225,6 +242,7 @@
             </div>
           </li>
         </div>
+
         <div class="a1_two box">
           <li class="other">
             <div class="avatar"><img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>

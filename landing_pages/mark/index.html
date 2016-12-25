@@ -4,6 +4,19 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAgGUHwXIpoG-5VZ11Llop184jlS4raipw&sensor=false&libraries=places"></script>
+    <script type="text/javascript">
+        google.maps.event.addDomListener(window, 'load', function () {
+            var places = new google.maps.places.Autocomplete(document.getElementById('location'));
+            google.maps.event.addListener(places, 'place_changed', function () {
+                var place = places.getPlace();
+                var address = place.formatted_address;
+                var latitude = place.geometry.location.A;
+                var longitude = place.geometry.location.F;
+                console.log(place);
+            });
+        });
+    </script>
   <script type="text/javascript">
   $(document).ready(function(){
     $('input[type="radio"]').click(function(){
@@ -104,7 +117,6 @@
         <div class="msg">
           <p>Hi there!</p>
           <p>My name is Mark, how can I help you ?</p>
-          <time>20:17</time>
         </div>
       </li>
       <li class="self">
@@ -174,7 +186,7 @@
           <li class="self">
             <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
             <div class="msg">
-              <form action="a4_one_a.asp">
+              <form class = "form" action="a4_one_a.asp">
                 <div class="form-group">
                   <label for="name">Name</label>
                   <input type="text" placeholder="John Smith" class="form-control" id="name">
@@ -194,7 +206,7 @@
           <li class="self">
             <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
             <div class="msg">
-              <form action="a4_two_a.asp">
+              <form class = "form" action="a4_two_a.asp">
                 <div class="form-group">
                   <label for="name">Name</label>
                   <input type="text" placeholder="John Smith" class="form-control" id="name">
@@ -255,11 +267,10 @@
           <li class="self">
             <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
             <div class="msg">
-              <form action="a1_two_a.asp">
+              <form class = "form" action="">
                 <div class="form-group">
                   <label for="location">Location</label>
                   <input type="text" placeholder="New York" class="form-control" id="location">
-                  <input type="submit" value="Submit">
                 </div>
               </form>
             </div>
@@ -277,7 +288,7 @@
           <li class="self">
             <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
             <div class="msg">
-              <form action="a6_a.asp">
+              <form class = "form" action="a6_a.asp">
                 <div class="form-group">
                   <label for="preferences">Preferences</label>
                   <input type="text" placeholder="Sample of what are users have asked: I am a vegetarian, I feel like some thai place with byob..." class="form-control" id="preferences">
@@ -300,7 +311,7 @@
           <li class="self">
             <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
             <div class="msg">
-              <form action="a7_a.asp">
+              <form class = "form" action="a7_a.asp">
                 <div class="form-group">
                   <label for="name">Name</label>
                   <input type="text" placeholder="John Smith" class="form-control" id="name">
@@ -326,7 +337,7 @@
           <li class="self">
             <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
             <div class="msg">
-              <form action="a1_three_a.asp">
+              <form class = "form" action="a1_three_a.asp">
                 <div class="form-group">
                   <label for="comment">Comment</label>
                   <input type="text" placeholder="I would like to invest..." class="form-control" id="comment">
@@ -349,7 +360,7 @@
           <li class="self">
             <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
             <div class="msg">
-              <form action="a8_a.asp">
+              <form class = "form" action="a8_a.asp">
                 <div class="form-group">
                   <label for="email">Email</label>
                   <input type="email" placeholder="John@smith.com" class="form-control" id="email">
@@ -363,3 +374,12 @@
     </ol>
   </div>
 </body>
+<script type="text/javascript">
+  $('form').each(function(){
+    $(this).submit(function(){
+        e.preventDefault();
+        alert("worked")
+        return  false;
+    })
+})
+</script>>

@@ -5,6 +5,7 @@
   <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAgGUHwXIpoG-5VZ11Llop184jlS4raipw&sensor=false&libraries=places"></script>
+   <script type="text/javascript" src="mark.js"></script>
     <script type="text/javascript">
         google.maps.event.addDomListener(window, 'load', function () {
             var places = new google.maps.places.Autocomplete(document.getElementById('location'));
@@ -17,6 +18,15 @@
             });
         });
     </script>
+    <script type='text/javascript'>
+         $(document).ready(function() {
+            //option A
+            $("form").submit(function(e){
+                e.preventDefault(e);
+                return false;
+            });
+        });
+        </script>
   <script type="text/javascript">
   $(document).ready(function(){
     $('input[type="radio"]').click(function(){
@@ -104,12 +114,31 @@
 </head>
 
 <body>
+
+<!-- Modal -->
+<div id="successModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title" id="successModalTitle">Thanks for the comment !</h4>
+      </div>
+      <div class="modal-body" id="successModalBody">
+        <p>Some text in the modal.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
   <div class="container col-md-6 col-md-offset-3">
     <link href="widget.css" rel="stylesheet">
     <div class="menu">
       <div class="back"><i class="fa fa-chevron-left"></i> <img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
       <div class="name">Mark | powered by Locaholic</div>
-      <div class="last">18:09</div>
+      
     </div>
     <ol class="chat">
       <li class="other">
@@ -233,7 +262,7 @@
             <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
             <div class="msg">
               <label><input type=radio name=radio5 value="a5_one">I need a restaurant recommendation.</label><br><br>
-              <label><input type=radio name=radio5 value="a5_two">Leave a comment</label><br><br>
+              <label><input type=radio name=radio5 value="a5_two" />Leave a comment</label><br><br>
             </div>
           </li>
         </div>
@@ -337,11 +366,10 @@
           <li class="self">
             <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
             <div class="msg">
-              <form class = "form" action="a1_three_a.asp">
+              <form class = "form" onsubmit="return leaveComment()">
                 <div class="form-group">
                   <label for="comment">Comment</label>
                   <input type="text" placeholder="I would like to invest..." class="form-control" id="comment">
-                  <input type="submit" value="Submit">
                 </div>
               </form>
             </div>
@@ -374,12 +402,3 @@
     </ol>
   </div>
 </body>
-<script type="text/javascript">
-  $('form').each(function(){
-    $(this).submit(function(){
-        e.preventDefault();
-        alert("worked")
-        return  false;
-    })
-})
-</script>>

@@ -6,7 +6,8 @@ function showMessage(str){
 }
 
 function showError(){
-
+	$("#successModalBody").html(str);
+	$("#successModal").modal("show");
 }
 
 function getCode(){
@@ -25,7 +26,7 @@ function leaveComment(){
 		data: data,
 		type: 'post',
 		success:showMessage('<i class="fa fa-check-circle fa-4x" aria-hidden="true"></i>You are Awesome!'),
-		error: showMessage('<i class="fa fa-times-circle fa-4x" aria-hidden="true"></i>Comment not submitted. Please try again.')
+		error: showError('<i class="fa fa-times-circle fa-4x" aria-hidden="true"></i>Comment not submitted. Please try again.')
 	})
 }
 
@@ -44,7 +45,7 @@ function signupBlogger(){
 		data: data,
 		type: 'post',
 		success:showMessage('<i class="fa fa-check-circle fa-4x" aria-hidden="true"></i>Thank you for signing up.'),
-		error: showMessage('<i class="fa fa-times-circle fa-4x" aria-hidden="true"></i>Oops! Please try again.')
+		error: showError('<i class="fa fa-times-circle fa-4x" aria-hidden="true"></i>Oops! Please try again.')
 	})
 }
 
@@ -63,7 +64,7 @@ function signupNonblogger(){
 		data: data,
 		type: 'post',
 		success:showMessage('<i class="fa fa-check-circle fa-4x" aria-hidden="true"></i>Thank you for signing up.'),
-		error: showMessage('<i class="fa fa-times-circle fa-4x" aria-hidden="true"></i>Oops! Please try again.')
+		error: showError('<i class="fa fa-times-circle fa-4x" aria-hidden="true"></i>Oops! Please try again.')
 	})
 }
 
@@ -78,6 +79,6 @@ function leaveEmail(){
 		data: data,
 		type: 'post',
 		success:showMessage('<i class="fa fa-check-circle fa-4x" aria-hidden="true"></i>Thank you for signing up.'),
-		error: showMessage('<i class="fa fa-times-circle fa-4x" aria-hidden="true"></i>Oops! Please try again.')
+		error: showError('<i class="fa fa-times-circle fa-4x" aria-hidden="true"></i>Oops! Please try again.')
 	})
 }

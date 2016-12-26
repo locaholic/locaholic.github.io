@@ -24,16 +24,16 @@ function leaveComment(){
 		url: [apiHost,"registration","feedback"].join('/'),
 		data: data,
 		type: 'post',
-		success:showMessage('<i class="fa fa-check-circle fa-4x" aria-hidden="true"></i>You are Awesome!')
+		success:showMessage('<i class="fa fa-check-circle fa-4x" aria-hidden="true"></i>You are Awesome!'),
 		error: showMessage('<i class="fa fa-times-circle fa-4x" aria-hidden="true"></i>Comment not submitted. Please try again.')
 	})
 }
 
 function signupBlogger(){
 	data = {
-		"blog_url": document.getElementById('url').value;
-		"number": document.getElementById('cellNumber').value;
-		"blogger": true;
+		"blog_url": document.getElementById('url').value,
+		"number": document.getElementById('cellNumber').value,
+		"blogger": true,
 		"email": document.getElementById('email').value,
 		"name": document.getElementById('name').value,
 		"source_page": window.location.pathname,
@@ -43,16 +43,16 @@ function signupBlogger(){
 		url: [apiHost,"registration","forms"].join('/'),
 		data: data,
 		type: 'post',
-		success:showMessage('<i class="fa fa-check-circle fa-4x" aria-hidden="true"></i>Thank you for signing up.')
+		success:showMessage('<i class="fa fa-check-circle fa-4x" aria-hidden="true"></i>Thank you for signing up.'),
 		error: showMessage('<i class="fa fa-times-circle fa-4x" aria-hidden="true"></i>Oops! Please try again.')
 	})
 }
 
 function signupNonblogger(){
 	data = {
-		"blog_url": document.getElementById('url').value;
-		"number": document.getElementById('cellNumber').value;
-		"blogger": false;
+		"blog_url": document.getElementById('url').value,
+		"number": document.getElementById('cellNumber').value,
+		"blogger": false,
 		"email": document.getElementById('email').value,
 		"name": document.getElementById('name').value,
 		"source_page": window.location.pathname,
@@ -62,7 +62,7 @@ function signupNonblogger(){
 		url: [apiHost,"registration","forms"].join('/'),
 		data: data,
 		type: 'post',
-		success:showMessage('<i class="fa fa-check-circle fa-4x" aria-hidden="true"></i>Thank you for signing up.')
+		success:showMessage('<i class="fa fa-check-circle fa-4x" aria-hidden="true"></i>Thank you for signing up.'),
 		error: showMessage('<i class="fa fa-times-circle fa-4x" aria-hidden="true"></i>Oops! Please try again.')
 	})
 }
@@ -77,7 +77,7 @@ function leaveEmail(){
 		url: [apiHost,"registration","forms"].join('/'),
 		data: data,
 		type: 'post',
-		success:showMessage('<i class="fa fa-check-circle fa-4x" aria-hidden="true"></i>Thank you for signing up.')
+		success:showMessage('<i class="fa fa-check-circle fa-4x" aria-hidden="true"></i>Thank you for signing up.'),
 		error: showMessage('<i class="fa fa-times-circle fa-4x" aria-hidden="true"></i>Oops! Please try again.')
 	})
 }

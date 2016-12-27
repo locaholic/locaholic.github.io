@@ -5,108 +5,108 @@
   <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAgGUHwXIpoG-5VZ11Llop184jlS4raipw&sensor=false&libraries=places"></script>
-   <script type="text/javascript" src="mark.js"></script>
-    <script type="text/javascript">
-        google.maps.event.addDomListener(window, 'load', function () {
-            var places = new google.maps.places.Autocomplete(document.getElementById('location'));
-            google.maps.event.addListener(places, 'place_changed', function () {
-                var place = places.getPlace();
-                var address = place.formatted_address;
-                var latitude = place.geometry.location.A;
-                var longitude = place.geometry.location.F;
-                console.log(place);
-            });
-        });
-    </script>
-    <script type='text/javascript'>
-         $(document).ready(function() {
-            //option A
-            $("form").submit(function(e){
-                e.preventDefault(e);
-                return false;
-            });
-        });
-        </script>
+  <script type="text/javascript" src="mark.js"></script>
+  <script type="text/javascript">
+  google.maps.event.addDomListener(window, 'load', function () {
+    var places = new google.maps.places.Autocomplete(document.getElementById('location'));
+    google.maps.event.addListener(places, 'place_changed', function () {
+      var place = places.getPlace();
+      var address = place.formatted_address;
+      var latitude = place.geometry.location.A;
+      var longitude = place.geometry.location.F;
+      console.log(place);
+    });
+  });
+  </script>
+  <script type='text/javascript'>
+  $(document).ready(function() {
+    //option A
+    $("form").submit(function(e){
+      e.preventDefault(e);
+      return false;
+    });
+  });
+  </script>
   <script type="text/javascript">
   $(document).ready(function(){
     $('input[type="radio"]').click(function(){
       $('.hide').hide().removeClass('hide');
       $('.hidden').hide().removeClass('hidden');
-      if($(this).attr("value")=="a1_one"){
-        $(".box").not(".a1_one").hide();
-        $(".a1_one").show();
+      if($(this).attr("value")=="explore"){
+        $(".box").not(".explore").hide();
+        $(".explore").show();
         $(".hideMe").show();
       }
-      if($(this).attr("value")=="a1_two"){
-        $(".box").not(".a1_two").hide();
-        $(".a1_two").show();
+      if($(this).attr("value")=="recommend"){
+        $(".box").not(".recommend").hide();
+        $(".recommend").show();
         $(".hideMe").show();
       }
-      if($(this).attr("value")=="a1_three"){
-        $(".box").not(".a1_three").hide();
-        $(".a1_three").show();
+      if($(this).attr("value")=="hello"){
+        $(".box").not(".hello").hide();
+        $(".hello").show();
         $(".hideMe").show();
       }
-      if($(this).attr("value")=="a2_one"){
-        $(".box").not(".a2_one").hide();
-        $(".a1_one").show();
-        $(".a2_one").show();
+      if($(this).attr("value")=="learnYes"){
+        $(".box").not(".learnYes").hide();
+        $(".explore").show();
+        $(".learnYes").show();
       }
-      if($(this).attr("value")=="a2_two"){
-        $(".box").not(".a2_two").hide();
-        $(".a1_one").show();
-        $(".a2_two").show();
+      if($(this).attr("value")=="learnNo"){
+        $(".box").not(".learnNo").hide();
+        $(".explore").show();
+        $(".learnNo").show();
       }
-      if($(this).attr("value")=="a3_one"){
-        $(".box").not(".a3_one").hide();
-        $(".a1_one").show();
-        $(".a2_one").show();
-        $(".a3_one").show();
+      if($(this).attr("value")=="waitlistYes"){
+        $(".box").not(".waitlistYes").hide();
+        $(".explore").show();
+        $(".learnYes").show();
+        $(".waitlistYes").show();
       }
-      if($(this).attr("value")=="a3_two"){
-        $(".box").not(".a3_two").hide();
-        $(".a1_one").show();
-        $(".a2_one").show();
-        $(".a3_two").show();
+      if($(this).attr("value")=="waitlistNo"){
+        $(".box").not(".waitlistNo").hide();
+        $(".explore").show();
+        $(".learnYes").show();
+        $(".waitlistNo").show();
 
       }
-      if($(this).attr("value")=="a4_one"){
-        $(".box").not(".a4_one").hide();
-        $(".a1_one").show();
-        $(".a2_one").show();
-        $(".a3_one").show();
-        $(".a4_one").show();
+      if($(this).attr("value")=="bloggerYes"){
+        $(".box").not(".bloggerYes").hide();
+        $(".explore").show();
+        $(".learnYes").show();
+        $(".waitlistYes").show();
+        $(".bloggerYes").show();
       }
-      if($(this).attr("value")=="a4_two"){
-        $(".box").not(".a4_two").hide();
-        $(".a1_one").show();
-        $(".a2_one").show();
-        $(".a3_one").show();
-        $(".a4_two").show();
+      if($(this).attr("value")=="bloggerNo"){
+        $(".box").not(".bloggerNo").hide();
+        $(".explore").show();
+        $(".learnYes").show();
+        $(".waitlistYes").show();
+        $(".bloggerNo").show();
       }
-      if($(this).attr("value")=="a5_one"){
-        $(".a1_two").show();
-        $(".a1_three").hide();
+      if($(this).attr("value")=="needRecommend"){
+        $(".recommend").show();
+        $(".hello").hide();
       }
-      if($(this).attr("value")=="a5_two"){
-        $(".a1_three").show();
-        $(".a1_two").hide();
+      if($(this).attr("value")=="leaveComment"){
+        $(".hello").show();
+        $(".recommend").hide();
       }
-      if($(this).attr("value")=="a6"){
-        $(".box").not(".a6").hide();
-        $(".a1_two").show();
-        $(".a6").show();
+      if($(this).attr("value")=="preferences"){
+        $(".box").not(".preferences").hide();
+        $(".recommend").show();
+        $(".preferences").show();
       }
-      if($(this).attr("value")=="a7"){
-        $(".box").not(".a7").hide();
-        $(".a1_two").show();
-        $(".a6").show();
-        $(".a7").show();
+      if($(this).attr("value")=="signupUser"){
+        $(".box").not(".signupUser").hide();
+        $(".recommend").show();
+        $(".preferences").show();
+        $(".signupUser").show();
       }
-      if($(this).attr("value")=="a8"){
-        $(".box").not(".a8").hide();
-        $(".a1_three").show();
-        $(".a8").show();
+      if($(this).attr("value")=="signupEmail"){
+        $(".box").not(".signupEmail").hide();
+        $(".hello").show();
+        $(".signupEmail").show();
       }
     });
   });
@@ -115,30 +115,27 @@
 
 <body>
 
-<!-- Modal -->
-<div id="successModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title" id="successModalTitle">Thanks for the comment !</h4>
-      </div>
-      <div class="modal-body" id="successModalBody">
-        <p>Some text in the modal.</p>
+  <!-- Modal -->
+  <div id="successModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title" id="successModalTitle">Thanks for your interest in Locaholic !</h4>
+        </div>
+        <div class="modal-body" id="successModalBody">
+          <p>Some text in the modal.</p>
+        </div>
       </div>
     </div>
-
   </div>
-</div>
 
   <div class="container col-md-6 col-md-offset-3">
     <link href="widget.css" rel="stylesheet">
     <div class="menu">
       <div class="back"><i class="fa fa-chevron-left"></i> <img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
       <div class="name">Mark | powered by Locaholic</div>
-      
     </div>
     <ol class="chat">
       <li class="other">
@@ -151,13 +148,13 @@
       <li class="self">
         <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
         <div class="msg">
-          <label><input type=radio name=radio1 value="a1_one">Just exploring</label><br><br>
-          <label><input type=radio name=radio1 value="a1_two">I need a restaurant recommendation.</label><br><br>
-          <label><input type=radio name=radio1 value="a1_three">Just wanted to say hi.</label><br><br>
+          <label><input type=radio name=radio1 value="explore">Just exploring</label><br><br>
+          <label><input type=radio name=radio1 value="recommend">I need a restaurant recommendation.</label><br><br>
+          <label><input type=radio name=radio1 value="hello">Just wanted to say hi.</label><br><br>
         </div>
       </li>
       <div class="hideMe">
-        <div class="a1_one box">
+        <div class="explore box">
           <li class="other">
             <div class="avatar"><img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
             <div class="msg">
@@ -165,16 +162,16 @@
             </div>
           </li>
         </div>
-        <div class="a1_one box">
+        <div class="explore box">
           <li class="self">
             <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
             <div class="msg">
-              <label><input type=radio name=radio2 value="a2_one">Yes</label><br><br>
-              <label><input type=radio name=radio2 value="a2_two">No</label><br><br>
+              <label><input type=radio name=radio2 value="learnYes">Yes</label><br><br>
+              <label><input type=radio name=radio2 value="learnNo">No</label><br><br>
             </div>
           </li>
         </div>
-        <div class="a2_one box">
+        <div class="learnYes box">
           <li class="other">
             <div class="avatar"><img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
             <div class="msg">
@@ -185,16 +182,16 @@
             </div>
           </li>
         </div>
-        <div class="a2_one box">
+        <div class="learnYes box">
           <li class="self">
             <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
             <div class="msg">
-              <label><input type=radio name=radio3 value="a3_one">Yes</label><br><br>
-              <label><input type=radio name=radio3 value="a3_two">No</label><br><br>
+              <label><input type=radio name=radio3 value="waitlistYes">Yes</label><br><br>
+              <label><input type=radio name=radio3 value="waitlistNo">No</label><br><br>
             </div>
           </li>
         </div>
-        <div class="a3_one box">
+        <div class="waitlistYes box">
           <li class="other">
             <div class="avatar"><img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
             <div class="msg">
@@ -202,20 +199,20 @@
             </div>
           </li>
         </div>
-        <div class="a3_one box">
+        <div class="waitlistYes box">
           <li class="self">
             <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
             <div class="msg">
-              <label><input type=radio name=radio4 value="a4_one">Yes</label><br><br>
-              <label><input type=radio name=radio4 value="a4_two">No</label><br><br>
+              <label><input type=radio name=radio4 value="bloggerYes">Yes</label><br><br>
+              <label><input type=radio name=radio4 value="bloggerNo">No</label><br><br>
             </div>
           </li>
         </div>
-        <div class="a4_one box">
+        <div class="bloggerYes box">
           <li class="self">
             <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
             <div class="msg">
-              <form class = "form" action="a4_one_a.asp">
+              <form class = "form" onsubmit="return signupBlogger()">
                 <div class="form-group">
                   <label for="name">Name</label>
                   <input type="text" placeholder="John Smith" class="form-control" id="name">
@@ -225,17 +222,16 @@
                   <input type="email" placeholder="John@smith.com" class="form-control" id="email">
                   <label for="url">Blog</label>
                   <input type="url" placeholder="Johns-travel.com" class="form-control" id="blog">
-                  <input type="submit" value="Submit">
                 </div>
               </form>
             </div>
           </li>
         </div>
-        <div class="a4_two box">
+        <div class="bloggerNo box">
           <li class="self">
             <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
             <div class="msg">
-              <form class = "form" action="a4_two_a.asp">
+              <form class = "form" onsubmit="return signupNonblogger()">
                 <div class="form-group">
                   <label for="name">Name</label>
                   <input type="text" placeholder="John Smith" class="form-control" id="name">
@@ -243,13 +239,12 @@
                   <input type="phone" placeholder="9955887700" class="form-control" id="cellNumber">
                   <label for="email">Email</label>
                   <input type="email" placeholder="John@smith.com" class="form-control" id="email">
-                  <input type="submit" value="Submit">
                 </div>
               </form>
             </div>
           </li>
         </div>
-        <div class="a3_two box">
+        <div class="waitlistNo box">
           <li class="other">
             <div class="avatar"><img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
             <div class="msg">
@@ -257,16 +252,16 @@
             </div>
           </li>
         </div>
-        <div class="a3_two box">
+        <div class="waitlistNo box">
           <li class="self">
             <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
             <div class="msg">
-              <label><input type=radio name=radio5 value="a5_one">I need a restaurant recommendation.</label><br><br>
-              <label><input type=radio name=radio5 value="a5_two" />Leave a comment</label><br><br>
+              <label><input type=radio name=radio5 value="needRecommend">I need a restaurant recommendation.</label><br><br>
+              <label><input type=radio name=radio5 value="leaveComment" />Leave a comment</label><br><br>
             </div>
           </li>
         </div>
-        <div class="a2_two box">
+        <div class="learnNo box">
           <li class="other">
             <div class="avatar"><img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
             <div class="msg">
@@ -274,17 +269,17 @@
             </div>
           </li>
         </div>
-        <div class="a2_two box">
+        <div class="learnNo box">
           <li class="self">
             <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
             <div class="msg">
-              <label><input type=radio name=radio5 value="a5_one">I need a restaurant recommendation.</label><br><br>
-              <label><input type=radio name=radio5 value="a5_two">Leave a comment</label><br><br>
+              <label><input type=radio name=radio5 value="needRecommend">I need a restaurant recommendation.</label><br><br>
+              <label><input type=radio name=radio5 value="leaveComment">Leave a comment</label><br><br>
             </div>
           </li>
         </div>
 
-        <div class="a1_two box">
+        <div class="recommend box">
           <li class="other">
             <div class="avatar"><img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
             <div class="msg">
@@ -292,11 +287,11 @@
             </div>
           </li>
         </div>
-        <div class="a1_two box">
+        <div class="recommend box">
           <li class="self">
             <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
             <div class="msg">
-              <form class = "form" action="">
+              <form class = "form" action="$('.preferences').show();">
                 <div class="form-group">
                   <label for="location">Location</label>
                   <input type="text" placeholder="New York" class="form-control" id="location">
@@ -305,7 +300,7 @@
             </div>
           </li>
         </div>
-        <div class="a6 box">
+        <div class="preferences box">
           <li class="other">
             <div class="avatar"><img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
             <div class="msg">
@@ -313,21 +308,20 @@
             </div>
           </li>
         </div>
-        <div class="a6 box">
+        <div class="preferences box">
           <li class="self">
             <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
             <div class="msg">
-              <form class = "form" action="a6_a.asp">
+              <form class = "form" action="$('.signupUser').show();">
                 <div class="form-group">
                   <label for="preferences">Preferences</label>
                   <input type="text" placeholder="Sample of what are users have asked: I am a vegetarian, I feel like some thai place with byob..." class="form-control" id="preferences">
-                  <input type="submit" value="Submit">
                 </div>
               </form>
             </div>
           </li>
         </div>
-        <div class="a7 box">
+        <div class="signupUser box">
           <li class="other">
             <div class="avatar"><img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
             <div class="msg">
@@ -336,11 +330,11 @@
             </div>
           </li>
         </div>
-        <div class="a7 box">
+        <div class="signupUser box">
           <li class="self">
             <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
             <div class="msg">
-              <form class = "form" action="a7_a.asp">
+              <form class = "form" action="retun signupNonblogger()">
                 <div class="form-group">
                   <label for="name">Name</label>
                   <input type="text" placeholder="John Smith" class="form-control" id="name">
@@ -348,13 +342,12 @@
                   <input type="phone" placeholder="9955887700" class="form-control" id="cellNumber">
                   <label for="email">Email</label>
                   <input type="email" placeholder="John@smith.com" class="form-control" id="email">
-                  <input type="submit" value="Submit">
                 </div>
               </form>
             </div>
           </li>
         </div>
-        <div class="a1_three box">
+        <div class="hello box">
           <li class="other">
             <div class="avatar"><img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
             <div class="msg">
@@ -362,7 +355,7 @@
             </div>
           </li>
         </div>
-        <div class="a1_three box">
+        <div class="hello box">
           <li class="self">
             <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
             <div class="msg">
@@ -375,7 +368,7 @@
             </div>
           </li>
         </div>
-        <div class="a8 box">
+        <div class="signupEmail box">
           <li class="other">
             <div class="avatar"><img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
             <div class="msg">
@@ -384,15 +377,14 @@
             </div>
           </li>
         </div>
-        <div class="a8 box">
+        <div class="signupEmail box">
           <li class="self">
             <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
             <div class="msg">
-              <form class = "form" action="a8_a.asp">
+              <form class = "form" action="return leaveEmail()">
                 <div class="form-group">
                   <label for="email">Email</label>
                   <input type="email" placeholder="John@smith.com" class="form-control" id="email">
-                  <input type="submit" value="Submit">
                 </div>
               </form>
             </div>

@@ -8,7 +8,7 @@ var form_msg = {
 var current_form='';
 
 function showMessage(result,status,xhr)
-{	
+{
 	msg = form_msg[current_form]
 	console.log(msg)
 	$("#successModalBody").html(msg);
@@ -31,8 +31,8 @@ function getCode(){
 function leaveComment(){
 	current_form = "leave_comment"
 	data = {
-		"email": document.getElementById('email').value,
-		"message": document.getElementById('comment').value,
+		"email": document.getElementById('email').getElementsByClassName('visible')[0],
+		"message": document.getElementById('comment').getElementsByClassName('visible')[0],
 		"source_page": window.location.pathname,
 		"source_form": "comment"
 	}
@@ -49,11 +49,11 @@ function leaveComment(){
 function signupBlogger(){
 	current_form = "signup_blogger"
 	data = {
-		"blog_url": document.getElementById('url').value,
-		"number": document.getElementById('cellNumber').value,
+		"blog_url": document.getElementById('url').getElementsByClassName('visible')[0],
+		"number": document.getElementById('cellNumber').getElementsByClassName('visible')[0],
 		"blogger": true,
-		"email": document.getElementById('email').value,
-		"name": document.getElementById('name').value,
+		"email": document.getElementById('email').getElementsByClassName('visible')[0],
+		"name": document.getElementById('name').getElementsByClassName('visible')[0],
 		"source_page": window.location.pathname,
 		"source_form": "signupBlogger",
 		"code":"pending"
@@ -71,12 +71,13 @@ function signupBlogger(){
 function signupNonblogger(){
 	current_form = "signup_non_blogger"
 	data = {
-		"number": document.getElementById('cellNumber').value,
+		"number": document.getElementById('cellNumber').getElementsByClassName('visible')[0],
 		"blogger": false,
-		"email": document.getElementById('email').value,
-		"name": document.getElementById('name').value,
+		"email": document.getElementById('email').getElementsByClassName('visible')[0],
+		"name": document.getElementById('name').getElementsByClassName('visible')[0],
 		"source_page": window.location.pathname,
-		"source_form": "signupNonblogger"
+		"source_form": "signupNonblogger",
+		"code":"pending"
 	}
 	$.ajax({
 		contentType: 'application/json; charset=utf-8',
@@ -91,9 +92,9 @@ function signupNonblogger(){
 function getRecommendations(){
 	current_form = "get_recommendations"
 	data = {
-		"phone": document.getElementById('cellNumber').value,
-		"email": document.getElementById('email').value,
-		"name": document.getElementById('name').value,
+		"phone": document.getElementById('cellNumber').getElementsByClassName('visible')[0],
+		"email": document.getElementById('email').getElementsByClassName('visible')[0],
+		"name": document.getElementById('name').getElementsByClassName('visible')[0],
 		"source_page": window.location.pathname,
 		"source_form": "recommendation",
 		"text": document.getElementById('preferences').value || '',

@@ -68,7 +68,6 @@
         $(".explore").show();
         $(".learnYes").show();
         $(".waitlistNo").show();
-
       }
       if($(this).attr("value")=="bloggerYes"){
         $(".box").not(".bloggerYes").hide();
@@ -76,6 +75,11 @@
         $(".learnYes").show();
         $(".waitlistYes").show();
         $(".bloggerYes").show();
+        $(".bloggerYes.name").addClass("visible");
+        $(".bloggerYes.cellNumber").addClass("visible");
+        $(".bloggerYes.email").addClass("visible");
+        $(".bloggerYes.url").addClass("visible");
+        $(".box").not(".bloggerYes").removeClass("visible");
       }
       if($(this).attr("value")=="bloggerNo"){
         $(".box").not(".bloggerNo").hide();
@@ -83,6 +87,10 @@
         $(".learnYes").show();
         $(".waitlistYes").show();
         $(".bloggerNo").show();
+        $(".bloggerNo.name").addClass("visible");
+        $(".bloggerNo.cellNumber").addClass("visible");
+        $(".bloggerNo.email").addClass("visible");
+        $(".box").not(".bloggerNo").removeClass("visible");
       }
       if($(this).attr("value")=="needRecommend"){
         $(".recommend").show();
@@ -102,11 +110,17 @@
         $(".recommend").show();
         $(".preferences").show();
         $(".signupUser").show();
+        $(".box").not(".signupUser").removeClass("visible");
+        $(".signupUser.name").addClass("visible");
+        $(".signupUser.cellNumber").addClass("visible");
+        $(".signupUser.email").addClass("visible");
       }
       if($(this).attr("value")=="signupEmail"){
         $(".box").not(".signupEmail").hide();
         $(".hello").show();
         $(".signupEmail").show();
+        $(".box").not(".signupEmail").removeClass("visible");
+        $(".signupEmail.email").addClass("visible");
       }
     });
   });
@@ -130,7 +144,7 @@
       </div>
     </div>
   </div>
-   <!-- Modal -->
+  <!-- Modal -->
   <div id="errorModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
       <!-- Modal content-->
@@ -255,6 +269,7 @@
                   <input type="phone" placeholder="9955887700" class="form-control" id="cellNumber">
                   <label for="email">Email</label>
                   <input type="email" placeholder="John@smith.com" class="form-control" id="email">
+                  <input type="submit" class="btn btn-primary" name="submit">
                 </div>
               </form>
             </div>
@@ -331,7 +346,7 @@
               <form class = "form" onsubmit="$('.signupUser').show();">
                 <div class="form-group">
                   <label for="preferences">Preferences</label>
-                  <textarea rows="5" cols="25" class="form-control" id="preferences" placeholder="Sample of what are users have asked: I am a vegetarian, I feel like some thai place with byob..."></textarea> 
+                  <textarea rows="5" cols="25" class="form-control" id="preferences" placeholder="Sample of what are users have asked: I am a vegetarian, I feel like some thai place with byob..."></textarea>
                 </div>
                 <input type="submit" value="Submit" class="btn btn-md btn-primary" />
               </form>

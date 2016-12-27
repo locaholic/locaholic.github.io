@@ -1,4 +1,4 @@
-apiHost = "http://localhost:8000";
+apiHost = "https://api.locaholic.co";
 var form_msg = {
 	"leave_comment": '<i class="fa fa-check-circle fa-4x" aria-hidden="true"></i>You are Awesome!',
 	"signup_blogger": '<i class="fa fa-check-circle fa-4x" aria-hidden="true"></i>Thanks for signing up, we\'ll get back to you soon!',

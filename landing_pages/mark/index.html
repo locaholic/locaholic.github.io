@@ -14,7 +14,7 @@
       var address = place.formatted_address;
       var latitude = place.geometry.location.A;
       var longitude = place.geometry.location.F;
-      console.log(place);
+      document.getElementById('location').setAttribute("place_id",place.place_id)
     });
   });
   </script>
@@ -124,7 +124,22 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title" id="successModalTitle">Thanks for your interest in Locaholic !</h4>
         </div>
-        <div class="modal-body" id="successModalBody">
+        <div class="modal-body text-success" id="successModalBody">
+          <p>Some text in the modal.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+   <!-- Modal -->
+  <div id="errorModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title" id="errorModalTitle">Your Request Could Not Be Completed!</h4>
+        </div>
+        <div class="modal-body text-error" id="errorModalBody">
           <p>Some text in the modal.</p>
         </div>
       </div>
@@ -221,7 +236,8 @@
                   <label for="email">Email</label>
                   <input type="email" placeholder="John@smith.com" class="form-control" id="email">
                   <label for="url">Blog</label>
-                  <input type="url" placeholder="Johns-travel.com" class="form-control" id="blog">
+                  <input type="url" placeholder="Johns-travel.com" class="form-control" id="url">
+                  <input type="submit" class="btn btn-primary" name="submit">
                 </div>
               </form>
             </div>
@@ -291,7 +307,7 @@
           <li class="self">
             <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
             <div class="msg">
-              <form class = "form" action="$('.preferences').show();">
+              <form class = "form" onsubmit="$('.preferences').show();">
                 <div class="form-group">
                   <label for="location">Location</label>
                   <input type="text" placeholder="New York" class="form-control" id="location">
@@ -312,11 +328,12 @@
           <li class="self">
             <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
             <div class="msg">
-              <form class = "form" action="$('.signupUser').show();">
+              <form class = "form" onsubmit="$('.signupUser').show();">
                 <div class="form-group">
                   <label for="preferences">Preferences</label>
-                  <input type="text" placeholder="Sample of what are users have asked: I am a vegetarian, I feel like some thai place with byob..." class="form-control" id="preferences">
+                  <textarea rows="5" cols="25" class="form-control" id="preferences" placeholder="Sample of what are users have asked: I am a vegetarian, I feel like some thai place with byob..."></textarea> 
                 </div>
+                <input type="submit" value="Submit" class="btn btn-md btn-primary" />
               </form>
             </div>
           </li>
@@ -334,7 +351,7 @@
           <li class="self">
             <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
             <div class="msg">
-              <form class = "form" action="retun signupNonblogger()">
+              <form class = "form" onsubmit="return getRecommendations()">
                 <div class="form-group">
                   <label for="name">Name</label>
                   <input type="text" placeholder="John Smith" class="form-control" id="name">
@@ -343,6 +360,8 @@
                   <label for="email">Email</label>
                   <input type="email" placeholder="John@smith.com" class="form-control" id="email">
                 </div>
+
+                <input type="submit" value="Get Recommendation!" class="btn btn-md btn-success" />
               </form>
             </div>
           </li>
@@ -359,7 +378,7 @@
           <li class="self">
             <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
             <div class="msg">
-              <form class = "form" onsubmit="return leaveComment()">
+              <form class = "form" onsubmit="$('.signupEmail').show();">
                 <div class="form-group">
                   <label for="comment">Comment</label>
                   <input type="text" placeholder="I would like to invest..." class="form-control" id="comment">
@@ -381,7 +400,7 @@
           <li class="self">
             <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
             <div class="msg">
-              <form class = "form" action="return leaveEmail()">
+              <form class = "form" onsubmit="return leaveComment()">
                 <div class="form-group">
                   <label for="email">Email</label>
                   <input type="email" placeholder="John@smith.com" class="form-control" id="email">

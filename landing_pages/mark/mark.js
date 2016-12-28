@@ -49,9 +49,9 @@ function leaveComment(){
 function signupBlogger(){
 	current_form = "signup_blogger"
 	data = {
-		"blog_url": document.getElementsByClassName('url_visible')[0],
-		"number": document.getElementsByClassName('cellNumber_visible')[0],
 		"blogger": true,
+		"blog_url": document.getElementById('url'),
+		"number": document.getElementsByClassName('cellNumber_visible')[0],
 		"email": document.getElementsByClassName('email_visible')[0],
 		"name": document.getElementsByClassName('name_visible')[0],
 		"source_page": window.location.pathname,
@@ -71,8 +71,8 @@ function signupBlogger(){
 function signupNonblogger(){
 	current_form = "signup_non_blogger"
 	data = {
-		"number": document.getElementsByClassName('cellNumber_visible')[0],
 		"blogger": false,
+		"number": document.getElementsByClassName('cellNumber_visible')[0],
 		"email": document.getElementsByClassName('email_visible')[0],
 		"name": document.getElementsByClassName('name_visible')[0],
 		"source_page": window.location.pathname,

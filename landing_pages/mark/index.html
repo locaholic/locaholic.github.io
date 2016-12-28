@@ -75,14 +75,12 @@
         $(".learnYes").show();
         $(".waitlistYes").show();
         $(".bloggerYes").show();
-        $(".bloggerYes.name").addClass("name_visible");
-        $(".bloggerYes.cellNumber").addClass("cellNumber_visible");
-        $(".bloggerYes.email").addClass("email_visible");
-        $(".bloggerYes.url").addClass("url_visible");
-        $(".box").not(".bloggerYes.name").removeClass("name_visible");
-        $(".box").not(".bloggerYes.cellNumber").removeClass("cellNumber_visible");
-        $(".box").not(".bloggerYes.email").removeClass("email_visible");
-        $(".box").not(".bloggerYes.url").removeClass("url_visible");
+        var all_name = document.querySelectorAll("[id='name']");
+        var all_email = document.querySelectorAll("[id='email']");
+        var all_number = document.querySelectorAll("[id='cellNumber']");
+        all_name[0].classList.add("name_visible");
+        all_email[0].classList.add("email_visible");
+        all_number[0].classList.add("cellNumber_visible");
       }
       if($(this).attr("value")=="bloggerNo"){
         $(".box").not(".bloggerNo").hide();
@@ -90,12 +88,12 @@
         $(".learnYes").show();
         $(".waitlistYes").show();
         $(".bloggerNo").show();
-        $(".bloggerNo.name").addClass("name_visible");
-        $(".bloggerNo.cellNumber").addClass("cellNumber_visible");
-        $(".bloggerNo.email").addClass("email_visible");
-        $(".box").not(".bloggerNo.name").removeClass("name_visible");
-        $(".box").not(".bloggerNo.cellNumber").removeClass("cellNumber_visible");
-        $(".box").not(".bloggerNo.email").removeClass("email_visible");
+        var all_name = document.querySelectorAll("[id='name']");
+        var all_email = document.querySelectorAll("[id='email']");
+        var all_number = document.querySelectorAll("[id='cellNumber']");
+        all_name[1].classList.add("name_visible");
+        all_email[1].classList.add("email_visible");
+        all_number[1].classList.add("cellNumber_visible");
       }
       if($(this).attr("value")=="needRecommend"){
         $(".recommend").show();
@@ -115,19 +113,20 @@
         $(".recommend").show();
         $(".preferences").show();
         $(".signupUser").show();
-        $(".signupUser.name").addClass("name_visible");
-        $(".signupUser.cellNumber").addClass("cellNumber_visible");
-        $(".signupUser.email").addClass("email_visible");
-        $(".box").not(".signupUser.name").removeClass("name_visible");
-        $(".box").not(".signupUser.email").removeClass("email_visible");
-        $(".box").not(".signupUser.cellNumber").removeClass("cellNumber_visible");
+        var all_name = document.querySelectorAll("[id='name']");
+        var all_email = document.querySelectorAll("[id='email']");
+        var all_number = document.querySelectorAll("[id='cellNumber']");
+        all_name[2].classList.add("name_visible");
+        all_email[2].classList.add("email_visible");
+        all_number[2].classList.add("cellNumber_visible");
       }
       if($(this).attr("value")=="signupEmail"){
         $(".box").not(".signupEmail").hide();
         $(".hello").show();
         $(".signupEmail").show();
-        $(".signupEmail.email").addClass("email_visible");
-        $(".box").not(".signupEmail.email").removeClass("email_visible");
+        var all_email = document.querySelectorAll("[id='email']");
+        all_email[3].classList.add("email_visible");
+
       }
     });
   });

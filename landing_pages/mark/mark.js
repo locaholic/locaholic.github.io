@@ -18,8 +18,8 @@ function showMessage(result,status,xhr)
 function showError(xhr,status,error){
 	str = ""
 	$.each(xhr.responseJSON, function(k, v) {
-  		str += '<p class="text-error h4"><b>'+k+" : " + v[0]+'</b></p>';
-  	});
+		str += '<p class="text-error h4"><b>'+k+" : " + v[0]+'</b></p>';
+	});
 	$("#errorModalBody").html(str);
 	$("#errorModal").modal("show");
 }
@@ -31,8 +31,8 @@ function getCode(){
 function leaveComment(){
 	current_form = "leave_comment"
 	data = {
-		"email": document.getElementsByClassName('email_visible')[0],
-		"message": document.getElementById('comment'),
+		"email": document.getElementsByClassName('email_visible')[0].value,
+		"message": document.getElementById('comment').value,
 		"source_page": window.location.pathname,
 		"source_form": "comment"
 	}
@@ -50,10 +50,10 @@ function signupBlogger(){
 	current_form = "signup_blogger"
 	data = {
 		"blogger": true,
-		"blog_url": document.getElementById('url'),
-		"number": document.getElementsByClassName('cellNumber_visible')[0],
-		"email": document.getElementsByClassName('email_visible')[0],
-		"name": document.getElementsByClassName('name_visible')[0],
+		"blog_url": document.getElementById('url').value,
+		"number": document.getElementsByClassName('cellNumber_visible')[0].value,
+		"email": document.getElementsByClassName('email_visible')[0].value,
+		"name": document.getElementsByClassName('name_visible')[0].value,
 		"source_page": window.location.pathname,
 		"source_form": "signupBlogger",
 		"code":"pending"
@@ -72,9 +72,9 @@ function signupNonblogger(){
 	current_form = "signup_non_blogger"
 	data = {
 		"blogger": false,
-		"number": document.getElementsByClassName('cellNumber_visible')[0],
-		"email": document.getElementsByClassName('email_visible')[0],
-		"name": document.getElementsByClassName('name_visible')[0],
+		"number": document.getElementsByClassName('cellNumber_visible')[0].value,
+		"email": document.getElementsByClassName('email_visible')[0].value,
+		"name": document.getElementsByClassName('name_visible')[0].value,
 		"source_page": window.location.pathname,
 		"source_form": "signupNonblogger",
 		"code":"pending"
@@ -92,9 +92,9 @@ function signupNonblogger(){
 function getRecommendations(){
 	current_form = "get_recommendations"
 	data = {
-		"phone": document.getElementsByClassName('cellNumber_visible')[0],
-		"email": document.getElementsByClassName('email_visible')[0],
-		"name": document.getElementsByClassName('name_visible')[0],
+		"phone": document.getElementsByClassName('cellNumber_visible')[0].value,
+		"email": document.getElementsByClassName('email_visible')[0].value,
+		"name": document.getElementsByClassName('name_visible')[0].value,
 		"source_page": window.location.pathname,
 		"source_form": "recommendation",
 		"text": document.getElementById('preferences').value || '',

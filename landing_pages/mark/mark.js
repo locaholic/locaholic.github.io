@@ -31,8 +31,8 @@ function getCode(){
 function leaveComment(){
 	current_form = "leave_comment"
 	data = {
-		"email": document.getElementById('email').getElementsByClassName('visible')[0],
-		"message": document.getElementById('comment').getElementsByClassName('visible')[0],
+		"email": document.getElementsByClassName('email_visible')[0],
+		"message": document.getElementById('comment'),
 		"source_page": window.location.pathname,
 		"source_form": "comment"
 	}
@@ -49,11 +49,11 @@ function leaveComment(){
 function signupBlogger(){
 	current_form = "signup_blogger"
 	data = {
-		"blog_url": document.getElementById('url').getElementsByClassName('visible')[0],
-		"number": document.getElementById('cellNumber').getElementsByClassName('visible')[0],
+		"blog_url": document.getElementsByClassName('url_visible')[0],
+		"number": document.getElementsByClassName('cellNumber_visible')[0],
 		"blogger": true,
-		"email": document.getElementById('email').getElementsByClassName('visible')[0],
-		"name": document.getElementById('name').getElementsByClassName('visible')[0],
+		"email": document.getElementsByClassName('email_visible')[0],
+		"name": document.getElementsByClassName('name_visible')[0],
 		"source_page": window.location.pathname,
 		"source_form": "signupBlogger",
 		"code":"pending"
@@ -71,10 +71,10 @@ function signupBlogger(){
 function signupNonblogger(){
 	current_form = "signup_non_blogger"
 	data = {
-		"number": document.getElementById('cellNumber').getElementsByClassName('visible')[0],
+		"number": document.getElementsByClassName('cellNumber_visible')[0],
 		"blogger": false,
-		"email": document.getElementById('email').getElementsByClassName('visible')[0],
-		"name": document.getElementById('name').getElementsByClassName('visible')[0],
+		"email": document.getElementsByClassName('email_visible')[0],
+		"name": document.getElementsByClassName('name_visible')[0],
 		"source_page": window.location.pathname,
 		"source_form": "signupNonblogger",
 		"code":"pending"
@@ -92,9 +92,9 @@ function signupNonblogger(){
 function getRecommendations(){
 	current_form = "get_recommendations"
 	data = {
-		"phone": document.getElementById('cellNumber').getElementsByClassName('visible')[0],
-		"email": document.getElementById('email').getElementsByClassName('visible')[0],
-		"name": document.getElementById('name').getElementsByClassName('visible')[0],
+		"phone": document.getElementsByClassName('cellNumber_visible')[0],
+		"email": document.getElementsByClassName('email_visible')[0],
+		"name": document.getElementsByClassName('name_visible')[0],
 		"source_page": window.location.pathname,
 		"source_form": "recommendation",
 		"text": document.getElementById('preferences').value || '',

@@ -75,11 +75,14 @@
         $(".learnYes").show();
         $(".waitlistYes").show();
         $(".bloggerYes").show();
-        $(".bloggerYes.name").addClass("visible");
-        $(".bloggerYes.cellNumber").addClass("visible");
-        $(".bloggerYes.email").addClass("visible");
-        $(".bloggerYes.url").addClass("visible");
-        $(".box").not(".bloggerYes").removeClass("visible");
+        $(".bloggerYes.name").addClass("name_visible");
+        $(".bloggerYes.cellNumber").addClass("cellNumber_visible");
+        $(".bloggerYes.email").addClass("email_visible");
+        $(".bloggerYes.url").addClass("url_visible");
+        $(".box").not(".bloggerYes.name").removeClass("name_visible");
+        $(".box").not(".bloggerYes.cellNumber").removeClass("cellNumber_visible");
+        $(".box").not(".bloggerYes.email").removeClass("email_visible");
+        $(".box").not(".bloggerYes.url").removeClass("url_visible");
       }
       if($(this).attr("value")=="bloggerNo"){
         $(".box").not(".bloggerNo").hide();
@@ -87,10 +90,12 @@
         $(".learnYes").show();
         $(".waitlistYes").show();
         $(".bloggerNo").show();
-        $(".bloggerNo.name").addClass("visible");
-        $(".bloggerNo.cellNumber").addClass("visible");
-        $(".bloggerNo.email").addClass("visible");
-        $(".box").not(".bloggerNo").removeClass("visible");
+        $(".bloggerNo.name").addClass("name_visible");
+        $(".bloggerNo.cellNumber").addClass("cellNumber_visible");
+        $(".bloggerNo.email").addClass("email_visible");
+        $(".box").not(".bloggerNo.name").removeClass("name_visible");
+        $(".box").not(".bloggerNo.cellNumber").removeClass("cellNumber_visible");
+        $(".box").not(".bloggerNo.email").removeClass("email_visible");
       }
       if($(this).attr("value")=="needRecommend"){
         $(".recommend").show();
@@ -110,17 +115,19 @@
         $(".recommend").show();
         $(".preferences").show();
         $(".signupUser").show();
-        $(".box").not(".signupUser").removeClass("visible");
-        $(".signupUser.name").addClass("visible");
-        $(".signupUser.cellNumber").addClass("visible");
-        $(".signupUser.email").addClass("visible");
+        $(".signupUser.name").addClass("name_visible");
+        $(".signupUser.cellNumber").addClass("cellNumber_visible");
+        $(".signupUser.email").addClass("email_visible");
+        $(".box").not(".signupUser.name").removeClass("name_visible");
+        $(".box").not(".signupUser.email").removeClass("email_visible");
+        $(".box").not(".signupUser.cellNumber").removeClass("cellNumber_visible");
       }
       if($(this).attr("value")=="signupEmail"){
         $(".box").not(".signupEmail").hide();
         $(".hello").show();
         $(".signupEmail").show();
-        $(".box").not(".signupEmail").removeClass("visible");
-        $(".signupEmail.email").addClass("visible");
+        $(".signupEmail.email").addClass("email_visible");
+        $(".box").not(".signupEmail.email").removeClass("email_visible");
       }
     });
   });

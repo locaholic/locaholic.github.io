@@ -53,6 +53,7 @@
             });
         });
     </script>
+    <script type="text/javascript" src="js/request.js"></script>
 </head>
 <style type="text/css">
 /*To show the Auto complete from google places in Modal*/
@@ -75,7 +76,7 @@
       <div class="modal-body">
         <div class="row">
             <div class="col-md-6">
-            <form>
+            <form onsubmit="return signupBlogger()">
               <div class="form-group">
                 <label for="url">Blog URL</label>
                 <input type="url" placeholder="http://myblog.com" class="form-control" id="url">
@@ -88,7 +89,7 @@
                 <label for="name">Your Name</label>
                 <input type="text" class="form-control" id="name" placeholder="Mark">
               </div>
-              
+
               <div class="checkbox">
                 <label><input name="emailChoice" type="checkbox"> Would you like to get updates from locaholic ?</label>
               </div>
@@ -114,7 +115,7 @@
               </div>
               </div>
               <button class="btn btn-primary" onclick="showPreview()">Preview </button> <span> </span> <button class="btn btn-success"> Get Code </button>
-            </form>       
+            </form>
             </div>
             <div class="col-md-6">
             <p class="text-muted h3"> Button Preview</p>
@@ -122,7 +123,7 @@
                 <div class="panel panel-primary">
                       <div class="panel-heading" id="welcomeMessagePreview">Hello there, what are you looking for ?</div>
                       <div class="panel-body">
-                          
+
                           <form>
                               <div class="form-group">
                                 <textarea class="form-control" rows="5" id="questionPreview" placeholder="Looking for places that serve good italian? Someplace not very pricey, plz"></textarea>
@@ -169,10 +170,10 @@
                 <a href="#how" onclick=$("#menu-close").click();>How it works ?</a>
             </li>
             <li>
-                <a href="#team" onclick=$("#menu-close").click();>Team</a>
+                <a href="#team" onclick=$("#menu-close").click();>Meet our Team</a>
             </li>
             <li>
-                <a href="#contact" onclick=$("#menu-close").click();>Contact</a>
+                <a href="#contact" onclick=$("#menu-close").click();>Contact Us</a>
             </li>
         </ul>
     </nav>
@@ -183,8 +184,8 @@
             <h1>Locaholic</h1>
             <h3 class="type-it">Convert passive recommendations into <strong>Active, Trackable </strong> experiences</h3>
             <br>
-            <a href="#signup" id ="btn-signup" class="btn btn-dark btn-lg" style="margin: 5px">Sign up Now !</a>
-            <a href="/landing_pages/mark" class="btn btn-light btn-lg" style="margin: 5px">Want a recommendation to eat at ?</a>
+            <a href="#" id ="btn-signup" class="btn btn-dark btn-lg" data-toggle="modal" style="margin: 5px" data-target="#getButtonModal" ="">Sign Up Now !</a>
+            <a href="../mark/index.html" class="btn btn-light btn-lg" style="margin: 5px">Want a recommendation to eat at ?</a>
         </div>
     </header>
 
@@ -282,7 +283,7 @@
     </aside>
 
     <!-- Portfolio -->
-    <section id="portfolio" class="portfolio">
+    <section id="team" class="portfolio">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
@@ -322,9 +323,10 @@
                             <div class="portfolio-item">
                                 <a href="#">
                                     <img class="img-portfolio img-responsive" src="img/portfolio-4.jpg">
+                                  </a>
                                     <p>Gaurav Shukla</p>
                                     <p>2+ years Full stack developer, startup experience, ideal party:hackathon</p>
-                                </a>
+
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -353,8 +355,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h3>Ready to Commit ?</h3>
-                    <a href="#" class="btn btn-lg btn-light">Sign Up Now !</a>
-
+                    <a href="#" class="btn btn-lg btn-light" data-toggle="modal" data-target="#getButtonModal" =""><strong>Sign Up Now !</strong></a>
                 </div>
             </div>
         </div>
@@ -362,6 +363,7 @@
 
 
     <!-- Footer -->
+    <section id="contact">
     <footer>
         <div class="container">
             <div class="row">
@@ -393,6 +395,7 @@
         </div>
         <a id="to-top" href="#top" class="btn btn-dark btn-lg"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
     </footer>
+  </section>
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
@@ -507,8 +510,8 @@
          });
          $(document).ajaxStart(function(){
              $("#ajax_loader").show();
-         });    
-    });    
+         });
+    });
 </script>
 </body>
 

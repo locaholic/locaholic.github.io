@@ -68,7 +68,6 @@
         $(".explore").show();
         $(".learnYes").show();
         $(".waitlistNo").show();
-
       }
       if($(this).attr("value")=="bloggerYes"){
         $(".box").not(".bloggerYes").hide();
@@ -76,6 +75,14 @@
         $(".learnYes").show();
         $(".waitlistYes").show();
         $(".bloggerYes").show();
+        $(".bloggerYes.name").addClass("name_visible");
+        $(".bloggerYes.cellNumber").addClass("cellNumber_visible");
+        $(".bloggerYes.email").addClass("email_visible");
+        $(".bloggerYes.url").addClass("url_visible");
+        $(".box").not(".bloggerYes.name").removeClass("name_visible");
+        $(".box").not(".bloggerYes.cellNumber").removeClass("cellNumber_visible");
+        $(".box").not(".bloggerYes.email").removeClass("email_visible");
+        $(".box").not(".bloggerYes.url").removeClass("url_visible");
       }
       if($(this).attr("value")=="bloggerNo"){
         $(".box").not(".bloggerNo").hide();
@@ -83,6 +90,12 @@
         $(".learnYes").show();
         $(".waitlistYes").show();
         $(".bloggerNo").show();
+        $(".bloggerNo.name").addClass("name_visible");
+        $(".bloggerNo.cellNumber").addClass("cellNumber_visible");
+        $(".bloggerNo.email").addClass("email_visible");
+        $(".box").not(".bloggerNo.name").removeClass("name_visible");
+        $(".box").not(".bloggerNo.cellNumber").removeClass("cellNumber_visible");
+        $(".box").not(".bloggerNo.email").removeClass("email_visible");
       }
       if($(this).attr("value")=="needRecommend"){
         $(".recommend").show();
@@ -102,11 +115,19 @@
         $(".recommend").show();
         $(".preferences").show();
         $(".signupUser").show();
+        $(".signupUser.name").addClass("name_visible");
+        $(".signupUser.cellNumber").addClass("cellNumber_visible");
+        $(".signupUser.email").addClass("email_visible");
+        $(".box").not(".signupUser.name").removeClass("name_visible");
+        $(".box").not(".signupUser.email").removeClass("email_visible");
+        $(".box").not(".signupUser.cellNumber").removeClass("cellNumber_visible");
       }
       if($(this).attr("value")=="signupEmail"){
         $(".box").not(".signupEmail").hide();
         $(".hello").show();
         $(".signupEmail").show();
+        $(".signupEmail.email").addClass("email_visible");
+        $(".box").not(".signupEmail.email").removeClass("email_visible");
       }
     });
   });
@@ -130,7 +151,7 @@
       </div>
     </div>
   </div>
-   <!-- Modal -->
+  <!-- Modal -->
   <div id="errorModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
       <!-- Modal content-->
@@ -255,6 +276,7 @@
                   <input type="phone" placeholder="9955887700" class="form-control" id="cellNumber">
                   <label for="email">Email</label>
                   <input type="email" placeholder="John@smith.com" class="form-control" id="email">
+                  <input type="submit" class="btn btn-primary" name="submit">
                 </div>
               </form>
             </div>
@@ -331,7 +353,7 @@
               <form class = "form" onsubmit="$('.signupUser').show();">
                 <div class="form-group">
                   <label for="preferences">Preferences</label>
-                  <textarea rows="5" cols="25" class="form-control" id="preferences" placeholder="Sample of what are users have asked: I am a vegetarian, I feel like some thai place with byob..."></textarea> 
+                  <textarea rows="5" cols="25" class="form-control" id="preferences" placeholder="Sample of what are users have asked: I am a vegetarian, I feel like some thai place with byob..."></textarea>
                 </div>
                 <input type="submit" value="Submit" class="btn btn-md btn-primary" />
               </form>

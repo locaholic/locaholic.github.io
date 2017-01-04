@@ -63,6 +63,36 @@
 </style>
 
 <body>
+<!-- Modal -->
+  <div id="successModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title" id="successModalTitle">Thanks for your interest in Locaholic !</h4>
+        </div>
+        <div class="modal-body text-success" id="successModalBody">
+          <p>Some text in the modal.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div id="errorModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title" id="errorModalTitle">Your Request Could Not Be Completed!</h4>
+        </div>
+        <div class="modal-body text-error" id="errorModalBody">
+          <p>Some text in the modal.</p>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- Modal -->
   <div id="getButtonModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
@@ -71,18 +101,18 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Customize your button</h4>
+          <h4 class="modal-title">Customize your widget</h4>
         </div>
         <div class="modal-body">
           <div class="row">
             <div class="col-md-6">
-              <form onsubmit="return signupBlogger()">
+              <form>
                 <div class="form-group">
                   <label for="url">Blog URL</label>
                   <input type="url" placeholder="http://myblog.com" class="form-control" id="url">
                 </div>
                 <div class="form-group">
-                  <label for="email">Where to send the incoming Requests ?</label>
+                  <label for="email">Email</label>
                   <input type="email" placeholder="awesomeblogger@gmail.com" class="form-control" id="email">
                 </div>
                 <div class="form-group">
@@ -91,10 +121,10 @@
                 </div>
 
                 <div class="checkbox">
-                  <label><input name="emailChoice" type="checkbox"> Would you like to get updates from locaholic ?</label>
+                  <label><input name="emailChoice" type="checkbox"> Need additional help installing the widget?</label>
                 </div>
                 <p class="text-muted">
-                  <a href="#" class="link" data-toggle="collapse" data-target="#advOpt"> Advanced Options</a>
+                  <a href="#" class="link" data-toggle="collapse" data-target="#advOpt"> Personalize your widget</a>
                 </p>
                 <div id="advOpt" class="collapse">
                   <!--   <div class="form-group">
@@ -103,7 +133,7 @@
                 </div> -->
                 <div class="form-group">
                   <label for="btnText">Custom Text</label>
-                  <input type="text" class="form-control" id="btnText" placeholder="Ask Mark for recommendation">
+                  <input type="text" class="form-control" id="btnText" placeholder="Get Recommendations">
                 </div>
                 <div class="form-group">
                   <label for="welcomeMessage">Welcome Message</label>
@@ -114,11 +144,11 @@
                   <input type="text" class="form-control" id="sampleQues" placeholder="Hello there what are you looking for ?">
                 </div>
               </div>
-              <button class="btn btn-primary" onclick="showPreview()">Preview </button> <span> </span> <button class="btn btn-success"> Get Code </button>
+              <button class="btn btn-primary" onclick="showPreview()">Preview </button> <span> </span> <button class="btn btn-success" onclick="return signupBlogger()"> Request Widget </button>
             </form>
           </div>
           <div class="col-md-6">
-            <p class="text-muted h3"> Button Preview</p>
+            <p class="text-muted h3"> Widget Preview</p>
             <div id="askButtonBody" class="collapse">
               <div class="panel panel-primary">
                 <div class="panel-heading" id="welcomeMessagePreview">Hello there, what are you looking for ?</div>
@@ -144,7 +174,7 @@
                 </div>
               </div>
             </div>
-            <button data-toggle="collapse" data-target="#askButtonBody" id="btnTextPreview" style="color: #FDFDFD;background-color: #426bf4;float: right;">Ask Mark For Recommendations</button>
+            <button data-toggle="collapse" data-target="#askButtonBody" id="btnTextPreview" style="color: #FDFDFD;background-color: #426bf4;float: right;">Get Recommendationss</button>
           </div>
         </div>
       </div>
@@ -179,17 +209,17 @@
 </nav>
 
 <!-- Header -->
-<header id="top" class="header">
-  <div class="text-vertical-center">
+<section id="top" class="about container-fluid">
+  <div class="text-center">
     <h1 class="logo">Locaholic</h1>
-    <h3 class="type-it"></h3>
-    <br>
-    <a href="#" class="btn btn-dark btn-lg" data-toggle="modal" data-target="#getButtonModal" ="">Sign Up Now !</a>
-    <div class="col-lg-11 col-lg-offset-1 text-right" style="margin-top: 250px">
-      <a href="#how" id = "btn-how" class="btn btn-dark btn-lg">Find out how !</a>
-    </div>
+    <p class="h3">
+      Provide <strong>An Interactive Blog Experience</strong>
+    </p>
+    <p class="h4">
+      Readers get <strong>personalized recommendtions</strong> without leaving your blog
+    </p>
   </div>
-</header>
+</section>
 
 <!-- How -->
 <!-- <section id="how" class="about">
@@ -220,7 +250,7 @@
                 <i class="fa fa-code fa-stack-1x text-primary" aria-hidden="true"></i>
               </span>
               <h4>
-                <strong>Add our button to your blog</strong>
+                <strong>Add our widget to your blog</strong>
               </h4>
               <p>Add our little code snippet to your blog and you are ready to take requests.</p>
 
@@ -233,9 +263,9 @@
                 <i class="fa fa-mouse-pointer fa-stack-1x text-primary"></i>
               </span>
               <h4>
-                <strong>User Clicks on it</strong>
+                <strong>Reader Clicks on it</strong>
               </h4>
-              <p>Visitor clicks to ask for a recommendation.</p>
+              <p>Reader clicks to ask for a recommendation.</p>
 
             </div>
           </div>
@@ -246,7 +276,7 @@
                 <i class="fa fa-question-circle-o fa-stack-1x text-primary"></i>
               </span>
               <h4>
-                <strong>Request Notification</strong>
+                <strong>Instant Notification</strong>
               </h4>
               <p>You will get notified of the request.</p>
 
@@ -259,7 +289,7 @@
                 <i class="fa fa-mail-reply-all fa-stack-1x text-primary"></i>
               </span>
               <h4>
-                <strong>Respond Back with Recommendations </strong>
+                <strong>Respond Back with Peronalized Recommendations </strong>
               </h4>
               <p>Respond within minutes to help your reader find their next awesome experience</p>
 
@@ -273,7 +303,7 @@
     <!-- /.row -->
   </div>
   <div class="col-md-20 text-center">
-    <a href="#" class="btn btn-light" data-toggle="modal" data-target="#getButtonModal" =""><strong>Get your Button</strong></a></div>
+    <a href="#" class="btn btn-light" data-toggle="modal" data-target="#getButtonModal" =""><strong>Request an invite</strong></a></div>
     <!-- /.container -->
   </section>
 
@@ -283,93 +313,6 @@
       <h1>"Alone we can do so little, together we can do so much."</h1>
     </div>
   </aside> -->
-
-  <!-- Portfolio -->
-  <section id="team" class="portfolio">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-10 col-lg-offset-1 text-center">
-          <h2>Meet our Team</h2>
-          <hr class="small">
-          <div class="row">
-            <div style="float: none; margin: 0 auto;">
-              <div class="portfolio-item">
-                <div class="team-image">
-                    <img class="img-portfolio img-responsive img-circle" src="img/pk.jpg">
-                  <div class="team-desc">
-                    <p>Prashant Kankaria</p>
-                    <p>CEO, 3 starups, helped restaurants 5X sales, experience in Publishing, Media Sales, Logistics</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-3">
-              <div class="portfolio-item team-image">
-                <a href="#">
-                  <img class="img-portfolio img-responsive img-circle" src="img/jd.jpg">
-                </a>
-                <div class="team-desc">
-                <p>Jeet Dholakia</p>
-                <p>CTO, dates technology @CEO, onemediain generated revenue over $100k</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="portfolio-item team-image">
-                <a href="#">
-                  <img class="img-portfolio img-responsive img-circle" src="img/cp.jpg">
-                </a>
-                <div class="team-desc">
-                <p>Chandra Prawal</p>
-                <p>CFO/COO @catering business, oversaw setup of $30 Million energy company, 9M&amp;A deals over a billion dollars total</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="portfolio-item team-image">
-                <a href="#">
-                  <img class="img-portfolio img-responsive img-circle" src="img/gs.jpg">
-                </a>
-                <div class="team-desc">
-                  <p>Gaurav Shukla</p>
-                  <p>2+ years Full stack developer, startup experience, ideal party:hackathon</p>
-                </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-              <div class="portfolio-item team-image">
-                <a href="#">
-                  <img class="img-portfolio img-responsive img-circle" src="img/portfolio-5.jpg">
-                </a>
-                <div class="team-desc">
-                  <p>Shubham Goyal</p>
-                  <p>Intern web development, 3rd year IT Student JIIT</p>
-              </div>
-            </div>
-          </div>
-          <!-- /.row (nested) -->
-
-        </div>
-        <!-- /.col-lg-10 -->
-      </div>
-      <!-- /.row -->
-    </div>
-    <!-- /.container -->
-  </section>
-
-  <!-- Call to Action -->
-  <aside class="call-to-action bg-primary">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h3>Ready to Commit ?</h3>
-          <a href="#" class="btn btn-lg btn-light" data-toggle="modal" data-target="#getButtonModal" =""><strong>Sign Up Now !</strong></a>
-        </div>
-      </div>
-    </div>
-  </aside>
 
 
   <!-- Footer -->
@@ -415,29 +358,7 @@
 
   <!-- Custom Theme JavaScript -->
   <script>
-  //Animates the button
-  function animateHowButton(){
-    id = '#'+'btn-how'
-    classes = ['animated', 'tada'].join(' ')
-    $(id).addClass(classes);
-  }
-
-  $('.type-it').typeIt({
-    speed:30,
-    deleteDelay:3000,
-    breakLines: false,
-    autoStart: false,
-    callback: animateHowButton,
-    // loop: true,
-    // loopDelay: 100000,
-    strings: [
-      'Do you want your <strong>readers </strong> to ask you for <strong>Recommendations</strong> ?',
-      'Do you want to respond to your readers requests <strong>within minutes </strong>?',
-      'Do you want to make your blog more <strong> interactive and personal</strong> ?',
-      'Now you can!!!',
-      "Let's make your blog more <strong> interactive and personal</strong> ..."]
-    });
-
+  
 
     $("#menu-close").click(function(e) {
       e.preventDefault();

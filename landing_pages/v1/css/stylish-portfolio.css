@@ -5,6 +5,7 @@
  */
 
 /* Global Styles */
+@import url('https://fonts.googleapis.com/css?family=Caveat');
 
 html,
 body {
@@ -14,6 +15,30 @@ body {
 
 body {
     font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.logo {
+    font-family: "Caveat", cursive;
+}
+.team-desc {
+    padding: 20px;
+    background-color: #333333;
+    visibility: hidden;
+    position: relative;
+    color: white;
+    max-height: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+    top: 0px;
+    transition: all 0.4s ease-in-out linear;
+    -moz-transition: all 0.4s ease-in-out; /* Firefox 4 */
+    -webkit-transition: all 0.4s ease-in-out; /* Safari and Chrome */
+    -o-transition: all 0.4s ease-in-out; /* Opera */
+}
+
+.team-image:hover > .team-desc {
+    visibility: visible;
+    top: -150px;
 }
 
 .text-vertical-center {
@@ -204,8 +229,8 @@ hr.small {
 
 .img-portfolio {
     margin: 0 auto;
-    max-width: 500px;
-    max-height: 333px;
+    max-width: 200px;
+    max-height: 250px;
 }
 
 .img-portfolio:hover {

@@ -181,7 +181,7 @@
 <!-- Header -->
 <header id="top" class="header">
   <div class="text-vertical-center">
-    <h1>Locaholic</h1>
+    <h1 class="logo">Locaholic</h1>
     <h3 class="type-it"></h3>
     <br>
     <a href="#" class="btn btn-dark btn-lg" data-toggle="modal" data-target="#getButtonModal" ="">Sign Up Now !</a>
@@ -192,7 +192,7 @@
 </header>
 
 <!-- How -->
-<section id="how" class="about">
+<!-- <section id="how" class="about">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
@@ -200,20 +200,20 @@
         <p class="lead">Connect with the readers via your blog to personalize their experiences.</p>
       </div>
     </div>
-    <!-- /.row -->
-  </div>
+ -->    <!-- /.row -->
+  <!-- </div> -->
   <!-- /.container -->
-</section>
+<!-- </section> -->
 
 <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
-<section id="services" class="services bg-primary">
+<section id="how" class="services bg-primary">
   <div class="container">
     <div class="row text-center">
       <div class="col-lg-10 col-lg-offset-1">
         <h2>How It Works</h2>
         <hr class="small">
         <div class="row">
-          <div class="col-md-3 col-sm-6">
+          <div class="col-md-3 col-sm-3">
             <div class="service-item">
               <span class="fa-stack fa-4x">
                 <i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i>
@@ -226,7 +226,7 @@
 
             </div>
           </div>
-          <div class="col-md-3 col-sm-6">
+          <div class="col-md-3 col-sm-3">
             <div class="service-item">
               <span class="fa-stack fa-4x">
                 <i class="fa fa-circle fa-stack-2x"></i>
@@ -239,7 +239,7 @@
 
             </div>
           </div>
-          <div class="col-md-3 col-sm-6">
+          <div class="col-md-3 col-sm-3">
             <div class="service-item">
               <span class="fa-stack fa-4x">
                 <i class="fa fa-circle fa-stack-2x"></i>
@@ -252,7 +252,7 @@
 
             </div>
           </div>
-          <div class="col-md-3 col-sm-6">
+          <div class="col-md-3 col-sm-3">
             <div class="service-item">
               <span class="fa-stack fa-4x">
                 <i class="fa fa-circle fa-stack-2x"></i>
@@ -278,11 +278,11 @@
   </section>
 
   <!-- Callout -->
-  <aside class="callout">
+<!--   <aside class="callout">
     <div class="text-vertical-center">
       <h1>"Alone we can do so little, together we can do so much."</h1>
     </div>
-  </aside>
+  </aside> -->
 
   <!-- Portfolio -->
   <section id="team" class="portfolio">
@@ -294,49 +294,58 @@
           <div class="row">
             <div style="float: none; margin: 0 auto;">
               <div class="portfolio-item">
-                <a href="#">
-                  <img class="img-portfolio img-responsive" src="img/portfolio-1.jpg">
-                </a>
-                <p>Prashant Kankaria</p>
-                <p>CEO, 3 starups, helped restaurants 5X sales, experience in Publishing, Media Sales, Logistics</p>
+                <div class="team-image">
+                    <img class="img-portfolio img-responsive img-circle" src="img/pk.jpg">
+                  <div class="team-desc">
+                    <p>Prashant Kankaria</p>
+                    <p>CEO, 3 starups, helped restaurants 5X sales, experience in Publishing, Media Sales, Logistics</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-6">
-              <div class="portfolio-item">
+            <div class="col-md-3">
+              <div class="portfolio-item team-image">
                 <a href="#">
-                  <img class="img-portfolio img-responsive" src="img/portfolio-1.jpg">
+                  <img class="img-portfolio img-responsive img-circle" src="img/jd.jpg">
                 </a>
+                <div class="team-desc">
                 <p>Jeet Dholakia</p>
                 <p>CTO, dates technology @CEO, onemediain generated revenue over $100k</p>
+                </div>
               </div>
             </div>
-            <div class="col-md-6">
-              <div class="portfolio-item">
+            <div class="col-md-3">
+              <div class="portfolio-item team-image">
                 <a href="#">
-                  <img class="img-portfolio img-responsive" src="img/portfolio-2.jpg">
+                  <img class="img-portfolio img-responsive img-circle" src="img/cp.jpg">
                 </a>
+                <div class="team-desc">
                 <p>Chandra Prawal</p>
                 <p>CFO/COO @catering business, oversaw setup of $30 Million energy company, 9M&amp;A deals over a billion dollars total</p>
+                </div>
               </div>
             </div>
-            <div class="col-md-6">
-              <div class="portfolio-item">
+            <div class="col-md-3">
+              <div class="portfolio-item team-image">
                 <a href="#">
-                  <img class="img-portfolio img-responsive" src="img/portfolio-4.jpg">
+                  <img class="img-portfolio img-responsive img-circle" src="img/gs.jpg">
                 </a>
-                <p>Gaurav Shukla</p>
-                <p>2+ years Full stack developer, startup experience, ideal party:hackathon</p>
-              </div>
+                <div class="team-desc">
+                  <p>Gaurav Shukla</p>
+                  <p>2+ years Full stack developer, startup experience, ideal party:hackathon</p>
+                </div>
+                </div>
             </div>
-            <div class="col-md-6">
-              <div class="portfolio-item">
+            <div class="col-md-3">
+              <div class="portfolio-item team-image">
                 <a href="#">
-                  <img class="img-portfolio img-responsive" src="img/portfolio-5.jpg">
+                  <img class="img-portfolio img-responsive img-circle" src="img/portfolio-5.jpg">
                 </a>
-                <p>Shubham Goyal</p>
-                <p>Intern web development, 3rd year IT Student JIIT</p>
+                <div class="team-desc">
+                  <p>Shubham Goyal</p>
+                  <p>Intern web development, 3rd year IT Student JIIT</p>
               </div>
             </div>
           </div>

@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en" >
+   <head>
+     <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+     <script type="text/javascript">
+
+     $(document).ready(function(){
+         $('input[type="radio"]').click(function(){
+             if($(this).attr("value")=="a1_one"){
+                 $(".box").not(".a1_one").hide();
+                 $(".a1_one").show();
+             }
+             if($(this).attr("value")=="a1_two"){
+                 $(".box").not(".a1_two").hide();
+                 $(".a1_two").show();
+             }
+             if($(this).attr("value")=="a1_three"){
+                 $(".box").not(".a1_three").hide();
+                 $(".a1_three").show();
+             }
+             if($(this).attr("value")=="a2_one"){
+                 $(".box").not(".a2_one").hide();
+                 $(".a2_one").show();
+                 $(".a1_one").show();
+             }
+             if($(this).attr("value")=="a2_two"){
+                 $(".box").not(".a2_two").hide();
+                 $(".a2_two").show();
+                 $(".a1_one").show();
+             }
+             if($(this).attr("value")=="a3_one"){
+                 $(".box").not(".a3_one").hide();
+                 $(".a2_one").show();
+                 $(".a1_one").show();
+                 $(".a3_one").show();
+            }
+            if($(this).attr("value")=="a4_one"){
+                $(".box").not(".a4_one").hide();
+                $(".a2_one").show();
+                $(".a1_one").show();
+                $(".a3_one").show();
+                $(".a4_one").show();
+            }
+            if($(this).attr("value")=="a4_two"){
+                $(".box").not(".a4_two").hide();
+                $(".a2_one").show();
+                $(".a1_one").show();
+                $(".a3_one").show();
+                $(".a4_two").show();
+            }
+             if($(this).attr("value")=="a5_one"){
+                 $(".box").not(".a5_one").hide();
+                 $(".a1_one").show();
+                 $(".a2_two").show();
+                 $(".a5_one").show();
+                 $(".a1_two").show();
+             }
+             if($(this).attr("value")=="a5_two"){
+                 $(".box").not(".a5_two").hide();
+                 $(".a1_one").show();
+                 $(".a2_one").show();
+                 $(".a3_two").show();
+                 $(".a5_two").show();
+                 $(".a1_three").show();
+             }
+         });
+     });
+
+</script>
+
+    </head>
+
+
+
+<link href="widget.css" rel="stylesheet">
+<div class="menu">
+            <div class="back"><i class="fa fa-chevron-left"></i> <img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
+            <div class="name">Mark | powered by Locaholic</div>
+            <div class="last">18:09</div>
+        </div>
+    <ol class="chat">
+    <li class="other">
+        <div class="avatar"><img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
+      <div class="msg">
+        <p>Hi there!</p>
+        <p>My name is Mark, how can I help you ?</p>
+        <time>20:17</time>
+      </div>
+    </li>
+    <li class="self">
+        <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
+      <div class="msg">
+        <label><input type=radio value="a1_one">Just exploring</label><br><br>
+          <label><input type=radio value="a1_two">I need a restaurant recommendation.</label><br><br>
+          <label><input type=radio value="a1_three">Just wanted to say hi.</label><br><br>
+        <time>20:18</time>
+      </div>
+    </li>
+    <div class="a1_one box">
+    <li class="other">
+        <div class="avatar"><img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
+      <div class="msg">
+
+        <p>Would you like to learn more about Locaholic? </p>
+        <time>20:18</time>
+      </li>
+      </div>
+      <div class="a1_two box">
+        <li class="other">
+            <div class="avatar"><img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
+          <div class="msg">
+
+      <p>That's awesome, I am glad I can be of help  </p>
+      <time>20:18</time>
+    </div>
+  </li>
+</div>
+
+    <div class="a1_three box">
+      <li class="other">
+          <div class="avatar"><img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
+        <div class="msg">
+
+    <p>Hi! I am always excited to meet new people. Please type in your comments and I or someone from my team will get back to you within 24 hours.</p>
+    <time>20:18</time>
+  </div>
+
+    </li>
+    </div>
+
+
+<div class="a1_one box">
+    <li class="self">
+      <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
+    <div class="msg">
+
+      <label><input type=radio value="a2_one">Yes</label><br><br>
+        <label><input type=radio value="a2_two">No</label><br><br>
+
+    </li>
+    </div>
+    <div class="a1_two box">
+    <li class="self">
+      <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
+    <div class="msg">
+
+        <form action="a1_two_a.asp">
+  <input type="text" name="a1_two_a_location" value="Enter the location"><br>
+  <input type="submit" value="Submit">
+  </form>
+
+    </li>
+    </div>
+
+      <div class="a1_three box">
+    <li class="self">
+      <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
+    <div class="msg">
+
+        <form action="a1_three_a.asp">
+  <input type="text" name="a1_three_a_comment" value="Please enter your comment "><br>
+  <input type="submit" value="Submit">
+  </form>
+
+    </li>
+</div>
+
+  <div class="a2_one box">
+    <li class="other">
+        <div class="avatar"><img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
+      <div class="msg">
+
+        <p>Pick a new restaurant in 5 mins!</p>
+        <p>Locaholic helps you get personalized recommendations from people you trust in minutes!</p>
+        <br><br><br><br><br><br><br><br>
+        <p>Would you like to join our waiting list?</p>
+        <time>20:18</time>
+      </div>
+    </li>
+  </div>
+
+
+      <div class="a2_one box">
+      <li class="self">
+        <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
+      <div class="msg">
+
+        <label><input type=radio value="a3_one">Yes</label><br><br>
+          <label><input type=radio value="a2_two">No</label><br><br>
+
+      </li>
+      </div>
+
+      <div class="a3_one box">
+        <li class="other">
+            <div class="avatar"><img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
+          <div class="msg">
+
+            <p>Are you a restaurant/travel blogger?</p>
+            <time>20:18</time>
+          </div>
+        </li>
+      </div>
+
+
+      <div class="a3_one box">
+      <li class="self">
+        <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
+      <div class="msg">
+
+        <label><input type=radio value="a4_one">Yes</label><br><br>
+          <label><input type=radio value="a4_two">No</label><br><br>
+
+      </li>
+      </div>
+
+      <div class="a4_one box">
+    <li class="self">
+      <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
+    <div class="msg">
+
+        <form action="a4_one_a.asp">
+    <input type="text" name="a4_one_a_fname" value="First Name">
+    <input type="text" name="a4_one_a_lname" value="Last Name"><br>
+    <input type="text" name="a4_one_a_number" value="Phone Number"><br>
+    <input type="text" name="a4_one_a_email" value="Email"><br>
+    <input type="text" name="a4_one_a_blog" value="Blog-Link"><br>
+    <input type="submit" value="Submit">
+    </form>
+
+    </li>
+    </div>
+    <div class="a4_two box">
+    <li class="self">
+    <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
+    <div class="msg">
+
+      <form action="a4_two_a.asp">
+    <input type="text" name="a4_two_a_fname" value="First Name">
+    <input type="text" name="a4_two_a_lname" value="Last Name"><br>
+    <input type="text" name="a4_two_a_number" value="Phone Number"><br>
+    <input type="text" name="a4_two_a_email" value="Email"><br>
+
+    <input type="submit" value="Submit">
+    </form>
+
+    </li>
+    </div>
+
+<div class="a2_two box">
+      <li class="other">
+          <div class="avatar"><img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
+        <div class="msg">
+
+          <p>I am always excited to meet people. The team is working hard to help you find a new restaurant in less than 5 mins.</p>
+          <time>20:18</time>
+        </div>
+
+    </li>
+</div>
+<div class="a2_two box">
+<li class="self">
+  <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
+<div class="msg">
+
+  <label><input type=radio value="a5_one">I need a restaurant recommendation.</label><br><br>
+    <label><input type=radio value="a5_two">Leave a comment</label><br><br>
+
+</li>
+</div>

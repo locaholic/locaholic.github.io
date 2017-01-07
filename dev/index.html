@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Get recommendations and explore new places">
+  <meta name="author" content="Locaholic">
+  <title>Locaholic|Private Personalized Recommendations from People You Trust</title>
+  <!-- Bootstrap Core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="css/stylish-portfolio.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <!-- Custom Fonts -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="css/style1.css" rel="stylesheet">
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <style>
+  .gly-ani {
+    animation: ani 2s infinite linear;
+  }
+  @keyframes ani {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(359deg);
+    }
+  }
+  </style>
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAgGUHwXIpoG-5VZ11Llop184jlS4raipw&sensor=false&libraries=places"></script>
+  <script type="text/javascript">
+  google.maps.event.addDomListener(window, 'load', function () {
+    var places = new google.maps.places.Autocomplete(document.getElementById('txtPlaces'));
+    google.maps.event.addListener(places, 'place_changed', function () {
+      var place = places.getPlace();
+      var address = place.formatted_address;
+      var latitude = place.geometry.location.A;
+      var longitude = place.geometry.location.F;
+      console.log(place);
+    });
+  });
+  </script>
+  <script type="text/javascript" src="js/request.js"></script>
+</head>
+<style type="text/css">
+/*To show the Auto complete from google places in Modal*/
+.pac-container {
+  z-index: 1051 !important;
+}
+</style>
+<body>
+  <!-- Modal -->
+  <div id="successModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title" id="successModalTitle">Thanks for your interest in Locaholic !</h4>
+        </div>
+        <div class="modal-body text-success" id="successModalBody">
+          <p>Some text in the modal.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div id="errorModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title" id="errorModalTitle">Your Request Could Not Be Completed!</h4>
+        </div>
+        <div class="modal-body text-error" id="errorModalBody">
+          <p>Some text in the modal.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div id="getButtonModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Customize your widget</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6">
+              <form onsubmit="return signupBlogger()">
+                <div class="form-group">
+                  <label for="url">Blog URL</label>
+                  <input type="url" placeholder="http://myblog.com" class="form-control" id="url">
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" placeholder="awesomeblogger@gmail.com" class="form-control" id="email">
+                </div>
+                <div class="form-group">
+                  <label for="name">Your Name</label>
+                  <input type="text" class="form-control" id="name" placeholder="Mark">
+                </div>
+                <div class="checkbox">
+                  <label><input name="emailChoice" type="checkbox"> Need additional help installing the widget?</label>
+                </div>
+                <p class="text-muted">
+                  <a href="#" class="link" data-toggle="collapse" data-target="#advOpt"> Personalize your widget</a>
+                </p>
+                <div id="advOpt" class="collapse">
+                  <!--   <div class="form-group">
+                  <label for="color">Color Theme</label>
+                  <input type="color" class="form-control" id="color">
+                </div> -->
+                <div class="form-group">
+                  <label for="btnText">Custom Text</label>
+                  <input type="text" class="form-control" id="btnText" placeholder="Get Recommendations">
+                </div>
+                <div class="form-group">
+                  <label for="welcomeMessage">Welcome Message</label>
+                  <input type="text" class="form-control" id="welcomeMessage" placeholder="Hello there what are you looking for ?">
+                </div>
+                <div class="form-group">
+                  <label for="sampleQues">Sample Question</label>
+                  <input type="text" class="form-control" id="sampleQues" placeholder="Hello there what are you looking for ?">
+                </div>
+              </div>
+              <button class="btn btn-primary" type="button" onclick="showPreview()">Preview </button> <span> </span> <button class="btn btn-success" type="submit"> Request Widget </button>
+            </form>
+          </div>
+          <div class="col-md-6">
+            <p class="text-muted h3"> Widget Preview</p>
+            <div id="askButtonBody" class="collapse">
+              <div class="panel panel-primary">
+                <div class="panel-heading" id="welcomeMessagePreview">Hello there, what are you looking for ?</div>
+                <div class="panel-body">
+                  <form>
+                    <div class="form-group">
+                      <textarea class="form-control" rows="5" id="questionPreview" placeholder="Looking for places that serve good italian? Someplace not very pricey, plz"></textarea>
+                      <label for="location">Where?</label>
+                      <input type="text" placeholder="New York" class="form-control" id="txtPlaces" />
+                      <!-- Commenting the current location option as we are not using https so it may not work for some people -->
+                      <!-- <span><a href="#" class="link">My Current Location</a></span> -->
+                    </div>
+                    <div class="form-group">
+                      <label for="email">Where do we send the Recommendations to?</label>
+                      <input type="email" placeholder="nikhil@gmail.com" class="form-control" id="email">
+                    </div>
+                    <div class="form-group">
+                      <label for="name">Your Name</label>
+                      <input type="text" class="form-control" id="name" placeholder="Nikhil">
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <button data-toggle="collapse" data-target="#askButtonBody" id="btnTextPreview" style="color: #FDFDFD;background-color: #426bf4;float: right;">Get Recommendations</button>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Navigation -->
+<a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+<nav id="sidebar-wrapper">
+  <ul class="sidebar-nav">
+    <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+    <li class="sidebar-brand">
+      <a href="#top" onclick=$("#menu-close").click();>Locaholic</a>
+    </li>
+    <li>
+      <a href="#top" onclick=$("#menu-close").click();>Home</a>
+    </li>
+    <li>
+      <a href="#how" onclick=$("#menu-close").click();>How it works ?</a>
+    </li>
+    <li>
+      <a href="#team" onclick=$("#menu-close").click();>Meet our Team</a>
+    </li>
+    <li>
+      <a href="#contact" onclick=$("#menu-close").click();>Contact Us</a>
+    </li>
+  </ul>
+</nav>
+<!-- Header -->
+<section id="top" class="about container-fluid">
+  <div class="text-center">
+    <h1 class="logo">Locaholic</h1>
+    <p class="h3">
+      Provide <strong>An Interactive Blog Experience</strong>
+    </p>
+    <p class="h4">
+      Readers get <strong>personalized recommendtions</strong> without leaving your blog
+    </p>
+  </div>
+</section>
+<!-- How -->
+<!-- <section id="how" class="about">
+<div class="container">
+<div class="row">
+<div class="col-lg-12 text-center">
+<h2>An interactive blog experience</h2>
+<p class="lead">Connect with the readers via your blog to personalize their experiences.</p>
+</div>
+</div>
+-->    <!-- /.row -->
+<!-- </div> -->
+<!-- /.container -->
+<!-- </section> -->
+<!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
+<section id="how" class="services bg-primary">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-lg-10 col-lg-offset-1">
+        <h2>How It Works</h2>
+        <hr class="small">
+        <div class="row">
+          <div class="col-md-3 col-sm-3">
+            <div class="service-item">
+              <span class="fa-stack fa-4x">
+                <i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i>
+                <i class="fa fa-code fa-stack-1x text-primary" aria-hidden="true"></i>
+              </span>
+              <h4>
+                <strong>Add a widget to your blog</strong>
+              </h4>
+              <p>Add a little code snippet to your blog and you are ready to take requests.</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-3">
+            <div class="service-item">
+              <span class="fa-stack fa-4x">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-mouse-pointer fa-stack-1x text-primary"></i>
+              </span>
+              <h4>
+                <strong>Reader Clicks on it</strong>
+              </h4>
+              <p>Your reader clicks to ask for a recommendation.</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-3">
+            <div class="service-item">
+              <span class="fa-stack fa-4x">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-question-circle-o fa-stack-1x text-primary"></i>
+              </span>
+              <h4>
+                <strong>Instant Notification</strong>
+              </h4>
+              <p>You will get notified of the request.</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-3">
+            <div class="service-item">
+              <span class="fa-stack fa-4x">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-mail-reply-all fa-stack-1x text-primary"></i>
+              </span>
+              <h4>
+                <strong>Respond Back with Personalized Recommendations </strong>
+              </h4>
+              <p>Respond within minutes to help your reader find their next awesome experience</p>
+            </div>
+          </div>
+        </div>
+        <!-- /.row (nested) -->
+      </div>
+      <!-- /.col-lg-10 -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <div class="col-md-20 text-center">
+    <a href="#" class="btn btn-light" data-toggle="modal" data-target="#getButtonModal" =""><strong>Request an invite</strong></a></div>
+    <!-- /.container -->
+  </section>
+  <!-- Portfolio -->
+  <section id="team" class="portfolio">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 col-lg-offset-1 text-center" style="color: black;">
+          <h2>Meet our Team</h2>
+        </div></div></div></section>
+        <div class="section primary-section" id="about">
+          <div class="container">
+            <div class="row-fluid team">
+              <div class="divrow">
+                <div class="span4" id="2-person">
+                  <div class="thumbnail" >
+                    <img src="img/pk.jpg" alt="team 1" class="img-circle img-responsive" style="width:250px;height:250px;">
+                    <h3>Prashant Kankaria</h3>
+                    <div class="mask">
+                      <h2>CEO of 3 Startups</h2>
+                      <p>Helped restaurants 5X sales, experience in Publishing, Media Sales, Logistics</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="span4" id="1-person">
+                  <div class="thumbnail" >
+                    <img src="img/jd.jpg" alt="team 1" class="img-circle img-responsive" style="width:250px;height:250px;">
+                    <h3>Jeet Dholakia</h3>
+                    <div class="mask">
+                      <h2>CTO, dates technology @CEO</h2>
+                      <p>Onemediain generated revenue over $100k</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="span4" id="first-person">
+                  <div class="thumbnail" >
+                    <img src="img/cp.jpg" alt="team 1" class="img-circle img-responsive" style="width:250px;height:250px;">
+                    <h3>Chandra Prawal</h3>
+                    <div class="mask">
+                      <h2>CFO/COO @catering business</h2>
+                      <p>Oversaw setup of $30 Million energy company, 9M&amp;A deals over a billion dollars total</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="span4" id="second-person">
+                  <div class="thumbnail" >
+                    <img src="img/gs.jpg" alt="team 1" class="img-circle img-responsive" style="width:250px;height:250px;">
+                    <h3>Gaurav Shukla</h3>
+                    <div class="mask">
+                      <h2>Full Stack Developer</h2>
+                      <p>Startup experience, ideal party:hackathon</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="span4" id="third-person">
+                  <div class="thumbnail" >
+                    <img src="img/sg.jpg" alt="team 1" class="img-circle img-responsive" style="width:250px;height:250px;">
+                    <h3>Shubham Goyal</h3>
+                    <div class="mask">
+                      <h2>Intern-Web Development</h2>
+                      <p>3rd year IT Student JIIT</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Callout -->
+        <!--   <aside class="callout">
+        <div class="text-vertical-center">
+        <h1>"Alone we can do so little, together we can do so much."</h1>
+      </div>
+    </aside> -->
+    <!-- Footer -->
+    <section id="contact">
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 col-lg-offset-1 text-center">
+              <h4><strong>Have any Questions ?</strong>
+              </h4>
+              <p>Prashant Kankaria</p>
+              <ul class="list-unstyled">
+                <li><i class="fa fa-phone fa-fw"></i> (609) 310-1176</li>
+                <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:name@example.com">prashantkankaria@locaholic.co</a>
+                </li>
+              </ul>
+              <br>
+              <ul class="list-inline">
+                <li>
+                  <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>
+                </li>
+              </ul>
+              <hr class="small">
+              <p class="text-muted">Copyright &copy; Locaholic 2016</p>
+            </div>
+          </div>
+        </div>
+        <a id="to-top" href="#top" class="btn btn-dark btn-lg"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
+      </footer>
+    </section>
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/typeit/4.3.0/typeit.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script>
+    $("#menu-close").click(function(e) {
+      e.preventDefault();
+      $("#sidebar-wrapper").toggleClass("active");
+    });
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#sidebar-wrapper").toggleClass("active");
+    });
+    // Scrolls to the selected menu item on the page
+    $(function() {
+      $('a[href*=#]:not([href=#],[data-toggle],[data-target],[data-slide])').click(function() {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+          if (target.length) {
+            $('html,body').animate({
+              scrollTop: target.offset().top
+            }, 1000);
+            return false;
+          }
+        }
+      });
+    });
+    //#to-top button appears after scrolling
+    var fixed = false;
+    $(document).scroll(function() {
+      if ($(this).scrollTop() > 250) {
+        if (!fixed) {
+          fixed = true;
+          // $('#to-top').css({position:'fixed', display:'block'});
+          $('#to-top').show("slow", function() {
+            $('#to-top').css({
+              position: 'fixed',
+              display: 'block'
+            });
+          });
+        }
+      } else {
+        if (fixed) {
+          fixed = false;
+          $('#to-top').hide("slow", function() {
+            $('#to-top').css({
+              display: 'none'
+            });
+          });
+        }
+      }
+    });
+    // Disable Google Maps scrolling
+    // See http://stackoverflow.com/a/25904582/1607849
+    // Disable scroll zooming and bind back the click event
+    var onMapMouseleaveHandler = function(event) {
+      var that = $(this);
+      that.on('click', onMapClickHandler);
+      that.off('mouseleave', onMapMouseleaveHandler);
+      that.find('iframe').css("pointer-events", "none");
+    }
+    var onMapClickHandler = function(event) {
+      var that = $(this);
+      // Disable the click handler until the user leaves the map area
+      that.off('click', onMapClickHandler);
+      // Enable scrolling zoom
+      that.find('iframe').css("pointer-events", "auto");
+      // Handle the mouse leave event
+      that.on('mouseleave', onMapMouseleaveHandler);
+    }
+    // Enable map zooming with mouse scroll when the user clicks the map
+    $('.map').on('click', onMapClickHandler);
+    </script>
+    <script src="js/utilities.js"></script>
+    <div id='ajax_loader' style="position: fixed; left: 50%; top: 50%; display: none; z-index:5000;">
+      <div class="container">
+        <span class="glyphicon glyphicon-refresh gly-ani" style="font-size:40px;"></span>
+      </div>
+    </div>
+    <script type="text/javascript">
+    jQuery(function ($){
+      $(document).ajaxStop(function(){
+        $("#ajax_loader").hide();
+      });
+      $(document).ajaxStart(function(){
+        $("#ajax_loader").show();
+      });
+    });
+    </script>
+    <script type='text/javascript'>
+    $(document).ready(function() {
+      //option A
+      $("form").submit(function(e){
+        e.preventDefault(e);
+        return false;
+      });
+    });
+    </script>
+  </body>
+  </html>

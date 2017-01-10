@@ -1,13 +1,16 @@
-.divrow{
+.flex-row{
   display:flex;
   display: -webkit-flex;
+  align-items: center;
   -webkit-flex-direction: row;
   flex-direction:row;
   flex-wrap:wrap;
+  justify-content: center;
 }
-.divrow > div{
+.flex-row > div{
   flex: 0 1 auto;
   text-align:center;
+  align-items: center;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   border-top: 52px solid transparent;
@@ -42,7 +45,7 @@
   background: #404E71;
 }
 .thumbnail .more {
-  display:block;
+  display:inline-block;
   z-index:4;
   position:absolute;
   top:-100px;

@@ -3,10 +3,25 @@ var app = angular.module('locaholic', ['ui.router', 'satellizer', 'toastr', 'ngM
 app.config(function ($stateProvider, $urlRouterProvider, $authProvider) {
 
   $stateProvider
-    .state('home', {
-      url: '/home',
+    .state('user', {
+      url: '/user',
       templateUrl: 'partials/home.tpl.html',
       data: {requiredLogin: true}
+    })
+    .state('ask', {
+      url: '/ask',
+      templateUrl: 'partials/ask.tpl.html',
+      // data: {requiredLogin: true}
+    })
+    .state('recommend', {
+      url: '/recommend',
+      templateUrl: 'partials/recommend.tpl.html',
+      // data: {requiredLogin: true}
+    })
+    .state('recommend.collection', {
+      url: '/recommend/:r_id/collection',
+      templateUrl: 'partials/collection.tpl.html',
+      // data: {requiredLogin: true}
     })
     // .state('secret', {
     //   url: '/secret',
@@ -20,7 +35,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $authProvider) {
       controller: 'LoginSignupCtrl'
     });
 
-  $urlRouterProvider.otherwise('/home');
+  $urlRouterProvider.otherwise('/user');
   $authProvider.facebook({
     url: 'https://api.locaholic.co/auth/facebook/?platform=web',
     clientId: '971388552927772',
@@ -90,34 +105,3 @@ app.controller('LoginSignupCtrl', function ($scope, $auth, $state, toastr) {
       })
   }
 });
-
-app.controller('SecretCtrl', function ($scope, $state, $auth, $http) {
-  $scope.logout = function () {
-    $auth.logout();
-    $state.go("home");
-  };
-
-  getUserInfo();
-
-  function getUserInfo() {
-    $http.get('http://test.locaholic.co:8000/profile/')
-      .then(function (response) {
-        $scope.user = response.data;
-      })
-      .catch(function (response) {
-        console.log("getUserInfo error", response);
-      })
-  }
-});
-
-app.controller('mainCtrl', function ($scope) {
-  $scope.items = [
-    { name: 'User', icon: 'user' },
-    { name: 'Comment', icon: 'comment' }
-  ];
-
-  $scope.listItemClick = function($index) {
-    var clickedItem = $scope.items[$index];
-    $mdBottomSheet.hide(clickedItem);
-  };
-  });

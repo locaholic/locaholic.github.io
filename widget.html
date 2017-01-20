@@ -1,0 +1,49 @@
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="askButtonBody" class="collapse" style="min-width: 250;min-height: 460">
+  <div class="panel panel-primary">
+    <div class="panel-heading" id="welcomeMessagePreview">Hello there, what are you looking for ?</div>
+    <div class="panel-body">
+      <form>
+        <div class="form-group">
+          <textarea class="form-control" rows="5" id="questionPreview" placeholder="Looking for places that serve good italian? Someplace not very pricey, plz"></textarea>
+          <label for="location">Where?</label>
+          <input type="text" placeholder="New York" class="form-control" id="txtPlaces" />
+          <!-- Commenting the current location option as we are not using https so it may not work for some people -->
+          <!-- <span><a href="#" class="link">My Current Location</a></span> -->
+        </div>
+        <div class="form-group">
+          <label for="email">Where do we send the Recommendations to?</label>
+          <input type="email" placeholder="nikhil@gmail.com" class="form-control" id="email">
+        </div>
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" class="form-control" id="name" placeholder="Nikhil">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<button data-toggle="collapse" data-target="#askButtonBody" id="btnTextPreview" style="position:fixed;bottom:0;right:0;min-width: 150;color: #FDFDFD;background-color: #426bf4;float: right;">Get Recommendationss</button>
+
+<script type="text/javascript">
+$( document ).ready(function() {
+    parent.postMessage({h:$('#btnTextPreview').outerHeight(),w:$('#btnTextPreview').outerWidth()+20}, '*'); 
+});
+$('#askButtonBody').on('hidden.bs.collapse', function (e) {
+  console.log("hide")
+  parent.postMessage({h:$('#btnTextPreview').outerHeight(),w:$('#btnTextPreview').outerWidth()+20}, '*'); 
+})
+$('#askButtonBody').on('show.bs.collapse', function (e) {
+  console.log("show")
+  parent.postMessage({h:$('#askButtonBody').outerHeight()+$('#btnTextPreview').outerHeight(),w:$('#askButtonBody').outerWidth()}, '*'); 
+})
+</script>
+</body>
+</html>

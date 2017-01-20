@@ -16,6 +16,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $authProvider) {
     .state('recommend', {
       url: '/recommend',
       templateUrl: 'partials/recommend.tpl.html',
+      controller: 'cardController'
       // data: {requiredLogin: true}
     })
     .state('recommend.collection', {
@@ -105,3 +106,27 @@ app.controller('LoginSignupCtrl', function ($scope, $auth, $state, toastr) {
       })
   }
 });
+app.controller('cardController', ['$scope','$http', cardController]);
+function cardController($scope, $http){
+    $scope.getRecommendations = function(){
+      $http({
+        method: 'GET',
+        url: baseUrl + '/users/1/questions/' + ques_uuid + '/recommendations'
+      }).then(function successCallback(response) {
+          // this callback will be called asynchronously
+          // when the response is available
+        }, function errorCallback(response) {
+          // called asynchronously if an error occurs
+          // or server returns response with an error status.
+        });
+    }
+    $scope.places = ["1","2","3","4","5","6"]
+    $scope.toggleFav = function ()
+    {
+      $scope.favColor = !$scope.favColor;
+    }
+    $scope.toggleLike = function ()
+    {
+      $scope.likeColor = !$scope.likeColor;
+    }
+  }

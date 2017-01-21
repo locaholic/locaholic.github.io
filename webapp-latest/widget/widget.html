@@ -4,7 +4,7 @@
 
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAgGUHwXIpoG-5VZ11Llop184jlS4raipw&sensor=false&libraries=places"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgGUHwXIpoG-5VZ11Llop184jlS4raipw&sensor=false&libraries=places"></script>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 <body>
@@ -15,10 +15,10 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title" id="successModalTitle">Thanks for your interest in Locaholic !</h4>
+          <h4 class="modal-title" id="successModalTitle">Sit Tight!</h4>
         </div>
         <div class="modal-body text-success" id="successModalBody">
-          <p>Some text in the modal.</p>
+          <p>Your recommendations or on the way and will be delivered straight to your email.</p>
         </div>
       </div>
     </div>
@@ -39,7 +39,7 @@
     </div>
   </div>
 
-<div id="askButtonBody" class="collapse" style="min-width: 250;min-height: 460">
+<div id="askButtonBody" class="collapse text-center" style="min-width: 250;min-height: 460">
   <div class="panel panel-primary">
     <div class="panel-heading" id="welcomeMessagePreview">Hello there, what are you looking for ?</div>
     <div class="panel-body">
@@ -62,9 +62,9 @@
       </form>
     </div>
   </div>
-  <button class="btn btn-lg btn-success" onclick="getRecommendations()">Send <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+  <button class="btn btn-sm btn-success"onclick="getRecommendations()">Send <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
 </div>
-<button data-toggle="collapse" data-target="#askButtonBody" id="btnTextPreview" style="position:fixed;bottom:0;right:0;min-width: 150;color: #FDFDFD;background-color: #426bf4;float: right;">Get Recommendationss</button>
+<button data-toggle="collapse" data-target="#askButtonBody" id="btnTextPreview" style="position:fixed;bottom:0;right:0;min-width: 150;color: #FDFDFD;background-color: #426bf4;float: right;">Get Recommendations</button>
 
 <script type="text/javascript">
 $( document ).ready(function() {
@@ -92,7 +92,7 @@ $('#askButtonBody').on('show.bs.collapse', function (e) {
       document.getElementById('location').setAttribute("latlng",latlng)
     });
   });
-  apiHost = "http://localhost:8000";
+  apiHost = "https://api.locaholic.co";
 
 function showMessage(result,status,xhr)
 {

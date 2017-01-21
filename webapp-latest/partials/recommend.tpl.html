@@ -1,0 +1,62 @@
+ <div id="overlay"></div>
+  <div id="dialogBox" onload="toggleOverlay()">
+    <p>Special box content ...</p>
+    <div layout="row" layout-align="center end" style="margin-top:200px;">
+      <button type="button" onmousedown="toggleOverlay()" class="btn btn-primary" style="z-index: 10;">Join now !</button>
+    </div>
+  </div>
+  <div id="wrapper">
+  <div layout= "row" layout-align="center center">
+    <md-card-header-text>
+      <span class="md-title">user name here</span>
+    </md-card-header-text>
+    <md-card-avatar>
+      <img class="md-user-avatar" src="img/profile.jpg" alt="user" style="max-height:80px; max-width:80px;">
+    </md-card-avatar>
+    <md-card-header-text>
+      <span class="md-subhead">some text here</span></br>
+      <span class="md-subhead">location goes here</span>
+    </md-card-header-text>
+  </div>
+  <div class="container-fluid">
+  <div class="row">
+    <div ng-repeat="place in places" class = "col-xs-12 col-sm-6 col-md-4">
+      <md-card style="position:relative; top:300px; box-shadow:none">
+        <img ng-src="img/image.jpg" class="md-card-image img-responsive" alt="shop" style="min-height: 240px">
+        <div align="right" style="top: -55px; position: relative; background: " >
+          <md-card-header style="padding: 10px;" class="gradient">
+            <md-card-avatar>
+              <img class="md-user-avatar" src="img/profile.jpg" alt="user" style="max-height:40px; max-width:40px;">
+            </md-card-avatar>
+            <md-card-avatar>
+              <img class="md-user-avatar" src="img/profile.jpg" alt="user" style="max-height:40px; max-width:40px;">
+            </md-card-avatar>
+            <md-card-avatar>
+              <img class="md-user-avatar" src="img/profile.jpg" alt="user" style="max-height:40px; max-width:40px;">
+            </md-card-avatar>
+            <md-card-header-text style="position:relative; top: -100px; text-align:left; left:-180px;">
+              <span class="md-title"><strong>location name goes here</strong></span>
+              <span class="md-subhead"><strong>rating goes here</strong></span>
+              <span class="md-subhead"><strong>no of recommends goes here</strong></span>
+            </md-card-header-text>
+          </div>
+        </md-card-header>
+        <section layout="row" layout-align="end end" style="position:relative; top:-105px;">
+          <md-card-actions>
+            <md-button class="md-icon-button" aria-label="favorite" ng-init="favColor='0'" ng-click=toggleFav()>
+              <md-icon><i ng-class="{'material-icons' : favColor, 'material-icons red' : !favColor}">favorite</i></md-icon>
+            </md-button>
+            <md-button class="md-icon-button" aria-label="comment">
+              <md-icon><i class="material-icons">mode_comment</i></md-icon>
+            </md-button>
+            <md-button class="md-icon-button" aria-label="thanks" ng-init="likeColor='0'" ng-click="toggleLike()">
+              <md-icon><i ng-class="{'material-icons' : likeColor, 'material-icons blue' : !likeColor}">thumb_up</i></md-icon>
+              <p ng-component='right'>thanks</p>
+            </md-button>
+          </md-card-actions>
+        </section>
+      </md-card>
+      </div>
+    </div>
+  </div>
+</div>

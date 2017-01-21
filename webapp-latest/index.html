@@ -7,13 +7,33 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="icon" href="favicon.jpg" type="image/jpg" sizes="16x16">
+     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  
 		 <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
 		 <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="bower_components/components-font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap-social/bootstrap-social.css">
     <link rel="stylesheet" type="text/css" href="bower_components/angular-toastr/dist/angular-toastr.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
-	</head>
+	<script>
+  function toggleOverlay(){
+  var overlay = document.getElementById('overlay');
+  var dialogBox = document.getElementById('dialogBox');
+  overlay.style.opacity = .9;
+  if(overlay.style.display == "block"){
+    overlay.style.display = "none";
+    dialogBox.style.display = "none";
+  } else {
+    overlay.style.display = "block";
+    dialogBox.style.display = "block";
+  }
+}
+  </script>
+  <style>
+  i.red {color: red;}
+  i.blue {color: blue;}
+  </style>
+  </head>
 	<body>
 	<div ng-cloak="" class="toolbardemoBasicUsage" ng-app="locaholic">
   <md-content>

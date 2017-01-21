@@ -4,17 +4,50 @@
 
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAgGUHwXIpoG-5VZ11Llop184jlS4raipw&sensor=false&libraries=places"></script>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 <body>
+<!-- Modal -->
+  <div id="successModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title" id="successModalTitle">Thanks for your interest in Locaholic !</h4>
+        </div>
+        <div class="modal-body text-success" id="successModalBody">
+          <p>Some text in the modal.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div id="errorModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title" id="errorModalTitle">Your Request Could Not Be Completed!</h4>
+        </div>
+        <div class="modal-body text-error" id="errorModalBody">
+          <p>Some text in the modal.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
 <div id="askButtonBody" class="collapse" style="min-width: 250;min-height: 460">
   <div class="panel panel-primary">
     <div class="panel-heading" id="welcomeMessagePreview">Hello there, what are you looking for ?</div>
     <div class="panel-body">
       <form>
         <div class="form-group">
-          <textarea class="form-control" rows="5" id="questionPreview" placeholder="Looking for places that serve good italian? Someplace not very pricey, plz"></textarea>
+          <textarea class="form-control" rows="5" id="title" placeholder="Looking for places that serve good italian? Someplace not very pricey, plz"></textarea>
           <label for="location">Where?</label>
-          <input type="text" placeholder="New York" class="form-control" id="txtPlaces" />
+          <input type="text" placeholder="New York" class="form-control" id="location" />
           <!-- Commenting the current location option as we are not using https so it may not work for some people -->
           <!-- <span><a href="#" class="link">My Current Location</a></span> -->
         </div>
@@ -29,6 +62,7 @@
       </form>
     </div>
   </div>
+  <button class="btn btn-lg btn-success" onclick="getRecommendations()">Send <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
 </div>
 <button data-toggle="collapse" data-target="#askButtonBody" id="btnTextPreview" style="position:fixed;bottom:0;right:0;min-width: 150;color: #FDFDFD;background-color: #426bf4;float: right;">Get Recommendationss</button>
 
@@ -45,5 +79,65 @@ $('#askButtonBody').on('show.bs.collapse', function (e) {
   parent.postMessage({h:$('#askButtonBody').outerHeight()+$('#btnTextPreview').outerHeight(),w:$('#askButtonBody').outerWidth()}, '*'); 
 })
 </script>
+ <script type="text/javascript">
+  google.maps.event.addDomListener(window, 'load', function () {
+    var places = new google.maps.places.Autocomplete(document.getElementById('location'));
+    google.maps.event.addListener(places, 'place_changed', function () {
+      var place = places.getPlace();
+      console.log(place)
+      var address = place.formatted_address;
+      var latlng = "lat/lng: ("+place.geometry.location.lat()+','+place.geometry.location.lng()+")";
+      document.getElementById('location').setAttribute("place_id",place.place_id)
+      document.getElementById('location').setAttribute("place_name",address)
+      document.getElementById('location').setAttribute("latlng",latlng)
+    });
+  });
+  apiHost = "http://localhost:8000";
+
+function showMessage(result,status,xhr)
+{
+  $("#successModal").modal("show");
+}
+
+function showError(xhr,status,error){
+  str = ""
+  $.each(xhr.responseJSON, function(k, v) {
+    if(k!="places" && k!="asked_from"){
+    str += '<p class="text-error h4"><b>'+k+" : " + v[0]+'</b></p>';
+    }
+  });
+  $("#errorModalBody").html(str);
+  $("#errorModal").modal("show");
+}
+
+function getRecommendations(){
+  current_form = "get_recommendations"
+  data = {
+    "email": document.getElementById('email').value,
+    "name": document.getElementById('name').value,
+    "asked_from": "8f9f14f5e4dc4161a6b435de30b2012b",
+    "title": document.getElementById('title').value || '',
+    "places": [
+     {
+      "g_place_id": document.getElementById('location').getAttribute("latlng"),
+      "name": document.getElementById('location').getAttribute("place_name"),
+      "json": {
+       "place_id": document.getElementById('location').getAttribute("place_id"),
+       "place_rating": -1
+      }
+     }]
+  }
+
+  $.ajax({
+    contentType: 'application/json; charset=utf-8',
+    url: [apiHost,"users/1","widget","questions/"].join('/'),
+    data: JSON.stringify(data),
+    type: 'POST',
+    success:showMessage,
+    error: showError
+  })
+}
+
+  </script>
 </body>
 </html>

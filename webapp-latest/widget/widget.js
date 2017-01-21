@@ -5,7 +5,7 @@
       window.addEventListener('message', function(event) { 
 
     // IMPORTANT: Check the origin of the data! 
-    if (~event.origin.indexOf('http://locaholic.co')) { 
+    if (~event.origin.indexOf('https://app.locaholic.co')) { 
       iframe = document.getElementById("locaholicIframe")
       iframe.width=event.data.w
       iframe.height=event.data.h;
@@ -16,3 +16,4 @@
         return; 
     } 
 });
+

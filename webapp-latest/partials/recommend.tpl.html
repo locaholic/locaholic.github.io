@@ -1,5 +1,5 @@
  <div id="overlay"></div>
-  <div id="dialogBox" onload="toggleOverlay()">
+  <div id="dialogBox" ng-init="toggleOverlay()">
     <p>Special box content ...</p>
     <div layout="row" layout-align="center end" style="margin-top:200px;">
       <button type="button" onmousedown="toggleOverlay()" class="btn btn-primary" style="z-index: 10;">Join now !</button>
@@ -60,3 +60,4 @@
     </div>
   </div>
 </div>
+<button onclick="getRecommendations()">click to load</button>

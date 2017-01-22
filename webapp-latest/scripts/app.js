@@ -14,16 +14,16 @@ app.config(function ($stateProvider, $urlRouterProvider, $authProvider) {
       // data: {requiredLogin: true}
     })
     .state('recommend', {
-      url: '/recommend',
+      url: '/q/:qid/r/:rid/',
       templateUrl: 'partials/recommend.tpl.html',
       controller: 'cardController'
       // data: {requiredLogin: true}
     })
-    .state('recommend.collection', {
-      url: '/recommend/:r_id/collection',
-      templateUrl: 'partials/collection.tpl.html',
-      // data: {requiredLogin: true}
-    })
+    // .state('recommend.collection', {
+    //   url: '/recommend/:r_id/collection',
+    //   templateUrl: 'partials/collection.tpl.html',
+    //   // data: {requiredLogin: true}
+    // })
     // .state('secret', {
     //   url: '/secret',
     //   templateUrl: 'partials/secret.tpl.html',
@@ -106,21 +106,20 @@ app.controller('LoginSignupCtrl', function ($scope, $auth, $state, toastr) {
       })
   }
 });
-app.controller('cardController', ['$scope','$http', cardController]);
-function cardController($scope, $http){
+function cardController($scope, $http, $stateParams){
+    $scope.places = [];
     $scope.getRecommendations = function(){
       $http({
         method: 'GET',
-        url: baseUrl + '/users/1/questions/' + ques_uuid + '/recommendations'
+        url: baseUrl + '/users/1/questions/' + $stateParams.qid + '/recommendations/' + $stateParams.rid +'/'
       }).then(function successCallback(response) {
-          // this callback will be called asynchronously
-          // when the response is available
+          $scope.places = response.data.collections.forEach(function(collection){
+            $scope.places.push.apply($scope.places, collection.places);
+          })
         }, function errorCallback(response) {
-          // called asynchronously if an error occurs
-          // or server returns response with an error status.
+          alert(JSON.stringify(response))
         });
     }
-    $scope.places = ["1","2","3","4","5","6"]
     $scope.toggleFav = function ()
     {
       $scope.favColor = !$scope.favColor;
@@ -130,3 +129,4 @@ function cardController($scope, $http){
       $scope.likeColor = !$scope.likeColor;
     }
   }
+app.controller('cardController', ['$scope','$http','$stateParams',cardController]);

@@ -76,7 +76,7 @@ $('#askButtonBody').on('hidden.bs.collapse', function (e) {
 })
 $('#askButtonBody').on('show.bs.collapse', function (e) {
   console.log("show")
-  parent.postMessage({h:$('#askButtonBody').outerHeight()+$('#btnTextPreview').outerHeight(),w:$('#askButtonBody').outerWidth()}, '*'); 
+  parent.postMessage({h:$('#askButtonBody').outerHeight()+$('#btnTextPreview').outerHeight()+40,w:$('#askButtonBody').outerWidth()}, '*'); 
 })
 </script>
  <script type="text/javascript">

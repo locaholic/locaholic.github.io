@@ -22,22 +22,22 @@ var scotchApp = angular.module('scotchApp', ['ngRoute','ui.materialize']);
             })
     });
 
+var baseUrl = "https://api.locaholic.co"
     // create the controller and inject Angular's $scope
 scotchApp.controller('viewAnswerController', ['$scope','$http','$routeParams', function($scope, $http,$routeParams){
-    var baseUrl = "https://api.locaholic.co"
     $scope.places = [1,2,3,4];
     $scope.getRecommendations = function(){
       $http({
         method: 'GET',
         url: baseUrl + '/users/1/widget/questions/' + $routeParams.qid + '/recommendations/' + $routeParams.rid +'/'
       }).then(function successCallback(response) {
-      		console.log(response.data)
-      		$scope.recommendation = 
+          console.log(response.data)
+          $scope.recommendation = 
           response.data.collection.forEach(function(c){
-          	c.places.forEach(function(place){
-          	  place.json = JSON.parse(place.json)
+            c.places.forEach(function(place){
+              place.json = JSON.parse(place.json)
               $scope.places.push(place);
-          	})
+            })
           })
         }, function errorCallback(response) {
           $scope.$parent.showError(response.data)
@@ -54,7 +54,6 @@ scotchApp.controller('viewAnswerController', ['$scope','$http','$routeParams', f
     }
   }]);
 
-var baseUrl = "http://localhost:8000"
 scotchApp.controller('answerController', ['$scope','$http','$routeParams','$location', function($scope, $http,$routeParams, $location){
     $scope.makeTrue = function(){
       console.log("called")

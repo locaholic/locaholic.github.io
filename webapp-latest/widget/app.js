@@ -1,5 +1,5 @@
 
-var scotchApp = angular.module('scotchApp', ['ngRoute','ui.materialize']);
+var scotchApp = angular.module('scotchApp', ['ngRoute','ui.materialize','angular-loading-bar']);
 
     // configure our routes
     scotchApp.config(function($routeProvider) {

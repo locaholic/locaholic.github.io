@@ -22,20 +22,23 @@ var scotchApp = angular.module('scotchApp', ['ngRoute','ui.materialize']);
             })
     });
 
-var baseUrl = "https://api.locaholic.co"
+var baseUrl = "http://localhost:8000"
     // create the controller and inject Angular's $scope
 scotchApp.controller('viewAnswerController', ['$scope','$http','$routeParams', function($scope, $http,$routeParams){
-    $scope.places = [1,2,3,4];
+    $scope.places = []
     $scope.getRecommendations = function(){
       $http({
         method: 'GET',
         url: baseUrl + '/users/1/widget/questions/' + $routeParams.qid + '/recommendations/' + $routeParams.rid +'/'
       }).then(function successCallback(response) {
           console.log(response.data)
-          $scope.recommendation = 
+          $scope.$parent.user = response.data.created_by
+          $scope.question = response.data.question
           response.data.collection.forEach(function(c){
+            console.log(c)
             c.places.forEach(function(place){
               place.json = JSON.parse(place.json)
+              console.log(place)
               $scope.places.push(place);
             })
           })
@@ -223,3 +226,10 @@ scotchApp.directive('googleplace', function($http) {
                     service.getDetails({placeId:place.place_id}, cb);
                   });
     }}});
+
+scotchApp.filter('plusOrMinus', function(){
+    return function(input){
+        input = input ? input : 0
+        return input > 0 ? "+"+input : 1.5
+    }
+})

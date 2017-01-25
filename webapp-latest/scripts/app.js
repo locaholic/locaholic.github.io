@@ -1,53 +1,5 @@
 var app = angular.module('locaholic', ['ui.router', 'satellizer', 'toastr', 'ngMaterial', 'ngMessages', 'material.svgAssetsCache']);
 
-app.config(function ($stateProvider, $urlRouterProvider, $authProvider) {
-
-  $stateProvider
-    .state('user', {
-      url: '/user',
-      templateUrl: 'partials/home.tpl.html',
-      data: {requiredLogin: true}
-    })
-    .state('ask', {
-      url: '/ask',
-      templateUrl: 'partials/ask.tpl.html',
-      // data: {requiredLogin: true}
-    })
-    .state('recommend', {
-      url: '/q/:qid/r/:rid/',
-      templateUrl: 'partials/recommend.tpl.html',
-      controller: 'cardController'
-      // data: {requiredLogin: true}
-    })
-    // .state('recommend.collection', {
-    //   url: '/recommend/:r_id/collection',
-    //   templateUrl: 'partials/collection.tpl.html',
-    //   // data: {requiredLogin: true}
-    // })
-    // .state('secret', {
-    //   url: '/secret',
-    //   templateUrl: 'partials/secret.tpl.html',
-    //   controller: 'SecretCtrl',
-      
-    // })
-    .state('login', {
-      url: '/login',
-      templateUrl: 'partials/login.tpl.html',
-      controller: 'LoginSignupCtrl'
-    });
-
-  $urlRouterProvider.otherwise('/user');
-  $authProvider.facebook({
-    url: 'https://api.locaholic.co/auth/facebook/?platform=web',
-    clientId: '971388552927772',
-    // by default, the redirect URI is http://localhost:5000
-    redirectUri: location.origin + location.pathname,
-    platform: 'web'
-    // redirectUri: ''
-  });
-
-});
-
 app.run(function ($rootScope, $state, $auth) {
   $rootScope.$on('$stateChangeStart',
     function (event, toState) {
@@ -106,12 +58,13 @@ app.controller('LoginSignupCtrl', function ($scope, $auth, $state, toastr) {
       })
   }
 });
-function cardController($scope, $http, $stateParams){
+app.controller('cardController', ['$scope','$http','$stateParams',function($scope, $http, $stateParams){
+    var baseUrl = "http://localhost:8000"
     $scope.places = [];
     $scope.getRecommendations = function(){
       $http({
         method: 'GET',
-        url: baseUrl + '/users/1/questions/' + $stateParams.qid + '/recommendations/' + $stateParams.rid +'/'
+        url: baseUrl + '/users/1/widget/questions/' + $stateParams.qid + '/recommendations/' + $stateParams.rid +'/'
       }).then(function successCallback(response) {
           $scope.places = response.data.collections.forEach(function(collection){
             $scope.places.push.apply($scope.places, collection.places);
@@ -120,6 +73,7 @@ function cardController($scope, $http, $stateParams){
           alert(JSON.stringify(response))
         });
     }
+    // $scope.getRecommendations();
     $scope.toggleFav = function ()
     {
       $scope.favColor = !$scope.favColor;
@@ -128,5 +82,53 @@ function cardController($scope, $http, $stateParams){
     {
       $scope.likeColor = !$scope.likeColor;
     }
-  }
-app.controller('cardController', ['$scope','$http','$stateParams',cardController]);
+  }]);
+
+
+app.config(function ($stateProvider, $urlRouterProvider, $authProvider) {
+
+  $stateProvider
+    .state('user', {
+      url: '/user',
+      templateUrl: 'partials/home.tpl.html',
+      data: {requiredLogin: true}
+    })
+    .state('ask', {
+      url: '/ask',
+      templateUrl: 'partials/ask.tpl.html',
+      // data: {requiredLogin: true}
+    })
+    .state('recommend', {
+      url: '/q/:qid/r/:rid/',
+      templateUrl: 'partials/recommend.tpl.html',
+      // data: {requiredLogin: true}
+    })
+    // .state('recommend.collection', {
+    //   url: '/recommend/:r_id/collection',
+    //   templateUrl: 'partials/collection.tpl.html',
+    //   // data: {requiredLogin: true}
+    // })
+    // .state('secret', {
+    //   url: '/secret',
+    //   templateUrl: 'partials/secret.tpl.html',
+    //   controller: 'SecretCtrl',
+      
+    // })
+    .state('login', {
+      url: '/login',
+      templateUrl: 'partials/login.tpl.html',
+      controller: 'LoginSignupCtrl'
+    });
+
+  $urlRouterProvider.otherwise('/user');
+  $authProvider.facebook({
+    url: 'https://api.locaholic.co/auth/facebook/?platform=web',
+    clientId: '971388552927772',
+    // by default, the redirect URI is http://localhost:5000
+    redirectUri: location.origin + location.pathname,
+    platform: 'web'
+    // redirectUri: ''
+  });
+
+});
+

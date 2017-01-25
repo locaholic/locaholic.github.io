@@ -1,0 +1,84 @@
+<!-- index.html -->
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      
+      <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.js"></script>
+      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+      <script src="app.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.2.2/angular-materialize.min.js"></script>
+    <style type="text/css">
+      .gradient {
+  background: -webkit-linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,1)); /*Safari 5.1-6*/
+  background: -o-linear-gradient(bottom,rgba(0,0,0,0,0),rgba(0,0,0,1)); /*Opera 11.1-12*/
+  background: -moz-linear-gradient(bottom,rgba(0,0,0,0),rgba(0,0,0,1)); /*Fx 3.6-15*/
+  background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1));
+}
+    </style> 
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgGUHwXIpoG-5VZ11Llop184jlS4raipw&sensor=false&libraries=places"></script>
+    </head>
+    <body ng-app="scotchApp" ng-controller="rootController" style="background: url('https://subtlepatterns.com/patterns/seigaiha.png');">
+     <div id="successModal" open="successModalOpen" class="modal">
+      <div class="modal-content">
+          <h4 class="modal-title" id="successModalTitle">Thanks!</h4>
+          <p>Your recommendations or on the way and will be delivered straight to your email.</p>  
+      </div>
+      <div class="modal-footer">
+        <a class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+    </div>
+  <!-- Modal -->
+  <div id="errorModal" class="modal center" open="errorModalOpen">
+      <div class="modal-content">
+        <h4 class="modal-header text-error">Your request could not be completed</h4>
+          <div id="errorModalBody" ng-bind-html="renderHtml(errorStr)"></div>
+          <a class="btn modal-action modal-close waves-effect waves-red btn-flat">Try Again</a>  
+      </div>
+  </div>
+
+        <!-- HEADER AND NAVBAR -->
+        <header>
+            <nav>
+              <div class="nav-wrapper purple darken-4">
+                <a href="#" class="brand-logo"><img style="max-height: 50px;max-width: 50px;vertical-align: middle" src="https://firebasestorage.googleapis.com/v0/b/locaholic-test.appspot.com/o/ic_launcher.png?alt=media&token=5d3f7075-04a0-4081-bab7-5bcf21983823"/>Locaholic</a>
+                <!-- <ul id="nav-mobile" class="right hide-on-med-and-down">
+                  <li><a href="sass.html">Sass</a></li>
+                  <li><a href="badges.html">Components</a></li>
+                  <li><a href="collapsible.html">JavaScript</a></li>
+                 --></ul>
+              </div>
+            </nav>
+        </header>
+        <div class="spinner-layer spinner-red">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+
+
+        <!-- MAIN CONTENT AND INJECTED VIEWS -->
+        <div id="main" class="container">
+        <div ng-view></div>
+
+            <!-- angular templating -->
+            <!-- this is where content will be injected -->
+
+        </div>
+
+
+<a href="#errorModal" class="btn" modal open="errorModalOpen" style="visibility: hidden;">Show Data</a>
+    </body>
+    </html>

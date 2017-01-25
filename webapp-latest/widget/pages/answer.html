@@ -1,0 +1,67 @@
+   <div class="row" ng-init="getQuestion()">
+   <ul class="collection">
+    <li class="collection-item avatar">
+      <img check-image placeholder="user.png" ng-src="{{user.thumbnail}}" alt="" class="circle">
+      <p style="font-size: 22px">{{question.title}}</p>
+      <p style="color: grey; font-size: small;font-style: italic;padding-top: 5px">{{user.first_name}} has asked you for recommendations <br>
+      </p>
+      <p class="secondary-content center"><a href="#"><i class="material-icons">place</i></a><br/>{{question.places[0].name}}</p>
+    </li>
+    </ul>
+    <div class="row">
+    <form class="col s12">
+      <div class="row center">
+        <div class="input-field col s12 m6 offset-m3">
+              <div>To send recommendations to {{user.first_name}}, start typing in the places and hit send when you are done</div>
+              <div>
+                <input ng-model="chosenPlace" places="places" details="details" googleplace/><a class="waves-effect waves-light btn purple darken-3" data-target="modal1" modal open="showInput" ng-click="makeTrue()">Send</a>
+                </div>
+        </div>
+       </div>
+    </form>
+  </div>
+        <div class="col s12 m4" ng-repeat="place in places track by $index">
+          <div class="card small">
+            <div class="card-image">
+              <img check-image placeholder="place.jpg" ng-src="{{place.photo}}">
+              <span class="card-title gradient" style="font-size:18px" ng-bind="place.formatted"></span>
+            </div>
+            <div class="card-content">
+              <p><i class="material-icons">schedule</i>Timing: 7:00am to 9:00 pm</p>
+              <p><i class="material-icons">call</i>"Telephone not available"</p>
+              </div>
+            <div class="card-action">
+              <a href="#"><i class="material-icons">comment</i></a><a href="#"><i class="material-icons">thumb_up</i></a><a href="#"><i class="material-icons">trending_up</i></a><a href="#"><i class="material-icons">call_split</i></a>
+              <a href="#"><i class="material-icons">playlist_add</i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="Mark Anthony" id="name" ng-model ="name" type="text" class="validate">
+          <label for="name">Full Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input placeholder="mark@gmail.com" id="email" ng-model="email" type="email" class="validate">
+          <label for="email">Email</label>
+        </div>
+      </div>
+    </form>
+  </div>
+    </div>
+    <div class="modal-footer">
+      <a  class=" modal-action modal-close waves-effect waves-red btn-flat">Continue Adding Places</a>
+      <a ng-click = "sendRecommendation()" class=" waves-effect waves-red btn-flat">Send</a>
+    </div>
+  </div>
+
+
+    

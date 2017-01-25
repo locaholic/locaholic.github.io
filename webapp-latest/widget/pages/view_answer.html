@@ -1,0 +1,29 @@
+   <div class="row" ng-init="getRecommendations()">
+   <ul class="collection">
+    <li class="collection-item avatar">
+      <img check-image placeholder="user.png" ng-src="{{user.thumbnail}}" alt="" class="circle">
+      <p style="font-size: 22px">{{question.title}}</p>
+      <p style="color: grey; font-size: small;font-style: italic;padding-top: 5px">{{user.first_name}} has sent you recommendations.<br>
+      </p>
+      <p class="secondary-content center"><a href="#"><i class="material-icons">place</i></a><br/>{{question.places[0].name}}</p>
+    </li>
+    </ul>
+   <span><img ng-src="{{}}"></span>
+        <div class="col s12 m4" ng-repeat="place in places track by $index">
+          <div class="card small">
+            <div class="card-image">
+              <img check-image placeholder="place.jpg" ng-src="{{place.json.photos[0]}}">
+              <span class="card-title">{{place.name}}</span>
+            </div>
+            <div class="card-content">
+              <p><i class="material-icons">schedule</i>Timing: 7:00am to 9:00 pm</p>
+              <p><i class="material-icons">call</i>"Telephone not available"</p>
+              </div>
+            <div class="card-action">
+              <a href="#"><i class="material-icons">comment</i></a><a href="#"><i class="material-icons">thumb_up</i></a><a href="#"><i class="material-icons">trending_up</i></a><a href="#"><i class="material-icons">call_split</i></a>
+              <a href="#"><i class="material-icons">playlist_add</i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

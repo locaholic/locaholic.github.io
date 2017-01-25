@@ -22,7 +22,7 @@ var scotchApp = angular.module('scotchApp', ['ngRoute','ui.materialize']);
             })
     });
 
-var baseUrl = "http://localhost:8000"
+var baseUrl = "https://api.locaholic.co"
     // create the controller and inject Angular's $scope
 scotchApp.controller('viewAnswerController', ['$scope','$http','$routeParams', function($scope, $http,$routeParams){
     $scope.places = []

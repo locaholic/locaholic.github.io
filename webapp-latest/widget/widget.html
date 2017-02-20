@@ -64,6 +64,7 @@
   </div>
   <button class="btn btn-block btn-success"onclick="getRecommendations()">Send <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
 </div>
+<br><br>
 <button data-toggle="collapse" data-target="#askButtonBody" id="btnTextPreview" style="position:fixed;bottom:0;right:0;min-width: 150;color: #FDFDFD;background-color: #426bf4;float: right;">Get Recommendations</button>
 
 <script type="text/javascript">
@@ -76,7 +77,7 @@ $('#askButtonBody').on('hidden.bs.collapse', function (e) {
 })
 $('#askButtonBody').on('show.bs.collapse', function (e) {
   console.log("show")
-  parent.postMessage({h:$('#askButtonBody').outerHeight()+$('#btnTextPreview').outerHeight()+30,w:$('#askButtonBody').outerWidth()}, '*'); 
+  parent.postMessage({h:$('#askButtonBody').outerHeight()+$('#btnTextPreview').outerHeight()+60,w:$('#askButtonBody').outerWidth()+20}, '*'); 
 })
 </script>
  <script type="text/javascript">

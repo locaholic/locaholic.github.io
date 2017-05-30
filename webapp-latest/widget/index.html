@@ -2,6 +2,7 @@
     <!DOCTYPE html>
     <html>
     <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       
       <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
@@ -65,7 +66,7 @@
                  --></ul>
               </div>
             </nav>
-        </header>
+        </header><!-- 
         <div class="spinner-layer spinner-red">
         <div class="circle-clipper left">
           <div class="circle"></div>
@@ -74,12 +75,12 @@
         </div><div class="circle-clipper right">
           <div class="circle"></div>
         </div>
-      </div>
+      </div> -->
 
 
         <!-- MAIN CONTENT AND INJECTED VIEWS -->
-        <div id="main" class="container">
-        <div ng-view></div>
+        <div id="main">
+        <div ng-view class="container col s12 m8 offset-m2 "></div>
 
             <!-- angular templating -->
             <!-- this is where content will be injected -->

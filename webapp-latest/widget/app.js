@@ -10,6 +10,10 @@ var scotchApp = angular.module('scotchApp', ['ngRoute','ui.materialize','angular
                 templateUrl : 'pages/view_answer.html',
                 controller  : 'viewAnswerController'
             })
+            .when('/q/:qid/r/', {
+                templateUrl : 'pages/view_answers.html',
+                controller  : 'viewAnswersController'
+            })
 
             // route for the about page
             .when('/q/:qid/', {
@@ -20,6 +24,15 @@ var scotchApp = angular.module('scotchApp', ['ngRoute','ui.materialize','angular
                 templateUrl : 'pages/thanks.html',
                 controller: 'rootController'
             })
+            .when('/', {
+                templateUrl : 'pages/login.html',
+                controller  : 'loginController'
+            })
+            .when('/q/', {
+                templateUrl : 'pages/questions.html',
+                controller  : 'questionController'
+            })
+
     });
 
 var baseUrl = "https://api.locaholic.co"
@@ -30,6 +43,39 @@ scotchApp.controller('viewAnswerController', ['$scope','$http','$routeParams', f
       $http({
         method: 'GET',
         url: baseUrl + '/users/1/widget/questions/' + $routeParams.qid + '/recommendations/' + $routeParams.rid +'/'
+      }).then(function successCallback(response) {
+          console.log(response.data)
+          $scope.$parent.user = response.data.created_by
+          $scope.question = response.data.question
+          response.data.collection.forEach(function(c){
+            console.log(c)
+            c.places.forEach(function(place){
+              place.json = JSON.parse(place.json)
+              console.log(place)
+              $scope.places.push(place);
+            })
+          })
+        }, function errorCallback(response) {
+          $scope.$parent.showError(response.data)
+        });
+    }
+    // $scope.getRecommendations();
+    $scope.toggleFav = function ()
+    {
+      $scope.favColor = !$scope.favColor;
+    }
+    $scope.toggleLike = function ()
+    {
+      $scope.likeColor = !$scope.likeColor;
+    }
+  }]);
+
+scotchApp.controller('viewAnswersController', ['$scope','$http','$routeParams', function($scope, $http,$routeParams){
+    $scope.places = []
+    $scope.getRecommendations = function(){
+      $http({
+        method: 'GET',
+        url: baseUrl + '/users/1/widget/questions/' + $routeParams.qid + '/recommendations/'
       }).then(function successCallback(response) {
           console.log(response.data)
           $scope.$parent.user = response.data.created_by

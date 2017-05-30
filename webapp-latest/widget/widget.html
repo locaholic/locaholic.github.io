@@ -64,6 +64,7 @@
   </div>
   <button class="btn btn-block btn-success"onclick="getRecommendations()">Send <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
 </div>
+<br><br>
 <button data-toggle="collapse" data-target="#askButtonBody" id="btnTextPreview" style="position:fixed;bottom:0;right:0;min-width: 150;color: #FDFDFD;background-color: #426bf4;float: right;">Get Recommendations</button>
 
 <script type="text/javascript">
@@ -76,10 +77,28 @@ $('#askButtonBody').on('hidden.bs.collapse', function (e) {
 })
 $('#askButtonBody').on('show.bs.collapse', function (e) {
   console.log("show")
-  parent.postMessage({h:$('#askButtonBody').outerHeight()+$('#btnTextPreview').outerHeight()+30,w:$('#askButtonBody').outerWidth()}, '*'); 
+  parent.postMessage({h:$('#askButtonBody').outerHeight()+$('#btnTextPreview').outerHeight()+60,w:$('#askButtonBody').outerWidth()+20}, '*'); 
 })
 </script>
  <script type="text/javascript">
+var queryParams = parseQuery(location.href.replace(/^[^\?]+\??/,''))
+
+function parseQuery ( query ) {
+ var Params = new Object ();
+ if ( ! query ) return Params; // return empty object
+ var Pairs = query.split(/[;&]/);
+ for ( var i = 0; i < Pairs.length; i++ ) {
+    var KeyVal = Pairs[i].split('=');
+    if ( ! KeyVal || KeyVal.length != 2 ) continue;
+    var key = unescape( KeyVal[0] );
+    var val = unescape( KeyVal[1] );
+    val = val.replace(/\+/g, ' ');
+    Params[key] = val;
+ }
+ return Params
+}
+
+
   google.maps.event.addDomListener(window, 'load', function () {
     var places = new google.maps.places.Autocomplete(document.getElementById('location'));
     google.maps.event.addListener(places, 'place_changed', function () {
@@ -115,7 +134,7 @@ function getRecommendations(){
   data = {
     "email": document.getElementById('email').value,
     "name": document.getElementById('name').value,
-    "asked_from": "8f9f14f5e4dc4161a6b435de30b2012b",
+    "asked_from": queryParams.id,
     "title": document.getElementById('title').value || '',
     "places": [
      {

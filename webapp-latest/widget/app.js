@@ -269,6 +269,7 @@ scotchApp.directive('googleplace', function($http) {
                     details.formatted = place.formatted_address;
                     details.placeId = place.place_id;
                     console.log(details)
+                    // scope.gPlace.text = "";
                     service.getDetails({placeId:place.place_id}, cb);
                   });
     }}});

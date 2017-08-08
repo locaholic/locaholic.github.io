@@ -1,5 +1,5 @@
 var app = angular.module('locaholic', ['ui.router', 'satellizer', 'toastr', 'ngMaterial', 'ngMessages', 'material.svgAssetsCache']);
-
+var baseUrl = "https://api.locaholic.co";
 app.run(function ($rootScope, $state, $auth) {
   $rootScope.$on('$stateChangeStart',
     function (event, toState) {
@@ -14,6 +14,21 @@ app.run(function ($rootScope, $state, $auth) {
     });
 });
 
+app.controller('AskController', ['$scope', '$http', '$stateParams', function ($scope, $http, $stateParams){
+  $scope.askQuestion = function(){
+    console.log("Ask Question called");
+  }
+  $scope.getPendingQuestions = function(){
+      $http({
+        method: 'GET',
+        url: baseUrl + '/users/1/questions/?asked=true'
+      }).then(function successCallback(response) {
+          console.log(response);
+        }, function errorCallback(response) {
+          alert(JSON.stringify(response))
+        });
+    }
+}]);
 
 app.controller('LoginSignupCtrl', function ($scope, $auth, $state, toastr) {
 
@@ -50,8 +65,7 @@ app.controller('LoginSignupCtrl', function ($scope, $auth, $state, toastr) {
   $scope.auth = function (provider) {
     $auth.authenticate(provider)
       .then(function (response) {
-        console.debug("success", response);
-        $state.go('secret');
+        $state.go('ask');
       })
       .catch(function (response) {
         console.debug("catch", response);
@@ -84,27 +98,59 @@ app.controller('cardController', ['$scope','$http','$stateParams',function($scop
     }
   }]);
 
+app.controller('RecommendationController', ['$scope','$http','$stateParams',function($scope, $http, $stateParams){
+    var baseUrl = "http://localhost:8000"
+    $scope.places = [];
+    $scope.getRecommendations = function(){
+      $http({
+        method: 'GET',
+        url: baseUrl + '/users/1/widget/questions/' + $stateParams.qid + '/recommendations/' + $stateParams.rid +'/'
+      }).then(function successCallback(response) {
+          $scope.places = response.data.collections.forEach(function(collection){
+            $scope.places.push.apply($scope.places, collection.places);
+          })
+        }, function errorCallback(response) {
+          alert(JSON.stringify(response))
+        });
+    }
+    // $scope.getRecommendations();
+    $scope.toggleFav = function ()
+    {
+      $scope.favColor = !$scope.favColor;
+    }
+    $scope.toggleLike = function ()
+    {
+      $scope.likeColor = !$scope.likeColor;
+    }
+  }]);
 
-app.config(function ($stateProvider, $urlRouterProvider, $authProvider) {
+
+app.config(['$stateProvider', '$urlRouterProvider', '$authProvider', '$httpProvider',function ($stateProvider, $urlRouterProvider, $authProvider, $httpProvider) {
 
   $stateProvider
     .state('user', {
       url: '/user',
-      templateUrl: 'partials/home.tpl.html',
+      templateUrl: 'partials/user.tpl.html',
       data: {requiredLogin: true}
     })
     .state('ask', {
       url: '/ask',
       templateUrl: 'partials/ask.tpl.html',
-      // data: {requiredLogin: true}
+      data: {requiredLogin: true},
+      controller: 'AskController'
     })
     .state('recommend', {
-      url: '/q/:qid/r/:rid/',
-      templateUrl: 'partials/recommend.tpl.html',
-      // data: {requiredLogin: true}
+      url: '/q/:qid/r/',
+      templateUrl: 'partials/recommend_post.tpl.html',
+      data: {requiredLogin: true}
     })
-    // .state('recommend.collection', {
-    //   url: '/recommend/:r_id/collection',
+    .state('recommend.browse', {
+      url: '/q/:qid/r/:rid/',
+      templateUrl: 'partials/recommend_browse.tpl.html',
+      data: {requiredLogin: true}
+    })
+    // .state('recommend.browse.collection', {
+    //   url: '/recommend/:r_id/col',
     //   templateUrl: 'partials/collection.tpl.html',
     //   // data: {requiredLogin: true}
     // })
@@ -121,6 +167,16 @@ app.config(function ($stateProvider, $urlRouterProvider, $authProvider) {
     });
 
   $urlRouterProvider.otherwise('/user');
+  
+  $httpProvider.interceptors.push(['$q', '$window', function($q,$window) {
+    return {
+     'request': function(config) {
+          config.headers['Authorization'] = "Bearer " + $window.localStorage['satellizer_token'];
+          return config;
+      }
+    };
+  }]);
+  
   $authProvider.facebook({
     url: 'https://api.locaholic.co/auth/facebook/?platform=web',
     clientId: '971388552927772',
@@ -130,5 +186,5 @@ app.config(function ($stateProvider, $urlRouterProvider, $authProvider) {
     // redirectUri: ''
   });
 
-});
+}]);
 

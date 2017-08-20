@@ -1,0 +1,15 @@
+ <div class="flexbox_item row">
+    <div class="col s12 m4">
+      <div class="card white lighten-2">
+        <a ui-sref="recommend_post({qid:question.ques.uuid})"><div class="card-content brown-text" >
+          <span class="card-title">{{question.ques.title}}</span>
+          <p><i class="medium material-icons">access_time</i> {{question.ques.created_on}}</p>
+          <p><i class="medium material-icons">location_on</i> {{question.ques.places[0].name}}</p>
+        </div>
+        <div class="card-action">
+          <a href="#">Share</a>
+          <a href="#"><img ng-src="{{question.ques.created_by.thumbnail}}" ng-attr-title="{{question.ques.created_by.name}}" class="circle responsive-img"></a>
+        </div>
+      </div>
+    </div>
+  </div>

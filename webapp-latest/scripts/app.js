@@ -1,4 +1,4 @@
-var app = angular.module('locaholic', ['ui.router', 'satellizer', 'toastr', 'ngMaterial', 'ngMessages', 'material.svgAssetsCache']);
+var app = angular.module('locaholic', ['ui.router', 'satellizer', 'toastr', 'ngMessages']);
 var baseUrl = "https://api.locaholic.co";
 app.run(function ($rootScope, $state, $auth) {
   $rootScope.$on('$stateChangeStart',
@@ -13,6 +13,111 @@ app.run(function ($rootScope, $state, $auth) {
       }
     });
 });
+
+app.directive('checkImage', function ($q) {
+    return {
+        restrict: 'A',
+        link: function (scope, element, attrs) {
+            attrs.$observe('ngSrc', function (ngSrc) {
+                var deferred = $q.defer();
+                var image = new Image();
+                image.onerror = function () {
+                    deferred.resolve(false);
+                    element.attr('src', element.attr('placeholder')); // set default image
+                };
+                image.onload = function () {
+                    deferred.resolve(true);
+                };
+                image.src = ngSrc;
+                return deferred.promise;
+            });
+        }
+    };
+});
+
+app.directive('question', function() {
+   var directive = {};
+   directive.restrict = 'E';
+   directive.templateUrl = "directive_partials/question.tpl.html";
+   directive.scope = {
+      question : "=data"
+   }
+   return directive;
+});
+
+app.directive('googleplace', function($http) {
+     var componentForm = {
+            street_number: 'short_name',
+            route: 'long_name',
+            locality: 'long_name',
+            administrative_area_level_1: 'short_name',
+            country: 'long_name',
+            postal_code: 'short_name'
+        };
+        var mapping = {
+            street_number: 'number',
+            route: 'street',
+            locality: 'city',
+            administrative_area_level_1: 'state',
+            country: 'country',
+            postal_code: 'zip'
+        };
+    return {
+        require: 'ngModel',
+        scope: {
+                ngModel: '=',
+                places: '=?',
+                details: '=?',
+            },
+        link: function(scope, element, attrs, model) {
+            var options = {
+                types: []
+            };
+            var placesArray = scope.$eval(attrs.places);
+            var details = scope.$eval(attrs.details);
+            
+            scope.gPlace = new google.maps.places.Autocomplete(element[0], options);
+            function cb(place,status){
+                      if(place.hasOwnProperty('photos')){
+                      details['photo'] = place.photos[0].getUrl({'maxWidth': 400, 'maxHeight': 400})
+                      }
+                      console.log(scope)
+                      scope.$apply(function () {
+                        placesArray.push(JSON.parse(JSON.stringify(details)));
+                        console.log(scope.places)
+                        model.$setViewValue(element.val());
+                        }
+                      );
+                  }
+            service = new google.maps.places.PlacesService(document.createElement('div'));
+              google.maps.event.addListener(scope.gPlace, 'place_changed', function () {
+                    var place = scope.gPlace.getPlace();
+                    details['latitude'] = place.geometry.location.lat()
+                    details['longitude'] = place.geometry.location.lng()
+                    // Get each component of the address from the place details
+                    // and fill the corresponding field on the form.
+                    for (var i = 0; i < place.address_components.length; i++) {
+                        var addressType = place.address_components[i].types[0];
+                        if (componentForm[addressType]) {
+                            var val = place.address_components[i][componentForm[addressType]];
+                            details[mapping[addressType]] = val;
+                        }
+                    }
+                    details.formatted = place.formatted_address;
+                    details.placeId = place.place_id;
+                    console.log(details)
+                    // scope.gPlace.text = "";
+                    service.getDetails({placeId:place.place_id}, cb);
+                  });
+    }}});
+
+app.filter('plusOrMinus', function(){
+    return function(input){
+        input = input ? input : 0
+        return input > 0 ? "+"+input : 1.5
+    }
+})
+
 
 app.controller('AskController', ['$scope', '$http', '$stateParams', function ($scope, $http, $stateParams){
   $scope.askQuestion = function(){
@@ -72,6 +177,10 @@ app.controller('LoginSignupCtrl', function ($scope, $auth, $state, toastr) {
       })
   }
 });
+
+
+
+
 app.controller('cardController', ['$scope','$http','$stateParams',function($scope, $http, $stateParams){
     var baseUrl = "http://localhost:8000"
     $scope.places = [];
@@ -99,31 +208,77 @@ app.controller('cardController', ['$scope','$http','$stateParams',function($scop
   }]);
 
 app.controller('RecommendationController', ['$scope','$http','$stateParams',function($scope, $http, $stateParams){
-    var baseUrl = "http://localhost:8000"
-    $scope.places = [];
-    $scope.getRecommendations = function(){
-      $http({
-        method: 'GET',
-        url: baseUrl + '/users/1/widget/questions/' + $stateParams.qid + '/recommendations/' + $stateParams.rid +'/'
-      }).then(function successCallback(response) {
-          $scope.places = response.data.collections.forEach(function(collection){
-            $scope.places.push.apply($scope.places, collection.places);
-          })
-        }, function errorCallback(response) {
-          alert(JSON.stringify(response))
-        });
+    // var baseUrl = "http://localhost:8000"
+    // $scope.places = [];
+    // $scope.getRecommendations = function(){
+    //   $http({
+    //     method: 'GET',
+    //     url: baseUrl + '/users/1/widget/questions/' + $stateParams.qid + '/recommendations/' + $stateParams.rid +'/'
+    //   }).then(function successCallback(response) {
+    //       $scope.places = response.data.collections.forEach(function(collection){
+    //         $scope.places.push.apply($scope.places, collection.places);
+    //       })
+    //     }, function errorCallback(response) {
+    //       alert(JSON.stringify(response))
+    //     });
+    // }
+    // // $scope.getRecommendations();
+    // $scope.toggleFav = function ()
+    // {
+    //   $scope.favColor = !$scope.favColor;
+    // }
+    // $scope.toggleLike = function ()
+    // {
+    //   $scope.likeColor = !$scope.likeColor;
+    // }
+    $scope.askQuestion = function(){
+      console.log("Ask Question called");
     }
-    // $scope.getRecommendations();
-    $scope.toggleFav = function ()
-    {
-      $scope.favColor = !$scope.favColor;
+
+    $scope.getQuestion = function(){
+      if($scope.requests && !$scope.current_ques){
+        angular.forEach($scope.requests, function(question){
+          if(question.ques.uuid == $stateParams.qid){
+            $scope.current_ques = question
+          }
+        })
+      }
+      if($scope.public && !$scope.current_ques){
+        angular.forEach($scope.requests, function(question){
+          if(question.ques.uuid == $routeParams.qid){
+            $scope.current_ques = question
+          }
+        })
+      }
+      if(!$scope.current_ques){
+        $scope.current_ques = getQuestionFromServer($http, $stateParams.qid)
+      }
     }
-    $scope.toggleLike = function ()
-    {
-      $scope.likeColor = !$scope.likeColor;
-    }
+    $scope.getPendingQuestions = function(){
+        $http({
+          method: 'GET',
+          url: baseUrl + '/users/1/questions/?asked=true'
+        }).then(function successCallback(response) {
+            $scope.requests = response.data.requests
+            $scope.public = response.data.public
+            console.log(response)
+          }, function errorCallback(response) {
+            alert(JSON.stringify(response))
+          });
+      }
   }]);
 
+var getQuestionFromServer = function(http, ques_uuid){
+        console.log("getQuestionFromServer")
+        http({
+        method: 'GET',
+          url: baseUrl + '/users/1/questions/' + ques_uuid +'/'
+        }).then(function successCallback(response) {
+              return response.data
+            }, function errorCallback(response) {
+            console.log(response.data)
+        });
+      }
 
 app.config(['$stateProvider', '$urlRouterProvider', '$authProvider', '$httpProvider',function ($stateProvider, $urlRouterProvider, $authProvider, $httpProvider) {
 
@@ -139,10 +294,17 @@ app.config(['$stateProvider', '$urlRouterProvider', '$authProvider', '$httpProvi
       data: {requiredLogin: true},
       controller: 'AskController'
     })
-    .state('recommend', {
+    .state('recommend_post', {
       url: '/q/:qid/r/',
       templateUrl: 'partials/recommend_post.tpl.html',
-      data: {requiredLogin: true}
+      data: {requiredLogin: true},
+      controller: 'RecommendationController'
+    })
+    .state('recommend', {
+      url: '/q/',
+      templateUrl: 'partials/recommend.tpl.html',
+      data: {requiredLogin: true},
+      controller: 'RecommendationController'
     })
     .state('recommend.browse', {
       url: '/q/:qid/r/:rid/',

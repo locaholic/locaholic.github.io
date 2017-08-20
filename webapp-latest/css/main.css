@@ -45,10 +45,23 @@ div#wrapper {
   left: 0px;
   padding-left:24px;
 }
-
+.bottom-nav-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
 .gradient {
   background: -webkit-linear-gradient(top,rgba(255,255,255,0),rgba(255,255,255,1)); /*Safari 5.1-6*/
   background: -o-linear-gradient(bottom,rgba(255,255,255,0),rgba(255,255,255,1)); /*Opera 11.1-12*/
   background: -moz-linear-gradient(bottom,rgba(255,255,255,0),rgba(255,255,255,1)); /*Fx 3.6-15*/
   background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
 }
+
+/*.flexbox_container {
+  display: flex;
+}
+
+.flexbox_item {
+  flex-grow: 1;
+}*/
+

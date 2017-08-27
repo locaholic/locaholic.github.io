@@ -170,7 +170,7 @@ app.controller('LoginSignupCtrl', function ($scope, $auth, $state, toastr) {
   $scope.auth = function (provider) {
     $auth.authenticate(provider)
       .then(function (response) {
-        $state.go('ask');
+        $state.go('recommend');
       })
       .catch(function (response) {
         console.debug("catch", response);
@@ -207,53 +207,45 @@ app.controller('cardController', ['$scope','$http','$stateParams',function($scop
     }
   }]);
 
-app.controller('RecommendationController', ['$scope','$http','$stateParams',function($scope, $http, $stateParams){
-    // var baseUrl = "http://localhost:8000"
-    // $scope.places = [];
-    // $scope.getRecommendations = function(){
-    //   $http({
-    //     method: 'GET',
-    //     url: baseUrl + '/users/1/widget/questions/' + $stateParams.qid + '/recommendations/' + $stateParams.rid +'/'
-    //   }).then(function successCallback(response) {
-    //       $scope.places = response.data.collections.forEach(function(collection){
-    //         $scope.places.push.apply($scope.places, collection.places);
-    //       })
-    //     }, function errorCallback(response) {
-    //       alert(JSON.stringify(response))
-    //     });
-    // }
-    // // $scope.getRecommendations();
-    // $scope.toggleFav = function ()
-    // {
-    //   $scope.favColor = !$scope.favColor;
-    // }
-    // $scope.toggleLike = function ()
-    // {
-    //   $scope.likeColor = !$scope.likeColor;
-    // }
-    $scope.askQuestion = function(){
-      console.log("Ask Question called");
-    }
 
-    $scope.getQuestion = function(){
-      if($scope.requests && !$scope.current_ques){
-        angular.forEach($scope.requests, function(question){
-          if(question.ques.uuid == $stateParams.qid){
-            $scope.current_ques = question
-          }
-        })
-      }
-      if($scope.public && !$scope.current_ques){
-        angular.forEach($scope.requests, function(question){
-          if(question.ques.uuid == $routeParams.qid){
-            $scope.current_ques = question
-          }
-        })
-      }
-      if(!$scope.current_ques){
-        $scope.current_ques = getQuestionFromServer($http, $stateParams.qid)
+app.service('cacheService', ['$window', '$http', function($window, $http) {
+    this.current_user;
+    this.getLoggedInUser = function () {
+      x = JSON.parse($window.localStorage.getItem("current_user"))
+      if(!x){
+        $http({
+          method: 'GET',
+          url: baseUrl + '/users/1/'
+        }).then(function successCallback(response) {
+            $window.localStorage.setItem('current_user',JSON.stringify(response.data))
+            return response.data
+          }, function errorCallback(response) {
+            alert(JSON.stringify(response))
+        });
+      }else {
+        return x
       }
     }
+}]);
+
+app.controller('RecommendationController', ['$scope','$http','$stateParams',function($scope, $http, $stateParams){
+    $scope.makeTrue = function(){
+      console.log("called")
+        $scope.$parent.showInput = true;
+    }
+    $scope.gPlace;
+    $scope.places=[];
+    $scope.details = {};
+    $scope.getQuestionFromServer = function(){
+      $http({
+        method: 'GET',
+        url: baseUrl + '/users/1/questions/' + $stateParams.qid +'/'
+        }).then(function successCallback(response) {
+              $scope.current_ques = response.data
+            }, function errorCallback(response) {
+            console.log(response.data)
+      });
+    }    
     $scope.getPendingQuestions = function(){
         $http({
           method: 'GET',
@@ -268,17 +260,10 @@ app.controller('RecommendationController', ['$scope','$http','$stateParams',func
       }
   }]);
 
-var getQuestionFromServer = function(http, ques_uuid){
-        console.log("getQuestionFromServer")
-        http({
-        method: 'GET',
-          url: baseUrl + '/users/1/questions/' + ques_uuid +'/'
-        }).then(function successCallback(response) {
-              return response.data
-            }, function errorCallback(response) {
-            console.log(response.data)
-        });
-      }
+app.controller('UserController', ['$scope','cacheService',function($scope, cacheService){
+    $scope.user = cacheService.getLoggedInUser();
+  }]);
+
 
 app.config(['$stateProvider', '$urlRouterProvider', '$authProvider', '$httpProvider',function ($stateProvider, $urlRouterProvider, $authProvider, $httpProvider) {
 
@@ -286,7 +271,8 @@ app.config(['$stateProvider', '$urlRouterProvider', '$authProvider', '$httpProvi
     .state('user', {
       url: '/user',
       templateUrl: 'partials/user.tpl.html',
-      data: {requiredLogin: true}
+      data: {requiredLogin: true},
+      controller: "UserController"
     })
     .state('ask', {
       url: '/ask',
@@ -328,7 +314,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$authProvider', '$httpProvi
       controller: 'LoginSignupCtrl'
     });
 
-  $urlRouterProvider.otherwise('/user');
+  $urlRouterProvider.otherwise('/q/');
   
   $httpProvider.interceptors.push(['$q', '$window', function($q,$window) {
     return {

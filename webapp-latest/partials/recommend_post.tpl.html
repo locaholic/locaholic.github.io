@@ -1,18 +1,18 @@
-   <div class="row" ng-init="getQuestion()">
+   <div class="row" ng-init="getQuestionFromServer()">
    <ul class="collection">
     <li class="collection-item avatar">
-      <img check-image placeholder="user.png" ng-src="{{current_ques.ques.created_by}}" alt="" class="circle">
-      <p style="font-size: 22px">{{current_ques.ques.title}}</p>
-      <p style="color: grey; font-size: small;font-style: italic;padding-top: 5px">{{current_ques.ques.created_by.first_name}} has asked you for recommendations <br>
+      <img check-image placeholder="user.png" ng-src="{{current_ques.created_by.thumbnail}}" alt="" class="circle">
+      <p style="font-size: 22px">{{current_ques.title}}</p>
+      <p style="color: grey; font-size: small;font-style: italic;padding-top: 5px">{{current_ques.created_by.first_name}} has asked you for recommendations <br>
       </p>
-      <p class="secondary-content center"><a href="#"><i class="material-icons">place</i></a><br/>{{current_ques.ques.places[0].name}}</p>
+      <p class="secondary-content center"><a href="#"><i class="material-icons">place</i></a><br/>{{current_ques.places[0].name}}</p>
     </li>
     </ul>
     <div class="row">
     <form class="col s12">
       <div class="row center">
         <div class="input-field col s12 m6 offset-m3">
-              <div>To send recommendations to {{user.first_name}}, start typing in the places and hit send when you are done</div>
+              <div>To send recommendations to {{current_ques.craeted_by.first_name}}, start typing in the places and hit send when you are done</div>
               <div>
                 <input ng-model="chosenPlace" places="places" details="details" googleplace/><a class="waves-effect waves-light btn red lighten-2" data-target="modal1" modal open="showInput" ng-click="makeTrue()" >Send</a>
                 </div>

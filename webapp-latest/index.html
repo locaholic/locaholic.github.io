@@ -14,7 +14,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
   </head>
-	<body>
+	<body style="margin: 0;padding: 0;background-image: url('img/login_splash.jpg'); background-size: cover;">
 	<div ng-cloak="" class="toolbardemoBasicUsage" ng-app="locaholic">
    <nav>
     <div class="nav-wrapper">
@@ -26,14 +26,16 @@
        </ul>-->
     </div>
   </nav>
-  <div ui-view id="ui-view"></div>
+  <div ui-view id="ui-view" ></div>
   <div class = "bottom-nav-container navbar-fixed">
   <nav>
     <div class="nav-wrapper">
-      <ul id="nav-mobile" class="left hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
+      <ul class="left">
+        <li><a ui-sref="discover()">Discover</a></li>
+        <li><a ui-sref="ask()">Ask</a></li>
+        <li><a ui-sref="recommend()">Recommend</a></li>
+        <li><a ui-sref="my_places()">My Places</a></li>
+        <li><a ui-ref="user()">My Profile</a></li>
       </ul>
     </div>
   </nav>
@@ -46,7 +48,7 @@
   <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
   <script src="bower_components/satellizer/satellizer.min.js"></script>
   <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>  
-  <script src="http://ngmaterial.assets.s3.amazonaws.com/svg-assets-cache.js"></script>
+  <!-- <script src="http://ngmaterial.assets.s3.amazonaws.com/svg-assets-cache.js"></script> -->
   <script src="scripts/app.js"></script>
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgGUHwXIpoG-5VZ11Llop184jlS4raipw&sensor=false&libraries=places"></script>
 	</body>

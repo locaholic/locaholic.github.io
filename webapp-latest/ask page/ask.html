@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en" >
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <link rel="stylesheet" href="./material.min.css">
+  <script src="./material.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script language="javascript">
+  angular
+  .module('ask_page', ['ngMaterial'])
+  .controller('cardController', ['$scope', cardController]);
+  function cardController($scope){
+  }
+  </script>
+</head>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row" style="align-self: center; padding: 0 0 0 0;">
+      <span class="mdl-layout-title">Locaholic<br>Ask a question!</span>
+    </div>
+  </header>
+  <main class="mdl-layout__content">
+    <div class="page-content">
+      <i class="material-icons" style="margin:2%; color:rgb(63, 81, 181); vertical-align:middle;">question_answer</i>
+      <label>My Questions</label>
+    </div>
+    <div class="mdl-card mdl-shadow--4dp">
+      <div class="mdl-card__title-text">question</div><br>
+      <div style="opacity:.75; padding-left:4%;">
+        <i class="material-icons" style="margin:2%; vertical-align:middle; width:24px; margin-top:0;">location_on</i>
+        <label>Location</label>
+      </div>
+      <div class="flex-row">
+        <button class="vertical-center mdl-button mdl-js-button mdl-button--accent">
+          <label>Ask Again</label>
+        </button>
+        <button class="vertical-center mdl-button mdl-js-button mdl-button--accent">
+          <label>Share</label>
+        </button>
+        <button id="editing" class="vertical-center mdl-button mdl-js-button mdl-button--accent">
+          <i class="material-icons">more_vert</i>
+        </button>
+      </div>
+    </div>
+    <ul class="mdl-menu mdl-js-menu" for="editing">
+      <li class="mdl-menu__item">Edit</li>
+      <li class="mdl-menu__item">Delete</li>
+    </ul>
+  </main>
+  <div style="display:flex;">
+    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" style="left:40%; top:-25px;">
+      <i class="material-icons">question_answer</i>
+    </button>
+  </div>
+  <footer class="mdl-mini-footer">
+    <div class="flex-row">
+      <div>
+        <button class="vertical-center mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent">
+          <i class="material-icons">explore</i>
+          <label>discover</label>
+        </button>
+      </div>
+      <div>
+        <button class="vertical-center mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent">
+          <i class="material-icons">question_answer</i>
+          <label>ask</label>
+        </button>
+      </div>
+      <div>
+        <button class="vertical-center mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent">
+          <i class="material-icons">thumb_up</i>
+          <label>recommendations</label>
+        </button>
+      </div>
+      <div>
+        <button class="vertical-center mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent">
+          <i class="material-icons">favorite</i>
+          <label>my places</label>
+        </button>
+      </div>
+      <div>
+        <button class="vertical-center mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent">
+          <i class="material-icons">account_circle</i>
+          <label>my profile</label>
+        </button>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
+</html>
